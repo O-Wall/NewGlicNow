@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace NewGlicNow
 {
@@ -31,6 +36,14 @@ namespace NewGlicNow
             Banco = ConfigurationManager.AppSettings.Get("banco");
 
             Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
+        }
+        public static bool SomenteNumeros(char tecla, string texto)
+        {
+            if ((!char.IsDigit(tecla) && tecla != (char)Keys.Back))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
