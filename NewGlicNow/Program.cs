@@ -16,7 +16,7 @@ namespace NewGlicNow
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal_());
+            Application.Run(new Form1());
         }
     }
 }

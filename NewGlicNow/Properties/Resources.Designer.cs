@@ -99,5 +99,25 @@ namespace NewGlicNow.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap journal_webinar_taking_notes_at_the_computer {
+            get {
+                object obj = ResourceManager.GetObject("journal-webinar-taking-notes-at-the-computer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap journal_woman_holding_computer_window {
+            get {
+                object obj = ResourceManager.GetObject("journal-woman-holding-computer-window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

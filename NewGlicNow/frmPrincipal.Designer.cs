@@ -35,18 +35,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.picImagem2 = new System.Windows.Forms.PictureBox();
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.picConfigu = new System.Windows.Forms.PictureBox();
-            this.picImagem1 = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
-            this.panel7.SuspendLayout();
+            this.picProfile = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picConfigu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -83,7 +80,6 @@
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.picImagem2);
             this.panel7.Enabled = false;
             this.panel7.Location = new System.Drawing.Point(193, 122);
             this.panel7.Name = "panel7";
@@ -102,7 +98,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
-            this.panel4.Controls.Add(this.picImagem1);
+            this.panel4.Controls.Add(this.picProfile);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.btnMapaGlicemia);
             this.panel4.Controls.Add(this.panel3);
@@ -120,16 +116,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 45);
             this.panel5.TabIndex = 21;
-            // 
-            // picImagem2
-            // 
-            this.picImagem2.Image = global::NewGlicNow.Properties.Resources.image_removebg_preview__1_;
-            this.picImagem2.Location = new System.Drawing.Point(476, 58);
-            this.picImagem2.Name = "picImagem2";
-            this.picImagem2.Size = new System.Drawing.Size(181, 100);
-            this.picImagem2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImagem2.TabIndex = 28;
-            this.picImagem2.TabStop = false;
             // 
             // picPerfil
             // 
@@ -151,16 +137,6 @@
             this.picConfigu.TabIndex = 27;
             this.picConfigu.TabStop = false;
             // 
-            // picImagem1
-            // 
-            this.picImagem1.Image = global::NewGlicNow.Properties.Resources.image_removebg_preview__2___2_;
-            this.picImagem1.Location = new System.Drawing.Point(-3, 261);
-            this.picImagem1.Name = "picImagem1";
-            this.picImagem1.Size = new System.Drawing.Size(185, 233);
-            this.picImagem1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImagem1.TabIndex = 29;
-            this.picImagem1.TabStop = false;
-            // 
             // picClose
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -171,6 +147,17 @@
             this.picClose.Size = new System.Drawing.Size(24, 24);
             this.picClose.TabIndex = 25;
             this.picClose.TabStop = false;
+            // 
+            // picProfile
+            // 
+            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picProfile.Image = global::NewGlicNow.Properties.Resources.journal_woman_holding_computer_window;
+            this.picProfile.Location = new System.Drawing.Point(5, 227);
+            this.picProfile.Name = "picProfile";
+            this.picProfile.Size = new System.Drawing.Size(182, 266);
+            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProfile.TabIndex = 22;
+            this.picProfile.TabStop = false;
             // 
             // frmPrincipal_
             // 
@@ -187,13 +174,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal_";
             this.Text = "frmPrincipal_";
-            this.panel7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picConfigu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,7 +194,6 @@
         private System.Windows.Forms.PictureBox picConfigu;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox picImagem2;
-        private System.Windows.Forms.PictureBox picImagem1;
+        private System.Windows.Forms.PictureBox picProfile;
     }
 }
