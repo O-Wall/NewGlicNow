@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NewGlicNow
 {
-    public partial class frmPrincipal_ : Form
+    public partial class frmPrincipal : Form
     {
-        public frmPrincipal_()
+        public frmPrincipal()
         {
             InitializeComponent();
         }

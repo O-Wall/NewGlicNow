@@ -1,6 +1,6 @@
 ﻿namespace NewGlicNow
 {
-    partial class Form1
+    partial class frmLogin
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -53,12 +53,13 @@
             // lblCasdatrese
             // 
             this.lblCasdatrese.AutoSize = true;
-            this.lblCasdatrese.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCasdatrese.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCasdatrese.Location = new System.Drawing.Point(376, 373);
             this.lblCasdatrese.Name = "lblCasdatrese";
             this.lblCasdatrese.Size = new System.Drawing.Size(94, 16);
             this.lblCasdatrese.TabIndex = 22;
             this.lblCasdatrese.Text = "Cadastre aqui!";
+            this.lblCasdatrese.Click += new System.EventHandler(this.lblCasdatrese_Click);
             // 
             // lblTitulo
             // 
@@ -146,6 +147,7 @@
             this.btnEntrar.TabIndex = 20;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // txtSenha
             // 
@@ -195,8 +197,9 @@
             this.picClose.Size = new System.Drawing.Size(24, 24);
             this.picClose.TabIndex = 14;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
-            // Form1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,8 +219,9 @@
             this.Controls.Add(this.picLogin);
             this.Controls.Add(this.picClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmLogin";
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).EndInit();

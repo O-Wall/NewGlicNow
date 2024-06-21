@@ -1,6 +1,6 @@
 ﻿namespace NewGlicNow
 {
-    partial class frmPrincipal_
+    partial class frmPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -128,7 +128,7 @@
             this.panel1.Size = new System.Drawing.Size(190, 7);
             this.panel1.TabIndex = 21;
             // 
-            // frmPrincipal_
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmPrincipal_";
+            this.Name = "frmPrincipal";
             this.Text = "frmPrincipal_";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

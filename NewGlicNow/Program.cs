@@ -16,7 +16,17 @@ namespace NewGlicNow
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form login = new frmLogin();
+            Application.Run(login);
+            Form cadastro = new frmCadastro();
+            if (login.Tag.ToString() == "Cadastro")
+            {
+                Application.Run(cadastro);
+            }
+            if (login.DialogResult == DialogResult.OK || cadastro.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new frmPrincipal());
+            }
         }
     }
 }

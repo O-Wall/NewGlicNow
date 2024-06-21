@@ -87,6 +87,7 @@
     <Compile Include="ucCadMap.Designer.cs">
       <DependentUpon>ucCadMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="frmAgenda.resx">
       <DependentUpon>frmAgenda.cs</DependentUpon>
     </EmbeddedResource>
