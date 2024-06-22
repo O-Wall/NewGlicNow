@@ -16,5 +16,10 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

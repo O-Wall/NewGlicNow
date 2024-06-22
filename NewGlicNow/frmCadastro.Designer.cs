@@ -28,43 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastro));
             this.cboEstado = new System.Windows.Forms.ComboBox();
-            this.picEstado = new System.Windows.Forms.PictureBox();
             this.cboCidade = new System.Windows.Forms.ComboBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
-            this.picCelular = new System.Windows.Forms.PictureBox();
-            this.picCidade = new System.Windows.Forms.PictureBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
-            this.picBairro = new System.Windows.Forms.PictureBox();
-            this.picComplemento = new System.Windows.Forms.PictureBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtCep = new System.Windows.Forms.TextBox();
-            this.picCep = new System.Windows.Forms.PictureBox();
-            this.picEndereco = new System.Windows.Forms.PictureBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.cboGenero = new System.Windows.Forms.ComboBox();
             this.cboTipoDiabete = new System.Windows.Forms.ComboBox();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.picEmail = new System.Windows.Forms.PictureBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
-            this.picCpf = new System.Windows.Forms.PictureBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtConfSenha = new System.Windows.Forms.TextBox();
-            this.picConfSenha = new System.Windows.Forms.PictureBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCadastro = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picEstado = new System.Windows.Forms.PictureBox();
+            this.picCelular = new System.Windows.Forms.PictureBox();
+            this.picCidade = new System.Windows.Forms.PictureBox();
+            this.picBairro = new System.Windows.Forms.PictureBox();
+            this.picComplemento = new System.Windows.Forms.PictureBox();
+            this.picCep = new System.Windows.Forms.PictureBox();
+            this.picEndereco = new System.Windows.Forms.PictureBox();
+            this.picEmail = new System.Windows.Forms.PictureBox();
+            this.picCpf = new System.Windows.Forms.PictureBox();
+            this.picConfSenha = new System.Windows.Forms.PictureBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picEditar = new System.Windows.Forms.PictureBox();
             this.picProfile = new System.Windows.Forms.PictureBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCidade)).BeginInit();
@@ -79,20 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(63, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(49, 13);
-            this.lblTitulo.TabIndex = 75;
-            this.lblTitulo.Text = "Cadastro";
             // 
             // cboEstado
             // 
@@ -108,15 +98,6 @@
             this.cboEstado.Size = new System.Drawing.Size(138, 21);
             this.cboEstado.TabIndex = 74;
             this.cboEstado.Text = "Estado";
-            // 
-            // picEstado
-            // 
-            this.picEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEstado.Location = new System.Drawing.Point(373, 467);
-            this.picEstado.Name = "picEstado";
-            this.picEstado.Size = new System.Drawing.Size(24, 24);
-            this.picEstado.TabIndex = 73;
-            this.picEstado.TabStop = false;
             // 
             // cboCidade
             // 
@@ -136,109 +117,50 @@
             // txtCelular
             // 
             this.txtCelular.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCelular.ForeColor = System.Drawing.Color.Black;
             this.txtCelular.Location = new System.Drawing.Point(335, 301);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(206, 13);
+            this.txtCelular.Size = new System.Drawing.Size(206, 20);
             this.txtCelular.TabIndex = 71;
             this.txtCelular.Text = "Celular";
-            // 
-            // picCelular
-            // 
-            this.picCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCelular.Location = new System.Drawing.Point(305, 301);
-            this.picCelular.Name = "picCelular";
-            this.picCelular.Size = new System.Drawing.Size(24, 24);
-            this.picCelular.TabIndex = 70;
-            this.picCelular.TabStop = false;
-            // 
-            // picCidade
-            // 
-            this.picCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCidade.Location = new System.Drawing.Point(79, 467);
-            this.picCidade.Name = "picCidade";
-            this.picCidade.Size = new System.Drawing.Size(24, 24);
-            this.picCidade.TabIndex = 69;
-            this.picCidade.TabStop = false;
             // 
             // txtBairro
             // 
             this.txtBairro.BackColor = System.Drawing.SystemColors.Window;
-            this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBairro.ForeColor = System.Drawing.Color.Black;
             this.txtBairro.Location = new System.Drawing.Point(109, 425);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(228, 13);
+            this.txtBairro.Size = new System.Drawing.Size(228, 20);
             this.txtBairro.TabIndex = 68;
             this.txtBairro.Text = "Bairro";
-            // 
-            // picBairro
-            // 
-            this.picBairro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBairro.Location = new System.Drawing.Point(79, 424);
-            this.picBairro.Name = "picBairro";
-            this.picBairro.Size = new System.Drawing.Size(24, 24);
-            this.picBairro.TabIndex = 67;
-            this.picBairro.TabStop = false;
-            // 
-            // picComplemento
-            // 
-            this.picComplemento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picComplemento.Location = new System.Drawing.Point(79, 388);
-            this.picComplemento.Name = "picComplemento";
-            this.picComplemento.Size = new System.Drawing.Size(24, 24);
-            this.picComplemento.TabIndex = 66;
-            this.picComplemento.TabStop = false;
             // 
             // txtComplemento
             // 
             this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
-            this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComplemento.ForeColor = System.Drawing.Color.Black;
             this.txtComplemento.Location = new System.Drawing.Point(109, 389);
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(432, 13);
+            this.txtComplemento.Size = new System.Drawing.Size(432, 20);
             this.txtComplemento.TabIndex = 65;
             this.txtComplemento.Text = "Complemento";
             // 
             // txtCep
             // 
             this.txtCep.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCep.ForeColor = System.Drawing.Color.Black;
             this.txtCep.Location = new System.Drawing.Point(384, 425);
             this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(157, 13);
+            this.txtCep.Size = new System.Drawing.Size(157, 20);
             this.txtCep.TabIndex = 64;
             this.txtCep.Text = "CEP";
-            // 
-            // picCep
-            // 
-            this.picCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCep.Location = new System.Drawing.Point(354, 424);
-            this.picCep.Name = "picCep";
-            this.picCep.Size = new System.Drawing.Size(24, 24);
-            this.picCep.TabIndex = 63;
-            this.picCep.TabStop = false;
-            // 
-            // picEndereco
-            // 
-            this.picEndereco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEndereco.Location = new System.Drawing.Point(79, 350);
-            this.picEndereco.Name = "picEndereco";
-            this.picEndereco.Size = new System.Drawing.Size(24, 24);
-            this.picEndereco.TabIndex = 62;
-            this.picEndereco.TabStop = false;
             // 
             // txtEndereco
             // 
             this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEndereco.ForeColor = System.Drawing.Color.Black;
             this.txtEndereco.Location = new System.Drawing.Point(109, 351);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(432, 13);
+            this.txtEndereco.Size = new System.Drawing.Size(432, 20);
             this.txtEndereco.TabIndex = 61;
             this.txtEndereco.Text = "Endereço";
             // 
@@ -299,6 +221,177 @@
             this.dtpDataNascimento.UseWaitCursor = true;
             this.dtpDataNascimento.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(109, 220);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(432, 20);
+            this.txtEmail.TabIndex = 54;
+            this.txtEmail.Text = "E-mail";
+            // 
+            // txtCPF
+            // 
+            this.txtCPF.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCPF.ForeColor = System.Drawing.Color.Black;
+            this.txtCPF.Location = new System.Drawing.Point(343, 183);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(198, 20);
+            this.txtCPF.TabIndex = 53;
+            this.txtCPF.Text = "CPF";
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.BackColor = System.Drawing.SystemColors.Window;
+            this.txtLogin.ForeColor = System.Drawing.Color.Black;
+            this.txtLogin.Location = new System.Drawing.Point(109, 183);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(180, 20);
+            this.txtLogin.TabIndex = 51;
+            this.txtLogin.Text = "Login";
+            // 
+            // txtConfSenha
+            // 
+            this.txtConfSenha.BackColor = System.Drawing.SystemColors.Window;
+            this.txtConfSenha.ForeColor = System.Drawing.Color.Black;
+            this.txtConfSenha.Location = new System.Drawing.Point(343, 149);
+            this.txtConfSenha.Name = "txtConfSenha";
+            this.txtConfSenha.Size = new System.Drawing.Size(198, 20);
+            this.txtConfSenha.TabIndex = 50;
+            this.txtConfSenha.Text = "Confirme Password";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSenha.ForeColor = System.Drawing.Color.Black;
+            this.txtSenha.Location = new System.Drawing.Point(109, 148);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(180, 20);
+            this.txtSenha.TabIndex = 48;
+            this.txtSenha.Text = "Password";
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNome.ForeColor = System.Drawing.Color.Black;
+            this.txtNome.Location = new System.Drawing.Point(155, 104);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(386, 20);
+            this.txtNome.TabIndex = 47;
+            this.txtNome.Text = "Nome Completo";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Brown;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.lblCadastro);
+            this.panel2.Controls.Add(this.picClose);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(618, 33);
+            this.panel2.TabIndex = 75;
+            // 
+            // lblCadastro
+            // 
+            this.lblCadastro.AutoSize = true;
+            this.lblCadastro.Location = new System.Drawing.Point(46, 12);
+            this.lblCadastro.Name = "lblCadastro";
+            this.lblCadastro.Size = new System.Drawing.Size(49, 13);
+            this.lblCadastro.TabIndex = 26;
+            this.lblCadastro.Text = "Cadastro";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::NewGlicNow.Properties.Resources.icons8_back_48__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+            this.picClose.Location = new System.Drawing.Point(587, 5);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(24, 24);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picClose.TabIndex = 25;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // picEstado
+            // 
+            this.picEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEstado.Location = new System.Drawing.Point(373, 467);
+            this.picEstado.Name = "picEstado";
+            this.picEstado.Size = new System.Drawing.Size(24, 24);
+            this.picEstado.TabIndex = 73;
+            this.picEstado.TabStop = false;
+            // 
+            // picCelular
+            // 
+            this.picCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCelular.Location = new System.Drawing.Point(305, 301);
+            this.picCelular.Name = "picCelular";
+            this.picCelular.Size = new System.Drawing.Size(24, 24);
+            this.picCelular.TabIndex = 70;
+            this.picCelular.TabStop = false;
+            // 
+            // picCidade
+            // 
+            this.picCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCidade.Location = new System.Drawing.Point(79, 467);
+            this.picCidade.Name = "picCidade";
+            this.picCidade.Size = new System.Drawing.Size(24, 24);
+            this.picCidade.TabIndex = 69;
+            this.picCidade.TabStop = false;
+            // 
+            // picBairro
+            // 
+            this.picBairro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBairro.Location = new System.Drawing.Point(79, 424);
+            this.picBairro.Name = "picBairro";
+            this.picBairro.Size = new System.Drawing.Size(24, 24);
+            this.picBairro.TabIndex = 67;
+            this.picBairro.TabStop = false;
+            // 
+            // picComplemento
+            // 
+            this.picComplemento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picComplemento.Location = new System.Drawing.Point(79, 388);
+            this.picComplemento.Name = "picComplemento";
+            this.picComplemento.Size = new System.Drawing.Size(24, 24);
+            this.picComplemento.TabIndex = 66;
+            this.picComplemento.TabStop = false;
+            // 
+            // picCep
+            // 
+            this.picCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCep.Location = new System.Drawing.Point(354, 424);
+            this.picCep.Name = "picCep";
+            this.picCep.Size = new System.Drawing.Size(24, 24);
+            this.picCep.TabIndex = 63;
+            this.picCep.TabStop = false;
+            // 
+            // picEndereco
+            // 
+            this.picEndereco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEndereco.Location = new System.Drawing.Point(79, 350);
+            this.picEndereco.Name = "picEndereco";
+            this.picEndereco.Size = new System.Drawing.Size(24, 24);
+            this.picEndereco.TabIndex = 62;
+            this.picEndereco.TabStop = false;
+            // 
             // picEmail
             // 
             this.picEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -307,28 +400,6 @@
             this.picEmail.Size = new System.Drawing.Size(24, 24);
             this.picEmail.TabIndex = 55;
             this.picEmail.TabStop = false;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(109, 220);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(432, 13);
-            this.txtEmail.TabIndex = 54;
-            this.txtEmail.Text = "E-mail";
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCPF.ForeColor = System.Drawing.Color.Black;
-            this.txtCPF.Location = new System.Drawing.Point(343, 183);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(198, 13);
-            this.txtCPF.TabIndex = 53;
-            this.txtCPF.Text = "CPF";
             // 
             // picCpf
             // 
@@ -339,28 +410,6 @@
             this.picCpf.TabIndex = 52;
             this.picCpf.TabStop = false;
             // 
-            // txtLogin
-            // 
-            this.txtLogin.BackColor = System.Drawing.SystemColors.Window;
-            this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLogin.ForeColor = System.Drawing.Color.Black;
-            this.txtLogin.Location = new System.Drawing.Point(109, 183);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(180, 13);
-            this.txtLogin.TabIndex = 51;
-            this.txtLogin.Text = "Login";
-            // 
-            // txtConfSenha
-            // 
-            this.txtConfSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtConfSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfSenha.ForeColor = System.Drawing.Color.Black;
-            this.txtConfSenha.Location = new System.Drawing.Point(343, 149);
-            this.txtConfSenha.Name = "txtConfSenha";
-            this.txtConfSenha.Size = new System.Drawing.Size(198, 13);
-            this.txtConfSenha.TabIndex = 50;
-            this.txtConfSenha.Text = "Confirme Password";
-            // 
             // picConfSenha
             // 
             this.picConfSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -369,28 +418,6 @@
             this.picConfSenha.Size = new System.Drawing.Size(24, 24);
             this.picConfSenha.TabIndex = 49;
             this.picConfSenha.TabStop = false;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSenha.ForeColor = System.Drawing.Color.Black;
-            this.txtSenha.Location = new System.Drawing.Point(109, 148);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(180, 13);
-            this.txtSenha.TabIndex = 48;
-            this.txtSenha.Text = "Password";
-            // 
-            // txtNome
-            // 
-            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNome.ForeColor = System.Drawing.Color.Black;
-            this.txtNome.Location = new System.Drawing.Point(155, 104);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(386, 13);
-            this.txtNome.TabIndex = 47;
-            this.txtNome.Text = "Nome Completo";
             // 
             // picSenha
             // 
@@ -428,6 +455,8 @@
             this.picProfile.TabIndex = 43;
             this.picProfile.TabStop = false;
             // 
+<<<<<<< HEAD
+=======
             // picClose
             // 
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -472,12 +501,13 @@
             this.pictureBox3.TabIndex = 41;
             this.pictureBox3.TabStop = false;
             // 
+>>>>>>> b4248bf379e3bed576191344bb569929a2af8e86
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 575);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.picEstado);
             this.Controls.Add(this.cboCidade);
@@ -513,6 +543,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadastro";
             this.Text = "frmCadastro";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCidade)).EndInit();
@@ -527,18 +561,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.PictureBox picEstado;
         private System.Windows.Forms.ComboBox cboCidade;
@@ -572,8 +600,8 @@
         private System.Windows.Forms.PictureBox picEditar;
         private System.Windows.Forms.PictureBox picProfile;
         private System.Windows.Forms.PictureBox picClose;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
