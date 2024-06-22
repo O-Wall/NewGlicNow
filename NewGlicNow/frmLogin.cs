@@ -26,10 +26,7 @@ namespace NewGlicNow
             Tag = "";
             try
             {
-                if (cboSalvo.Checked)
-                {
-                    
-                }                
+                            
             }
             catch (Exception ex)
             {
