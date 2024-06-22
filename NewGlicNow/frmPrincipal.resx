@@ -117,11 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="btnMapaGlicemia.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+<<<<<<< HEAD
         DAAACwwBP0AiyAAAAQFJREFUSEvtkzsKAjEQhrfVI1iJD7DQK3gj8ShaKGhlZ+UlbLyDvQ/0EvGbOFlC
+=======
+        DQAACw0B7QfALAAAAQFJREFUSEvtkzsKAjEQhrfVI1iJD7DQK3gj8ShaKGhlZ+UlbLyDvQ/0EvGbOFlC
+>>>>>>> 37d9d37d6de89b02612ee5252c2814aec34c2b23
         1MXEFAp+8LEkO/NP2Efxcxhj6qIu80JwH894wJpu50HDLyicMG0AjV2cYke3wnC59vVWPDQvbYwxC13n
         CxcIWNmo+7WH8syFKw60LB1C3IAdSqjw+ckdBLkBjjwndxAWDtiivJc5li8+GQ17xUTL0iFEPlM5rQzy
         nWFbyx7h5tgrfqaEdrU8Dhob+A7224+Gxua937LG8PR7FFbaEgeN/oCmbpewV/5cuhUHjf8B1dDoDxhi
@@ -131,7 +138,11 @@
   <data name="picClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+<<<<<<< HEAD
         DAAACwwBP0AiyAAAA3pJREFUaEPtmdtOE1EUhnkWEc+AnFraoS3l0HYKFBVQSIzhwgfwRgQ5I4bnMpJg
+=======
+        DQAACw0B7QfALAAAA3pJREFUaEPtmdtOE1EUhnkWEc+AnFraoS3l0HYKFBVQSIzhwgfwRgQ5I4bnMpJg
+>>>>>>> 37d9d37d6de89b02612ee5252c2814aec34c2b23
         fAUj0k5neprh0HIl0OVe045pYDqzuzBxX8yfrIum0+T7pmvW3jvT5sWLFy9i5jw1P1FJLWTPUwtQmZqH
         yiTWK6hMYL2EchJrDsoy1iyUE7NwFp+pVexFrcafm3U69qxWo9NwOoKVgpMo1hScDGNNwkkEawKOw6xC
         yVoNyXAsyYohyXIdiz8MWhEAHgwpAXognqlj8ee/w7NCeCMYByMQhzoWf0SCNwIxgoBA8PrgOEVAHHjd
@@ -149,6 +160,9 @@
         2tr+AKRWM3DqGJELAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="btnAgenda.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <data name="picProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABJEAAAUACAYAAAD3A8PgAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
@@ -4433,7 +4447,11 @@
   <data name="picConfigu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+<<<<<<< HEAD
         DAAACwwBP0AiyAAAA59JREFUaEPt2luoTFEcx/HjTkIuSeRB8uZZeaWQJ3eh5NH9LuWFkhRRilJyKQ9E
+=======
+        DQAACw0B7QfALAAAA59JREFUaEPt2luoTFEcx/HjTkIuSeRB8uZZeaWQJ3eh5NH9LuWFkhRRilJyKQ9E
+>>>>>>> 37d9d37d6de89b02612ee5252c2814aec34c2b23
         Ue5CkpK7kuSWhFCI3HLn+zsz67T9+8+ec/bMXmfU/OrTmbNn9t5rz+y1Zv3XOQ311NOYNhiJfVipDSaz
         sAmDG3+rwXTBKjzCn6IvSDa4P95Dz/3CUYyGLr5m0gnfEC4iOI2QQ7DP/0R31FSuwzZUjkPvvvfcLdRc
         tsNrbJqtaNWoTwwsPGzKaniNTTMXNm2LP6NEDVBDnuMA1sLrI+W8xVSsgPrQCyxGlGiUuQuvYdWgY0fJ
