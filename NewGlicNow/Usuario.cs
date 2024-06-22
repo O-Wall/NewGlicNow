@@ -49,7 +49,7 @@ namespace NewGlicNow
             {
                 parameters.Clear();
                 sql = "select id, NomeCompleto, CPF, DataNascimento," +
-                    " Email, FotoPerfil, Celular, TipoDiabetesId, SexoId, LoginId \n";
+                    " Email, FotoPerfil, Celular, TipoDiabeteId, SexoId \n";
                 sql += "from tblUsuario \n";
                 if (Id != 0)
                 {
@@ -70,11 +70,11 @@ namespace NewGlicNow
                 if (Id != 0 || (CPF != string.Empty && dt.Rows.Count > 0))
                 {
                     Id = Convert.ToInt32(dt.Rows[0]["id"]);
-                    NomeCompleto = dt.Rows[0]["nome_completo"].ToString();
+                    NomeCompleto = dt.Rows[0]["nomeCompleto"].ToString();
                     CPF = dt.Rows[0]["cpf"].ToString();
                     DataNascimento = Convert.ToDateTime(dt.Rows[0]["dataNascimento"]);
                     Email = dt.Rows[0]["email"].ToString();
-                    if (dt.Rows[0]["fotoPerfil"] != DBNull.Value) // Lembrar de sempre verificar isso
+                    if (dt.Rows[0]["fotoPerfil"] != DBNull.Value)
                     {
                         FotoPerfil = (byte[])dt.Rows[0]["fotoPerfil"];
                     }

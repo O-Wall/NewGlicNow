@@ -14,6 +14,7 @@ namespace NewGlicNow
         [STAThread]
         static void Main()
         {
+            Global.LerAppConfig();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form login = new frmLogin();

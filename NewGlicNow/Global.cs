@@ -19,6 +19,7 @@ namespace NewGlicNow
         public static string Servidor = string.Empty;
         public static string Banco = string.Empty;
         public static int IdUsuarioLogado = 0;
+        public static string ResetMsg = string.Empty;
 
         public static string Criptografar(string senha)
         {
@@ -44,6 +45,11 @@ namespace NewGlicNow
                 return true;
             }
             return false;
+        }
+        public static void LimparTexto(TextBox txt)
+        {
+            ResetMsg = txt.Text;
+            txt.Clear();
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCasdatrese = new System.Windows.Forms.Label();
+            this.lblCadastre = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -38,7 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboSalvo = new System.Windows.Forms.CheckBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.picLogin = new System.Windows.Forms.PictureBox();
@@ -50,17 +50,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCasdatrese
+            // lblCadastre
             // 
-            this.lblCasdatrese.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCasdatrese.AutoSize = true;
-            this.lblCasdatrese.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCasdatrese.Location = new System.Drawing.Point(490, 412);
-            this.lblCasdatrese.Name = "lblCasdatrese";
-            this.lblCasdatrese.Size = new System.Drawing.Size(94, 16);
-            this.lblCasdatrese.TabIndex = 22;
-            this.lblCasdatrese.Text = "Cadastre aqui!";
-            this.lblCasdatrese.Click += new System.EventHandler(this.lblCasdatrese_Click);
+            this.lblCadastre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCadastre.AutoSize = true;
+            this.lblCadastre.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastre.Location = new System.Drawing.Point(490, 412);
+            this.lblCadastre.Name = "lblCadastre";
+            this.lblCadastre.Size = new System.Drawing.Size(94, 16);
+            this.lblCadastre.TabIndex = 3;
+            this.lblCadastre.Text = "Cadastre aqui!";
+            this.lblCadastre.Click += new System.EventHandler(this.lblCasdatre_Click);
             // 
             // lblTitulo
             // 
@@ -80,7 +80,7 @@
             this.lblBemVindo.Location = new System.Drawing.Point(384, 148);
             this.lblBemVindo.Name = "lblBemVindo";
             this.lblBemVindo.Size = new System.Drawing.Size(83, 13);
-            this.lblBemVindo.TabIndex = 27;
+            this.lblBemVindo.TabIndex = 0;
             this.lblBemVindo.Text = "Seja bem vindo!";
             // 
             // panel3
@@ -143,7 +143,7 @@
             this.cboSalvo.Location = new System.Drawing.Point(349, 298);
             this.cboSalvo.Name = "cboSalvo";
             this.cboSalvo.Size = new System.Drawing.Size(118, 24);
-            this.cboSalvo.TabIndex = 23;
+            this.cboSalvo.TabIndex = 3;
             this.cboSalvo.Text = "Salvar login";
             this.cboSalvo.UseVisualStyleBackColor = true;
             // 
@@ -154,22 +154,24 @@
             this.btnEntrar.Location = new System.Drawing.Point(417, 346);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(89, 36);
-            this.btnEntrar.TabIndex = 20;
+            this.btnEntrar.TabIndex = 0;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // txtSenha
+            // txtPassword
             // 
-            this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSenha.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSenha.ForeColor = System.Drawing.Color.Black;
-            this.txtSenha.Location = new System.Drawing.Point(379, 248);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(190, 13);
-            this.txtSenha.TabIndex = 19;
-            this.txtSenha.Text = "Password";
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.Location = new System.Drawing.Point(379, 248);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(190, 13);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtLogin
             // 
@@ -180,8 +182,10 @@
             this.txtLogin.Location = new System.Drawing.Point(379, 204);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(190, 13);
-            this.txtLogin.TabIndex = 18;
+            this.txtLogin.TabIndex = 1;
             this.txtLogin.Text = "Username";
+            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
+            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
             // 
             // picSenha
             // 
@@ -219,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 549);
-            this.Controls.Add(this.lblCasdatrese);
+            this.Controls.Add(this.lblCadastre);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblBemVindo);
             this.Controls.Add(this.panel3);
@@ -228,7 +232,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cboSalvo);
             this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.picSenha);
             this.Controls.Add(this.picLogin);
@@ -249,7 +253,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCasdatrese;
+        private System.Windows.Forms.Label lblCadastre;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblBemVindo;
         private System.Windows.Forms.Panel panel3;
@@ -259,7 +263,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox cboSalvo;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.PictureBox picSenha;
         private System.Windows.Forms.PictureBox picLogin;
