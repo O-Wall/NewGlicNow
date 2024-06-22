@@ -1,6 +1,6 @@
 ﻿namespace NewGlicNow
 {
-    partial class Form1
+    partial class frmLogin
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -32,6 +32,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
-            this.picProfile = new System.Windows.Forms.PictureBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
@@ -55,11 +55,12 @@
             this.lblCasdatrese.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCasdatrese.AutoSize = true;
             this.lblCasdatrese.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCasdatrese.Location = new System.Drawing.Point(481, 415);
+            this.lblCasdatrese.Location = new System.Drawing.Point(490, 412);
             this.lblCasdatrese.Name = "lblCasdatrese";
             this.lblCasdatrese.Size = new System.Drawing.Size(94, 16);
             this.lblCasdatrese.TabIndex = 22;
             this.lblCasdatrese.Text = "Cadastre aqui!";
+            this.lblCasdatrese.Click += new System.EventHandler(this.lblCasdatrese_Click);
             // 
             // lblTitulo
             // 
@@ -91,6 +92,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(257, 549);
             this.panel3.TabIndex = 26;
+            // 
+            // picProfile
+            // 
+            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picProfile.Image = global::NewGlicNow.Properties.Resources.journal_webinar_taking_notes_at_the_computer;
+            this.picProfile.Location = new System.Drawing.Point(3, 0);
+            this.picProfile.Name = "picProfile";
+            this.picProfile.Size = new System.Drawing.Size(254, 549);
+            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProfile.TabIndex = 0;
+            this.picProfile.TabStop = false;
             // 
             // lblCadastro
             // 
@@ -145,6 +157,7 @@
             this.btnEntrar.TabIndex = 20;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // txtSenha
             // 
@@ -169,17 +182,6 @@
             this.txtLogin.Size = new System.Drawing.Size(190, 13);
             this.txtLogin.TabIndex = 18;
             this.txtLogin.Text = "Username";
-            // 
-            // picProfile
-            // 
-            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picProfile.Image = global::NewGlicNow.Properties.Resources.journal_webinar_taking_notes_at_the_computer;
-            this.picProfile.Location = new System.Drawing.Point(3, 0);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(254, 549);
-            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProfile.TabIndex = 0;
-            this.picProfile.TabStop = false;
             // 
             // picSenha
             // 
@@ -210,8 +212,9 @@
             this.picClose.Size = new System.Drawing.Size(24, 24);
             this.picClose.TabIndex = 14;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
-            // Form1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,8 +234,9 @@
             this.Controls.Add(this.picLogin);
             this.Controls.Add(this.picClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmLogin";
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).EndInit();

@@ -276,6 +276,20 @@
             this.panel7.Size = new System.Drawing.Size(2, 66);
             this.panel7.TabIndex = 24;
             // 
+<<<<<<< HEAD
+=======
+            // picProfile
+            // 
+            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picProfile.Image = global::NewGlicNow.Properties.Resources.journal_woman_holding_computer_window;
+            this.picProfile.Location = new System.Drawing.Point(5, 227);
+            this.picProfile.Name = "picProfile";
+            this.picProfile.Size = new System.Drawing.Size(182, 266);
+            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProfile.TabIndex = 22;
+            this.picProfile.TabStop = false;
+            // 
+>>>>>>> b4248bf379e3bed576191344bb569929a2af8e86
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoBanco.cs" />
+    <Compile Include="Endereco.cs" />
     <Compile Include="frmAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +81,7 @@
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Log_in.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ucAgenda.cs">
@@ -93,6 +96,7 @@
     <Compile Include="ucCadMap.Designer.cs">
       <DependentUpon>ucCadMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="frmAgenda.resx">
       <DependentUpon>frmAgenda.cs</DependentUpon>
     </EmbeddedResource>

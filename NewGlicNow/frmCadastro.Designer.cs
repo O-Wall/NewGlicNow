@@ -455,6 +455,53 @@
             this.picProfile.TabIndex = 43;
             this.picProfile.TabStop = false;
             // 
+<<<<<<< HEAD
+=======
+            // picClose
+            // 
+            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picClose.Location = new System.Drawing.Point(582, 9);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(24, 24);
+            this.picClose.TabIndex = 42;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblTitulo);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.picClose);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(618, 43);
+            this.panel1.TabIndex = 79;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(12, 9, 12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(831, 9);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(12, 9, 12, 9);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.TabIndex = 41;
+            this.pictureBox3.TabStop = false;
+            // 
+>>>>>>> b4248bf379e3bed576191344bb569929a2af8e86
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
