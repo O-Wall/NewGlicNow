@@ -45,8 +45,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.ucAgenda1 = new NewGlicNow.ucAgenda();
+            this.panel16 = new System.Windows.Forms.Panel();            
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.picConfigu = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -235,15 +234,7 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(2, 66);
             this.panel16.TabIndex = 23;
-            // 
-            // ucAgenda1
-            // 
-            this.ucAgenda1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(96)))), ((int)(((byte)(88)))));
-            this.ucAgenda1.Location = new System.Drawing.Point(187, 114);
-            this.ucAgenda1.Name = "ucAgenda1";
-            this.ucAgenda1.Size = new System.Drawing.Size(769, 484);
-            this.ucAgenda1.TabIndex = 34;
-            // 
+            //            
             // picPerfil
             // 
             this.picPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -297,7 +288,6 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(954, 594);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.ucAgenda1);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel10);
@@ -339,7 +329,6 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel16;
-        private ucAgenda ucAgenda1;
         private System.Windows.Forms.PictureBox picProfile;
         private System.Windows.Forms.Label lblNomePerfil;
         private System.Windows.Forms.PictureBox picMinimize;

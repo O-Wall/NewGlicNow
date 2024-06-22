@@ -96,7 +96,6 @@
             // picProfile
             // 
             this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picProfile.Image = global::NewGlicNow.Properties.Resources.journal_webinar_taking_notes_at_the_computer;
             this.picProfile.Location = new System.Drawing.Point(3, 0);
             this.picProfile.Name = "picProfile";
             this.picProfile.Size = new System.Drawing.Size(254, 549);

@@ -373,7 +373,6 @@
             this.picBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBack.BackColor = System.Drawing.Color.Transparent;
             this.picBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBack.Image = global::NewGlicNow.Properties.Resources.icons8_back_48__1_;
             this.picBack.Location = new System.Drawing.Point(8, 4);
             this.picBack.Name = "picBack";
             this.picBack.Size = new System.Drawing.Size(24, 24);
