@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace NewGlicNow
 {
-    public partial class frmCadastro : Form
+    public partial class FrmCadastro : Form
     {
-        public frmCadastro()
+        public FrmCadastro()
         {
             InitializeComponent();
         }
 
-        private void picClose_Click(object sender, EventArgs e)
+        private void PicClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnCadastro_Click(object sender, EventArgs e)
+        private void BtnCadastro_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();

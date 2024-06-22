@@ -1,6 +1,6 @@
 ﻿namespace NewGlicNow
 {
-    partial class frmCadastro
+    partial class FrmCadastro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastro));
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.cboCidade = new System.Windows.Forms.ComboBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
@@ -181,7 +181,7 @@
             this.btnCadastro.TabIndex = 59;
             this.btnCadastro.Text = "&Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = true;
-            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
+            this.btnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
             // 
             // cboGenero
             // 
@@ -328,7 +328,7 @@
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picClose.TabIndex = 42;
             this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.Click += new System.EventHandler(this.PicClose_Click);
             // 
             // picEstado
             // 
@@ -456,7 +456,7 @@
             this.picProfile.TabIndex = 43;
             this.picProfile.TabStop = false;
             // 
-            // frmCadastro
+            // FrmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -495,7 +495,8 @@
             this.Controls.Add(this.picEditar);
             this.Controls.Add(this.picProfile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmCadastro";
+            this.Name = "FrmCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastro";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
