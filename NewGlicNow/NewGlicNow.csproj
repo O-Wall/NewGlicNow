@@ -81,6 +81,12 @@
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucAgenda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAgenda.Designer.cs">
+      <DependentUpon>ucAgenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucCadMap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +118,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucAgenda.resx">
+      <DependentUpon>ucAgenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucCadMap.resx">
       <DependentUpon>ucCadMap.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,22 +138,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\image-removebg-preview %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-removebg-preview %282%29 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-removebg-preview %282%29 %281%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-removebg-preview %282%29 %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\journal-woman-holding-computer-window.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\journal-webinar-taking-notes-at-the-computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\journal-man-kneeling-with-his-hands-up %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-x-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-config-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minimize-24 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-48 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

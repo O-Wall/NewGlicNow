@@ -10,16 +10,14 @@ using System.Windows.Forms;
 
 namespace NewGlicNow
 {
-    public partial class frmAgenda : Form
+    public partial class ucAgenda : UserControl
     {
-        public frmAgenda()
+        public ucAgenda()
         {
             InitializeComponent();
+            
+
         }
 
-        private void picClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }
