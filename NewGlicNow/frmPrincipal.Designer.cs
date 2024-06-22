@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button btnMapaGlicemia;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
+            System.Windows.Forms.Button btnAgenda;
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnMapaGlicemia = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnAgenda = new System.Windows.Forms.Button();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.picProfile = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();            
+            this.panel16 = new System.Windows.Forms.Panel();
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.picConfigu = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            btnMapaGlicemia = new System.Windows.Forms.Button();
+            btnAgenda = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -68,14 +69,18 @@
             // 
             // btnMapaGlicemia
             // 
-            this.btnMapaGlicemia.BackColor = System.Drawing.Color.White;
-            this.btnMapaGlicemia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapaGlicemia.Location = new System.Drawing.Point(12, 211);
-            this.btnMapaGlicemia.Name = "btnMapaGlicemia";
-            this.btnMapaGlicemia.Size = new System.Drawing.Size(173, 45);
-            this.btnMapaGlicemia.TabIndex = 14;
-            this.btnMapaGlicemia.Text = "Mapa de Glicemia";
-            this.btnMapaGlicemia.UseVisualStyleBackColor = false;
+            btnMapaGlicemia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
+            btnMapaGlicemia.FlatAppearance.BorderSize = 0;
+            btnMapaGlicemia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMapaGlicemia.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnMapaGlicemia.ForeColor = System.Drawing.Color.White;
+            btnMapaGlicemia.Location = new System.Drawing.Point(12, 211);
+            btnMapaGlicemia.Name = "btnMapaGlicemia";
+            btnMapaGlicemia.Size = new System.Drawing.Size(173, 45);
+            btnMapaGlicemia.TabIndex = 14;
+            btnMapaGlicemia.Text = "Mapa de Glicemia";
+            btnMapaGlicemia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnMapaGlicemia.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -119,12 +124,11 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
-            this.panel4.Controls.Add(this.btnAgenda);
+            this.panel4.Controls.Add(btnAgenda);
             this.panel4.Controls.Add(this.lblNomePerfil);
             this.panel4.Controls.Add(this.panel13);
             this.panel4.Controls.Add(this.picProfile);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.btnMapaGlicemia);
+            this.panel4.Controls.Add(btnMapaGlicemia);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Location = new System.Drawing.Point(-1, 98);
             this.panel4.Name = "panel4";
@@ -134,14 +138,18 @@
             // 
             // btnAgenda
             // 
-            this.btnAgenda.BackColor = System.Drawing.Color.White;
-            this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgenda.Location = new System.Drawing.Point(12, 120);
-            this.btnAgenda.Name = "btnAgenda";
-            this.btnAgenda.Size = new System.Drawing.Size(173, 45);
-            this.btnAgenda.TabIndex = 36;
-            this.btnAgenda.Text = "Agenda";
-            this.btnAgenda.UseVisualStyleBackColor = false;
+            btnAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
+            btnAgenda.FlatAppearance.BorderSize = 0;
+            btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAgenda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnAgenda.ForeColor = System.Drawing.Color.White;
+            btnAgenda.Location = new System.Drawing.Point(12, 120);
+            btnAgenda.Name = "btnAgenda";
+            btnAgenda.Size = new System.Drawing.Size(173, 45);
+            btnAgenda.TabIndex = 36;
+            btnAgenda.Text = "Agenda";
+            btnAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnAgenda.UseVisualStyleBackColor = false;
             // 
             // lblNomePerfil
             // 
@@ -166,21 +174,12 @@
             // 
             this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picProfile.Image = ((System.Drawing.Image)(resources.GetObject("picProfile.Image")));
-            this.picProfile.Location = new System.Drawing.Point(3, 257);
+            this.picProfile.Location = new System.Drawing.Point(3, 263);
             this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(182, 202);
+            this.picProfile.Size = new System.Drawing.Size(182, 237);
             this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProfile.TabIndex = 22;
             this.picProfile.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel5.ForeColor = System.Drawing.Color.Brown;
-            this.panel5.Location = new System.Drawing.Point(0, 211);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(8, 45);
-            this.panel5.TabIndex = 21;
             // 
             // panel1
             // 
@@ -234,7 +233,7 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(2, 66);
             this.panel16.TabIndex = 23;
-            //            
+            // 
             // picPerfil
             // 
             this.picPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -266,17 +265,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(2, 66);
             this.panel7.TabIndex = 24;
-            //
-            // picProfile
             // 
-            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picProfile.Location = new System.Drawing.Point(5, 227);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(182, 266);
-            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProfile.TabIndex = 22;
-            this.picProfile.TabStop = false;
-            //
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,12 +301,10 @@
         #endregion
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox picPerfil;
-        private System.Windows.Forms.Button btnMapaGlicemia;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox picConfigu;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel9;
@@ -328,7 +315,6 @@
         private System.Windows.Forms.PictureBox picProfile;
         private System.Windows.Forms.Label lblNomePerfil;
         private System.Windows.Forms.PictureBox picMinimize;
-        private System.Windows.Forms.Button btnAgenda;
         private System.Windows.Forms.Panel panel7;
     }
 }
