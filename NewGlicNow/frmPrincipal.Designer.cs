@@ -113,7 +113,7 @@
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picClose.TabIndex = 25;
             this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.Click += new System.EventHandler(this.PicClose_Click);
             // 
             // panel4
             // 

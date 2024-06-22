@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace NewGlicNow
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
         bool passwordchar = true;
-        private void picClose_Click(object sender, EventArgs e)
+        private void PicClose_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -45,12 +45,12 @@ namespace NewGlicNow
                 }
             }
         }
-        private void lblCasdatre_Click(object sender, EventArgs e)
+        private void LblCasdatre_Click(object sender, EventArgs e)
         {
             Tag = "Cadastro";
             Close();
         }
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void BtnEntrar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -100,7 +100,7 @@ namespace NewGlicNow
                 MessageBox.Show("Erro --> " +ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void txtPassword_Enter(object sender, EventArgs e)
+        private void TxtPassword_Enter(object sender, EventArgs e)
         {
             if (passwordchar)
             {
@@ -109,7 +109,7 @@ namespace NewGlicNow
                 passwordchar = false;
             }           
         }
-        private void txtPassword_Leave(object sender, EventArgs e)
+        private void TxtPassword_Leave(object sender, EventArgs e)
         {
             if (txtPassword.Text == string.Empty)
             {
@@ -119,14 +119,14 @@ namespace NewGlicNow
                 passwordchar = true;
             }
         }
-        private void txtLogin_Enter(object sender, EventArgs e)
+        private void TxtLogin_Enter(object sender, EventArgs e)
         {
             if(txtLogin.Text == "Username")
             {
                 Global.LimparTexto(txtLogin);
             }
         }
-        private void txtLogin_Leave(object sender, EventArgs e)
+        private void TxtLogin_Leave(object sender, EventArgs e)
         {
             if(txtLogin.Text == string.Empty)
             {

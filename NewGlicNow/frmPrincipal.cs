@@ -19,7 +19,7 @@ namespace NewGlicNow
         }
 
 
-        private void picClose_Click(object sender, EventArgs e)
+        private void PicClose_Click(object sender, EventArgs e)
         {
             Close();
         }

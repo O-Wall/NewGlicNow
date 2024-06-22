@@ -1,6 +1,6 @@
 ﻿namespace NewGlicNow
 {
-    partial class frmLogin
+    partial class FrmLogin
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -60,7 +60,7 @@
             this.lblCadastre.Size = new System.Drawing.Size(94, 16);
             this.lblCadastre.TabIndex = 3;
             this.lblCadastre.Text = "Cadastre aqui!";
-            this.lblCadastre.Click += new System.EventHandler(this.lblCasdatre_Click);
+            this.lblCadastre.Click += new System.EventHandler(this.LblCasdatre_Click);
             // 
             // lblTitulo
             // 
@@ -156,7 +156,7 @@
             this.btnEntrar.TabIndex = 0;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
             // 
             // txtPassword
             // 
@@ -169,8 +169,8 @@
             this.txtPassword.Size = new System.Drawing.Size(190, 13);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Password";
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            this.txtPassword.Enter += new System.EventHandler(this.TxtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.TxtPassword_Leave);
             // 
             // txtLogin
             // 
@@ -183,8 +183,8 @@
             this.txtLogin.Size = new System.Drawing.Size(190, 13);
             this.txtLogin.TabIndex = 1;
             this.txtLogin.Text = "Username";
-            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
-            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
+            this.txtLogin.Enter += new System.EventHandler(this.TxtLogin_Enter);
+            this.txtLogin.Leave += new System.EventHandler(this.TxtLogin_Leave);
             // 
             // picSenha
             // 
@@ -215,7 +215,7 @@
             this.picClose.Size = new System.Drawing.Size(24, 24);
             this.picClose.TabIndex = 14;
             this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.Click += new System.EventHandler(this.PicClose_Click);
             // 
             // frmLogin
             // 

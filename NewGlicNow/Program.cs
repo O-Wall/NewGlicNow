@@ -17,7 +17,7 @@ namespace NewGlicNow
             Global.LerAppConfig();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form login = new frmLogin();
+            Form login = new FrmLogin();
             Application.Run(login);
             Form cadastro = new FrmCadastro();
             if (login.Tag.ToString() == "Cadastro")
