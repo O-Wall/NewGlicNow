@@ -174,15 +174,9 @@
             // 
             this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picProfile.Image = ((System.Drawing.Image)(resources.GetObject("picProfile.Image")));
-<<<<<<< HEAD
-            this.picProfile.Location = new System.Drawing.Point(5, 227);
+            this.picProfile.Location = new System.Drawing.Point(3, 257);
             this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(182, 266);
-=======
-            this.picProfile.Location = new System.Drawing.Point(3, 263);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(182, 237);
->>>>>>> 37d9d37d6de89b02612ee5252c2814aec34c2b23
+            this.picProfile.Size = new System.Drawing.Size(182, 202);
             this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProfile.TabIndex = 22;
             this.picProfile.TabStop = false;
