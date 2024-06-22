@@ -19,6 +19,7 @@ namespace NewGlicNow
         public static string Servidor = string.Empty;
         public static string Banco = string.Empty;
         public static int IdUsuarioLogado = 0;
+        public static string UltimoIdLogado = "0";
         public static string ResetMsg = string.Empty;
 
         public static string Criptografar(string senha)
@@ -35,6 +36,7 @@ namespace NewGlicNow
         {
             Servidor = ConfigurationManager.AppSettings.Get("servidor");
             Banco = ConfigurationManager.AppSettings.Get("banco");
+            UltimoIdLogado = ConfigurationManager.AppSettings.Get("UltimoIdLogado");
 
             Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
         }

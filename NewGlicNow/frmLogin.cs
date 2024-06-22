@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -24,15 +25,25 @@ namespace NewGlicNow
         private void Form1_Load(object sender, EventArgs e)
         {
             Tag = "";
-            try
+            Global.LerAppConfig();
+            if (Global.UltimoIdLogado != "0")
             {
-                            
+                try
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.log_In.Id = Convert.ToInt32(Global.UltimoIdLogado);
+                    usuario.log_In.Consultar();
+                    if(usuario.log_In.Salvo == true)
+                    {
+                        txtLogin.Text = usuario.log_In.Login;
+                        txtPassword.Text = usuario.log_In.Password;
+                    }                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
         private void lblCasdatre_Click(object sender, EventArgs e)
         {
@@ -63,6 +74,24 @@ namespace NewGlicNow
                 usuario.Consultar();
                 MessageBox.Show($"Bem vindo {usuario.NomeCompleto}. ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Global.IdUsuarioLogado = usuario.Id;
+                if(cboSalvo.Checked == true)
+                {
+                    usuario.log_In.Salvo = true;
+                    usuario.log_In.Gravar();
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    config.AppSettings.Settings["UltimoIdLogado"].Value = Convert.ToString(Global.IdUsuarioLogado);
+                    config.Save(ConfigurationSaveMode.Modified);
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
+                else
+                {
+                    usuario.log_In.Salvo = false;
+                    usuario.log_In.Gravar();
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    config.AppSettings.Settings["UltimoIdLogado"].Value = "0";
+                    config.Save(ConfigurationSaveMode.Modified);
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
                 DialogResult = DialogResult.OK;
                 Close();
             }
