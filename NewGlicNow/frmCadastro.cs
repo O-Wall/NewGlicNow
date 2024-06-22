@@ -19,13 +19,24 @@ namespace NewGlicNow
 
         private void PicClose_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
+              "GlicNow", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
+            if (DialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
         private void BtnCadastro_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void FrmCadastro_Load(object sender, EventArgs e)
+        {
         }
     }
 }

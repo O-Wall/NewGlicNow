@@ -20,7 +20,14 @@ namespace NewGlicNow
         bool passwordchar = true;
         private void PicClose_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
+              "GlicNow", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
+            if (DialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {

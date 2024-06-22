@@ -48,7 +48,6 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picEstado = new System.Windows.Forms.PictureBox();
@@ -66,7 +65,6 @@
             this.picEditar = new System.Windows.Forms.PictureBox();
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCelular)).BeginInit();
@@ -285,7 +283,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Brown;
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.lblCadastro);
             this.panel2.Controls.Add(this.picClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -293,19 +290,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(618, 33);
             this.panel2.TabIndex = 75;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(12, 9, 12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
             // 
             // lblCadastro
             // 
@@ -498,9 +482,9 @@
             this.Name = "FrmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastro";
+            this.Load += new System.EventHandler(this.FrmCadastro_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCelular)).EndInit();
@@ -557,6 +541,5 @@
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblCadastro;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

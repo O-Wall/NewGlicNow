@@ -17,13 +17,25 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-
-
         private void PicClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        private void PicConfigu_Click(object sender, EventArgs e)
+        {
+            new frmConfig();
+        }
 
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja encerrar a aplicação?",
+               "GlicNow", MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question,
+               MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

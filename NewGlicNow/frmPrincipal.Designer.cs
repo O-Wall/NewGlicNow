@@ -45,7 +45,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();            
+            this.panel16 = new System.Windows.Forms.Panel();
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.picConfigu = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -166,9 +166,9 @@
             // 
             this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picProfile.Image = ((System.Drawing.Image)(resources.GetObject("picProfile.Image")));
-            this.picProfile.Location = new System.Drawing.Point(3, 257);
+            this.picProfile.Location = new System.Drawing.Point(5, 227);
             this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(182, 202);
+            this.picProfile.Size = new System.Drawing.Size(182, 266);
             this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProfile.TabIndex = 22;
             this.picProfile.TabStop = false;
@@ -234,7 +234,7 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(2, 66);
             this.panel16.TabIndex = 23;
-            //            
+            // 
             // picPerfil
             // 
             this.picPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -258,6 +258,7 @@
             this.picConfigu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picConfigu.TabIndex = 27;
             this.picConfigu.TabStop = false;
+            this.picConfigu.Click += new System.EventHandler(this.PicConfigu_Click);
             // 
             // panel7
             // 
@@ -266,17 +267,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(2, 66);
             this.panel7.TabIndex = 24;
-            //
-            // picProfile
             // 
-            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picProfile.Location = new System.Drawing.Point(5, 227);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(182, 266);
-            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProfile.TabIndex = 22;
-            this.picProfile.TabStop = false;
-            //
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,8 +286,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.Text = "frmPrincipal_";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

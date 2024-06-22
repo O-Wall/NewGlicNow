@@ -217,7 +217,7 @@
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.PicClose_Click);
             // 
-            // frmLogin
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -237,7 +237,7 @@
             this.Controls.Add(this.picLogin);
             this.Controls.Add(this.picClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLogin";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
