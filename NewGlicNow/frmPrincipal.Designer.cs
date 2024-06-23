@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button btnMapaGlicemia;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             System.Windows.Forms.Button btnAgenda;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.picMinimize = new System.Windows.Forms.PictureBox();
@@ -59,14 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picConfigu)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel3.Location = new System.Drawing.Point(1, 120);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(8, 45);
-            this.panel3.TabIndex = 20;
-            // 
             // btnMapaGlicemia
             // 
             btnMapaGlicemia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
@@ -81,6 +73,29 @@
             btnMapaGlicemia.Text = "Mapa de Glicemia";
             btnMapaGlicemia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnMapaGlicemia.UseVisualStyleBackColor = false;
+            // 
+            // btnAgenda
+            // 
+            btnAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
+            btnAgenda.FlatAppearance.BorderSize = 0;
+            btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAgenda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnAgenda.ForeColor = System.Drawing.Color.White;
+            btnAgenda.Location = new System.Drawing.Point(12, 120);
+            btnAgenda.Name = "btnAgenda";
+            btnAgenda.Size = new System.Drawing.Size(173, 45);
+            btnAgenda.TabIndex = 36;
+            btnAgenda.Text = "Agenda";
+            btnAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnAgenda.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.OrangeRed;
+            this.panel3.Location = new System.Drawing.Point(1, 120);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(8, 45);
+            this.panel3.TabIndex = 20;
             // 
             // panel2
             // 
@@ -98,7 +113,6 @@
             this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picMinimize.BackColor = System.Drawing.Color.Transparent;
             this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
             this.picMinimize.Location = new System.Drawing.Point(891, 6);
             this.picMinimize.Name = "picMinimize";
             this.picMinimize.Size = new System.Drawing.Size(24, 24);
@@ -111,7 +125,6 @@
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
             this.picClose.Location = new System.Drawing.Point(922, 5);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(24, 24);
@@ -135,21 +148,6 @@
             this.panel4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel4.Size = new System.Drawing.Size(186, 504);
             this.panel4.TabIndex = 27;
-            // 
-            // btnAgenda
-            // 
-            btnAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
-            btnAgenda.FlatAppearance.BorderSize = 0;
-            btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnAgenda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnAgenda.ForeColor = System.Drawing.Color.White;
-            btnAgenda.Location = new System.Drawing.Point(12, 120);
-            btnAgenda.Name = "btnAgenda";
-            btnAgenda.Size = new System.Drawing.Size(173, 45);
-            btnAgenda.TabIndex = 36;
-            btnAgenda.Text = "Agenda";
-            btnAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnAgenda.UseVisualStyleBackColor = false;
             // 
             // lblNomePerfil
             // 
@@ -250,7 +248,6 @@
             this.picConfigu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picConfigu.BackColor = System.Drawing.Color.Transparent;
             this.picConfigu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picConfigu.Image = ((System.Drawing.Image)(resources.GetObject("picConfigu.Image")));
             this.picConfigu.Location = new System.Drawing.Point(11, 45);
             this.picConfigu.Name = "picConfigu";
             this.picConfigu.Size = new System.Drawing.Size(32, 32);
@@ -285,9 +282,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
-            this.Text = "frmPrincipal_";
+            this.Text = "frmPrincipal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
