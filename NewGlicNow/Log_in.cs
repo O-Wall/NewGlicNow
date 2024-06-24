@@ -35,7 +35,7 @@ namespace NewGlicNow
             try
             {
                 parameters.Clear();
-                sql = "select Id, Login, Password, Salvo, UsuarioId \n";
+                sql = "select Id, Login, Password, Salvo, UsuarioId\n";
                 sql += "from tblLogin \n";
                 if (UsuarioId != 0)
                 {
@@ -75,14 +75,14 @@ namespace NewGlicNow
                 parameters.Clear();
                 if (Id == 0)
                 {
-                    sql = "insert into tblUsuario \n";
+                    sql = "insert into tblLogin \n";
                     sql += "(Login, Password, Salvo, UsuarioId)\n";
                     sql += "values \n";
                     sql += "(@login, @password, @salvo, @usuarioId)";
                 }
                 else
                 {
-                    sql = "update tblUsuario\n";
+                    sql = "update tblLogin\n";
                     sql += "set \n";
                     sql += "Login     = @login, \n";                    
                     sql += "Password  = @password, \n";
