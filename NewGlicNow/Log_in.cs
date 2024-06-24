@@ -86,7 +86,7 @@ namespace NewGlicNow
                     sql += "set \n";
                     sql += "Login     = @login, \n";                    
                     sql += "Password  = @password, \n";
-                    sql += "Salvo = @salvo \n";
+                    sql += "Salvo = @salvo, \n";
                     sql += "UsuarioId = @usuarioId \n";
                     sql += "where id  = @id \n";
                     parameters.Add(new SqlParameter("@id", Id));
