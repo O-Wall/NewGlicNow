@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlBordaForm = new System.Windows.Forms.Panel();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
-            this.lblDashboard = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.lblDashboard = new System.Windows.Forms.Label();
             this.pnlBordaPerfil1 = new System.Windows.Forms.Panel();
             this.pnlBordaPerfil2 = new System.Windows.Forms.Panel();
             this.pnlBordaPerfil3 = new System.Windows.Forms.Panel();
@@ -48,47 +47,26 @@
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.pnlBordaForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBordaForm
             // 
             this.pnlBordaForm.BackColor = System.Drawing.Color.Brown;
             this.pnlBordaForm.Controls.Add(this.picMinimize);
-            this.pnlBordaForm.Controls.Add(this.lblDashboard);
             this.pnlBordaForm.Controls.Add(this.picClose);
+            this.pnlBordaForm.Controls.Add(this.lblDashboard);
             this.pnlBordaForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBordaForm.Location = new System.Drawing.Point(0, 0);
             this.pnlBordaForm.Name = "pnlBordaForm";
             this.pnlBordaForm.Size = new System.Drawing.Size(954, 36);
             this.pnlBordaForm.TabIndex = 119;
-            // 
-            // picMinimize
-            // 
-            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimize.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picMinimize.Location = new System.Drawing.Point(894, 5);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(24, 24);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picMinimize.TabIndex = 43;
-            this.picMinimize.TabStop = false;
-            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click_1);
-            // 
-            // lblDashboard
-            // 
-            this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Location = new System.Drawing.Point(12, 9);
-            this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(49, 13);
-            this.lblDashboard.TabIndex = 26;
-            this.lblDashboard.Text = "Cadastro";
             // 
             // picClose
             // 
@@ -99,9 +77,18 @@
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(24, 24);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picClose.TabIndex = 42;
+            this.picClose.TabIndex = 44;
             this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click_1);
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // lblDashboard
+            // 
+            this.lblDashboard.AutoSize = true;
+            this.lblDashboard.Location = new System.Drawing.Point(12, 9);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(49, 13);
+            this.lblDashboard.TabIndex = 26;
+            this.lblDashboard.Text = "Cadastro";
             // 
             // pnlBordaPerfil1
             // 
@@ -272,6 +259,19 @@
             this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
             this.pnlBordaPerfil4.TabIndex = 34;
             // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picMinimize.Location = new System.Drawing.Point(894, 5);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(24, 24);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picMinimize.TabIndex = 45;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,12 +296,12 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlBordaForm.ResumeLayout(false);
             this.pnlBordaForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,9 +309,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlBordaForm;
-        private System.Windows.Forms.PictureBox picMinimize;
         private System.Windows.Forms.Label lblDashboard;
-        private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Panel pnlBordaPerfil1;
         private System.Windows.Forms.Panel pnlBordaPerfil2;
         private System.Windows.Forms.Panel pnlBordaPerfil3;
@@ -328,5 +326,7 @@
         private System.Windows.Forms.PictureBox picProfile;
         private System.Windows.Forms.Label lblNomePerfil;
         private System.Windows.Forms.Panel pnlBordaPerfil4;
+        private System.Windows.Forms.PictureBox picClose;
+        private System.Windows.Forms.PictureBox picMinimize;
     }
 }
