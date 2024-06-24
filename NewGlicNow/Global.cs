@@ -103,6 +103,29 @@ namespace NewGlicNow
             }
         }
 
-
+        public static DataTable ConsultarSexo()
+        {
+            try
+            {
+                string sql = "select id, descricao from tblSexo \n";
+                return new AcessoBanco().Consultar(sql, new List<SqlParameter>());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static DataTable ConsultarTipoDiabete()
+        {
+            try
+            {
+                string sql = "select id, descricao from tblTipoDiabete \n";
+                return new AcessoBanco().Consultar(sql, new List<SqlParameter>());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

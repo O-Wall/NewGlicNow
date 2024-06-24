@@ -21,7 +21,7 @@ namespace FinalGlicNow
         }
 
         bool load = false;
-        bool passwordchar = true;
+        //bool passwordchar = true;
 
 
         //MÉTODOS

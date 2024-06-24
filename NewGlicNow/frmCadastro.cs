@@ -21,15 +21,13 @@ namespace NewGlicNow
         bool load = false;
         Usuario usuario = new Usuario();
         Log_in log_In = new Log_in();
+        Endereco endereco = new Endereco();
 
         //MÉTODOS
         private void PreencherClasse()
         {
             usuario.NomeCompleto = txtNome.Text;
-            if (usuario.log_In.Password != txtSenha.Text)
-            {
-                usuario.log_In.Password = Global.Criptografar(txtSenha.Text);
-            }
+            usuario.log_In.Password = Global.Criptografar(txtSenha.Text);
             usuario.log_In.Login = txtLogin.Text;
             usuario.CPF = txtCPF.Text;
             usuario.Email = txtEmail.Text;
@@ -49,7 +47,7 @@ namespace NewGlicNow
             try
             {
                 string msgErro = string.Empty;
-               
+
                 if (txtNome.Text == string.Empty)
                 {
                     msgErro += "Preencha o campo: NOME COMPLETO.\n";
@@ -60,7 +58,7 @@ namespace NewGlicNow
                     msgErro += "Preencha o campo: SENHA.\n";
                 }
 
-                if(txtConfSenha.Text == string.Empty)
+                if (txtConfSenha.Text == string.Empty)
                 {
                     msgErro += "Preencha o campo: CONFIRMAR SENHA.\n";
                 }
@@ -167,7 +165,6 @@ namespace NewGlicNow
             }
 
         }
-
         private void CarregarEstados()
         {
             try
@@ -183,7 +180,35 @@ namespace NewGlicNow
                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void CarregarSexos()
+        {
+            try
+            {
+                cboGenero.DataSource = Global.ConsultarSexo();
+                cboGenero.DisplayMember = "Gênero";
+                cboGenero.ValueMember = "Id";
+                cboGenero.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro -->" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void CarregarTipoDiabetes()
+        {
+            try
+            {
+                cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
+                cboTipoDiabete.DisplayMember = "Tipo Diabete";
+                cboTipoDiabete.ValueMember = "Id";
+                cboTipoDiabete.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro -->" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                
+        }
         private void CarregarCidades()
         {
             if (!load)
@@ -212,6 +237,8 @@ namespace NewGlicNow
         private void FrmCadastro_Load(object sender, EventArgs e)
         {
             CarregarEstados();
+            CarregarSexos();
+            CarregarTipoDiabetes();
             load = true;
 
         }
@@ -277,6 +304,7 @@ namespace NewGlicNow
                 PreencherClasse();
                 usuario.Gravar();
                 log_In.Gravar();
+                endereco.Gravar();
                 MessageBox.Show("Usuário Cadastrado com sucesso!", "Cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
