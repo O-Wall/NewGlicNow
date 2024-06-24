@@ -85,12 +85,6 @@
             // cboEstado
             // 
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Items.AddRange(new object[] {
-            "Pré-diabetes.",
-            "Diabetes tipo 1",
-            "Diabetes tipo 2",
-            "Diabetes Gestacional",
-            ""});
             this.cboEstado.Location = new System.Drawing.Point(109, 470);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(138, 21);
@@ -101,12 +95,6 @@
             // cboCidade
             // 
             this.cboCidade.FormattingEnabled = true;
-            this.cboCidade.Items.AddRange(new object[] {
-            "Pré-diabetes.",
-            "Diabetes tipo 1",
-            "Diabetes tipo 2",
-            "Diabetes Gestacional",
-            ""});
             this.cboCidade.Location = new System.Drawing.Point(315, 470);
             this.cboCidade.Name = "cboCidade";
             this.cboCidade.Size = new System.Drawing.Size(226, 21);
@@ -188,10 +176,6 @@
             // cboGenero
             // 
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Items.AddRange(new object[] {
-            "Masculino",
-            "Feminino",
-            "Prefiro não informar"});
             this.cboGenero.Location = new System.Drawing.Point(79, 298);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(200, 21);
@@ -202,12 +186,6 @@
             // cboTipoDiabete
             // 
             this.cboTipoDiabete.FormattingEnabled = true;
-            this.cboTipoDiabete.Items.AddRange(new object[] {
-            "Pré-diabetes.",
-            "Diabetes tipo 1",
-            "Diabetes tipo 2",
-            "Diabetes Gestacional",
-            ""});
             this.cboTipoDiabete.Location = new System.Drawing.Point(285, 256);
             this.cboTipoDiabete.Name = "cboTipoDiabete";
             this.cboTipoDiabete.Size = new System.Drawing.Size(256, 21);
