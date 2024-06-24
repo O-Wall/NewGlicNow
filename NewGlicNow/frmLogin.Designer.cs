@@ -37,12 +37,12 @@
             this.BordaSenha = new System.Windows.Forms.Panel();
             this.BordaLogin = new System.Windows.Forms.Panel();
             this.cboSalvo = new System.Windows.Forms.CheckBox();
-            this.btnEntrar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.TelaLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagemLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).BeginInit();
@@ -145,18 +145,6 @@
             this.cboSalvo.Text = "Salvar login";
             this.cboSalvo.UseVisualStyleBackColor = true;
             // 
-            // btnEntrar
-            // 
-            this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Location = new System.Drawing.Point(426, 346);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(89, 36);
-            this.btnEntrar.TabIndex = 46;
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
-            // 
             // txtSenha
             // 
             this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -209,18 +197,30 @@
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Location = new System.Drawing.Point(600, 13);
+            this.picClose.Location = new System.Drawing.Point(600, 12);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(24, 24);
-            this.picClose.TabIndex = 54;
+            this.picClose.TabIndex = 48;
             this.picClose.TabStop = false;
+            // 
+            // btnEntrar
+            // 
+            this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrar.Location = new System.Drawing.Point(396, 345);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(89, 36);
+            this.btnEntrar.TabIndex = 54;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 549);
-            this.Controls.Add(this.picClose);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblCadastre);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblBemVindo);
@@ -229,11 +229,11 @@
             this.Controls.Add(this.BordaSenha);
             this.Controls.Add(this.BordaLogin);
             this.Controls.Add(this.cboSalvo);
-            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.picSenha);
             this.Controls.Add(this.picLogin);
+            this.Controls.Add(this.picClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -260,12 +260,12 @@
         private System.Windows.Forms.Panel BordaSenha;
         private System.Windows.Forms.Panel BordaLogin;
         private System.Windows.Forms.CheckBox cboSalvo;
-        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.PictureBox picSenha;
         private System.Windows.Forms.PictureBox picLogin;
         private System.Windows.Forms.PictureBox picClose;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }
 

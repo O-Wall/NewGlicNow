@@ -37,6 +37,7 @@ namespace NewGlicNow
                         txtLogin.Text = usuario.log_In.Login;
                         txtSenha.Text = usuario.log_In.Password;
                     }
+                    txtSenha.UseSystemPasswordChar = true;
                 }
                 catch (Exception ex)
                 {
@@ -44,8 +45,6 @@ namespace NewGlicNow
                 }
             }
         }
-
-
 
         private void PicClose_Click(object sender, EventArgs e)
         {
@@ -104,11 +103,15 @@ namespace NewGlicNow
         {
             try
             {
-                string PasswordCriptografada = Global.Criptografar(txtSenha.Text);
+                string PasswordCriptografada = txtSenha.Text;
                 Usuario usuario = new Usuario();
                 usuario.log_In.Login = txtLogin.Text;
                 usuario.log_In.Consultar();
-
+                if (txtSenha.Text != usuario.log_In.Password)
+                {
+                    PasswordCriptografada = Global.Criptografar(txtSenha.Text);
+                    return;
+                }
                 if (usuario.log_In.Id == 0)
                 {
                     MessageBox.Show("Usuário e/ou senha inválidos", "Erro no Login",
