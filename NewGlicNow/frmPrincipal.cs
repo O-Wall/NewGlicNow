@@ -68,14 +68,6 @@ namespace NewGlicNow
 
 
 
-        private void picMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        private void picClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Deseja encerrar a aplicação?",
@@ -87,22 +79,15 @@ namespace NewGlicNow
             }
         }
 
-        private void picClose_Click_1(object sender, EventArgs e)
+        private void picMinimize_Click(object sender, EventArgs e)
         {
-            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
-              "GlicNow", MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question,
-              MessageBoxDefaultButton.Button2);
+            this.WindowState = FormWindowState.Minimized;
 
-            if (DialogResult == DialogResult.Yes)
-            {
-                Close();
-            }
         }
 
-        private void picMinimize_Click_1(object sender, EventArgs e)
+        private void picClose_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized
+            Close();
         }
     }
 }
