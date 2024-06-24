@@ -446,6 +446,7 @@
             this.txtNumero.Size = new System.Drawing.Size(109, 20);
             this.txtNumero.TabIndex = 74;
             this.txtNumero.Text = "Nº";
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // picNumero
             // 
