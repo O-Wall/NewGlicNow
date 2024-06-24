@@ -46,19 +46,6 @@ namespace NewGlicNow
             }
         }
 
-        private void PicClose_Click(object sender, EventArgs e)
-        {
-            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
-              "GlicNow", MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question,
-              MessageBoxDefaultButton.Button2);
-
-            if (DialogResult == DialogResult.Yes)
-            {
-                Close();
-            }
-        }
-
         private void txtLogin_Enter(object sender, EventArgs e)
         {
             if (txtLogin.Text == "Login")
@@ -156,6 +143,19 @@ namespace NewGlicNow
             catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
+              "GlicNow", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
+
+            if (DialogResult == DialogResult.Yes)
+            {
+                Close();
             }
         }
     }
