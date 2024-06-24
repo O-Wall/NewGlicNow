@@ -155,6 +155,7 @@
             this.btnEntrar.TabIndex = 46;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // txtSenha
             // 
@@ -211,14 +212,16 @@
             this.picClose.Location = new System.Drawing.Point(600, 12);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(24, 24);
-            this.picClose.TabIndex = 48;
+            this.picClose.TabIndex = 54;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 549);
+            this.Controls.Add(this.picClose);
             this.Controls.Add(this.lblCadastre);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblBemVindo);
@@ -232,7 +235,6 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.picSenha);
             this.Controls.Add(this.picLogin);
-            this.Controls.Add(this.picClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
