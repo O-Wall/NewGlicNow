@@ -157,6 +157,8 @@ namespace NewGlicNow
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+                    }
+
+
     }
 }

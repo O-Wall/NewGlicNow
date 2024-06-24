@@ -87,7 +87,22 @@ namespace NewGlicNow
             }
         }
 
+        private void picClose_Click_1(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
+              "GlicNow", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
 
+            if (DialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
 
+        private void picMinimize_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized
+        }
     }
 }
