@@ -100,7 +100,6 @@
             this.cboCidade.Size = new System.Drawing.Size(226, 21);
             this.cboCidade.TabIndex = 15;
             this.cboCidade.Text = "Cidade";
-            this.cboCidade.SelectedIndexChanged += new System.EventHandler(this.cboCidade_SelectedIndexChanged);
             // 
             // txtCelular
             // 
@@ -181,7 +180,6 @@
             this.cboGenero.Size = new System.Drawing.Size(200, 21);
             this.cboGenero.TabIndex = 8;
             this.cboGenero.Text = "Gênero";
-            this.cboGenero.SelectedIndexChanged += new System.EventHandler(this.cboGenero_SelectedIndexChanged);
             // 
             // cboTipoDiabete
             // 
@@ -191,7 +189,6 @@
             this.cboTipoDiabete.Size = new System.Drawing.Size(256, 21);
             this.cboTipoDiabete.TabIndex = 7;
             this.cboTipoDiabete.Text = "Tipo de Diabete";
-            this.cboTipoDiabete.SelectedIndexChanged += new System.EventHandler(this.cboTipoDiabete_SelectedIndexChanged);
             // 
             // dtpDataNascimento
             // 
@@ -415,6 +412,7 @@
             this.picEditar.Size = new System.Drawing.Size(24, 24);
             this.picEditar.TabIndex = 44;
             this.picEditar.TabStop = false;
+            this.picEditar.Click += new System.EventHandler(this.picEditar_Click);
             // 
             // picProfile
             // 

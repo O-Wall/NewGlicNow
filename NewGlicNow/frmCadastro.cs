@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -255,22 +257,6 @@ namespace NewGlicNow
             }
         }
 
-        
-        //FAZER:
-             private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
-        {
-             //CARREGAR GÊNERO
-        }
-             private void cboTipoDiabete_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //CARREGAR TIPO DE DIABETE
-        }
-             private void cboCidade_SelectedIndexChanged(object sender, EventArgs e)
-             {
-
-             }
-        //============================
-
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarCidades();
@@ -312,6 +298,36 @@ namespace NewGlicNow
             catch (Exception ex)
             {
                 MessageBox.Show("Erro -->"+ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void picEditar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog abrirImg = new OpenFileDialog();
+            abrirImg.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            string profile = "";
+
+            if (abrirImg.ShowDialog() == DialogResult.OK)
+            {
+                profile = abrirImg.FileName;
+            }
+
+            try
+            {
+                byte[] imageBytes;
+                using (FileStream fs = new FileStream(profile, FileMode.Open, FileAccess.Read))
+                {
+                    imageBytes = new byte[fs.Length];
+                    fs.Read(imageBytes, 0, Convert.ToInt32(fs.Length));
+                }
+
+
+                MessageBox.Show("Imagem carregada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                picProfile.Image =  
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
