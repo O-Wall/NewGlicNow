@@ -35,7 +35,6 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.gboCadastro = new System.Windows.Forms.GroupBox();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.cboCidade = new System.Windows.Forms.ComboBox();
@@ -57,6 +56,8 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picConfSenha = new System.Windows.Forms.PictureBox();
             this.picPerfil = new System.Windows.Forms.PictureBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.pnlBordaConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -127,6 +128,7 @@
             // 
             // gboCadastro
             // 
+            this.gboCadastro.Controls.Add(this.txtNumero);
             this.gboCadastro.Controls.Add(this.txtComplemento);
             this.gboCadastro.Controls.Add(this.txtBairro);
             this.gboCadastro.Controls.Add(this.txtCEP);
@@ -147,21 +149,12 @@
             this.gboCadastro.TabStop = false;
             this.gboCadastro.Text = "Cadastro";
             // 
-            // txtComplemento
-            // 
-            this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
-            this.txtComplemento.ForeColor = System.Drawing.Color.Black;
-            this.txtComplemento.Location = new System.Drawing.Point(32, 303);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(432, 20);
-            this.txtComplemento.TabIndex = 116;
-            this.txtComplemento.Text = "Complemento";
-            // 
             // txtBairro
             // 
             this.txtBairro.BackColor = System.Drawing.SystemColors.Window;
             this.txtBairro.ForeColor = System.Drawing.Color.Black;
             this.txtBairro.Location = new System.Drawing.Point(32, 341);
+            this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(228, 20);
             this.txtBairro.TabIndex = 117;
@@ -171,9 +164,10 @@
             // 
             this.txtCEP.BackColor = System.Drawing.SystemColors.Window;
             this.txtCEP.ForeColor = System.Drawing.Color.Black;
-            this.txtCEP.Location = new System.Drawing.Point(307, 341);
+            this.txtCEP.Location = new System.Drawing.Point(284, 341);
+            this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(157, 20);
+            this.txtCEP.Size = new System.Drawing.Size(180, 20);
             this.txtCEP.TabIndex = 115;
             this.txtCEP.Text = "CEP";
             // 
@@ -212,6 +206,7 @@
             this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
             this.txtEndereco.ForeColor = System.Drawing.Color.Black;
             this.txtEndereco.Location = new System.Drawing.Point(32, 264);
+            this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(432, 20);
             this.txtEndereco.TabIndex = 114;
@@ -235,6 +230,7 @@
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(32, 106);
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(432, 20);
             this.txtEmail.TabIndex = 110;
@@ -245,6 +241,7 @@
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.ForeColor = System.Drawing.Color.Black;
             this.txtNome.Location = new System.Drawing.Point(30, 31);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(432, 20);
             this.txtNome.TabIndex = 104;
@@ -255,6 +252,7 @@
             this.txtCPF.BackColor = System.Drawing.SystemColors.Window;
             this.txtCPF.ForeColor = System.Drawing.Color.Black;
             this.txtCPF.Location = new System.Drawing.Point(32, 70);
+            this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(198, 20);
             this.txtCPF.TabIndex = 109;
@@ -265,6 +263,7 @@
             this.txtCelular.BackColor = System.Drawing.SystemColors.Window;
             this.txtCelular.ForeColor = System.Drawing.Color.Black;
             this.txtCelular.Location = new System.Drawing.Point(258, 200);
+            this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(206, 20);
             this.txtCelular.TabIndex = 118;
@@ -328,6 +327,7 @@
             this.txtLogin.BackColor = System.Drawing.SystemColors.Window;
             this.txtLogin.ForeColor = System.Drawing.Color.Black;
             this.txtLogin.Location = new System.Drawing.Point(49, 119);
+            this.txtLogin.MaxLength = 50;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(180, 20);
             this.txtLogin.TabIndex = 108;
@@ -338,6 +338,7 @@
             this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
             this.txtSenha.ForeColor = System.Drawing.Color.Black;
             this.txtSenha.Location = new System.Drawing.Point(49, 160);
+            this.txtSenha.MaxLength = 30;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(180, 20);
             this.txtSenha.TabIndex = 105;
@@ -348,6 +349,7 @@
             this.txtConfSenha.BackColor = System.Drawing.SystemColors.Window;
             this.txtConfSenha.ForeColor = System.Drawing.Color.Black;
             this.txtConfSenha.Location = new System.Drawing.Point(49, 202);
+            this.txtConfSenha.MaxLength = 30;
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(180, 20);
             this.txtConfSenha.TabIndex = 107;
@@ -389,6 +391,27 @@
             this.picPerfil.TabIndex = 2;
             this.picPerfil.TabStop = false;
             // 
+            // txtNumero
+            // 
+            this.txtNumero.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNumero.ForeColor = System.Drawing.Color.Black;
+            this.txtNumero.Location = new System.Drawing.Point(32, 302);
+            this.txtNumero.MaxLength = 5;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(109, 20);
+            this.txtNumero.TabIndex = 122;
+            this.txtNumero.Text = "Nº";
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
+            this.txtComplemento.ForeColor = System.Drawing.Color.Black;
+            this.txtComplemento.Location = new System.Drawing.Point(173, 303);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(291, 20);
+            this.txtComplemento.TabIndex = 121;
+            this.txtComplemento.Text = "Complemento";
+            // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,7 +449,6 @@
         private System.Windows.Forms.PictureBox picBack;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.GroupBox gboCadastro;
-        private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.ComboBox cboCidade;
@@ -448,5 +470,7 @@
         private System.Windows.Forms.PictureBox picLogin;
         private System.Windows.Forms.PictureBox picConfSenha;
         private System.Windows.Forms.PictureBox picPerfil;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.TextBox txtComplemento;
     }
 }

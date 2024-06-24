@@ -45,61 +45,6 @@ namespace NewGlicNow
             }
         }
 
-        private void BtnEntrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string PasswordCriptografada = Global.Criptografar(txtSenha.Text);
-                Usuario usuario = new Usuario();
-                usuario.log_In.Login = txtLogin.Text;
-                usuario.log_In.Consultar();
-
-                if (usuario.log_In.Id == 0)
-                {
-                    MessageBox.Show("Usuário e/ou senha inválidos", "Erro no Login",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (!usuario.log_In.Autenticar(PasswordCriptografada))
-                {
-                    MessageBox.Show("Usuário e/ou senha inválidos", "Erro no Login",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                usuario.Id = usuario.log_In.UsuarioId;
-                usuario.Consultar();
-
-                MessageBox.Show($"Bem vindo {usuario.NomeCompleto}. ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Global.IdUsuarioLogado = usuario.Id;
-
-                if (cboSalvo.Checked == true)
-                {
-                    usuario.log_In.Salvo = true;
-                    usuario.log_In.Gravar();
-                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                    config.AppSettings.Settings["UltimoIdLogado"].Value = Convert.ToString(Global.IdUsuarioLogado);
-                    config.Save(ConfigurationSaveMode.Modified);
-                    ConfigurationManager.RefreshSection("appSettings");
-                }
-                else
-                {
-                    usuario.log_In.Salvo = false;
-                    usuario.log_In.Gravar();
-                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                    config.AppSettings.Settings["UltimoIdLogado"].Value = "0";
-                    config.Save(ConfigurationSaveMode.Modified);
-                    ConfigurationManager.RefreshSection("appSettings");
-                }
-
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
         private void PicClose_Click(object sender, EventArgs e)
@@ -153,6 +98,62 @@ namespace NewGlicNow
         {
             Tag = "Cadastro";
             Close();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string PasswordCriptografada = Global.Criptografar(txtSenha.Text);
+                Usuario usuario = new Usuario();
+                usuario.log_In.Login = txtLogin.Text;
+                usuario.log_In.Consultar();
+
+                if (usuario.log_In.Id == 0)
+                {
+                    MessageBox.Show("Usuário e/ou senha inválidos", "Erro no Login",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!usuario.log_In.Autenticar(PasswordCriptografada))
+                {
+                    MessageBox.Show("Usuário e/ou senha inválidos", "Erro no Login",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                usuario.Id = usuario.log_In.UsuarioId;
+                usuario.Consultar();
+
+                MessageBox.Show($"Bem vindo {usuario.NomeCompleto}. ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Global.IdUsuarioLogado = usuario.Id;
+
+                if (cboSalvo.Checked == true)
+                {
+                    usuario.log_In.Salvo = true;
+                    usuario.log_In.Gravar();
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    config.AppSettings.Settings["UltimoIdLogado"].Value = Convert.ToString(Global.IdUsuarioLogado);
+                    config.Save(ConfigurationSaveMode.Modified);
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
+                else
+                {
+                    usuario.log_In.Salvo = false;
+                    usuario.log_In.Gravar();
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    config.AppSettings.Settings["UltimoIdLogado"].Value = "0";
+                    config.Save(ConfigurationSaveMode.Modified);
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
+
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
