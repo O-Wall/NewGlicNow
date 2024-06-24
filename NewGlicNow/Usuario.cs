@@ -109,7 +109,7 @@ namespace NewGlicNow
             try
             {
                 parameters.Clear();
-                sql = "select id, NomeCompleto, CPF, DataNascimento," +
+                sql = "select Id, NomeCompleto, CPF, DataNascimento," +
                     " Email, FotoPerfil, Celular, TipoDiabeteId, SexoId \n";
                 sql += "from tblUsuario \n";
                 if (Id != 0)

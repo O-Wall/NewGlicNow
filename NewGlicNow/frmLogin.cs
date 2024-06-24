@@ -39,6 +39,7 @@ namespace NewGlicNow
                         txtLogin.Text = usuario.log_In.Login;
                         txtSenha.Text = usuario.log_In.Password;
                     }
+                    txtSenha.UseSystemPasswordChar = true;
                 }
                 catch (Exception ex)
                 {
@@ -46,9 +47,23 @@ namespace NewGlicNow
                 }
             }
         }
+        private void PicClose_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
+              "GlicNow", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
+
+<<<<<<< HEAD
 
 
-
+=======
+            if (DialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+>>>>>>> 1b7db626035384165f1ba9bd6336677ab7d7d1a8
         private void txtLogin_Enter(object sender, EventArgs e)
         {
             if (txtLogin.Text == "Login")
@@ -56,12 +71,18 @@ namespace NewGlicNow
                 Global.LimparTexto(txtLogin);
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1b7db626035384165f1ba9bd6336677ab7d7d1a8
         private void txtLogin_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtLogin);
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1b7db626035384165f1ba9bd6336677ab7d7d1a8
         private void txtSenha_Enter(object sender, EventArgs e)
         {
             if (passwordchar)
@@ -71,7 +92,10 @@ namespace NewGlicNow
                 passwordchar = false;
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1b7db626035384165f1ba9bd6336677ab7d7d1a8
         private void txtSenha_Leave(object sender, EventArgs e)
         {
             if (txtSenha.Text == string.Empty)
@@ -93,11 +117,15 @@ namespace NewGlicNow
         {
             try
             {
-                string PasswordCriptografada = Global.Criptografar(txtSenha.Text);
+                string PasswordCriptografada = txtSenha.Text;
                 Usuario usuario = new Usuario();
                 usuario.log_In.Login = txtLogin.Text;
                 usuario.log_In.Consultar();
-
+                if(txtSenha.Text != usuario.log_In.Password)
+                {
+                    PasswordCriptografada = Global.Criptografar(txtSenha.Text);
+                    return;
+                }
                 if (usuario.log_In.Id == 0)
                 {
                     MessageBox.Show("Usuário e/ou senha inválidos", "Erro no Login",
@@ -115,7 +143,7 @@ namespace NewGlicNow
                 usuario.Consultar();
 
                 MessageBox.Show($"Bem vindo {usuario.NomeCompleto}. ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Global.IdUsuarioLogado = usuario.Id;
+                Global.IdUsuarioLogado = usuario.log_In.UsuarioId;
 
                 if (cboSalvo.Checked == true)
                 {
@@ -144,6 +172,7 @@ namespace NewGlicNow
                 MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+<<<<<<< HEAD
 
         private void picClose_Click(object sender, EventArgs e)
         {
@@ -157,5 +186,7 @@ namespace NewGlicNow
                 Close();
             }
         }
+=======
+>>>>>>> 1b7db626035384165f1ba9bd6336677ab7d7d1a8
     }
 }

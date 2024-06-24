@@ -323,7 +323,10 @@ namespace NewGlicNow
 
 
                 MessageBox.Show("Imagem carregada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+<<<<<<< HEAD
                 //picProfile.Image =  
+=======
+>>>>>>> 1b7db626035384165f1ba9bd6336677ab7d7d1a8
             }
             catch (Exception ex)
             {
