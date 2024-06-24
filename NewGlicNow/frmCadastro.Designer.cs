@@ -301,7 +301,7 @@
             this.picClose.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(582, 9);
+            this.picClose.Location = new System.Drawing.Point(588, 5);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(24, 24);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

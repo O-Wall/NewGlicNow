@@ -79,6 +79,7 @@
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMinimize.TabIndex = 43;
             this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click_1);
             // 
             // lblDashboard
             // 
@@ -100,6 +101,7 @@
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picClose.TabIndex = 42;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click_1);
             // 
             // pnlBordaPerfil1
             // 
