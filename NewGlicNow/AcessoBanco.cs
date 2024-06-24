@@ -24,6 +24,7 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
+
         private void Desconectar()
         {
             try
@@ -39,16 +40,19 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
+
         public DataTable Consultar(string sqlCommand, List<SqlParameter> lista)
         {
             try
             {
                 Conectar();
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
+
                 foreach (SqlParameter p in lista)
                 {
                     command.Parameters.Add(p);
                 }
+
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -63,6 +67,7 @@ namespace NewGlicNow
                 Desconectar();
             }
         }
+
         public void Executar(string sqlCommand, List<SqlParameter> lista)
         {
             try
@@ -81,6 +86,7 @@ namespace NewGlicNow
             }
             finally { Desconectar(); }
         }
+
         public int Executar(List<SqlParameter> lista, string sqlCommand)
         {
             try

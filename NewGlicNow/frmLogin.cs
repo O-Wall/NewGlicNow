@@ -18,18 +18,10 @@ namespace NewGlicNow
             InitializeComponent();
         }
         bool passwordchar = true;
-        private void PicClose_Click(object sender, EventArgs e)
-        {
-            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
-              "GlicNow", MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question,
-              MessageBoxDefaultButton.Button2);
-            if (DialogResult == DialogResult.Yes)
-            {
-                Close();
-            }
-        }
-        private void Form1_Load(object sender, EventArgs e)
+
+
+
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
             Tag = "";
             Global.LerAppConfig();
@@ -40,11 +32,11 @@ namespace NewGlicNow
                     Usuario usuario = new Usuario();
                     usuario.log_In.Id = Convert.ToInt32(Global.UltimoIdLogado);
                     usuario.log_In.Consultar();
-                    if(usuario.log_In.Salvo == true)
+                    if (usuario.log_In.Salvo == true)
                     {
                         txtLogin.Text = usuario.log_In.Login;
-                        txtPassword.Text = usuario.log_In.Password;
-                    }                    
+                        txtSenha.Text = usuario.log_In.Password;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -52,19 +44,16 @@ namespace NewGlicNow
                 }
             }
         }
-        private void LblCasdatre_Click(object sender, EventArgs e)
-        {
-            Tag = "Cadastro";
-            Close();
-        }
+
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
             try
             {
-                string PasswordCriptografada = Global.Criptografar(txtPassword.Text);
+                string PasswordCriptografada = Global.Criptografar(txtSenha.Text);
                 Usuario usuario = new Usuario();
                 usuario.log_In.Login = txtLogin.Text;
                 usuario.log_In.Consultar();
+
                 if (usuario.log_In.Id == 0)
                 {
                     MessageBox.Show("Usuário e/ou senha inválidos", "Erro no Login",
@@ -77,11 +66,14 @@ namespace NewGlicNow
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 usuario.Id = usuario.log_In.UsuarioId;
                 usuario.Consultar();
+
                 MessageBox.Show($"Bem vindo {usuario.NomeCompleto}. ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Global.IdUsuarioLogado = usuario.Id;
-                if(cboSalvo.Checked == true)
+
+                if (cboSalvo.Checked == true)
                 {
                     usuario.log_In.Salvo = true;
                     usuario.log_In.Gravar();
@@ -99,48 +91,68 @@ namespace NewGlicNow
                     config.Save(ConfigurationSaveMode.Modified);
                     ConfigurationManager.RefreshSection("appSettings");
                 }
+
                 DialogResult = DialogResult.OK;
                 Close();
             }
             catch (Exception ex)
-            { 
-                MessageBox.Show("Erro --> " +ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void TxtPassword_Enter(object sender, EventArgs e)
+
+
+        private void PicClose_Click(object sender, EventArgs e)
         {
-            if (passwordchar)
+            DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
+              "GlicNow", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
+
+            if (DialogResult == DialogResult.Yes)
             {
-                Global.LimparTexto(txtPassword);
-                txtPassword.UseSystemPasswordChar = true;
-                passwordchar = false;
-            }           
-        }
-        private void TxtPassword_Leave(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == string.Empty)
-            {
-                txtPassword.Text = Global.ResetMsg;
-                Global.ResetMsg = string.Empty;
-                txtPassword.UseSystemPasswordChar = false;
-                passwordchar = true;
+                Close();
             }
         }
-        private void TxtLogin_Enter(object sender, EventArgs e)
+
+        private void txtLogin_Enter(object sender, EventArgs e)
         {
-            if(txtLogin.Text == "Username")
+            if (txtLogin.Text == "Login")
             {
                 Global.LimparTexto(txtLogin);
             }
         }
-        private void TxtLogin_Leave(object sender, EventArgs e)
+
+        private void txtLogin_Leave(object sender, EventArgs e)
         {
-            if(txtLogin.Text == string.Empty)
+            Global.ResetMensagem(txtLogin);
+        }
+
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            if (passwordchar)
             {
-                txtLogin.Text = Global.ResetMsg;
+                Global.LimparTexto(txtSenha);
+                txtSenha.UseSystemPasswordChar = true;
+                passwordchar = false;
+            }
+        }
+
+        private void txtSenha_Leave(object sender, EventArgs e)
+        {
+            if (txtSenha.Text == string.Empty)
+            {
+                txtSenha.Text = Global.ResetMsg;
                 Global.ResetMsg = string.Empty;
-            }              
-            
+                txtSenha.UseSystemPasswordChar = false;
+                passwordchar = true;
+            }
+        }
+
+        private void lblCadastre_Click(object sender, EventArgs e)
+        {
+            Tag = "Cadastro";
+            Close();
         }
     }
 }

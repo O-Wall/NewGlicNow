@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace NewGlicNow
 {
-    public partial class frmAgenda : Form
+    public partial class ucCadastroMapGlic : UserControl
     {
-        public frmAgenda()
+        public ucCadastroMapGlic()
         {
             InitializeComponent();
-        }
-
-        private void picClose_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

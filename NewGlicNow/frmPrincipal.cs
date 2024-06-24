@@ -17,16 +17,65 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-        private void PicClose_Click(object sender, EventArgs e)
+
+        //MÉTODOS
+
+            //CRIAR ALGUM QUE FAÇA UM FORMULÁRIO CHAMAR OUTRO.
+                //Sabemos de duas maneiras até o momento
+
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            /* PUXAR O NOME E A FOTO DO USUÁRIO NO BANCO
+                     Usuario usuario = new Usuario
+                     {
+                         Id = Global.IdUsuarioLogado
+                       };
+
+                    usuario.Consultar();
+                    lblUsuario.Text = $"Usuário: {usuario.Nome}";
+                    lblServidor.Text = $"Servidor: {Global.Servidor}";
+                    lblBanco.Text = $"Banco: {Global.Banco}";
+            */
+        }
+
+
+
+
+        //ARRUMAR ESSE PROBLEMINHA AQUI:
+        private void btnAgenda_Click(object sender, EventArgs e)
+        {
+            pnlEnfeite.Height = btnAgenda.Height;
+            pnlEnfeite.Top = btnAgenda.Top;
+
+            /* Colocar o User Control da Agenda para frente, assim que acionado o botão:
+                    [NOME DO USER CONTROL].BringToFront();
+            */
+        }
+        private void btnGlicemia_Click(object sender, EventArgs e)
+        {
+            pnlEnfeite.Height = btnGlicemia.Height;
+            pnlEnfeite.Top = btnGlicemia.Top;
+        }
+        private void btnConfiguracao_Click(object sender, EventArgs e)
+        {
+            pnlEnfeite.Height = btnConfiguracao.Height;
+            pnlEnfeite.Top = btnConfiguracao.Top;
+
+        }
+        //===============================
+
+
+
+
+        private void picMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void picClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void PicConfigu_Click(object sender, EventArgs e)
-        {
-            new frmConfig();
-        }
-
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Deseja encerrar a aplicação?",
@@ -37,5 +86,8 @@ namespace NewGlicNow
                 e.Cancel = true;
             }
         }
+
+
+
     }
 }

@@ -24,6 +24,7 @@ namespace NewGlicNow
             Salvo = false;
             UsuarioId = 0;
         }
+
         AcessoBanco acesso = new AcessoBanco();
         DataTable dt = new DataTable();
         List<SqlParameter> parameters = new List<SqlParameter>();
@@ -61,10 +62,12 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
+
         public bool Autenticar(string senha)
         {
             return senha == Password;
         }
+
         public void Gravar()
         {
             try

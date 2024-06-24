@@ -18,6 +18,7 @@ namespace NewGlicNow
         public string CEP { get; set; }
         public int CidadeId { get; set; }
         public int UsuarioId { get; set; }
+
         public Endereco()
         {
             Id = 0;
@@ -29,10 +30,12 @@ namespace NewGlicNow
             CidadeId = 0;
             UsuarioId = 0;
         }
+
         AcessoBanco acesso = new AcessoBanco();
         DataTable dt = new DataTable();
         List<SqlParameter> parameters = new List<SqlParameter>();
         string sql = string.Empty;
+
         public void Consultar()
         {
             try

@@ -37,12 +37,73 @@ namespace NewGlicNow
             SexoId = 0;
             log_In = new Log_in();
         }
-
+                
         AcessoBanco acesso = new AcessoBanco();
         DataTable dt = new DataTable(); 
         List<SqlParameter> parameters = new List<SqlParameter>();
         string sql = string.Empty;
-        
+
+        public void Gravar()
+        {
+            try
+            {
+                using (TransactionScope transacao = new TransactionScope())
+                {
+                    parameters.Clear();
+                    if (Id != 0)
+                    {
+                        sql = "insert into tblUsuario \n";
+                        sql += "(NomeCompleto, CPF, DataNascimento, Email, FotoPerfil, Celular, TipoDiabeteId, SexoId)\n";
+                        sql += "values \n";
+                        sql += "(@nomeCompleto, @cpf, @dataNascimento, @email, @fotoPerfil, @celular, @tipoDiabeteId, @sexoId);\n";
+                        sql += "select @@IDENTITY";
+                    }
+                    else
+                    {
+                        sql = "update tblUsuario \n";
+                        sql += "set \n";
+                        sql += "NomeCompleto = @nomeCompleto, \n";
+                        sql += "CPF = @cpf, \n";
+                        sql += "DataNascimento = @dataNascimento, \n";
+                        sql += "Email = @email, \n";
+                        sql += "FotoPerfil = @fotoPerfil, \n";
+                        sql += "Celular = @Celular, \n";
+                        sql += "TipoDiabetesId = @tipoDiabeteId, \n";
+                        sql += "SexoId = @sexoId \n";
+                        sql += "where Id = @id; \n";
+                        parameters.Add(new SqlParameter("@id", Id));
+                    }
+                    parameters.Add(new SqlParameter("@nomeCompleto", NomeCompleto));
+                    parameters.Add(new SqlParameter("@cpf", CPF));
+                    parameters.Add(new SqlParameter("@dataNascimento", DataNascimento));
+                    parameters.Add(new SqlParameter("@email", Email));
+                    parameters.Add(new SqlParameter("@fotoPerfil", FotoPerfil));
+                    parameters.Add(new SqlParameter("@celular", Celular));
+                    parameters.Add(new SqlParameter("@tipoDiabeteId", TipoDiabeteId));
+                    parameters.Add(new SqlParameter("@sexoId", SexoId));
+
+                    if (Id == 0)
+                    {
+                        Id = acesso.Executar(parameters, sql);
+                    }
+                    else
+                    {
+                        acesso.Executar(sql, parameters);
+                    }
+                    log_In.UsuarioId = Id;
+                    log_In.Gravar();
+                    endereco.UsuarioId = Id;
+                    endereco.Gravar();
+                    transacao.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
         public DataTable Consultar()
         {
             try
@@ -89,64 +150,8 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
-        public void Gravar()
-        {
-            try
-            {
-                using (TransactionScope transacao = new TransactionScope())
-                {
-                    parameters.Clear();
-                    if (Id != 0)
-                    {
-                        sql = "insert into tblUsuario \n";
-                        sql += "(NomeCompleto, CPF, DataNascimento, Email, FotoPerfil, Celular, TipoDiabeteId, SexoId)\n";
-                        sql += "values \n";
-                        sql += "(@nomeCompleto, @cpf, @dataNascimento, @email, @fotoPerfil, @celular, @tipoDiabeteId, @sexoId);\n";
-                        sql += "select @@IDENTITY";
-                    }
-                    else
-                    {                        
-                        sql = "update tblUsuario \n";
-                        sql += "set \n";
-                        sql += "NomeCompleto = @nomeCompleto, \n";
-                        sql += "CPF = @cpf, \n";
-                        sql += "DataNascimento = @dataNascimento, \n";
-                        sql += "Email = @email, \n";
-                        sql += "FotoPerfil = @fotoPerfil, \n";
-                        sql += "Celular = @Celular, \n";
-                        sql += "TipoDiabetesId = @tipoDiabeteId, \n";
-                        sql += "SexoId = @sexoId \n";
-                        sql += "where Id = @id; \n";
-                        parameters.Add(new SqlParameter("@id", Id));
-                    }
-                    parameters.Add(new SqlParameter("@nomeCompleto", NomeCompleto));
-                    parameters.Add(new SqlParameter("@cpf", CPF));
-                    parameters.Add(new SqlParameter("@dataNascimento", DataNascimento));
-                    parameters.Add(new SqlParameter("@email", Email));
-                    parameters.Add(new SqlParameter("@fotoPerfil", FotoPerfil));
-                    parameters.Add(new SqlParameter("@celular", Celular));
-                    parameters.Add(new SqlParameter("@tipoDiabeteId", TipoDiabeteId));
-                    parameters.Add(new SqlParameter("@sexoId", SexoId));                    
 
-                    if (Id == 0)
-                    {
-                        Id = acesso.Executar(parameters, sql);                        
-                    }
-                    else
-                    {
-                        acesso.Executar(sql, parameters);
-                    }
-                    log_In.UsuarioId = Id;
-                    log_In.Gravar();
-                    endereco.UsuarioId = Id;
-                    endereco.Gravar();
-                    transacao.Complete();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+       
+
     }
 }

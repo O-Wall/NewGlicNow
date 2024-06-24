@@ -34,7 +34,7 @@
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.txtCep = new System.Windows.Forms.TextBox();
+            this.txtCEP = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
@@ -91,11 +91,12 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboEstado.Location = new System.Drawing.Point(403, 460);
+            this.cboEstado.Location = new System.Drawing.Point(109, 470);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(138, 21);
-            this.cboEstado.TabIndex = 74;
+            this.cboEstado.TabIndex = 14;
             this.cboEstado.Text = "Estado";
+            this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
             // cboCidade
             // 
@@ -106,21 +107,23 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboCidade.Location = new System.Drawing.Point(109, 460);
+            this.cboCidade.Location = new System.Drawing.Point(315, 470);
             this.cboCidade.Name = "cboCidade";
-            this.cboCidade.Size = new System.Drawing.Size(258, 21);
-            this.cboCidade.TabIndex = 72;
+            this.cboCidade.Size = new System.Drawing.Size(226, 21);
+            this.cboCidade.TabIndex = 15;
             this.cboCidade.Text = "Cidade";
+            this.cboCidade.SelectedIndexChanged += new System.EventHandler(this.cboCidade_SelectedIndexChanged);
             // 
             // txtCelular
             // 
             this.txtCelular.BackColor = System.Drawing.SystemColors.Window;
             this.txtCelular.ForeColor = System.Drawing.Color.Black;
-            this.txtCelular.Location = new System.Drawing.Point(335, 301);
+            this.txtCelular.Location = new System.Drawing.Point(335, 299);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(206, 20);
-            this.txtCelular.TabIndex = 71;
+            this.txtCelular.TabIndex = 9;
             this.txtCelular.Text = "Celular";
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtBairro
             // 
@@ -129,7 +132,7 @@
             this.txtBairro.Location = new System.Drawing.Point(109, 425);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(228, 20);
-            this.txtBairro.TabIndex = 68;
+            this.txtBairro.TabIndex = 12;
             this.txtBairro.Text = "Bairro";
             // 
             // txtComplemento
@@ -139,18 +142,19 @@
             this.txtComplemento.Location = new System.Drawing.Point(109, 389);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(432, 20);
-            this.txtComplemento.TabIndex = 65;
+            this.txtComplemento.TabIndex = 11;
             this.txtComplemento.Text = "Complemento";
             // 
-            // txtCep
+            // txtCEP
             // 
-            this.txtCep.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCep.ForeColor = System.Drawing.Color.Black;
-            this.txtCep.Location = new System.Drawing.Point(384, 425);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(157, 20);
-            this.txtCep.TabIndex = 64;
-            this.txtCep.Text = "CEP";
+            this.txtCEP.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCEP.ForeColor = System.Drawing.Color.Black;
+            this.txtCEP.Location = new System.Drawing.Point(384, 428);
+            this.txtCEP.Name = "txtCEP";
+            this.txtCEP.Size = new System.Drawing.Size(157, 20);
+            this.txtCEP.TabIndex = 13;
+            this.txtCEP.Text = "CEP";
+            this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEP_KeyPress);
             // 
             // txtEndereco
             // 
@@ -159,7 +163,7 @@
             this.txtEndereco.Location = new System.Drawing.Point(109, 351);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(432, 20);
-            this.txtEndereco.TabIndex = 61;
+            this.txtEndereco.TabIndex = 10;
             this.txtEndereco.Text = "Endereço";
             // 
             // btnLimpar
@@ -167,7 +171,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(310, 520);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(113, 36);
-            this.btnLimpar.TabIndex = 60;
+            this.btnLimpar.TabIndex = 17;
             this.btnLimpar.Text = "&Limpar Campos";
             this.btnLimpar.UseVisualStyleBackColor = true;
             // 
@@ -176,7 +180,7 @@
             this.btnCadastro.Location = new System.Drawing.Point(429, 520);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(112, 36);
-            this.btnCadastro.TabIndex = 59;
+            this.btnCadastro.TabIndex = 16;
             this.btnCadastro.Text = "&Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
@@ -191,8 +195,9 @@
             this.cboGenero.Location = new System.Drawing.Point(79, 298);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(200, 21);
-            this.cboGenero.TabIndex = 58;
+            this.cboGenero.TabIndex = 8;
             this.cboGenero.Text = "Gênero";
+            this.cboGenero.SelectedIndexChanged += new System.EventHandler(this.cboGenero_SelectedIndexChanged);
             // 
             // cboTipoDiabete
             // 
@@ -206,8 +211,9 @@
             this.cboTipoDiabete.Location = new System.Drawing.Point(285, 256);
             this.cboTipoDiabete.Name = "cboTipoDiabete";
             this.cboTipoDiabete.Size = new System.Drawing.Size(256, 21);
-            this.cboTipoDiabete.TabIndex = 57;
-            this.cboTipoDiabete.Text = "Tipo Diabete";
+            this.cboTipoDiabete.TabIndex = 7;
+            this.cboTipoDiabete.Text = "Tipo de Diabete";
+            this.cboTipoDiabete.SelectedIndexChanged += new System.EventHandler(this.cboTipoDiabete_SelectedIndexChanged);
             // 
             // dtpDataNascimento
             // 
@@ -216,7 +222,7 @@
             this.dtpDataNascimento.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(200, 20);
-            this.dtpDataNascimento.TabIndex = 56;
+            this.dtpDataNascimento.TabIndex = 6;
             this.dtpDataNascimento.UseWaitCursor = true;
             this.dtpDataNascimento.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
@@ -227,7 +233,7 @@
             this.txtEmail.Location = new System.Drawing.Point(109, 220);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(432, 20);
-            this.txtEmail.TabIndex = 54;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.Text = "E-mail";
             // 
             // txtCPF
@@ -237,8 +243,9 @@
             this.txtCPF.Location = new System.Drawing.Point(343, 183);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(198, 20);
-            this.txtCPF.TabIndex = 53;
+            this.txtCPF.TabIndex = 4;
             this.txtCPF.Text = "CPF";
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // txtLogin
             // 
@@ -247,7 +254,7 @@
             this.txtLogin.Location = new System.Drawing.Point(109, 183);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(180, 20);
-            this.txtLogin.TabIndex = 51;
+            this.txtLogin.TabIndex = 3;
             this.txtLogin.Text = "Login";
             // 
             // txtConfSenha
@@ -257,8 +264,8 @@
             this.txtConfSenha.Location = new System.Drawing.Point(343, 149);
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(198, 20);
-            this.txtConfSenha.TabIndex = 50;
-            this.txtConfSenha.Text = "Confirme Password";
+            this.txtConfSenha.TabIndex = 2;
+            this.txtConfSenha.Text = "Confirmar senha";
             // 
             // txtSenha
             // 
@@ -267,8 +274,8 @@
             this.txtSenha.Location = new System.Drawing.Point(109, 148);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(180, 20);
-            this.txtSenha.TabIndex = 48;
-            this.txtSenha.Text = "Password";
+            this.txtSenha.TabIndex = 1;
+            this.txtSenha.Text = "Senha";
             // 
             // txtNome
             // 
@@ -277,7 +284,7 @@
             this.txtNome.Location = new System.Drawing.Point(155, 104);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(386, 20);
-            this.txtNome.TabIndex = 47;
+            this.txtNome.TabIndex = 0;
             this.txtNome.Text = "Nome Completo";
             // 
             // panel2
@@ -289,7 +296,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(618, 33);
-            this.panel2.TabIndex = 75;
+            this.panel2.TabIndex = 18;
             // 
             // lblCadastro
             // 
@@ -297,7 +304,7 @@
             this.lblCadastro.Location = new System.Drawing.Point(46, 12);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(49, 13);
-            this.lblCadastro.TabIndex = 26;
+            this.lblCadastro.TabIndex = 0;
             this.lblCadastro.Text = "Cadastro";
             // 
             // picClose
@@ -317,7 +324,7 @@
             // picEstado
             // 
             this.picEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEstado.Location = new System.Drawing.Point(373, 467);
+            this.picEstado.Location = new System.Drawing.Point(285, 467);
             this.picEstado.Name = "picEstado";
             this.picEstado.Size = new System.Drawing.Size(24, 24);
             this.picEstado.TabIndex = 73;
@@ -326,7 +333,7 @@
             // picCelular
             // 
             this.picCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCelular.Location = new System.Drawing.Point(305, 301);
+            this.picCelular.Location = new System.Drawing.Point(305, 295);
             this.picCelular.Name = "picCelular";
             this.picCelular.Size = new System.Drawing.Size(24, 24);
             this.picCelular.TabIndex = 70;
@@ -456,7 +463,7 @@
             this.Controls.Add(this.picBairro);
             this.Controls.Add(this.picComplemento);
             this.Controls.Add(this.txtComplemento);
-            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtCEP);
             this.Controls.Add(this.picCep);
             this.Controls.Add(this.picEndereco);
             this.Controls.Add(this.txtEndereco);
@@ -516,7 +523,7 @@
         private System.Windows.Forms.PictureBox picBairro;
         private System.Windows.Forms.PictureBox picComplemento;
         private System.Windows.Forms.TextBox txtComplemento;
-        private System.Windows.Forms.TextBox txtCep;
+        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.PictureBox picCep;
         private System.Windows.Forms.PictureBox picEndereco;
         private System.Windows.Forms.TextBox txtEndereco;
