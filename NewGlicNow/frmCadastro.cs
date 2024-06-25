@@ -320,15 +320,18 @@ namespace NewGlicNow
                     imageBytes = new byte[fs.Length];
                     fs.Read(imageBytes, 0, Convert.ToInt32(fs.Length));
                 }
-
-
-                MessageBox.Show("Imagem carregada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //picProfile.Image =  
+                picProfile.Image = ;
+                MessageBox.Show("Imagem carregada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
     }
 }
