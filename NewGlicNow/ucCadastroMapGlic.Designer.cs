@@ -145,8 +145,7 @@
             // 
             // ucCadastroMapGlic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.dgvMapaGlic);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.grpRegistrar);

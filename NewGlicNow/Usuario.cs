@@ -42,7 +42,55 @@ namespace NewGlicNow
         AcessoBanco acesso = new AcessoBanco();
         DataTable dt = new DataTable(); 
         List<SqlParameter> parameters = new List<SqlParameter>();
-        string sql = string.Empty;
+        string sql = string.Empty;       
+
+
+        public DataTable Consultar()
+        {
+            try
+            {
+                parameters.Clear();
+                sql = "select Id, NomeCompleto, CPF, DataNascimento," +
+                    " Email, Celular, FotoPerfil, TipoDiabeteId, SexoId \n";
+                sql += "from tblUsuario \n";
+                if (Id != 0)
+                {
+                    sql += "where @id = Id \n";
+                    parameters.Add(new SqlParameter("@id", Id));
+                }
+                else if (CPF != string.Empty)
+                {
+                    sql += "Where @cpf = CPF \n";
+                    parameters.Add(new SqlParameter("@cpf", CPF));
+                }
+                else if (NomeCompleto != string.Empty)
+                {
+                    sql += "Where @nomeCompleto = NomeCompleto \n";
+                    parameters.Add(new SqlParameter("@nomeCompleto", '%' + NomeCompleto + '%'));
+                }
+                dt = acesso.Consultar(sql, parameters);
+                if (Id != 0 || (CPF != string.Empty && dt.Rows.Count > 0))
+                {
+                    Id = Convert.ToInt32(dt.Rows[0]["id"]);
+                    NomeCompleto = dt.Rows[0]["nomeCompleto"].ToString();
+                    CPF = dt.Rows[0]["cpf"].ToString();
+                    DataNascimento = Convert.ToDateTime(dt.Rows[0]["dataNascimento"]);
+                    Email = dt.Rows[0]["email"].ToString();
+                    if (dt.Rows[0]["fotoPerfil"] != DBNull.Value)
+                    {
+                        FotoPerfil = (byte[])dt.Rows[0]["fotoPerfil"];
+                    }
+                    Celular = dt.Rows[0]["celular"].ToString();
+                    TipoDiabeteId = Convert.ToInt32(dt.Rows[0]["tipoDiabeteId"]);
+                    SexoId = Convert.ToInt32(dt.Rows[0]["SexoId"]);                    
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public void Gravar()
         {
@@ -105,54 +153,6 @@ namespace NewGlicNow
         }
 
 
-        public DataTable Consultar()
-        {
-            try
-            {
-                parameters.Clear();
-                sql = "select Id, NomeCompleto, CPF, DataNascimento," +
-                    " Email, Celular, FotoPerfil, TipoDiabeteId, SexoId \n";
-                sql += "from tblUsuario \n";
-                if (Id != 0)
-                {
-                    sql += "where @id = Id \n";
-                    parameters.Add(new SqlParameter("@id", Id));
-                }
-                else if (CPF != string.Empty)
-                {
-                    sql += "Where @cpf = CPF \n";
-                    parameters.Add(new SqlParameter("@cpf", CPF));
-                }
-                else if (NomeCompleto != string.Empty)
-                {
-                    sql += "Where @nomeCompleto = NomeCompleto \n";
-                    parameters.Add(new SqlParameter("@nomeCompleto", '%' + NomeCompleto + '%'));
-                }
-                dt = acesso.Consultar(sql, parameters);
-                if (Id != 0 || (CPF != string.Empty && dt.Rows.Count > 0))
-                {
-                    Id = Convert.ToInt32(dt.Rows[0]["id"]);
-                    NomeCompleto = dt.Rows[0]["nomeCompleto"].ToString();
-                    CPF = dt.Rows[0]["cpf"].ToString();
-                    DataNascimento = Convert.ToDateTime(dt.Rows[0]["dataNascimento"]);
-                    Email = dt.Rows[0]["email"].ToString();
-                    if (dt.Rows[0]["fotoPerfil"] != DBNull.Value)
-                    {
-                        FotoPerfil = (byte[])dt.Rows[0]["fotoPerfil"];
-                    }
-                    Celular = dt.Rows[0]["celular"].ToString();
-                    TipoDiabeteId = Convert.ToInt32(dt.Rows[0]["tipoDiabeteId"]);
-                    SexoId = Convert.ToInt32(dt.Rows[0]["SexoId"]);                    
-                }
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-       
 
     }
 }
