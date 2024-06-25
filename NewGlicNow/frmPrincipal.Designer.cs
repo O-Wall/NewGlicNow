@@ -48,6 +48,9 @@
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
+            this.ucAgenda1 = new FinalGlicNow.ucAgenda();
+            this.ucCadastroMapGlic1 = new NewGlicNow.ucCadastroMapGlic();
+            this.ucCadastroMapGlic2 = new NewGlicNow.ucCadastroMapGlic();
             this.pnlBordaForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -272,12 +275,37 @@
             this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
             this.pnlBordaPerfil4.TabIndex = 34;
             // 
+            // ucAgenda1
+            // 
+            this.ucAgenda1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(96)))), ((int)(((byte)(88)))));
+            this.ucAgenda1.Location = new System.Drawing.Point(185, 108);
+            this.ucAgenda1.Name = "ucAgenda1";
+            this.ucAgenda1.Size = new System.Drawing.Size(772, 488);
+            this.ucAgenda1.TabIndex = 120;
+            // 
+            // ucCadastroMapGlic1
+            // 
+            this.ucCadastroMapGlic1.Location = new System.Drawing.Point(373, 194);
+            this.ucCadastroMapGlic1.Name = "ucCadastroMapGlic1";
+            this.ucCadastroMapGlic1.Size = new System.Drawing.Size(13, 8);
+            this.ucCadastroMapGlic1.TabIndex = 121;
+            // 
+            // ucCadastroMapGlic2
+            // 
+            this.ucCadastroMapGlic2.Location = new System.Drawing.Point(185, 108);
+            this.ucCadastroMapGlic2.Name = "ucCadastroMapGlic2";
+            this.ucCadastroMapGlic2.Size = new System.Drawing.Size(769, 486);
+            this.ucCadastroMapGlic2.TabIndex = 122;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(954, 594);
+            this.Controls.Add(this.ucCadastroMapGlic2);
+            this.Controls.Add(this.ucCadastroMapGlic1);
+            this.Controls.Add(this.ucAgenda1);
             this.Controls.Add(this.pnlBordaForm);
             this.Controls.Add(this.pnlBordaPerfil1);
             this.Controls.Add(this.pnlBordaPerfil2);
@@ -328,5 +356,8 @@
         private System.Windows.Forms.Panel pnlBordaPerfil4;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.PictureBox picMinimize;
+        private FinalGlicNow.ucAgenda ucAgenda1;
+        private ucCadastroMapGlic ucCadastroMapGlic1;
+        private ucCadastroMapGlic ucCadastroMapGlic2;
     }
 }
