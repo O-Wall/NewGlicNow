@@ -153,5 +153,21 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
+         
+        public static DataTable ConsultarGlicemia()
+        {
+            try
+            {
+                string sql = "select id, PreCafe, PosCafe, PreAlmoco, PosAlmoco, PreJantar, PosJantar, BasalMatutino,";
+                       sql += " BasalNoturno, Carboidrato, Observacao";
+                       sql += " from tblGlicemia \n";
+                return new AcessoBanco().Consultar(sql, new List<SqlParameter>());
+                    
+
+            }
+        }
+
+
+
     }
 }

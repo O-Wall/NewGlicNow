@@ -22,6 +22,19 @@ namespace FinalGlicNow
         Usuario usuario = new Usuario();
 
 
+        /* TAREFAS
+
+                //AO CLICAR NO txtPesquisa, acessar o banco
+                //AO ESCOLHER A DATA no dtpDataAgenda acessar o banco
+
+                //AJUSTAR TAMANHO DOS CARACTERES EM CADA TEXTBOX
+
+                //FAZER O GRID
+
+                //FAZER O BOTÃO GRAVAR (INSERT)
+
+        */
+
         //MÉTODOS
         private string ValidarPreenchimento()
         {
@@ -55,7 +68,10 @@ namespace FinalGlicNow
             }
         }
 
-        private void PreencherFormulario()
+
+
+        //RESOLVER ESSE PROBLEMINHA AQUI
+                private void PreencherFormulario()
         {
             /*
             txtTitulo.Text = //usuario.Login;
@@ -64,8 +80,7 @@ namespace FinalGlicNow
             txtObservacao.Text = //usuario.Password;            
             */
         }
-
-        private void CarregarGridAgenda()
+                private void CarregarGridAgenda()
         {
             /* AQUI SERÁ PRECISO FAZER O SISTEMA CONVERSAR COM A TABLE "AGENDA"
              do USUARIO POR MEIO DO [ CONSULTAR(); ]
@@ -96,6 +111,8 @@ namespace FinalGlicNow
             }
         }
 
+        //==============================
+
         private void LimparCampos()
         {
             //Irá apagar somente o que está abaixo de "Registrar tarefas"
@@ -105,6 +122,8 @@ namespace FinalGlicNow
             txtObservacao.Clear();
             txtTitulo.Focus();
         }
+
+
         //
 
 
@@ -117,8 +136,9 @@ namespace FinalGlicNow
         }
 
 
+
         //ARRUMAR ESSE PROBLEMINHA AQUI:
-        private void txtPesquisaTitulo_TextChanged(object sender, EventArgs e)
+                private void txtPesquisaTitulo_TextChanged(object sender, EventArgs e)
         {
             /* Fazer busca no banco de dados
                     Preciso verificar se é o "TextChanged" o mais aconselhável
@@ -130,7 +150,7 @@ namespace FinalGlicNow
             CarregarGridAgenda();
             */
         }
-        private void dtpDataAgenda_ValueChanged(object sender, EventArgs e)
+                private void dtpDataAgenda_ValueChanged(object sender, EventArgs e)
         {
             /*
            usuario = new Usuario();
@@ -138,7 +158,7 @@ namespace FinalGlicNow
            CarregarGridAgenda();
            */
         }
-        private void grdAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
+                private void grdAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             /*
             try

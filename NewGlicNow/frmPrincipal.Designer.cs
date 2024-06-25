@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlBordaForm = new System.Windows.Forms.Panel();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.pnlBordaPerfil1 = new System.Windows.Forms.Panel();
@@ -47,13 +48,12 @@
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.pnlBordaForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBordaForm
@@ -67,6 +67,19 @@
             this.pnlBordaForm.Name = "pnlBordaForm";
             this.pnlBordaForm.Size = new System.Drawing.Size(954, 36);
             this.pnlBordaForm.TabIndex = 119;
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picMinimize.Location = new System.Drawing.Point(894, 5);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(24, 24);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picMinimize.TabIndex = 45;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
             // 
             // picClose
             // 
@@ -148,7 +161,7 @@
             this.pnlBordaMenu3.BackColor = System.Drawing.Color.Black;
             this.pnlBordaMenu3.Location = new System.Drawing.Point(183, 92);
             this.pnlBordaMenu3.Name = "pnlBordaMenu3";
-            this.pnlBordaMenu3.Size = new System.Drawing.Size(2, 500);
+            this.pnlBordaMenu3.Size = new System.Drawing.Size(2, 503);
             this.pnlBordaMenu3.TabIndex = 114;
             // 
             // picPerfil
@@ -259,19 +272,6 @@
             this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
             this.pnlBordaPerfil4.TabIndex = 34;
             // 
-            // picMinimize
-            // 
-            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimize.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picMinimize.Location = new System.Drawing.Point(894, 5);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(24, 24);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picMinimize.TabIndex = 45;
-            this.picMinimize.TabStop = false;
-            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,12 +296,12 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlBordaForm.ResumeLayout(false);
             this.pnlBordaForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }
