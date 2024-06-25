@@ -78,7 +78,6 @@ namespace NewGlicNow
                         Observacao = dt.Rows[0]["observacao"].ToString();
                         UsuarioId = Convert.ToInt32(dt.Rows[0]["usuarioId"]);
                     }
-                    return dt;
                 }
             }
             catch (Exception ex)
@@ -96,7 +95,7 @@ namespace NewGlicNow
                     sql = "insert into tblGlicemia \n";
                     sql += "(Data,PreCafe, PosCafe, PreAlmoco, PosAlmoco, PreJantar," +
                         " PosJantar, BasalMatutino, BasalNoturno, Observacao, UsuarioId) \n";
-                    sql += "values \n\";
+                    sql += "values \n";
                     sql += "(@data, @preCafe, @posCafe, @preAlmoco, @posAlmoco," +
                         " @preJantar, @posJantar, @basalMatutino, @basalNoturno, @observacao, @usuarioId) \n";
                     sql += "select @@IDENTITY";

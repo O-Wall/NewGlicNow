@@ -20,7 +20,7 @@ namespace NewGlicNow
 
 
     }
-    Usuario usuario = new Usuario();
+    //Usuario usuario = new Usuario();
 
     //MÉTODOS
 

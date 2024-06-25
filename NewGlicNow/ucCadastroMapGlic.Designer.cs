@@ -129,6 +129,15 @@
             // cboPeriodo
             // 
             this.cboPeriodo.FormattingEnabled = true;
+            this.cboPeriodo.Items.AddRange(new object[] {
+            "PRE-Café",
+            "PÓS-Café",
+            "PRE-Almoço",
+            "PÓS-Almoço",
+            "PRE-Jantar",
+            "PÓS-Jantar",
+            "Basal Matutino",
+            "Basal Noturno"});
             this.cboPeriodo.Location = new System.Drawing.Point(121, 24);
             this.cboPeriodo.Name = "cboPeriodo";
             this.cboPeriodo.Size = new System.Drawing.Size(152, 21);
