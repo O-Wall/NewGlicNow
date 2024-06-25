@@ -27,18 +27,11 @@ namespace NewGlicNow
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            picPerfil.Image = Global.BytesToImage(user.FotoPerfil);
-            /* PUXAR O NOME E A FOTO DO USUÁRIO NO BANCO
-                     Usuario usuario = new Usuario
-                     {
-                         Id = Global.IdUsuarioLogado
-                       };
-
-                    usuario.Consultar();
-                    lblUsuario.Text = $"Usuário: {usuario.Nome}";
-                    lblServidor.Text = $"Servidor: {Global.Servidor}";
-                    lblBanco.Text = $"Banco: {Global.Banco}";
-            */
+            if (user.FotoPerfil != null)
+            {
+                picPerfil.Image = Global.BytesToImage(user.FotoPerfil);
+            }
+            lblNomePerfil.Text = user.NomeCompleto;
         }
 
 

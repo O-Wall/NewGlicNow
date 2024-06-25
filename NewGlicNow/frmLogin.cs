@@ -17,10 +17,7 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-
-
         bool passwordchar = true;
-
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
@@ -46,7 +43,6 @@ namespace NewGlicNow
                 }
             }
         }
-
         private void txtLogin_Enter(object sender, EventArgs e)
         {
             if (txtLogin.Text == "Login")
@@ -54,12 +50,10 @@ namespace NewGlicNow
                 Global.LimparTexto(txtLogin);
             }
         }
-
         private void txtLogin_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtLogin);
         }
-
         private void txtSenha_Enter(object sender, EventArgs e)
         {
             if (passwordchar)
@@ -69,7 +63,6 @@ namespace NewGlicNow
                 passwordchar = false;
             }
         }
-
         private void txtSenha_Leave(object sender, EventArgs e)
         {
             if (txtSenha.Text == string.Empty)
@@ -80,13 +73,11 @@ namespace NewGlicNow
                 passwordchar = true;
             }
         }
-
         private void lblCadastre_Click(object sender, EventArgs e)
         {
             Tag = "Cadastro";
             Close();
         }
-
         private void picClose_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("Deseja encerrar a aplicação?",
@@ -99,7 +90,6 @@ namespace NewGlicNow
                 Close();
             }
         }
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             try
