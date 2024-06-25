@@ -50,17 +50,17 @@ namespace NewGlicNow
             {
                 string msgErro = string.Empty;
 
-                if (txtNome.Text == string.Empty)
+                if (txtNome.Text == string.Empty || txtNome.Text == "Nome Completo")
                 {
-                    msgErro += "Preencha o campo: NOME COMPLETO.\n";
+                    msgErro = "Preencha o campo: NOME COMPLETO.\n";
                 }
 
-                if (txtSenha.Text == string.Empty)
+                if (txtSenha.Text == string.Empty || txtSenha.Text == "Senha")
                 {
                     msgErro += "Preencha o campo: SENHA.\n";
                 }
 
-                if (txtConfSenha.Text == string.Empty)
+                if (txtConfSenha.Text == string.Empty || txtConfSenha.Text == "Confirmar senha")
                 {
                     msgErro += "Preencha o campo: CONFIRMAR SENHA.\n";
                 }
@@ -68,7 +68,7 @@ namespace NewGlicNow
                 {
                     msgErro += "Confirmação da senha não confere.\n";
                 }
-                if (txtLogin.Text == string.Empty)
+                if (txtLogin.Text == string.Empty || txtLogin.Text == "Login")
                 {
                     msgErro = "Preencha o campo: LOGIN.\n";
                 }
@@ -84,12 +84,12 @@ namespace NewGlicNow
                     }
                 }     
 
-                if (txtCPF.Text == string.Empty)
+                if (txtCPF.Text == string.Empty || txtCPF.Text == "CPF")
                 {
                     msgErro += "Preencha o campo: CPF.\n";
                 }
 
-                if (txtEmail.Text == string.Empty)
+                if (txtEmail.Text == string.Empty || txtEmail.Text == "E-mail")
                 {
                     msgErro += "Preencha o campo E-MAIL.\n";
                 }
@@ -104,7 +104,7 @@ namespace NewGlicNow
                         msgErro += "Email inválido.\n";
                     }
                 }
-                if(txtNumero.Text == string.Empty)
+                if(txtNumero.Text == string.Empty || txtNumero.Text == "Nº")
                 {
                     msgErro += "Preencha o campo NÚMERO.\n";
                 }
@@ -124,27 +124,27 @@ namespace NewGlicNow
                     msgErro += "Selecione o campo: Gênero.\n";
                 }
 
-                if (txtCelular.Text == string.Empty)
+                if (txtCelular.Text == string.Empty || txtCelular.Text == "Celular")
                 {
                     msgErro += "Preencha o campo Celular.\n";
                 }
 
-                if (txtEndereco.Text == string.Empty)
+                if (txtEndereco.Text == string.Empty || txtEndereco.Text == "Endereço")
                 {
                     msgErro += "Preencha o campo: ENDEREÇO.\n";
                 }
 
-                if (txtComplemento.Text == string.Empty)
+                if (txtComplemento.Text == string.Empty || txtComplemento.Text == "Complemento")
                 {
                     msgErro += "Preencha o campo: COMPLEMENTO.\n";
                 }
 
-                if (txtBairro.Text == string.Empty)
+                if (txtBairro.Text == string.Empty || txtBairro.Text == "Bairro")
                 {
                     msgErro += "Preencha o campo: BAIRRO.\n";
                 }
 
-                if (txtCEP.Text == string.Empty)
+                if (txtCEP.Text == string.Empty || txtCEP.Text == "CEP")
                 {
                     msgErro += "Preencha o campo: CEP.\n";
                 }
