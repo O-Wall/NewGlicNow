@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfig));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlBordaConfig = new System.Windows.Forms.Panel();
-            this.picBack = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.gboCadastro = new System.Windows.Forms.GroupBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.cboCidade = new System.Windows.Forms.ComboBox();
@@ -56,10 +57,7 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picConfSenha = new System.Windows.Forms.PictureBox();
             this.picPerfil = new System.Windows.Forms.PictureBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.pnlBordaConfig.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.gboCadastro.SuspendLayout();
             this.gboLogin.SuspendLayout();
@@ -73,7 +71,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(67, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(21, 11);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(120, 13);
@@ -83,26 +81,13 @@
             // pnlBordaConfig
             // 
             this.pnlBordaConfig.BackColor = System.Drawing.Color.Brown;
-            this.pnlBordaConfig.Controls.Add(this.picBack);
             this.pnlBordaConfig.Controls.Add(this.picClose);
             this.pnlBordaConfig.Controls.Add(this.lblTitulo);
             this.pnlBordaConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBordaConfig.Location = new System.Drawing.Point(0, 0);
             this.pnlBordaConfig.Name = "pnlBordaConfig";
-            this.pnlBordaConfig.Size = new System.Drawing.Size(934, 33);
+            this.pnlBordaConfig.Size = new System.Drawing.Size(934, 35);
             this.pnlBordaConfig.TabIndex = 102;
-            // 
-            // picBack
-            // 
-            this.picBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBack.BackColor = System.Drawing.Color.Transparent;
-            this.picBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBack.Location = new System.Drawing.Point(8, 4);
-            this.picBack.Name = "picBack";
-            this.picBack.Size = new System.Drawing.Size(24, 24);
-            this.picBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBack.TabIndex = 104;
-            this.picBack.TabStop = false;
             // 
             // picClose
             // 
@@ -116,6 +101,7 @@
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picClose.TabIndex = 44;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // btnConfirmar
             // 
@@ -148,6 +134,27 @@
             this.gboCadastro.TabIndex = 126;
             this.gboCadastro.TabStop = false;
             this.gboCadastro.Text = "Cadastro";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNumero.ForeColor = System.Drawing.Color.Black;
+            this.txtNumero.Location = new System.Drawing.Point(32, 302);
+            this.txtNumero.MaxLength = 5;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(109, 20);
+            this.txtNumero.TabIndex = 122;
+            this.txtNumero.Text = "Nº";
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
+            this.txtComplemento.ForeColor = System.Drawing.Color.Black;
+            this.txtComplemento.Location = new System.Drawing.Point(173, 303);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(291, 20);
+            this.txtComplemento.TabIndex = 121;
+            this.txtComplemento.Text = "Complemento";
             // 
             // txtBairro
             // 
@@ -391,27 +398,6 @@
             this.picPerfil.TabIndex = 2;
             this.picPerfil.TabStop = false;
             // 
-            // txtNumero
-            // 
-            this.txtNumero.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNumero.ForeColor = System.Drawing.Color.Black;
-            this.txtNumero.Location = new System.Drawing.Point(32, 302);
-            this.txtNumero.MaxLength = 5;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(109, 20);
-            this.txtNumero.TabIndex = 122;
-            this.txtNumero.Text = "Nº";
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
-            this.txtComplemento.ForeColor = System.Drawing.Color.Black;
-            this.txtComplemento.Location = new System.Drawing.Point(173, 303);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(291, 20);
-            this.txtComplemento.TabIndex = 121;
-            this.txtComplemento.Text = "Complemento";
-            // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,7 +413,6 @@
             this.Load += new System.EventHandler(this.frmConfig_Load);
             this.pnlBordaConfig.ResumeLayout(false);
             this.pnlBordaConfig.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             this.gboCadastro.ResumeLayout(false);
             this.gboCadastro.PerformLayout();
@@ -446,7 +431,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel pnlBordaConfig;
         private System.Windows.Forms.PictureBox picClose;
-        private System.Windows.Forms.PictureBox picBack;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.GroupBox gboCadastro;
         private System.Windows.Forms.TextBox txtBairro;

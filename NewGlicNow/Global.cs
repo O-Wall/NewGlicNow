@@ -154,6 +154,7 @@ namespace NewGlicNow
             }
         }
          
+        /*ARRUMAR ESSE PROBLEMINHAS AQUI
         public static DataTable ConsultarGlicemia()
         {
             try
@@ -166,7 +167,7 @@ namespace NewGlicNow
 
             }
         }
-
+        */
 
 
     }

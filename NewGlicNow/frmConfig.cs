@@ -20,6 +20,23 @@ namespace FinalGlicNow
             InitializeComponent();
         }
 
+        /*TAREFAS
+            
+            //ASSIM QUE ABRIR O FORMULÁRIO DE CONFIGURAÇÕES, CARREGAR AS INFORMAÇÕES QUE ESTÃO NO BANCO.
+
+            //FAZER O VALIDAR PREENCHIMENTO [LOGIN] ---> Verificar no banco se não existe algum nome que já existe.
+
+            //APAGAR AS MENSAGENS ASSIM QUE CLICAR NO TEXTBOX
+
+           //ATIVAR AS BOLINHAS NA "SENHA" e "CONFIRMAÇÃO"
+
+           //COLOCAR SOMENTE NÚMEROS EM: Celular, CPF, CEP, N°, 
+
+           //TIRAR O NOME "frm..", usar somente o nome da página
+
+         */ 
+
+
         bool load = false;
         Usuario usuario = new Usuario();
         Log_in log_In = new Log_in();
@@ -62,6 +79,8 @@ namespace FinalGlicNow
             cboCidade.SelectedIndex = usuario.endereco.CidadeId;
         }
 
+
+        //ARRUMAR ESSE PROBLEMINHA AQUI:
         private string ValidarPreenchimento()
         {
             try
@@ -95,7 +114,7 @@ namespace FinalGlicNow
                 else
                 {
                     Usuario u = new Usuario();
-                    u.Login = txtUsuario.Text;
+                    u.Login = txtLogin.Text;
                     u.Consultar();
                     if (usuario.Id == 0 && u.Id != 0 ||
                         usuario.Id != 0 && u.Id != 0 && usuario.Id != u.Id)
@@ -185,6 +204,15 @@ namespace FinalGlicNow
             }
 
         }
+        //==============================
+
+
+        //ARRUMAR ESSE PROBLEMINHA AQUI:
+        /* CARREGAR O TIPO DE DIABATE
+         
+         */
+        //==============================
+
 
         private void CarregarEstados()
         {
@@ -252,6 +280,8 @@ namespace FinalGlicNow
 
         }
 
+
+        //RESOLVER ESSE PROBLEMINHA AQUI:
         private void frmConfig_Load(object sender, EventArgs e)
         {
             CarregarEstados();
@@ -260,10 +290,15 @@ namespace FinalGlicNow
             //PreencherFormulario();
             load = true;
         }
+        //===============================
+
+
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarCidades();
         }
+
+
 
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -277,6 +312,8 @@ namespace FinalGlicNow
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
+
+
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -293,6 +330,7 @@ namespace FinalGlicNow
             MessageBox.Show("Usuário atualizado com sucesso!", "Configuração de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
             PreencherFormulario();
         }
+
         private void picClose_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("Deseja fechar a aba configuração?",

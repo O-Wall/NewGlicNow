@@ -88,7 +88,7 @@
             // cboEstado
             // 
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(109, 470);
+            this.cboEstado.Location = new System.Drawing.Point(109, 464);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(170, 21);
             this.cboEstado.TabIndex = 14;
@@ -98,7 +98,7 @@
             // cboCidade
             // 
             this.cboCidade.FormattingEnabled = true;
-            this.cboCidade.Location = new System.Drawing.Point(315, 470);
+            this.cboCidade.Location = new System.Drawing.Point(315, 464);
             this.cboCidade.Name = "cboCidade";
             this.cboCidade.Size = new System.Drawing.Size(226, 21);
             this.cboCidade.TabIndex = 15;
@@ -122,12 +122,13 @@
             // 
             this.txtBairro.BackColor = System.Drawing.SystemColors.Window;
             this.txtBairro.ForeColor = System.Drawing.Color.Black;
-            this.txtBairro.Location = new System.Drawing.Point(109, 425);
+            this.txtBairro.Location = new System.Drawing.Point(109, 426);
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(239, 20);
             this.txtBairro.TabIndex = 12;
             this.txtBairro.Text = "Bairro";
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
             this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
             // 
@@ -135,7 +136,7 @@
             // 
             this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
             this.txtComplemento.ForeColor = System.Drawing.Color.Black;
-            this.txtComplemento.Location = new System.Drawing.Point(285, 389);
+            this.txtComplemento.Location = new System.Drawing.Point(285, 390);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(256, 20);
             this.txtComplemento.TabIndex = 11;
@@ -147,12 +148,13 @@
             // 
             this.txtCEP.BackColor = System.Drawing.SystemColors.Window;
             this.txtCEP.ForeColor = System.Drawing.Color.Black;
-            this.txtCEP.Location = new System.Drawing.Point(384, 428);
+            this.txtCEP.Location = new System.Drawing.Point(384, 426);
             this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(157, 20);
             this.txtCEP.TabIndex = 13;
             this.txtCEP.Text = "CEP";
+            this.txtCEP.TextChanged += new System.EventHandler(this.txtCEP_TextChanged);
             this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Enter);
             this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEP_KeyPress);
             this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
@@ -334,7 +336,7 @@
             // picEstado
             // 
             this.picEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEstado.Location = new System.Drawing.Point(285, 467);
+            this.picEstado.Location = new System.Drawing.Point(285, 461);
             this.picEstado.Name = "picEstado";
             this.picEstado.Size = new System.Drawing.Size(24, 24);
             this.picEstado.TabIndex = 73;
@@ -352,7 +354,7 @@
             // picCidade
             // 
             this.picCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCidade.Location = new System.Drawing.Point(79, 467);
+            this.picCidade.Location = new System.Drawing.Point(79, 461);
             this.picCidade.Name = "picCidade";
             this.picCidade.Size = new System.Drawing.Size(24, 24);
             this.picCidade.TabIndex = 69;
@@ -361,16 +363,17 @@
             // picBairro
             // 
             this.picBairro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBairro.Location = new System.Drawing.Point(79, 424);
+            this.picBairro.Location = new System.Drawing.Point(79, 425);
             this.picBairro.Name = "picBairro";
             this.picBairro.Size = new System.Drawing.Size(24, 24);
             this.picBairro.TabIndex = 67;
             this.picBairro.TabStop = false;
+            this.picBairro.Click += new System.EventHandler(this.picBairro_Click);
             // 
             // picComplemento
             // 
             this.picComplemento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picComplemento.Location = new System.Drawing.Point(255, 385);
+            this.picComplemento.Location = new System.Drawing.Point(255, 386);
             this.picComplemento.Name = "picComplemento";
             this.picComplemento.Size = new System.Drawing.Size(24, 24);
             this.picComplemento.TabIndex = 66;
@@ -379,11 +382,12 @@
             // picCep
             // 
             this.picCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCep.Location = new System.Drawing.Point(354, 424);
+            this.picCep.Location = new System.Drawing.Point(354, 422);
             this.picCep.Name = "picCep";
             this.picCep.Size = new System.Drawing.Size(24, 24);
             this.picCep.TabIndex = 63;
             this.picCep.TabStop = false;
+            this.picCep.Click += new System.EventHandler(this.picCep_Click);
             // 
             // picEndereco
             // 
@@ -463,7 +467,7 @@
             // 
             this.txtNumero.BackColor = System.Drawing.SystemColors.Window;
             this.txtNumero.ForeColor = System.Drawing.Color.Black;
-            this.txtNumero.Location = new System.Drawing.Point(109, 388);
+            this.txtNumero.Location = new System.Drawing.Point(109, 389);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(109, 20);
@@ -476,7 +480,7 @@
             // picNumero
             // 
             this.picNumero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picNumero.Location = new System.Drawing.Point(79, 384);
+            this.picNumero.Location = new System.Drawing.Point(79, 385);
             this.picNumero.Name = "picNumero";
             this.picNumero.Size = new System.Drawing.Size(24, 24);
             this.picNumero.TabIndex = 75;

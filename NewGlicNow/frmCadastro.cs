@@ -20,6 +20,24 @@ namespace NewGlicNow
             InitializeComponent();
         }
 
+        /* TAREFAS
+         
+                //DEIXAR A OPÇÃO DE APARECER CASO O USUÁRIO QUEIRA [PLUS]
+
+                //VALIDAR PREENCHIMENTO [LOGIN]
+
+                //AO CLICAR A PRIMEIRA VEZ, ELE APAGA E EU ESCREVO, ASSIM QUE EU SAIO E CLICO NOVAMENTE, ELE APAGA NOVAMENTE PARA EU ESCREVER.
+
+                //ARRUMAR A GRAVAÇÃO DA DATA DE NASCIMENTO (Não lembro se ainda está gravando "01/01/0001")
+                     É possível colocar o nome "Data de nascimento" e assim que ele clicar mostrar a data?
+
+                //FAZER LIMPAR CAMPOS?
+          
+          
+         */ 
+
+
+
         bool load = false;
         Usuario usuario = new Usuario();
 
@@ -40,7 +58,10 @@ namespace NewGlicNow
             usuario.endereco.Bairro = txtBairro.Text;
             usuario.endereco.CEP = txtCEP.Text;
             usuario.endereco.CidadeId = cboCidade.SelectedIndex;
+
         }
+
+        //ARRUMAR ESSE PROBLEMINHA AQUI:
         private string ValidarPreenchimento()
         {
             try
@@ -165,6 +186,9 @@ namespace NewGlicNow
             }
 
         }
+        //==============================
+
+
         private void CarregarEstados()
         {
             try
@@ -419,5 +443,24 @@ namespace NewGlicNow
             Global.LimparTexto(txtCEP);
         }
 
+        private void picBairro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCEP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picCep_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
