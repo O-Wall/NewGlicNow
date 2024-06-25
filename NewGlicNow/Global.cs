@@ -10,6 +10,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Drawing;
 
 namespace NewGlicNow
 {
@@ -50,6 +53,35 @@ namespace NewGlicNow
             }
             return false;
         }
+        public static Image BytesToImage(byte[] bytes)
+        {
+            try
+            {
+                MemoryStream oMemoryStream = new MemoryStream(bytes);
+                return Image.FromStream(oMemoryStream);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static byte[] ImageToBytes(PictureBox picture)
+        {
+            try
+            {
+                byte[] bytes;
+                MemoryStream oMemoryStream = new MemoryStream();
+                picture.Image.Save(oMemoryStream, ImageFormat.Jpeg);
+                bytes = new byte[oMemoryStream.Length];
+                oMemoryStream.Position = 0;
+                oMemoryStream.Read(bytes, 0, bytes.Length);
+                return bytes;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public static void LimparTexto(TextBox txt)
         {
@@ -64,12 +96,6 @@ namespace NewGlicNow
                 Global.ResetMsg = string.Empty;
             }
         }
-
-        /* LIMPAR O TEXTO BOX EM TODOS OS LUGARES:
-       Criar um método no qual quando eu clico em qualquer textbox, ele faz a mesma coisa.
-           Ficar esperto em relação aos plugins;
-           Fazer outro somente para senhas (Login, Cadastro e Configurações) 
-       */
 
         public static DataTable ConsultarEstados()
         {

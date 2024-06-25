@@ -419,6 +419,7 @@
             // 
             // picEditar
             // 
+            this.picEditar.BackColor = System.Drawing.Color.Black;
             this.picEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEditar.Location = new System.Drawing.Point(119, 104);
             this.picEditar.Name = "picEditar";

@@ -68,24 +68,21 @@ namespace NewGlicNow
                 {
                     msgErro += "Confirmação da senha não confere.\n";
                 }
-
-                /* VERIFICAR ISSO AQUI [LOGIN]
-                 * if (txtLogin.Text == string.Empty)
+                if (txtLogin.Text == string.Empty)
                 {
-                    msgErro = "Preencha o USUÁRIO.\n";
+                    msgErro = "Preencha o campo: LOGIN.\n";
                 }
                 else
                 {
                     Usuario u = new Usuario();
-                    u.Login = txtUsuario.Text;
+                    u.log_In.Login = txtLogin.Text;
                     u.Consultar();
                     if (usuario.Id == 0 && u.Id != 0 ||
                         usuario.Id != 0 && u.Id != 0 && usuario.Id != u.Id)
                     {
-                        msgErro += "Usuário já existente.\n";
+                        msgErro += "Login já existente.\n";
                     }
-                }
-                */
+                }     
 
                 if (txtCPF.Text == string.Empty)
                 {
@@ -107,6 +104,10 @@ namespace NewGlicNow
                         msgErro += "Email inválido.\n";
                     }
                 }
+                if(txtNumero.Text == string.Empty)
+                {
+                    msgErro += "Preencha o campo NÚMERO.\n";
+                }
 
                 if (dtpDataNascimento.Value == DateTime.Parse("01/01/1900"))
                 {
@@ -125,7 +126,7 @@ namespace NewGlicNow
 
                 if (txtCelular.Text == string.Empty)
                 {
-                    msgErro += "Preencha o campo NÚMERO.\n";
+                    msgErro += "Preencha o campo Celular.\n";
                 }
 
                 if (txtEndereco.Text == string.Empty)
@@ -201,7 +202,7 @@ namespace NewGlicNow
             try
             {
                 cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
-                cboTipoDiabete.DisplayMember = "Tipo Diabete";
+                cboTipoDiabete.DisplayMember = "TipoDiabete";
                 cboTipoDiabete.ValueMember = "Id";
                 cboTipoDiabete.SelectedIndex = -1;
             }
@@ -288,6 +289,7 @@ namespace NewGlicNow
                     return;
                 }
                 PreencherClasse();
+                
                 usuario.Gravar();
                 log_In.Gravar();
                 endereco.Gravar();
@@ -320,7 +322,9 @@ namespace NewGlicNow
                     imageBytes = new byte[fs.Length];
                     fs.Read(imageBytes, 0, Convert.ToInt32(fs.Length));
                 }
-                picProfile.Image = ;
+                usuario.FotoPerfil = imageBytes;
+                picProfile.Image = Global.BytesToImage(imageBytes);
+                picProfile.SizeMode = PictureBoxSizeMode.Zoom;
                 MessageBox.Show("Imagem carregada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);                
             }
             catch (Exception ex)
