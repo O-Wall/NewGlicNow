@@ -281,6 +281,7 @@ namespace FinalGlicNow
         }
 
 
+
         //RESOLVER ESSE PROBLEMINHA AQUI:
         private void frmConfig_Load(object sender, EventArgs e)
         {

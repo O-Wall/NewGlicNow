@@ -26,12 +26,13 @@ namespace NewGlicNow
 
                 //VALIDAR PREENCHIMENTO [LOGIN]
 
-                //AO CLICAR A PRIMEIRA VEZ, ELE APAGA E EU ESCREVO, ASSIM QUE EU SAIO E CLICO NOVAMENTE, ELE APAGA NOVAMENTE PARA EU ESCREVER.
+                //AO CLICAR EM QUALQUER TEXTBOX PELA PRIMEIRA VEZ, ELE APAGA E EU ESCREVO, ASSIM QUE EU SAIO E CLICO NOVAMENTE, 
+                        ELE APAGA NOVAMENTE PARA EU ESCREVER.
 
                 //ARRUMAR A GRAVAÇÃO DA DATA DE NASCIMENTO (Não lembro se ainda está gravando "01/01/0001")
                      É possível colocar o nome "Data de nascimento" e assim que ele clicar mostrar a data?
 
-                //FAZER LIMPAR CAMPOS?
+                //FAZER BOTÃO LIMPAR CAMPOS?
           
           
          */ 
@@ -346,14 +347,19 @@ namespace NewGlicNow
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
 
+
+
         private void txtNome_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtNome);
+                Global.ResetMensagem(txtNome);           
         }
         private void txtNome_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtNome);
+                Global.LimparTexto(txtNome);
+
         }
+
+
         private void txtSenha_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtSenha);
@@ -362,6 +368,7 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtSenha);
         }
+
         private void txtConfSenha_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtConfSenha);
@@ -370,6 +377,7 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtConfSenha);
         }
+
         private void txtLogin_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtLogin);
@@ -378,30 +386,41 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtLogin);
         }
+
+
         private void txtCPF_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtCPF);
         }
         private void txtCPF_Enter(object sender, EventArgs e)
         {
+            if (txtCPF.Text == "CPF") ;
             Global.LimparTexto(txtCPF);
         }
+
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtEmail);
+            if (txtEmail.Text == "Email")
+            {
+                Global.ResetMensagem(txtEmail);
+            }
+
         }
         private void txtEmail_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtEmail);
+                Global.ResetMensagem(txtEmail);           
         }
+
         private void txtCelular_Leave(object sender, EventArgs e)
         {
+            if (txtCelular.Text == "Celular") ;
             Global.ResetMensagem(txtCelular);
         }
         private void txtCelular_Enter(object sender, EventArgs e)
         {
             Global.LimparTexto(txtCelular);
         }
+
         private void txtEndereco_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtEndereco);
@@ -410,6 +429,7 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtEndereco);
         }
+
         private void txtNumero_Enter(object sender, EventArgs e)
         {
             Global.LimparTexto(txtNumero);
@@ -418,6 +438,7 @@ namespace NewGlicNow
         {
             Global.ResetMensagem(txtNumero);
         }
+
         private void txtComplemento_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtComplemento);
@@ -426,6 +447,7 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtComplemento);
         }
+
         private void txtBairro_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtBairro);
@@ -434,6 +456,7 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtBairro);
         }
+
         private void txtCEP_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtCEP);
@@ -443,24 +466,6 @@ namespace NewGlicNow
             Global.LimparTexto(txtCEP);
         }
 
-        private void picBairro_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void txtBairro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCEP_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picCep_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
