@@ -22,9 +22,7 @@ namespace NewGlicNow
 
         bool load = false;
         Usuario usuario = new Usuario();
-        Log_in log_In = new Log_in();
 
-        //MÉTODOS
         private void PreencherClasse()
         {
             usuario.NomeCompleto = txtNome.Text;
@@ -232,10 +230,6 @@ namespace NewGlicNow
                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //
-
-
-        //"FUNÇÕES"
         private void FrmCadastro_Load(object sender, EventArgs e)
         {
             CarregarEstados();
@@ -244,7 +238,6 @@ namespace NewGlicNow
             load = true;
 
         }
-
         private void PicClose_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("Certeza que deseja encerrar o Cadastro?",
@@ -256,13 +249,10 @@ namespace NewGlicNow
                 Close();
             }
         }
-
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarCidades();
         }
-
-
         private void txtCEP_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
@@ -287,8 +277,7 @@ namespace NewGlicNow
                     MessageBox.Show(MsgErro, "Erro de Preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                PreencherClasse();
-                
+                PreencherClasse();                
                 usuario.Gravar();
                 MessageBox.Show("Usuário Cadastrado com sucesso!", "Cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
@@ -299,7 +288,6 @@ namespace NewGlicNow
                 MessageBox.Show("Erro -->"+ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void picEditar_Click(object sender, EventArgs e)
         {
             OpenFileDialog abrirImg = new OpenFileDialog();
@@ -329,15 +317,106 @@ namespace NewGlicNow
                 MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
 
-        private void cboTipoDiabete_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtNome_Leave(object sender, EventArgs e)
         {
-
+            Global.ResetMensagem(txtNome);
+        }
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtNome);
+        }
+        private void txtSenha_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtNome);
+        }
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtSenha);
+        }
+        private void txtConfSenha_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtConfSenha);
+        }
+        private void txtConfSenha_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtConfSenha);
+        }
+        private void txtLogin_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtLogin);
+        }
+        private void txtLogin_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtLogin);
+        }
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtCPF);
+        }
+        private void txtCPF_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtCPF);
+        }
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtEmail);
+        }
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtEmail);
+        }
+        private void txtCelular_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtCelular);
+        }
+        private void txtCelular_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtCelular);
+        }
+        private void txtEndereco_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtEndereco);
+        }
+        private void txtEndereco_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtEndereco);
+        }
+        private void txtNumero_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtNumero);
+        }
+        private void txtNumero_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtNumero);
+        }
+        private void txtComplemento_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtComplemento);
+        }
+        private void txtComplemento_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtComplemento);
+        }
+        private void txtBairro_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtBairro);
+        }
+        private void txtBairro_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtBairro);
+        }
+        private void txtCEP_Leave(object sender, EventArgs e)
+        {
+            Global.ResetMensagem(txtCEP);
+        }
+        private void txtCEP_Enter(object sender, EventArgs e)
+        {
+            Global.LimparTexto(txtCEP);
         }
     }
 }

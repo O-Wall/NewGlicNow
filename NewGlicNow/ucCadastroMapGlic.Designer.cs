@@ -36,13 +36,14 @@
             this.lblPeriodo = new System.Windows.Forms.Label();
             this.lblObservacao = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtValores
             // 
-            this.txtValores.Location = new System.Drawing.Point(138, 65);
+            this.txtValores.Location = new System.Drawing.Point(131, 54);
             this.txtValores.MaxLength = 5;
             this.txtValores.Name = "txtValores";
             this.txtValores.Size = new System.Drawing.Size(100, 20);
@@ -50,7 +51,7 @@
             // 
             // txtObservacao
             // 
-            this.txtObservacao.Location = new System.Drawing.Point(138, 97);
+            this.txtObservacao.Location = new System.Drawing.Point(131, 86);
             this.txtObservacao.MaxLength = 1000;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
@@ -60,7 +61,7 @@
             // cboPeriodo
             // 
             this.cboPeriodo.FormattingEnabled = true;
-            this.cboPeriodo.Location = new System.Drawing.Point(138, 29);
+            this.cboPeriodo.Location = new System.Drawing.Point(131, 18);
             this.cboPeriodo.Name = "cboPeriodo";
             this.cboPeriodo.Size = new System.Drawing.Size(152, 21);
             this.cboPeriodo.TabIndex = 11;
@@ -77,7 +78,7 @@
             // lblValores
             // 
             this.lblValores.AutoSize = true;
-            this.lblValores.Location = new System.Drawing.Point(32, 65);
+            this.lblValores.Location = new System.Drawing.Point(25, 54);
             this.lblValores.Name = "lblValores";
             this.lblValores.Size = new System.Drawing.Size(100, 13);
             this.lblValores.TabIndex = 9;
@@ -86,7 +87,7 @@
             // lblPeriodo
             // 
             this.lblPeriodo.AutoSize = true;
-            this.lblPeriodo.Location = new System.Drawing.Point(32, 29);
+            this.lblPeriodo.Location = new System.Drawing.Point(25, 18);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(45, 13);
             this.lblPeriodo.TabIndex = 8;
@@ -95,7 +96,7 @@
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(32, 100);
+            this.lblObservacao.Location = new System.Drawing.Point(25, 89);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(65, 13);
             this.lblObservacao.TabIndex = 7;
@@ -109,19 +110,29 @@
             this.panel1.Controls.Add(this.lblObservacao);
             this.panel1.Controls.Add(this.lblPeriodo);
             this.panel1.Controls.Add(this.lblValores);
-            this.panel1.Location = new System.Drawing.Point(25, 319);
+            this.panel1.Location = new System.Drawing.Point(25, 297);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(639, 174);
+            this.panel1.Size = new System.Drawing.Size(639, 157);
             this.panel1.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(547, 473);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 35);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Name = "ucCadastroMapGlic";
-            this.Size = new System.Drawing.Size(684, 496);
+            this.Size = new System.Drawing.Size(684, 524);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -139,5 +150,6 @@
         private System.Windows.Forms.Label lblPeriodo;
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

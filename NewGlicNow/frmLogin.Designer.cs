@@ -196,6 +196,7 @@
             // picClose
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.BackColor = System.Drawing.Color.Gray;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picClose.Location = new System.Drawing.Point(600, 12);
             this.picClose.Name = "picClose";
