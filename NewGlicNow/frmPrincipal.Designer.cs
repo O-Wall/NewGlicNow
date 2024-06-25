@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlBordaForm = new System.Windows.Forms.Panel();
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
@@ -48,9 +49,9 @@
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ucAgenda1 = new FinalGlicNow.ucAgenda();
             this.ucCadastroMapGlic1 = new NewGlicNow.ucCadastroMapGlic();
-            this.ucCadastroMapGlic2 = new NewGlicNow.ucCadastroMapGlic();
             this.pnlBordaForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -100,7 +101,7 @@
             // lblDashboard
             // 
             this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Location = new System.Drawing.Point(12, 9);
+            this.lblDashboard.Location = new System.Drawing.Point(21, 13);
             this.lblDashboard.Name = "lblDashboard";
             this.lblDashboard.Size = new System.Drawing.Size(49, 13);
             this.lblDashboard.TabIndex = 26;
@@ -275,6 +276,13 @@
             this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
             this.pnlBordaPerfil4.TabIndex = 34;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = null;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // ucAgenda1
             // 
             this.ucAgenda1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(96)))), ((int)(((byte)(88)))));
@@ -285,17 +293,10 @@
             // 
             // ucCadastroMapGlic1
             // 
-            this.ucCadastroMapGlic1.Location = new System.Drawing.Point(373, 194);
+            this.ucCadastroMapGlic1.Location = new System.Drawing.Point(185, 108);
             this.ucCadastroMapGlic1.Name = "ucCadastroMapGlic1";
-            this.ucCadastroMapGlic1.Size = new System.Drawing.Size(13, 8);
+            this.ucCadastroMapGlic1.Size = new System.Drawing.Size(769, 488);
             this.ucCadastroMapGlic1.TabIndex = 121;
-            // 
-            // ucCadastroMapGlic2
-            // 
-            this.ucCadastroMapGlic2.Location = new System.Drawing.Point(185, 108);
-            this.ucCadastroMapGlic2.Name = "ucCadastroMapGlic2";
-            this.ucCadastroMapGlic2.Size = new System.Drawing.Size(769, 486);
-            this.ucCadastroMapGlic2.TabIndex = 122;
             // 
             // frmPrincipal
             // 
@@ -303,7 +304,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(954, 594);
-            this.Controls.Add(this.ucCadastroMapGlic2);
             this.Controls.Add(this.ucCadastroMapGlic1);
             this.Controls.Add(this.ucAgenda1);
             this.Controls.Add(this.pnlBordaForm);
@@ -356,8 +356,8 @@
         private System.Windows.Forms.Panel pnlBordaPerfil4;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.PictureBox picMinimize;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private FinalGlicNow.ucAgenda ucAgenda1;
         private ucCadastroMapGlic ucCadastroMapGlic1;
-        private ucCadastroMapGlic ucCadastroMapGlic2;
     }
 }

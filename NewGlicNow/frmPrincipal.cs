@@ -39,9 +39,9 @@ namespace NewGlicNow
             {
                 picPerfil.Image = Global.BytesToImage(user.FotoPerfil);
             }
-            lblNomePerfil.Text = user.NomeCompleto; //Vai ficar estranho o nome completo, será que dá para limitar?
 
-            //Deixar o botão agenda como "inicial" e trazer a ucAgenda junto, podemos colocar uma mensagem na parte branca.
+            lblNomePerfil.Text = user.NomeCompleto; 
+            ucAgenda1.BringToFront();            
         }
 
 
@@ -50,13 +50,14 @@ namespace NewGlicNow
         {
             pnlEnfeite.Height = btnAgenda.Height;
             pnlEnfeite.Top = btnAgenda.Top;
-            //Trazer o ucAgenda para frente
+            ucAgenda1.BringToFront();
+            
         }
         private void btnGlicemia_Click(object sender, EventArgs e)
         {
             pnlEnfeite.Height = btnGlicemia.Height;
             pnlEnfeite.Top = btnGlicemia.Top;
-            //Trazer o ucCadastroMapGlic para frente
+            ucCadastroMapGlic1.BringToFront();            
         }
         private void btnConfiguracao_Click(object sender, EventArgs e)
         {
