@@ -17,8 +17,9 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-        bool passwordchar = true;
 
+
+        bool passwordchar = true;
 
 
         private void FrmLogin_Load(object sender, EventArgs e)
