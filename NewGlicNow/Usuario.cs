@@ -36,6 +36,7 @@ namespace NewGlicNow
             TipoDiabeteId = 0;
             SexoId = 0;
             log_In = new Log_in();
+            endereco = new Endereco();
         }
                 
         AcessoBanco acesso = new AcessoBanco();
@@ -50,12 +51,12 @@ namespace NewGlicNow
                 using (TransactionScope transacao = new TransactionScope())
                 {
                     parameters.Clear();
-                    if (Id != 0)
+                    if (Id == 0)
                     {
                         sql = "insert into tblUsuario \n";
-                        sql += "(NomeCompleto, CPF, DataNascimento, Email, FotoPerfil, Celular, TipoDiabeteId, SexoId)\n";
+                        sql += "(NomeCompleto, CPF, DataNascimento, Email, Celular, FotoPerfil, TipoDiabeteId, SexoId)\n";
                         sql += "values \n";
-                        sql += "(@nomeCompleto, @cpf, @dataNascimento, @email, @fotoPerfil, @celular, @tipoDiabeteId, @sexoId);\n";
+                        sql += "(@nomeCompleto, @cpf, @dataNascimento, @email, @celular, @fotoPerfil, @tipoDiabeteId, @sexoId);\n";
                         sql += "select @@IDENTITY";
                     }
                     else
@@ -68,7 +69,7 @@ namespace NewGlicNow
                         sql += "Email = @email, \n";
                         sql += "FotoPerfil = @fotoPerfil, \n";
                         sql += "Celular = @Celular, \n";
-                        sql += "TipoDiabetesId = @tipoDiabeteId, \n";
+                        sql += "TipoDiabeteId = @tipoDiabeteId, \n";
                         sql += "SexoId = @sexoId \n";
                         sql += "where Id = @id; \n";
                         parameters.Add(new SqlParameter("@id", Id));
@@ -110,7 +111,7 @@ namespace NewGlicNow
             {
                 parameters.Clear();
                 sql = "select Id, NomeCompleto, CPF, DataNascimento," +
-                    " Email, FotoPerfil, Celular, TipoDiabeteId, SexoId \n";
+                    " Email, Celular, FotoPerfil, TipoDiabeteId, SexoId \n";
                 sql += "from tblUsuario \n";
                 if (Id != 0)
                 {

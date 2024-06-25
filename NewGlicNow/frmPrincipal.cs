@@ -17,7 +17,7 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-
+        Usuario user = new Usuario();
         //MÉTODOS
 
             //CRIAR ALGUM QUE FAÇA UM FORMULÁRIO CHAMAR OUTRO.
@@ -26,6 +26,7 @@ namespace NewGlicNow
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            picPerfil.Image = Global.BytesToImage(user.FotoPerfil);
             /* PUXAR O NOME E A FOTO DO USUÁRIO NO BANCO
                      Usuario usuario = new Usuario
                      {

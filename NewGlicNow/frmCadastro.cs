@@ -23,7 +23,6 @@ namespace NewGlicNow
         bool load = false;
         Usuario usuario = new Usuario();
         Log_in log_In = new Log_in();
-        Endereco endereco = new Endereco();
 
         //MÉTODOS
         private void PreencherClasse()
@@ -291,8 +290,6 @@ namespace NewGlicNow
                 PreencherClasse();
                 
                 usuario.Gravar();
-                log_In.Gravar();
-                endereco.Gravar();
                 MessageBox.Show("Usuário Cadastrado com sucesso!", "Cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
@@ -309,11 +306,11 @@ namespace NewGlicNow
             abrirImg.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
             string profile = "";
 
-            if (abrirImg.ShowDialog() == DialogResult.OK)
+            if (abrirImg.ShowDialog() != DialogResult.OK)
             {
-                profile = abrirImg.FileName;
+                return;
             }
-
+            profile = abrirImg.FileName;
             try
             {
                 byte[] imageBytes;
