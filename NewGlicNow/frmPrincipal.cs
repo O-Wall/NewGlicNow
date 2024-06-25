@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalGlicNow;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,9 @@ namespace NewGlicNow
         {
             pnlEnfeite.Height = btnConfiguracao.Height;
             pnlEnfeite.Top = btnConfiguracao.Top;
+
+            frmConfig frmConfig = new frmConfig();
+            frmConfig.ShowDialog();
 
         }
 

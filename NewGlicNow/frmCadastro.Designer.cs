@@ -196,6 +196,7 @@
             this.cboTipoDiabete.Size = new System.Drawing.Size(256, 21);
             this.cboTipoDiabete.TabIndex = 7;
             this.cboTipoDiabete.Text = "Tipo de Diabete";
+            this.cboTipoDiabete.SelectedIndexChanged += new System.EventHandler(this.cboTipoDiabete_SelectedIndexChanged);
             // 
             // dtpDataNascimento
             // 

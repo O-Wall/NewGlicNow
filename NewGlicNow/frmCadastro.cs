@@ -188,7 +188,7 @@ namespace NewGlicNow
             try
             {
                 cboGenero.DataSource = Global.ConsultarSexo();
-                cboGenero.DisplayMember = "Gênero";
+                cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
                 cboGenero.SelectedIndex = -1;
             }
@@ -202,7 +202,7 @@ namespace NewGlicNow
             try
             {
                 cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
-                cboTipoDiabete.DisplayMember = "TipoDiabete";
+                cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
                 cboTipoDiabete.SelectedIndex = -1;
             }
@@ -336,6 +336,11 @@ namespace NewGlicNow
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
+        }
+
+        private void cboTipoDiabete_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

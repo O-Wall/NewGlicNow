@@ -257,7 +257,7 @@ namespace FinalGlicNow
             CarregarEstados();
             CarregarSexos();
             CarregarTipoDiabetes();
-            PreencherFormulario();
+            //PreencherFormulario();
             load = true;
         }
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
