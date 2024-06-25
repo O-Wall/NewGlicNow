@@ -62,7 +62,7 @@ namespace NewGlicNow
         private void dtpData_ValueChanged(object sender, EventArgs e)
         {
             usuario = new Usuario();
-            usuario.mapaGlic.Data = dtpData.Value;
+            usuario.mapaGlic.Data = dtpDataInicio.Value;
             CarregarGridGlic();
         }
 

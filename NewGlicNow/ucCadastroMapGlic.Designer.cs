@@ -38,7 +38,10 @@
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
             this.cboPeriodo = new System.Windows.Forms.ComboBox();
             this.btnMapa = new System.Windows.Forms.Button();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataFim = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).BeginInit();
             this.grpRegistrar.SuspendLayout();
             this.SuspendLayout();
@@ -155,22 +158,53 @@
             this.btnMapa.Text = "&Mapa de Glicemia";
             this.btnMapa.UseVisualStyleBackColor = true;
             // 
-            // dtpData
+            // dtpDataInicio
             // 
-            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(56, 14);
-            this.dtpData.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(97, 20);
-            this.dtpData.TabIndex = 15;
-            this.dtpData.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
-            this.dtpData.ValueChanged += new System.EventHandler(this.dtpData_ValueChanged);
+            this.dtpDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataInicio.Location = new System.Drawing.Point(56, 14);
+            this.dtpDataInicio.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataInicio.Name = "dtpDataInicio";
+            this.dtpDataInicio.Size = new System.Drawing.Size(97, 20);
+            this.dtpDataInicio.TabIndex = 15;
+            this.dtpDataInicio.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            this.dtpDataInicio.ValueChanged += new System.EventHandler(this.dtpData_ValueChanged);
+            // 
+            // dtpDataFim
+            // 
+            this.dtpDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataFim.Location = new System.Drawing.Point(620, 14);
+            this.dtpDataFim.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataFim.Name = "dtpDataFim";
+            this.dtpDataFim.Size = new System.Drawing.Size(97, 20);
+            this.dtpDataFim.TabIndex = 19;
+            this.dtpDataFim.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(159, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(579, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "label2";
             // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpDataFim);
+            this.Controls.Add(this.dtpDataInicio);
             this.Controls.Add(this.btnMapa);
             this.Controls.Add(this.dgvMapaGlic);
             this.Controls.Add(this.btnGravar);
@@ -182,6 +216,7 @@
             this.grpRegistrar.ResumeLayout(false);
             this.grpRegistrar.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -197,6 +232,9 @@
         private System.Windows.Forms.GroupBox grpRegistrar;
         private System.Windows.Forms.ComboBox cboPeriodo;
         private System.Windows.Forms.Button btnMapa;
-        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.DateTimePicker dtpDataInicio;
+        private System.Windows.Forms.DateTimePicker dtpDataFim;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
