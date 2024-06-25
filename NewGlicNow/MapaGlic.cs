@@ -26,7 +26,7 @@ namespace NewGlicNow
         public MapaGlic()
         {
             Id = 0;
-            Data = DateTime.MinValue;
+            Data = DateTime.Now;
             PreCafe = 0;
             PosCafe = 0;
             PreAlmoco = 0;
@@ -43,8 +43,43 @@ namespace NewGlicNow
         List<SqlParameter> parameters = new List<SqlParameter>();
         string sql = string.Empty;
 
-
-        /*
+        public DataTable Consultar()
+        {
+            try
+            {                
+                parameters.Clear();
+                sql = "select Id, Data, PreCafe, PosCafe," +
+                    " PreAlmoco, PosAlmoco, PreJantar, PosJantar, BasalMatutino, BasalNoturno," +
+                    "Observacao, UsuarioId \n";
+                sql += "from tblGlicemia \n";
+                sql += "where UsuarioId = @usuarioId \n";
+                //sql += " and data beetwen ";
+                parameters.Add(new SqlParameter("@UsuarioId", UsuarioId));
+                parameters.Add(new SqlParameter("@data", Data));
+                dt = acesso.Consultar(sql, parameters);
+                if(dt.Rows.Count==1)
+                {
+                    Id = Convert.ToInt32(dt.Rows[0]["id"]);
+                    Data = Convert.ToDateTime(dt.Rows[0]["data"]);
+                    PreCafe = Convert.ToInt32(dt.Rows[0]["preCafe"]);
+                    PosCafe = Convert.ToInt32(dt.Rows[0]["posCafe"]);
+                    PreAlmoco = Convert.ToInt32(dt.Rows[0]["preAlmoco"]);
+                    PosAlmoco = Convert.ToInt32(dt.Rows[0]["posAlmoco"]);
+                    PreJantar = Convert.ToInt32(dt.Rows[0]["preJantar"]);
+                    PosJantar = Convert.ToInt32(dt.Rows[0]["posJantar"]);
+                    BasalMatutino = Convert.ToInt32(dt.Rows[0]["basalMatutino"]);
+                    BasalNoturno = Convert.ToInt32(dt.Rows[0]["basalNoturno"]);
+                    Observacao = Convert.ToString(dt.Rows[0]["observacao"]);
+                    UsuarioId = Convert.ToInt32(dt.Rows[0]["usuarioId"]);
+                }
+                return dt;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+       
         public void Gravar()
         {
             try
@@ -99,8 +134,10 @@ namespace NewGlicNow
                 }
 
             }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
-
-        */
     }
 }
