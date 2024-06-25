@@ -42,7 +42,7 @@
             // 
             // txtValores
             // 
-            this.txtValores.Location = new System.Drawing.Point(135, 62);
+            this.txtValores.Location = new System.Drawing.Point(138, 65);
             this.txtValores.MaxLength = 5;
             this.txtValores.Name = "txtValores";
             this.txtValores.Size = new System.Drawing.Size(100, 20);
@@ -50,17 +50,17 @@
             // 
             // txtObservacao
             // 
-            this.txtObservacao.Location = new System.Drawing.Point(101, 97);
+            this.txtObservacao.Location = new System.Drawing.Point(138, 97);
             this.txtObservacao.MaxLength = 1000;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(134, 20);
+            this.txtObservacao.Size = new System.Drawing.Size(484, 60);
             this.txtObservacao.TabIndex = 12;
             // 
             // cboPeriodo
             // 
             this.cboPeriodo.FormattingEnabled = true;
-            this.cboPeriodo.Location = new System.Drawing.Point(83, 26);
+            this.cboPeriodo.Location = new System.Drawing.Point(138, 29);
             this.cboPeriodo.Name = "cboPeriodo";
             this.cboPeriodo.Size = new System.Drawing.Size(152, 21);
             this.cboPeriodo.TabIndex = 11;
@@ -111,7 +111,7 @@
             this.panel1.Controls.Add(this.lblValores);
             this.panel1.Location = new System.Drawing.Point(25, 319);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 141);
+            this.panel1.Size = new System.Drawing.Size(639, 174);
             this.panel1.TabIndex = 14;
             // 
             // ucCadastroMapGlic
