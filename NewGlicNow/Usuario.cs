@@ -22,6 +22,7 @@ namespace NewGlicNow
         public int SexoId { get; set; }
         public Log_in log_In { get; set; }
         public Endereco endereco { get; set; }
+        public MapaGlic mapaGlic { get; set; }
         
 
         public Usuario()
@@ -37,6 +38,7 @@ namespace NewGlicNow
             SexoId = 0;
             log_In = new Log_in();
             endereco = new Endereco();
+            mapaGlic = new MapaGlic();
         }
                 
         AcessoBanco acesso = new AcessoBanco();

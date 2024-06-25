@@ -37,8 +37,8 @@
             this.dgvMapaGlic = new System.Windows.Forms.DataGridView();
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
             this.cboPeriodo = new System.Windows.Forms.ComboBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnMapa = new System.Windows.Forms.Button();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).BeginInit();
             this.grpRegistrar.SuspendLayout();
             this.SuspendLayout();
@@ -46,15 +46,16 @@
             // txtValores
             // 
             this.txtValores.Location = new System.Drawing.Point(121, 60);
-            this.txtValores.MaxLength = 5;
+            this.txtValores.MaxLength = 3;
             this.txtValores.Name = "txtValores";
             this.txtValores.Size = new System.Drawing.Size(100, 20);
             this.txtValores.TabIndex = 13;
+            this.txtValores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValores_KeyPress);
             // 
             // txtObservacao
             // 
             this.txtObservacao.Location = new System.Drawing.Point(121, 92);
-            this.txtObservacao.MaxLength = 1000;
+            this.txtObservacao.MaxLength = 100;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(484, 60);
@@ -104,12 +105,13 @@
             this.dgvMapaGlic.AllowUserToResizeRows = false;
             this.dgvMapaGlic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMapaGlic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMapaGlic.Location = new System.Drawing.Point(56, 22);
+            this.dgvMapaGlic.Location = new System.Drawing.Point(56, 40);
             this.dgvMapaGlic.MultiSelect = false;
             this.dgvMapaGlic.Name = "dgvMapaGlic";
             this.dgvMapaGlic.ReadOnly = true;
-            this.dgvMapaGlic.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMapaGlic.Size = new System.Drawing.Size(661, 219);
+            this.dgvMapaGlic.RowHeadersVisible = false;
+            this.dgvMapaGlic.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvMapaGlic.Size = new System.Drawing.Size(661, 189);
             this.dgvMapaGlic.TabIndex = 16;
             // 
             // grpRegistrar
@@ -131,12 +133,12 @@
             // 
             this.cboPeriodo.FormattingEnabled = true;
             this.cboPeriodo.Items.AddRange(new object[] {
-            "PRE-Café",
-            "PÓS-Café",
-            "PRE-Almoço",
-            "PÓS-Almoço",
-            "PRE-Jantar",
-            "PÓS-Jantar",
+            "Pre-Café",
+            "Pós-Café",
+            "Pre-Almoço",
+            "Pós-Almoço",
+            "Pre-Jantar",
+            "Pós-Jantar",
             "Basal Matutino",
             "Basal Noturno"});
             this.cboPeriodo.Location = new System.Drawing.Point(121, 24);
@@ -150,19 +152,32 @@
             this.btnMapa.Name = "btnMapa";
             this.btnMapa.Size = new System.Drawing.Size(103, 35);
             this.btnMapa.TabIndex = 18;
-            this.btnMapa.Text = "&Gerar Mapa";
+            this.btnMapa.Text = "&Mapa de Glicemia";
             this.btnMapa.UseVisualStyleBackColor = true;
+            // 
+            // dtpData
+            // 
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(56, 14);
+            this.dtpData.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(97, 20);
+            this.dtpData.TabIndex = 15;
+            this.dtpData.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            this.dtpData.ValueChanged += new System.EventHandler(this.dtpData_ValueChanged);
             // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpData);
             this.Controls.Add(this.btnMapa);
             this.Controls.Add(this.dgvMapaGlic);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.grpRegistrar);
             this.Name = "ucCadastroMapGlic";
             this.Size = new System.Drawing.Size(763, 479);
+            this.Load += new System.EventHandler(this.ucCadastroMapGlic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).EndInit();
             this.grpRegistrar.ResumeLayout(false);
             this.grpRegistrar.PerformLayout();
@@ -180,8 +195,8 @@
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.DataGridView dgvMapaGlic;
         private System.Windows.Forms.GroupBox grpRegistrar;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox cboPeriodo;
         private System.Windows.Forms.Button btnMapa;
+        private System.Windows.Forms.DateTimePicker dtpData;
     }
 }
