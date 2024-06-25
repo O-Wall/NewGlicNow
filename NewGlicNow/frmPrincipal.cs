@@ -40,17 +40,11 @@ namespace NewGlicNow
         }
 
 
-
-
-        //ARRUMAR ESSE PROBLEMINHA AQUI:
+              
         private void btnAgenda_Click(object sender, EventArgs e)
         {
             pnlEnfeite.Height = btnAgenda.Height;
-            pnlEnfeite.Top = btnAgenda.Top;
-
-            /* Colocar o User Control da Agenda para frente, assim que acionado o botão:
-                    [NOME DO USER CONTROL].BringToFront();
-            */
+            pnlEnfeite.Top = btnAgenda.Top;       
         }
         private void btnGlicemia_Click(object sender, EventArgs e)
         {
@@ -63,9 +57,6 @@ namespace NewGlicNow
             pnlEnfeite.Top = btnConfiguracao.Top;
 
         }
-        //===============================
-
-
 
 
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
