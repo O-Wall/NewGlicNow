@@ -38,6 +38,7 @@
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
             this.cboPeriodo = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnMapa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).BeginInit();
             this.grpRegistrar.SuspendLayout();
             this.SuspendLayout();
@@ -143,10 +144,20 @@
             this.cboPeriodo.Size = new System.Drawing.Size(152, 21);
             this.cboPeriodo.TabIndex = 14;
             // 
+            // btnMapa
+            // 
+            this.btnMapa.Location = new System.Drawing.Point(320, 428);
+            this.btnMapa.Name = "btnMapa";
+            this.btnMapa.Size = new System.Drawing.Size(103, 35);
+            this.btnMapa.TabIndex = 18;
+            this.btnMapa.Text = "&Gerar Mapa";
+            this.btnMapa.UseVisualStyleBackColor = true;
+            // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnMapa);
             this.Controls.Add(this.dgvMapaGlic);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.grpRegistrar);
@@ -171,5 +182,6 @@
         private System.Windows.Forms.GroupBox grpRegistrar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox cboPeriodo;
+        private System.Windows.Forms.Button btnMapa;
     }
 }
