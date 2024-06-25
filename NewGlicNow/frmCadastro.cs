@@ -332,7 +332,7 @@ namespace NewGlicNow
         }
         private void txtSenha_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtNome);
+            Global.ResetMensagem(txtSenha);
         }
         private void txtSenha_Enter(object sender, EventArgs e)
         {
