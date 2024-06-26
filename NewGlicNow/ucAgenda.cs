@@ -71,7 +71,7 @@ namespace FinalGlicNow
 
 
         //RESOLVER ESSE PROBLEMINHA AQUI
-                private void PreencherFormulario()
+        private void PreencherFormulario()
         {
             /*
             txtTitulo.Text = //usuario.Login;
@@ -80,7 +80,7 @@ namespace FinalGlicNow
             txtObservacao.Text = //usuario.Password;            
             */
         }
-                private void CarregarGridAgenda()
+        private void CarregarGridAgenda()
         {
             /* AQUI SERÁ PRECISO FAZER O SISTEMA CONVERSAR COM A TABLE "AGENDA"
              do USUARIO POR MEIO DO [ CONSULTAR(); ]
@@ -131,14 +131,14 @@ namespace FinalGlicNow
         //"FUNÇÕES"
         private void ucAgenda_Load(object sender, EventArgs e)
         {
-            CarregarGridAgenda();
+            //CarregarGridAgenda();
             load = true;
         }
 
 
 
         //ARRUMAR ESSE PROBLEMINHA AQUI:
-                private void txtPesquisaTitulo_TextChanged(object sender, EventArgs e)
+        private void txtPesquisaTitulo_TextChanged(object sender, EventArgs e)
         {
             /* Fazer busca no banco de dados
                     Preciso verificar se é o "TextChanged" o mais aconselhável
@@ -150,7 +150,7 @@ namespace FinalGlicNow
             CarregarGridAgenda();
             */
         }
-                private void dtpDataAgenda_ValueChanged(object sender, EventArgs e)
+        private void dtpDataAgenda_ValueChanged(object sender, EventArgs e)
         {
             /*
            usuario = new Usuario();
@@ -158,7 +158,7 @@ namespace FinalGlicNow
            CarregarGridAgenda();
            */
         }
-                private void grdAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void grdAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             /*
             try
@@ -193,7 +193,7 @@ namespace FinalGlicNow
         {
             LimparCampos();
         }
-             
+
 
 
     }

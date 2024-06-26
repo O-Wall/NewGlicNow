@@ -42,6 +42,7 @@
             this.dtpDataFim = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).BeginInit();
             this.grpRegistrar.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +100,7 @@
             this.btnGravar.TabIndex = 15;
             this.btnGravar.Text = "&Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // dgvMapaGlic
             // 
@@ -116,6 +118,7 @@
             this.dgvMapaGlic.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvMapaGlic.Size = new System.Drawing.Size(661, 189);
             this.dgvMapaGlic.TabIndex = 16;
+            this.dgvMapaGlic.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMapaGlic_CellClick);
             // 
             // grpRegistrar
             // 
@@ -161,18 +164,17 @@
             // dtpDataInicio
             // 
             this.dtpDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataInicio.Location = new System.Drawing.Point(56, 14);
+            this.dtpDataInicio.Location = new System.Drawing.Point(180, 14);
             this.dtpDataInicio.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpDataInicio.Name = "dtpDataInicio";
             this.dtpDataInicio.Size = new System.Drawing.Size(97, 20);
             this.dtpDataInicio.TabIndex = 15;
             this.dtpDataInicio.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
-            this.dtpDataInicio.ValueChanged += new System.EventHandler(this.dtpData_ValueChanged);
             // 
             // dtpDataFim
             // 
             this.dtpDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataFim.Location = new System.Drawing.Point(620, 14);
+            this.dtpDataFim.Location = new System.Drawing.Point(335, 13);
             this.dtpDataFim.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpDataFim.Name = "dtpDataFim";
             this.dtpDataFim.Size = new System.Drawing.Size(97, 20);
@@ -182,7 +184,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(159, 20);
+            this.label1.Location = new System.Drawing.Point(139, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 20;
@@ -191,16 +193,27 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(579, 20);
+            this.label2.Location = new System.Drawing.Point(294, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 21;
             this.label2.Text = "label2";
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(56, 11);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 22;
+            this.btnPesquisar.Text = "&Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpDataFim);
@@ -236,5 +249,6 @@
         private System.Windows.Forms.DateTimePicker dtpDataFim;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

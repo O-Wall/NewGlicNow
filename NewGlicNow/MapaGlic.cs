@@ -57,11 +57,19 @@ namespace NewGlicNow
                     " PreAlmoco, PosAlmoco, PreJantar, PosJantar, BasalMatutino, BasalNoturno," +
                     "Observacao, UsuarioId \n";
                 sql += "from tblGlicemia \n";
-                sql += "where UsuarioId = @usuarioId \n";
-                sql += " and data beetwen @dataInicio AND @dataFim \n";
-                parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
-                parameters.Add(new SqlParameter("@dataInicio", DataInicio));
-                parameters.Add(new SqlParameter("@dataFim", DataFim));
+                if (Id != 0)
+                {
+                    sql += "where Id = @Id \n";
+                    parameters.Add(new SqlParameter("@id", Id));
+                }
+                else
+                {
+                    sql += "where UsuarioId = @usuarioId \n";
+                    sql += " and data between cast(@dataInicio as date) AND cast(@dataFim as date)\n";
+                    parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
+                    parameters.Add(new SqlParameter("@dataInicio", DataInicio));
+                    parameters.Add(new SqlParameter("@dataFim", DataFim));
+                }
                 dt = acesso.Consultar(sql, parameters);
                 if(dt.Rows.Count==1)
                 {
@@ -99,13 +107,11 @@ namespace NewGlicNow
                     sql += "values \n";
                     sql += "(@data, @preCafe, @posCafe, @preAlmoco, @posAlmoco," +
                         " @preJantar, @posJantar, @basalMatutino, @basalNoturno, @observacao, @usuarioId) \n";
-                    sql += "select @@IDENTITY";
                 }
                 else
                 {
                     sql = "update tblGlicemia \n";
                     sql += "set \n";
-                    sql += "Data = @data, \n";
                     sql += "PreCafe = @preCafe, \n";
                     sql += "PosCafe = @posCafe, \n";
                     sql += "PreAlmoco = @preAlmoco, \n";
@@ -119,16 +125,16 @@ namespace NewGlicNow
                     sql += "where Id = @id; \n";
                     parameters.Add(new SqlParameter("@id", Id));
                 }
-                parameters.Add(new SqlParameter("@data", Data));
                 parameters.Add(new SqlParameter("@preCafe", PreCafe));
                 parameters.Add(new SqlParameter("@posCafe", PosCafe));
                 parameters.Add(new SqlParameter("@preAlmoco", PreAlmoco));
                 parameters.Add(new SqlParameter("@posAlmoco", PosAlmoco));
                 parameters.Add(new SqlParameter("@preJantar", PreJantar));
+                parameters.Add(new SqlParameter("@posJantar", PosJantar));
                 parameters.Add(new SqlParameter("@basalMatutino", BasalMatutino));
                 parameters.Add(new SqlParameter("@basalNoturno", BasalNoturno));
                 parameters.Add(new SqlParameter("@observacao", Observacao));
-                parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
+                parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
 
                 if (Id == 0)
                 {
