@@ -91,6 +91,5 @@ namespace NewGlicNow
         {
             Close();
         }
-
     }
 }
