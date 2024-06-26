@@ -23,6 +23,7 @@ namespace NewGlicNow
         public Log_in log_In { get; set; }
         public Endereco endereco { get; set; }
         public MapaGlic mapaGlic { get; set; }
+        public Agenda agenda {  get; set; }
         
 
         public Usuario()
@@ -39,6 +40,7 @@ namespace NewGlicNow
             log_In = new Log_in();
             endereco = new Endereco();
             mapaGlic = new MapaGlic();
+            agenda = new Agenda();
         }
                 
         AcessoBanco acesso = new AcessoBanco();

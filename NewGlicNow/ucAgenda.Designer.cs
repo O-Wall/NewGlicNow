@@ -30,7 +30,7 @@
         {
             this.picMedico = new System.Windows.Forms.PictureBox();
             this.picCalendario = new System.Windows.Forms.PictureBox();
-            this.dtpDataAgenda = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataAgendaInicio = new System.Windows.Forms.DateTimePicker();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.txtPesquisaTitulo = new System.Windows.Forms.TextBox();
@@ -40,6 +40,8 @@
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdAgenda = new System.Windows.Forms.DataGridView();
             this.gprPesquisar = new System.Windows.Forms.GroupBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.dtpDataAgendaFim = new System.Windows.Forms.DateTimePicker();
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.picMedico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCalendario)).BeginInit();
@@ -64,14 +66,14 @@
             this.picCalendario.TabIndex = 138;
             this.picCalendario.TabStop = false;
             // 
-            // dtpDataAgenda
+            // dtpDataAgendaInicio
             // 
-            this.dtpDataAgenda.Location = new System.Drawing.Point(11, 45);
-            this.dtpDataAgenda.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            this.dtpDataAgenda.Name = "dtpDataAgenda";
-            this.dtpDataAgenda.Size = new System.Drawing.Size(215, 20);
-            this.dtpDataAgenda.TabIndex = 129;
-            this.dtpDataAgenda.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaInicio.Location = new System.Drawing.Point(173, 45);
+            this.dtpDataAgendaInicio.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaInicio.Name = "dtpDataAgendaInicio";
+            this.dtpDataAgendaInicio.Size = new System.Drawing.Size(215, 20);
+            this.dtpDataAgendaInicio.TabIndex = 129;
+            this.dtpDataAgendaInicio.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // btnLimpar
             // 
@@ -100,7 +102,6 @@
             this.txtPesquisaTitulo.Size = new System.Drawing.Size(598, 20);
             this.txtPesquisaTitulo.TabIndex = 128;
             this.txtPesquisaTitulo.Text = "Título";
-            this.txtPesquisaTitulo.TextChanged += new System.EventHandler(this.txtPesquisaTitulo_TextChanged);
             // 
             // txtObservacao
             // 
@@ -159,14 +160,35 @@
             // 
             // gprPesquisar
             // 
+            this.gprPesquisar.Controls.Add(this.btnPesquisar);
+            this.gprPesquisar.Controls.Add(this.dtpDataAgendaFim);
             this.gprPesquisar.Controls.Add(this.txtPesquisaTitulo);
-            this.gprPesquisar.Controls.Add(this.dtpDataAgenda);
+            this.gprPesquisar.Controls.Add(this.dtpDataAgendaInicio);
             this.gprPesquisar.Location = new System.Drawing.Point(73, 8);
             this.gprPesquisar.Name = "gprPesquisar";
             this.gprPesquisar.Size = new System.Drawing.Size(618, 75);
             this.gprPesquisar.TabIndex = 141;
             this.gprPesquisar.TabStop = false;
             this.gprPesquisar.Text = "Pesquisar por";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(11, 42);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 131;
+            this.btnPesquisar.Text = "&Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // dtpDataAgendaFim
+            // 
+            this.dtpDataAgendaFim.Location = new System.Drawing.Point(394, 45);
+            this.dtpDataAgendaFim.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaFim.Name = "dtpDataAgendaFim";
+            this.dtpDataAgendaFim.Size = new System.Drawing.Size(215, 20);
+            this.dtpDataAgendaFim.TabIndex = 130;
+            this.dtpDataAgendaFim.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // grpRegistrar
             // 
@@ -209,7 +231,7 @@
         #endregion
         private System.Windows.Forms.PictureBox picMedico;
         private System.Windows.Forms.PictureBox picCalendario;
-        private System.Windows.Forms.DateTimePicker dtpDataAgenda;
+        private System.Windows.Forms.DateTimePicker dtpDataAgendaInicio;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.TextBox txtPesquisaTitulo;
@@ -220,5 +242,7 @@
         private System.Windows.Forms.DataGridView grdAgenda;
         private System.Windows.Forms.GroupBox gprPesquisar;
         private System.Windows.Forms.GroupBox grpRegistrar;
+        private System.Windows.Forms.DateTimePicker dtpDataAgendaFim;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

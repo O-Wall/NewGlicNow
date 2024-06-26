@@ -54,7 +54,6 @@ namespace NewGlicNow
                 MessageBox.Show("Erro -->" + ex.Message,"Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void PreencherClasse()
         {
             if(cboPeriodo.SelectedIndex == 0)
@@ -97,47 +96,44 @@ namespace NewGlicNow
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.PreCafe);
             }
-            if (cboPeriodo.SelectedIndex == 1)
+            else if (cboPeriodo.SelectedIndex == 1)
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.PosCafe);
             }
-            if (cboPeriodo.SelectedIndex == 2)
+            else if (cboPeriodo.SelectedIndex == 2)
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.PreAlmoco);
             }
-            if (cboPeriodo.SelectedIndex == 3)
+            else if (cboPeriodo.SelectedIndex == 3)
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.PosAlmoco);
             }
-            if (cboPeriodo.SelectedIndex == 4)
+            else if (cboPeriodo.SelectedIndex == 4)
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.PreJantar);
             }
-            if (cboPeriodo.SelectedIndex == 5)
+            else if (cboPeriodo.SelectedIndex == 5)
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.PosJantar);
             }
-            if (cboPeriodo.SelectedIndex == 6)
+            else if (cboPeriodo.SelectedIndex == 6)
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.BasalMatutino);
             }
-            if (cboPeriodo.SelectedIndex == 7)
+            else if (cboPeriodo.SelectedIndex == 7)
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.BasalNoturno);
             }
             txtObservacao.Text = usuario.mapaGlic.Observacao;
         }
-
         private void ucCadastroMapGlic_Load(object sender, EventArgs e)
         {
             CarregarGridGlic();           
         }
-
         private void txtValores_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
-
         private string ValidarPreenchimento()
         {
             string msgErro = string.Empty;
@@ -151,7 +147,6 @@ namespace NewGlicNow
             }
             return msgErro;
         }
-
         private void btnGravar_Click(object sender, EventArgs e)
         {
             try
@@ -178,7 +173,6 @@ namespace NewGlicNow
                 MessageBox.Show("Erro -->"+ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             usuario = new Usuario();
@@ -186,7 +180,6 @@ namespace NewGlicNow
             usuario.mapaGlic.DataFim = dtpDataFim.Value;
             CarregarGridGlic();
         }
-
         private void dgvMapaGlic_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -198,22 +191,11 @@ namespace NewGlicNow
                 usuario.mapaGlic.Consultar();
                 txtObservacao.Text = usuario.mapaGlic.Observacao;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
-            }
-            
-
-            
+                MessageBox.Show($"Erro ao selecionar a Glicemia: {ex.Message}", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
     }
-    /* Tarefas
-    //CRIAR VALIDAÇÃO DE PREENCHIMENTO
-    //AJUSTAR TAMANHO DOS CARACTERES EM CADA TEXTBOX
-    //REFAZER BANCO DE DADOS AO CLICAR NA COLUNA DESEJA, SEJA SELECIONADO O "PRECAFE" E O "VALOR" QUE ESTÁ DENTRO DELE, DE CADA DIA.
-    //Estou achando que precisará usar consultar do banco como "inner join" "group by"
-    //FAZER O GRID
-    //FAZER O BOTÃO GRAVAR (INSERT)
-    */
 }

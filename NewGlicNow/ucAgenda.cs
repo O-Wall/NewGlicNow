@@ -17,25 +17,7 @@ namespace FinalGlicNow
         {
             InitializeComponent();
         }
-
-        bool load = false;
         Usuario usuario = new Usuario();
-
-
-        /* TAREFAS
-
-                //AO CLICAR NO txtPesquisa, acessar o banco
-                //AO ESCOLHER A DATA no dtpDataAgenda acessar o banco
-
-                //AJUSTAR TAMANHO DOS CARACTERES EM CADA TEXTBOX
-
-                //FAZER O GRID
-
-                //FAZER O BOTÃO GRAVAR (INSERT)
-
-        */
-
-        //MÉTODOS
         private string ValidarPreenchimento()
         {
             try
@@ -66,135 +48,113 @@ namespace FinalGlicNow
             {
                 throw new Exception(ex.Message);
             }
-        }
-
-
-
-        //RESOLVER ESSE PROBLEMINHA AQUI
+        }        
         private void PreencherFormulario()
         {
-            /*
-            txtTitulo.Text = //usuario.Login;
-            //dtpData
-            txtMedico.Text = //usuario.Password;
-            txtObservacao.Text = //usuario.Password;            
-            */
+            txtTitulo.Text = usuario.agenda.Titulo;
+            txtMedico.Text = usuario.agenda.NomeMedico;
+            txtObservacao.Text = usuario.agenda.Observacao;
+            dtpData.Value = usuario.agenda.DataHora;
+        }
+        private void PreencherClasse()
+        {
+            usuario.agenda.Titulo = txtTitulo.Text;
+            usuario.agenda.NomeMedico = txtMedico.Text;
+            usuario.agenda.Observacao = txtObservacao.Text;
+            usuario.agenda.DataHora = dtpData.Value;
         }
         private void CarregarGridAgenda()
         {
-            /* AQUI SERÁ PRECISO FAZER O SISTEMA CONVERSAR COM A TABLE "AGENDA"
-             do USUARIO POR MEIO DO [ CONSULTAR(); ]
-            */
             try
             {
-                grdAgenda.DataSource = usuario.Consultar();
-
+                grdAgenda.DataSource = usuario.agenda.Consultar();
                 //Ocultando colunas
                 grdAgenda.Columns[0].Visible = false;
                 grdAgenda.Columns[3].Visible = false;
-                grdAgenda.Columns[5].Visible = false;
+                grdAgenda.Columns[4].Visible = false;
                 //Definindo cabeçalhos
-                grdAgenda.Columns[1].HeaderText = "Título";
-                grdAgenda.Columns[2].HeaderText = "Data";
-                grdAgenda.Columns[4].HeaderText = "Observação";
-
+                grdAgenda.Columns[1].HeaderText = "Data";
+                grdAgenda.Columns[2].HeaderText = "Título";
                 //Definindo largura das colunas               
-                grdAgenda.Columns[1].Width = 149;
-                grdAgenda.Columns[2].Width = 149;
-                grdAgenda.Columns[3].Width = 149;
-                grdAgenda.Columns[4].Width = 149;
+                grdAgenda.Columns[1].Width = 100;
+                grdAgenda.Columns[2].Width = 200;                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                MessageBox.Show($"Erro ao carregar a agenda: {ex.Message}", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        //==============================
-
         private void LimparCampos()
         {
-            //Irá apagar somente o que está abaixo de "Registrar tarefas"
             usuario = new Usuario();
             txtTitulo.Clear();
             txtMedico.Clear();
             txtObservacao.Clear();
             txtTitulo.Focus();
         }
-
-
-        //
-
-
-
-        //"FUNÇÕES"
         private void ucAgenda_Load(object sender, EventArgs e)
         {
-            //CarregarGridAgenda();
-            load = true;
-        }
-
-
-
-        //ARRUMAR ESSE PROBLEMINHA AQUI:
-        private void txtPesquisaTitulo_TextChanged(object sender, EventArgs e)
-        {
-            /* Fazer busca no banco de dados
-                    Preciso verificar se é o "TextChanged" o mais aconselhável
-             */
-
-            /*
-            usuario = new Usuario();
-            usuario.Nome = txtPesquisaTitulo.Text; //COLOCAR: "objeto.NOME A SER PREENCHIDO"
             CarregarGridAgenda();
-            */
-        }
-        private void dtpDataAgenda_ValueChanged(object sender, EventArgs e)
-        {
-            /*
-           usuario = new Usuario();
-           usuario.DataHora = dtpData.Value; //COLOCAR: "objeto.NOME A SER PREENCHIDO"
-           CarregarGridAgenda();
-           */
         }
         private void grdAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
             try
             {
-                 ALTEREI ALGUMAS COISAS, MAS AINDA PRECISA ARRUMAR O ACESSO AO BANCO
                 usuario = new Usuario();
-                usuario.Id = Convert.ToInt32(grdAgenda.SelectedRows[0].Cells[0].Value);
-                usuario.Consultar();
-                PreencherFormulario();
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = grdAgenda.Rows[e.RowIndex];
+                    usuario.agenda.Id = Convert.ToInt32(row.Cells[0].Value);
+                    usuario.agenda.Consultar();
+                    PreencherFormulario();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                MessageBox.Show($"Erro ao selecionar a agenda: {ex.Message}", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            */
+            }            
         }
-        //===============================
-
-
-
-        //ARRUMAR ESSE PROBLEMINHA AQUI:
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            /*Gravar tudo no banco de dados
-             */
+            try
+            {
+                string MsgERRO = ValidarPreenchimento();
+                if (MsgERRO != string.Empty)
+                {
+                    MessageBox.Show(MsgERRO, "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                PreencherClasse();
+                usuario.agenda.Gravar();
+                MessageBox.Show("Evento Gravado com Sucesso!",
+                    "Agenda",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimparCampos();
+                CarregarGridAgenda();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao gravar a agenda: {ex.Message}", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        //===============================
-
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
         }
-
-
-
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            usuario = new Usuario();
+            if(txtPesquisaTitulo.Text != string.Empty)
+            {
+                usuario.agenda.Titulo = txtPesquisaTitulo.Text;
+            }
+            usuario.agenda.DataInicio = dtpDataAgendaInicio.Value;
+            usuario.agenda.DataFim = dtpDataAgendaFim.Value;
+            CarregarGridAgenda();
+        }
     }
 }

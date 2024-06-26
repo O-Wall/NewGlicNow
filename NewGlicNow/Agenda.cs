@@ -16,6 +16,8 @@ namespace NewGlicNow
         public int Id { get; set; }
         public string Titulo { get; set; }
         public DateTime DataHora { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataFim { get; set; }
         public string NomeMedico { get; set; }
         public string Observacao { get; set; }
         public int UsuarioId { get; set; }
@@ -25,7 +27,9 @@ namespace NewGlicNow
         {
             Id = 0;
             Titulo = string.Empty;
-            DataHora = DateTime.MinValue;
+            DataHora = DateTime.Now;
+            DataInicio = DateTime.Now;
+            DataFim = DateTime.Now;
             NomeMedico = string.Empty;
             Observacao = string.Empty;
             UsuarioId = 0;
@@ -45,31 +49,21 @@ namespace NewGlicNow
                 sql = "select Id, Titulo, DataHora, NomeMedico," +
                     " Observacao, UsuarioId \n";
                 sql += "from tblAgenda \n";
-
-                sql += "where UsuarioId = @usuarioId \n";
-                //sql += " and data beetwen ";
-                parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
-                parameters.Add(new SqlParameter("@dataHora", DataHora));
-
                 if (Id != 0)
                 {
-                    sql += "where @id = Id \n";
+                    sql += "where Id = @Id \n";
                     parameters.Add(new SqlParameter("@id", Id));
                 }
-                else if (Titulo != string.Empty)
+                else
                 {
-                    sql += "Where @titulo = Titulo \n";
-                    parameters.Add(new SqlParameter("@titulo", Titulo));
+                    sql += "where UsuarioId = @usuarioId \n";
+                    sql += " and data between @dataInicio and @dataFim \n";
+                    parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
+                    parameters.Add(new SqlParameter("@dataInicio", DataInicio));
+                    parameters.Add(new SqlParameter("@dataFim", DataFim));
                 }
-                else if (DataHora != DateTime.MinValue)
-                {
-                    sql += "Where @dataHora = DataHora \n";
-                    parameters.Add(new SqlParameter("@dataHora", DataHora));
-                }
-
                 dt = acesso.Consultar(sql, parameters);
-
-                if (Id != 0 || (Titulo != string.Empty && dt.Rows.Count > 0))
+                if (dt.Rows.Count == 1)
                 {
                     Id = Convert.ToInt32(dt.Rows[0]["Id"]);
                     Titulo = dt.Rows[0]["Titulo"].ToString();
@@ -118,7 +112,7 @@ namespace NewGlicNow
                     parameters.Add(new SqlParameter("@DataHora", DataHora));
                     parameters.Add(new SqlParameter("@NomeMedico", NomeMedico));
                     parameters.Add(new SqlParameter("@Observacao", Observacao));
-                    parameters.Add(new SqlParameter("@UsuarioId", UsuarioId));
+                    parameters.Add(new SqlParameter("@UsuarioId", Global.IdUsuarioLogado));
 
                     if (Id == 0)
                     {
