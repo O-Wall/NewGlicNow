@@ -1,4 +1,4 @@
-﻿namespace FinalGlicNow
+﻿namespace GlicNow
 {
     partial class ucAgendaFalhou
     {

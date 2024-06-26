@@ -87,90 +87,101 @@
             // 
             // cboEstado
             // 
+            this.cboEstado.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.Location = new System.Drawing.Point(109, 464);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(170, 21);
-            this.cboEstado.TabIndex = 14;
+            this.cboEstado.TabIndex = 16;
             this.cboEstado.Text = "Estado";
             this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
             // cboCidade
             // 
+            this.cboCidade.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cboCidade.FormattingEnabled = true;
             this.cboCidade.Location = new System.Drawing.Point(315, 464);
             this.cboCidade.Name = "cboCidade";
             this.cboCidade.Size = new System.Drawing.Size(226, 21);
-            this.cboCidade.TabIndex = 15;
+            this.cboCidade.TabIndex = 17;
             this.cboCidade.Text = "Cidade";
             // 
             // txtCelular
             // 
             this.txtCelular.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCelular.ForeColor = System.Drawing.Color.Black;
+            this.txtCelular.ForeColor = System.Drawing.Color.Gray;
             this.txtCelular.Location = new System.Drawing.Point(335, 299);
             this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(206, 20);
-            this.txtCelular.TabIndex = 9;
+            this.txtCelular.TabIndex = 10;
             this.txtCelular.Text = "Celular";
             this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
+            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Leave);
+
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtBairro
             // 
             this.txtBairro.BackColor = System.Drawing.SystemColors.Window;
-            this.txtBairro.ForeColor = System.Drawing.Color.Black;
+            this.txtBairro.ForeColor = System.Drawing.Color.Gray;
             this.txtBairro.Location = new System.Drawing.Point(109, 426);
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(239, 20);
-            this.txtBairro.TabIndex = 12;
+            this.txtBairro.TabIndex = 14;
             this.txtBairro.Text = "Bairro";
             this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
+            this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Leave);
+
+
             // 
             // txtComplemento
             // 
             this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
-            this.txtComplemento.ForeColor = System.Drawing.Color.Black;
+            this.txtComplemento.ForeColor = System.Drawing.Color.Gray;
             this.txtComplemento.Location = new System.Drawing.Point(285, 390);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(256, 20);
-            this.txtComplemento.TabIndex = 11;
+            this.txtComplemento.TabIndex = 13;
             this.txtComplemento.Text = "Complemento";
             this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Enter);
+            this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Leave);
             // 
             // txtCEP
             // 
             this.txtCEP.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCEP.ForeColor = System.Drawing.Color.Black;
+            this.txtCEP.ForeColor = System.Drawing.Color.Gray;
             this.txtCEP.Location = new System.Drawing.Point(384, 426);
             this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(157, 20);
-            this.txtCEP.TabIndex = 13;
+            this.txtCEP.TabIndex = 15;
             this.txtCEP.Text = "CEP";
             this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Enter);
+            this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Leave);
             this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEP_KeyPress);
             // 
             // txtEndereco
             // 
             this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEndereco.ForeColor = System.Drawing.Color.Black;
+            this.txtEndereco.ForeColor = System.Drawing.Color.Gray;
             this.txtEndereco.Location = new System.Drawing.Point(109, 351);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(432, 20);
-            this.txtEndereco.TabIndex = 10;
+            this.txtEndereco.TabIndex = 11;
             this.txtEndereco.Text = "Endereço";
             this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Enter);
+            this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Leave);
+
             // 
             // btnLimpar
             // 
             this.btnLimpar.Location = new System.Drawing.Point(310, 520);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(113, 36);
-            this.btnLimpar.TabIndex = 17;
+            this.btnLimpar.TabIndex = 0;
             this.btnLimpar.Text = "&Limpar Campos";
             this.btnLimpar.UseVisualStyleBackColor = true;
             // 
@@ -179,27 +190,30 @@
             this.btnCadastro.Location = new System.Drawing.Point(429, 520);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(112, 36);
-            this.btnCadastro.TabIndex = 16;
+            this.btnCadastro.TabIndex = 18;
             this.btnCadastro.Text = "&Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
             // 
             // cboGenero
             // 
+            this.cboGenero.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Location = new System.Drawing.Point(79, 298);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(200, 21);
-            this.cboGenero.TabIndex = 8;
+            this.cboGenero.TabIndex = 9;
             this.cboGenero.Text = "Gênero";
             // 
             // cboTipoDiabete
             // 
+            this.cboTipoDiabete.BackColor = System.Drawing.SystemColors.Window;
+            this.cboTipoDiabete.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cboTipoDiabete.FormattingEnabled = true;
             this.cboTipoDiabete.Location = new System.Drawing.Point(285, 256);
             this.cboTipoDiabete.Name = "cboTipoDiabete";
             this.cboTipoDiabete.Size = new System.Drawing.Size(256, 21);
-            this.cboTipoDiabete.TabIndex = 7;
+            this.cboTipoDiabete.TabIndex = 8;
             this.cboTipoDiabete.Text = "Tipo de Diabete";
             // 
             // dtpDataNascimento
@@ -209,82 +223,92 @@
             this.dtpDataNascimento.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(200, 20);
-            this.dtpDataNascimento.TabIndex = 6;
+            this.dtpDataNascimento.TabIndex = 7;
             this.dtpDataNascimento.UseWaitCursor = true;
             this.dtpDataNascimento.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.ForeColor = System.Drawing.Color.Gray;
             this.txtEmail.Location = new System.Drawing.Point(109, 220);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(432, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 6;
             this.txtEmail.Text = "E-mail";
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Leave);
+
             // 
             // txtCPF
             // 
             this.txtCPF.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCPF.ForeColor = System.Drawing.Color.Black;
+            this.txtCPF.ForeColor = System.Drawing.Color.Gray;
             this.txtCPF.Location = new System.Drawing.Point(343, 183);
             this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(198, 20);
-            this.txtCPF.TabIndex = 4;
+            this.txtCPF.TabIndex = 5;
             this.txtCPF.Text = "CPF";
             this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Enter);
+            this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Leave);
+
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // txtLogin
             // 
             this.txtLogin.BackColor = System.Drawing.SystemColors.Window;
-            this.txtLogin.ForeColor = System.Drawing.Color.Black;
+            this.txtLogin.ForeColor = System.Drawing.Color.Gray;
             this.txtLogin.Location = new System.Drawing.Point(109, 183);
             this.txtLogin.MaxLength = 50;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(180, 20);
-            this.txtLogin.TabIndex = 3;
+            this.txtLogin.TabIndex = 4;
             this.txtLogin.Text = "Login";
             this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
+            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Leave);
+
             // 
             // txtConfSenha
             // 
             this.txtConfSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtConfSenha.ForeColor = System.Drawing.Color.Black;
+            this.txtConfSenha.ForeColor = System.Drawing.Color.Gray;
             this.txtConfSenha.Location = new System.Drawing.Point(343, 149);
             this.txtConfSenha.MaxLength = 30;
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(198, 20);
-            this.txtConfSenha.TabIndex = 2;
+            this.txtConfSenha.TabIndex = 3;
             this.txtConfSenha.Text = "Confirmar senha";
             this.txtConfSenha.Enter += new System.EventHandler(this.txtConfSenha_Enter);
+            this.txtConfSenha.Enter += new System.EventHandler(this.txtConfSenha_Leave);
+
             // 
             // txtSenha
             // 
             this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSenha.ForeColor = System.Drawing.Color.Black;
+            this.txtSenha.ForeColor = System.Drawing.Color.Gray;
             this.txtSenha.Location = new System.Drawing.Point(109, 148);
             this.txtSenha.MaxLength = 30;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(180, 20);
-            this.txtSenha.TabIndex = 1;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.Text = "Senha";
             this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
+            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Leave);
             // 
             // txtNome
             // 
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNome.ForeColor = System.Drawing.Color.Black;
+            this.txtNome.ForeColor = System.Drawing.Color.Gray;
             this.txtNome.Location = new System.Drawing.Point(155, 104);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(386, 20);
-            this.txtNome.TabIndex = 0;
+            this.txtNome.TabIndex = 1;
             this.txtNome.Text = "Nome Completo";
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // panel2
             // 
@@ -451,12 +475,12 @@
             // txtNumero
             // 
             this.txtNumero.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNumero.ForeColor = System.Drawing.Color.Black;
+            this.txtNumero.ForeColor = System.Drawing.Color.Gray;
             this.txtNumero.Location = new System.Drawing.Point(109, 389);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(109, 20);
-            this.txtNumero.TabIndex = 74;
+            this.txtNumero.TabIndex = 12;
             this.txtNumero.Text = "Nº";
             this.txtNumero.Enter += new System.EventHandler(this.txtNumero_Enter);
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);

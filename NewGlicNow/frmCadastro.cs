@@ -373,103 +373,136 @@ namespace NewGlicNow
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
+
+
+
         private void txtNome_Leave(object sender, EventArgs e)
         {
-                Global.ResetMensagem(txtNome);           
+                Global.TextBoxLeave(txtNome, "Nome Completo");           
         }
         private void txtNome_Enter(object sender, EventArgs e)
         {
-                Global.LimparTexto(txtNome);
+            Global.TextBoxEnter(txtNome, "Nome Completo");
 
         }
+
+
         private void txtSenha_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtSenha);
+            Global.TextBoxLeave(txtSenha, "Senha");
         }
         private void txtSenha_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtSenha);
+            Global.TextBoxEnter(txtSenha, "Senha");
         }
+
+
+
         private void txtConfSenha_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtConfSenha);
+            Global.TextBoxLeave(txtConfSenha, "Confirmar senha");
         }
         private void txtConfSenha_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtConfSenha);
+            Global.TextBoxEnter(txtConfSenha, "Confirmar senha");
         }
+
+
+
         private void txtLogin_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtLogin);
+            Global.TextBoxLeave(txtCPF, "Login");
+
         }
         private void txtLogin_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtLogin);
+            Global.TextBoxEnter(txtCPF, "Login");
         }
+
+
+
         private void txtCPF_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtCPF);
+            Global.TextBoxLeave(txtCPF, "CPF");
         }
         private void txtCPF_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtCPF);
+            Global.TextBoxEnter(txtCPF, "CPF");
+
         }
+
+
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtEmail);
+            Global.TextBoxLeave(txtEmail, "Email");
 
         }
         private void txtEmail_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtEmail);
+            Global.TextBoxEnter(txtEmail, "Email");
         }
+
+
         private void txtCelular_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtCelular);
+            Global.TextBoxLeave(txtCelular, "Celular");
         }
         private void txtCelular_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtCelular);
+            Global.TextBoxEnter(txtEndereco, "Celular");
         }
+
+
         private void txtEndereco_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtEndereco);
+            Global.TextBoxLeave(txtEndereco, "Endereço");
         }
         private void txtEndereco_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtEndereco);
+            Global.TextBoxEnter(txtEndereco, "Endereço");
         }
+
+
         private void txtNumero_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtNumero);
+            Global.TextBoxEnter(txtNumero, "Nº");
         }
         private void txtNumero_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtNumero);
+            Global.TextBoxLeave(txtNumero, "Nº");
         }
+
+
         private void txtComplemento_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtComplemento);
+            Global.TextBoxLeave(txtComplemento, "Complemento");
         }
         private void txtComplemento_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtComplemento);
+            Global.TextBoxEnter(txtComplemento, "Complemento");
         }
+
+
         private void txtBairro_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtBairro);
+            Global.TextBoxLeave(txtBairro, "Bairro");
         }
         private void txtBairro_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtBairro);
+            Global.TextBoxEnter(txtBairro, "Bairro");
         }
+
+
         private void txtCEP_Leave(object sender, EventArgs e)
         {
-            Global.ResetMensagem(txtCEP);
+            Global.TextBoxLeave(txtCEP, "CEP");
         }
         private void txtCEP_Enter(object sender, EventArgs e)
         {
-            Global.LimparTexto(txtCEP);
+            Global.TextBoxEnter(txtCEP, "CEP");
         }
+
+
+
     }
 }

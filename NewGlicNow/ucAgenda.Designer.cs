@@ -59,7 +59,7 @@
             this.grdAgenda.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.grdAgenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdAgenda.Location = new System.Drawing.Point(15, 95);
+            this.grdAgenda.Location = new System.Drawing.Point(73, 89);
             this.grdAgenda.Name = "grdAgenda";
             this.grdAgenda.ReadOnly = true;
             this.grdAgenda.RowHeadersVisible = false;
@@ -94,7 +94,7 @@
             this.gprPesquisar.Controls.Add(this.dtpDataAgendaFim);
             this.gprPesquisar.Controls.Add(this.txtPesquisaTitulo);
             this.gprPesquisar.Controls.Add(this.dtpDataAgendaInicio);
-            this.gprPesquisar.Location = new System.Drawing.Point(15, 14);
+            this.gprPesquisar.Location = new System.Drawing.Point(73, 8);
             this.gprPesquisar.Name = "gprPesquisar";
             this.gprPesquisar.Size = new System.Drawing.Size(618, 75);
             this.gprPesquisar.TabIndex = 146;
@@ -216,7 +216,7 @@
             this.Controls.Add(this.gprPesquisar);
             this.Controls.Add(this.grpRegistrar);
             this.Name = "ucAgenda";
-            this.Size = new System.Drawing.Size(655, 474);
+            this.Size = new System.Drawing.Size(763, 479);
             this.Load += new System.EventHandler(this.ucAgenda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).EndInit();
             this.gprPesquisar.ResumeLayout(false);

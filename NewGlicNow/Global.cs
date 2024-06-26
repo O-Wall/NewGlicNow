@@ -97,6 +97,26 @@ namespace NewGlicNow
             }
         }
 
+        public static void TextBoxEnter(TextBox txt, string texto)
+        {            
+            if (txt.Text == texto)
+            {
+                txt.Text = "";
+                txt.ForeColor = Color.Black;
+            }
+        }
+
+        public static void TextBoxLeave(TextBox txt, string texto)
+        {
+            if (string.IsNullOrWhiteSpace(txt.Text))
+            {
+                txt.Text = texto;
+                txt.ForeColor = Color.Gray;
+            }
+        }
+        //  public static void ResetMensagem(TextBox txt)
+
+
         public static DataTable ConsultarEstados()
         {
             try
