@@ -71,16 +71,18 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(21, 11);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(10, 6);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(120, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(183, 21);
             this.lblTitulo.TabIndex = 42;
             this.lblTitulo.Text = "Configurações da conta";
             // 
             // pnlBordaConfig
             // 
-            this.pnlBordaConfig.BackColor = System.Drawing.Color.Brown;
+            this.pnlBordaConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.pnlBordaConfig.Controls.Add(this.picClose);
             this.pnlBordaConfig.Controls.Add(this.lblTitulo);
             this.pnlBordaConfig.Dock = System.Windows.Forms.DockStyle.Top;
@@ -105,12 +107,14 @@
             // 
             // btnConfirmar
             // 
+            this.btnConfirmar.BackColor = System.Drawing.Color.White;
+            this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnConfirmar.Location = new System.Drawing.Point(140, 410);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(100, 33);
             this.btnConfirmar.TabIndex = 125;
             this.btnConfirmar.Text = "&Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
             // gboCadastro
             // 
@@ -128,6 +132,7 @@
             this.gboCadastro.Controls.Add(this.txtCelular);
             this.gboCadastro.Controls.Add(this.cboEstado);
             this.gboCadastro.Controls.Add(this.dtpDataNascimento);
+            this.gboCadastro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboCadastro.Location = new System.Drawing.Point(397, 69);
             this.gboCadastro.Name = "gboCadastro";
             this.gboCadastro.Size = new System.Drawing.Size(485, 426);
@@ -137,50 +142,57 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNumero.ForeColor = System.Drawing.Color.Black;
-            this.txtNumero.Location = new System.Drawing.Point(32, 302);
+            this.txtNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtNumero.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtNumero.ForeColor = System.Drawing.Color.Gray;
+            this.txtNumero.Location = new System.Drawing.Point(32, 300);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(109, 20);
+            this.txtNumero.Size = new System.Drawing.Size(109, 22);
             this.txtNumero.TabIndex = 122;
             this.txtNumero.Text = "Nº";
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // txtComplemento
             // 
-            this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
-            this.txtComplemento.ForeColor = System.Drawing.Color.Black;
-            this.txtComplemento.Location = new System.Drawing.Point(173, 303);
+            this.txtComplemento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtComplemento.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtComplemento.ForeColor = System.Drawing.Color.Gray;
+            this.txtComplemento.Location = new System.Drawing.Point(173, 300);
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(291, 20);
+            this.txtComplemento.Size = new System.Drawing.Size(291, 22);
             this.txtComplemento.TabIndex = 121;
             this.txtComplemento.Text = "Complemento";
             // 
             // txtBairro
             // 
-            this.txtBairro.BackColor = System.Drawing.SystemColors.Window;
-            this.txtBairro.ForeColor = System.Drawing.Color.Black;
-            this.txtBairro.Location = new System.Drawing.Point(32, 341);
+            this.txtBairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtBairro.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtBairro.ForeColor = System.Drawing.Color.Gray;
+            this.txtBairro.Location = new System.Drawing.Point(32, 339);
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(228, 20);
+            this.txtBairro.Size = new System.Drawing.Size(228, 22);
             this.txtBairro.TabIndex = 117;
             this.txtBairro.Text = "Bairro";
             // 
             // txtCEP
             // 
-            this.txtCEP.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCEP.ForeColor = System.Drawing.Color.Black;
-            this.txtCEP.Location = new System.Drawing.Point(284, 341);
+            this.txtCEP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtCEP.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtCEP.ForeColor = System.Drawing.Color.Gray;
+            this.txtCEP.Location = new System.Drawing.Point(284, 339);
             this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(180, 20);
+            this.txtCEP.Size = new System.Drawing.Size(180, 22);
             this.txtCEP.TabIndex = 115;
             this.txtCEP.Text = "CEP";
             // 
             // cboCidade
             // 
+            this.cboCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.cboCidade.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cboCidade.ForeColor = System.Drawing.Color.Gray;
             this.cboCidade.FormattingEnabled = true;
             this.cboCidade.Items.AddRange(new object[] {
             "Pré-diabetes.",
@@ -188,14 +200,16 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboCidade.Location = new System.Drawing.Point(32, 383);
+            this.cboCidade.Location = new System.Drawing.Point(32, 381);
             this.cboCidade.Name = "cboCidade";
-            this.cboCidade.Size = new System.Drawing.Size(258, 21);
+            this.cboCidade.Size = new System.Drawing.Size(258, 24);
             this.cboCidade.TabIndex = 119;
             this.cboCidade.Text = "Cidade";
             // 
             // cboTipoDiabete
             // 
+            this.cboTipoDiabete.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cboTipoDiabete.ForeColor = System.Drawing.Color.Gray;
             this.cboTipoDiabete.FormattingEnabled = true;
             this.cboTipoDiabete.Items.AddRange(new object[] {
             "Pré-diabetes.",
@@ -203,82 +217,93 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboTipoDiabete.Location = new System.Drawing.Point(256, 156);
+            this.cboTipoDiabete.Location = new System.Drawing.Point(258, 148);
             this.cboTipoDiabete.Name = "cboTipoDiabete";
-            this.cboTipoDiabete.Size = new System.Drawing.Size(206, 21);
+            this.cboTipoDiabete.Size = new System.Drawing.Size(206, 24);
             this.cboTipoDiabete.TabIndex = 112;
             this.cboTipoDiabete.Text = "Tipo Diabete";
             // 
             // txtEndereco
             // 
-            this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEndereco.ForeColor = System.Drawing.Color.Black;
-            this.txtEndereco.Location = new System.Drawing.Point(32, 264);
+            this.txtEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtEndereco.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtEndereco.ForeColor = System.Drawing.Color.Gray;
+            this.txtEndereco.Location = new System.Drawing.Point(32, 262);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(432, 20);
+            this.txtEndereco.Size = new System.Drawing.Size(432, 22);
             this.txtEndereco.TabIndex = 114;
             this.txtEndereco.Text = "Endereço";
             // 
             // cboGenero
             // 
+            this.cboGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.cboGenero.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cboGenero.ForeColor = System.Drawing.Color.Gray;
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Items.AddRange(new object[] {
             "Masculino",
             "Feminino",
             "Prefiro não informar"});
-            this.cboGenero.Location = new System.Drawing.Point(32, 158);
+            this.cboGenero.Location = new System.Drawing.Point(32, 148);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(200, 21);
+            this.cboGenero.Size = new System.Drawing.Size(200, 24);
             this.cboGenero.TabIndex = 113;
             this.cboGenero.Text = "Gênero";
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(32, 106);
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtEmail.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtEmail.ForeColor = System.Drawing.Color.Gray;
+            this.txtEmail.Location = new System.Drawing.Point(32, 104);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(432, 20);
+            this.txtEmail.Size = new System.Drawing.Size(432, 22);
             this.txtEmail.TabIndex = 110;
             this.txtEmail.Text = "E-mail";
             // 
             // txtNome
             // 
-            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNome.ForeColor = System.Drawing.Color.Black;
-            this.txtNome.Location = new System.Drawing.Point(30, 31);
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtNome.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtNome.ForeColor = System.Drawing.Color.Gray;
+            this.txtNome.Location = new System.Drawing.Point(30, 29);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(432, 20);
+            this.txtNome.Size = new System.Drawing.Size(432, 22);
             this.txtNome.TabIndex = 104;
             this.txtNome.Text = "Nome Completo";
             // 
             // txtCPF
             // 
-            this.txtCPF.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCPF.ForeColor = System.Drawing.Color.Black;
-            this.txtCPF.Location = new System.Drawing.Point(32, 70);
+            this.txtCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtCPF.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtCPF.ForeColor = System.Drawing.Color.Gray;
+            this.txtCPF.Location = new System.Drawing.Point(32, 68);
             this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(198, 20);
+            this.txtCPF.Size = new System.Drawing.Size(198, 22);
             this.txtCPF.TabIndex = 109;
             this.txtCPF.Text = "CPF";
             // 
             // txtCelular
             // 
-            this.txtCelular.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCelular.ForeColor = System.Drawing.Color.Black;
-            this.txtCelular.Location = new System.Drawing.Point(258, 200);
+            this.txtCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtCelular.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtCelular.ForeColor = System.Drawing.Color.Gray;
+            this.txtCelular.Location = new System.Drawing.Point(256, 191);
             this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(206, 20);
+            this.txtCelular.Size = new System.Drawing.Size(208, 22);
             this.txtCelular.TabIndex = 118;
             this.txtCelular.Text = "Celular";
             // 
             // cboEstado
             // 
+            this.cboEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.cboEstado.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cboEstado.ForeColor = System.Drawing.Color.Gray;
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.Items.AddRange(new object[] {
             "Pré-diabetes.",
@@ -286,19 +311,20 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboEstado.Location = new System.Drawing.Point(324, 383);
+            this.cboEstado.Location = new System.Drawing.Point(324, 381);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(138, 21);
+            this.cboEstado.Size = new System.Drawing.Size(138, 24);
             this.cboEstado.TabIndex = 120;
             this.cboEstado.Text = "Estado";
             // 
             // dtpDataNascimento
             // 
+            this.dtpDataNascimento.Font = new System.Drawing.Font("Arial", 9.75F);
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(256, 70);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(256, 68);
             this.dtpDataNascimento.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(206, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(206, 22);
             this.dtpDataNascimento.TabIndex = 111;
             this.dtpDataNascimento.UseWaitCursor = true;
             this.dtpDataNascimento.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
@@ -314,6 +340,7 @@
             this.gboLogin.Controls.Add(this.picLogin);
             this.gboLogin.Controls.Add(this.picConfSenha);
             this.gboLogin.Controls.Add(this.picPerfil);
+            this.gboLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gboLogin.Location = new System.Drawing.Point(60, 109);
             this.gboLogin.Name = "gboLogin";
             this.gboLogin.Size = new System.Drawing.Size(261, 258);
@@ -324,7 +351,7 @@
             // picSenha
             // 
             this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSenha.Location = new System.Drawing.Point(19, 156);
+            this.picSenha.Location = new System.Drawing.Point(18, 158);
             this.picSenha.Name = "picSenha";
             this.picSenha.Size = new System.Drawing.Size(24, 24);
             this.picSenha.TabIndex = 103;
@@ -332,39 +359,43 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.BackColor = System.Drawing.SystemColors.Window;
-            this.txtLogin.ForeColor = System.Drawing.Color.Black;
-            this.txtLogin.Location = new System.Drawing.Point(49, 119);
+            this.txtLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtLogin.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtLogin.ForeColor = System.Drawing.Color.Gray;
+            this.txtLogin.Location = new System.Drawing.Point(49, 117);
             this.txtLogin.MaxLength = 50;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(180, 20);
+            this.txtLogin.Size = new System.Drawing.Size(180, 22);
             this.txtLogin.TabIndex = 108;
             this.txtLogin.Text = "Login";
             // 
             // txtSenha
             // 
-            this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSenha.ForeColor = System.Drawing.Color.Black;
+            this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtSenha.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtSenha.ForeColor = System.Drawing.Color.Gray;
             this.txtSenha.Location = new System.Drawing.Point(49, 160);
             this.txtSenha.MaxLength = 30;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(180, 20);
+            this.txtSenha.Size = new System.Drawing.Size(180, 22);
             this.txtSenha.TabIndex = 105;
             this.txtSenha.Text = "Senha";
             // 
             // txtConfSenha
             // 
-            this.txtConfSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtConfSenha.ForeColor = System.Drawing.Color.Black;
-            this.txtConfSenha.Location = new System.Drawing.Point(49, 202);
+            this.txtConfSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtConfSenha.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtConfSenha.ForeColor = System.Drawing.Color.Gray;
+            this.txtConfSenha.Location = new System.Drawing.Point(49, 204);
             this.txtConfSenha.MaxLength = 30;
             this.txtConfSenha.Name = "txtConfSenha";
-            this.txtConfSenha.Size = new System.Drawing.Size(180, 20);
+            this.txtConfSenha.Size = new System.Drawing.Size(180, 22);
             this.txtConfSenha.TabIndex = 107;
             this.txtConfSenha.Text = "Confirmar senha";
             // 
             // picEditar
             // 
+            this.picEditar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.picEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEditar.Location = new System.Drawing.Point(133, 76);
             this.picEditar.Name = "picEditar";
@@ -376,7 +407,7 @@
             // picLogin
             // 
             this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogin.Location = new System.Drawing.Point(19, 113);
+            this.picLogin.Location = new System.Drawing.Point(18, 115);
             this.picLogin.Name = "picLogin";
             this.picLogin.Size = new System.Drawing.Size(24, 24);
             this.picLogin.TabIndex = 102;
@@ -385,7 +416,7 @@
             // picConfSenha
             // 
             this.picConfSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picConfSenha.Location = new System.Drawing.Point(19, 198);
+            this.picConfSenha.Location = new System.Drawing.Point(18, 202);
             this.picConfSenha.Name = "picConfSenha";
             this.picConfSenha.Size = new System.Drawing.Size(24, 24);
             this.picConfSenha.TabIndex = 106;
@@ -404,6 +435,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(934, 546);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.gboCadastro);

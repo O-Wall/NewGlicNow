@@ -48,6 +48,7 @@
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBordaForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -58,7 +59,7 @@
             // 
             // pnlBordaForm
             // 
-            this.pnlBordaForm.BackColor = System.Drawing.Color.Brown;
+            this.pnlBordaForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.pnlBordaForm.Controls.Add(this.picMinimize);
             this.pnlBordaForm.Controls.Add(this.picClose);
             this.pnlBordaForm.Controls.Add(this.lblDashboard);
@@ -97,11 +98,13 @@
             // lblDashboard
             // 
             this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Location = new System.Drawing.Point(21, 13);
+            this.lblDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDashboard.ForeColor = System.Drawing.Color.White;
+            this.lblDashboard.Location = new System.Drawing.Point(14, 7);
             this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(49, 13);
+            this.lblDashboard.Size = new System.Drawing.Size(72, 21);
             this.lblDashboard.TabIndex = 26;
-            this.lblDashboard.Text = "Cadastro";
+            this.lblDashboard.Text = "Principal";
             // 
             // pnlBordaPerfil1
             // 
@@ -178,7 +181,7 @@
             // pnlMenu
             // 
             this.pnlMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.pnlMenu.Controls.Add(this.btnConfiguracao);
             this.pnlMenu.Controls.Add(this.btnGlicemia);
             this.pnlMenu.Controls.Add(this.btnAgenda);
@@ -196,7 +199,7 @@
             // 
             this.btnConfiguracao.FlatAppearance.BorderSize = 0;
             this.btnConfiguracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracao.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracao.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracao.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracao.Location = new System.Drawing.Point(13, 208);
             this.btnConfiguracao.Name = "btnConfiguracao";
@@ -211,7 +214,7 @@
             // 
             this.btnGlicemia.FlatAppearance.BorderSize = 0;
             this.btnGlicemia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGlicemia.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGlicemia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGlicemia.ForeColor = System.Drawing.Color.White;
             this.btnGlicemia.Location = new System.Drawing.Point(13, 141);
             this.btnGlicemia.Name = "btnGlicemia";
@@ -226,7 +229,7 @@
             // 
             this.btnAgenda.FlatAppearance.BorderSize = 0;
             this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgenda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgenda.ForeColor = System.Drawing.Color.White;
             this.btnAgenda.Location = new System.Drawing.Point(14, 74);
             this.btnAgenda.Name = "btnAgenda";
@@ -257,9 +260,10 @@
             // 
             this.lblNomePerfil.AutoSize = true;
             this.lblNomePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomePerfil.Location = new System.Drawing.Point(52, 40);
+            this.lblNomePerfil.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePerfil.Location = new System.Drawing.Point(40, 34);
             this.lblNomePerfil.Name = "lblNomePerfil";
-            this.lblNomePerfil.Size = new System.Drawing.Size(85, 13);
+            this.lblNomePerfil.Size = new System.Drawing.Size(110, 17);
             this.lblNomePerfil.TabIndex = 35;
             this.lblNomePerfil.Text = "Nome do Sujeito";
             // 
@@ -271,13 +275,23 @@
             this.pnlBordaPerfil4.Name = "pnlBordaPerfil4";
             this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
             this.pnlBordaPerfil4.TabIndex = 34;
-            //
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.OrangeRed;
+            this.panel1.Location = new System.Drawing.Point(183, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(771, 3);
+            this.panel1.TabIndex = 115;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(954, 594);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBordaForm);
             this.Controls.Add(this.pnlBordaPerfil1);
             this.Controls.Add(this.pnlBordaPerfil2);
@@ -327,5 +341,6 @@
         private System.Windows.Forms.Panel pnlBordaPerfil4;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.PictureBox picMinimize;
+        private System.Windows.Forms.Panel panel1;
     }
 }

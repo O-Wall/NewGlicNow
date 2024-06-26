@@ -30,10 +30,8 @@
         {
             this.lblCadastre = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblBemVindo = new System.Windows.Forms.Label();
             this.TelaLogin = new System.Windows.Forms.Panel();
             this.picImagemLogin = new System.Windows.Forms.PictureBox();
-            this.lblCadastro = new System.Windows.Forms.Label();
             this.BordaSenha = new System.Windows.Forms.Panel();
             this.BordaLogin = new System.Windows.Forms.Panel();
             this.cboSalvo = new System.Windows.Forms.CheckBox();
@@ -54,38 +52,30 @@
             // 
             this.lblCadastre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCadastre.AutoSize = true;
-            this.lblCadastre.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastre.Location = new System.Drawing.Point(494, 399);
+            this.lblCadastre.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastre.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCadastre.Location = new System.Drawing.Point(421, 368);
             this.lblCadastre.Name = "lblCadastre";
-            this.lblCadastre.Size = new System.Drawing.Size(94, 16);
+            this.lblCadastre.Size = new System.Drawing.Size(75, 17);
             this.lblCadastre.TabIndex = 47;
-            this.lblCadastre.Text = "Cadastre aqui!";
+            this.lblCadastre.Text = "Criar conta";
             this.lblCadastre.Click += new System.EventHandler(this.lblCadastre_Click);
             // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(323, 58);
+            this.lblTitulo.Location = new System.Drawing.Point(316, 119);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(33, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(89, 37);
             this.lblTitulo.TabIndex = 43;
             this.lblTitulo.Text = "Login";
             // 
-            // lblBemVindo
-            // 
-            this.lblBemVindo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBemVindo.AutoSize = true;
-            this.lblBemVindo.Location = new System.Drawing.Point(393, 148);
-            this.lblBemVindo.Name = "lblBemVindo";
-            this.lblBemVindo.Size = new System.Drawing.Size(83, 13);
-            this.lblBemVindo.TabIndex = 40;
-            this.lblBemVindo.Text = "Seja bem vindo!";
-            // 
             // TelaLogin
             // 
-            this.TelaLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(46)))), ((int)(((byte)(44)))));
+            this.TelaLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.TelaLogin.Controls.Add(this.picImagemLogin);
             this.TelaLogin.Dock = System.Windows.Forms.DockStyle.Left;
             this.TelaLogin.Location = new System.Drawing.Point(0, 0);
@@ -102,22 +92,11 @@
             this.picImagemLogin.TabIndex = 41;
             this.picImagemLogin.TabStop = false;
             // 
-            // lblCadastro
-            // 
-            this.lblCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCadastro.AutoSize = true;
-            this.lblCadastro.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastro.Location = new System.Drawing.Point(355, 397);
-            this.lblCadastro.Name = "lblCadastro";
-            this.lblCadastro.Size = new System.Drawing.Size(138, 18);
-            this.lblCadastro.TabIndex = 51;
-            this.lblCadastro.Text = "Não tem cadastro?";
-            // 
             // BordaSenha
             // 
             this.BordaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BordaSenha.BackColor = System.Drawing.Color.Black;
-            this.BordaSenha.Location = new System.Drawing.Point(388, 271);
+            this.BordaSenha.Location = new System.Drawing.Point(369, 253);
             this.BordaSenha.Name = "BordaSenha";
             this.BordaSenha.Size = new System.Drawing.Size(200, 1);
             this.BordaSenha.TabIndex = 53;
@@ -126,7 +105,7 @@
             // 
             this.BordaLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BordaLogin.BackColor = System.Drawing.Color.Black;
-            this.BordaLogin.Location = new System.Drawing.Point(388, 223);
+            this.BordaLogin.Location = new System.Drawing.Point(369, 205);
             this.BordaLogin.Name = "BordaLogin";
             this.BordaLogin.Size = new System.Drawing.Size(200, 1);
             this.BordaLogin.TabIndex = 52;
@@ -137,10 +116,10 @@
             this.cboSalvo.AutoSize = true;
             this.cboSalvo.Checked = true;
             this.cboSalvo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cboSalvo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSalvo.Location = new System.Drawing.Point(358, 298);
+            this.cboSalvo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSalvo.Location = new System.Drawing.Point(342, 274);
             this.cboSalvo.Name = "cboSalvo";
-            this.cboSalvo.Size = new System.Drawing.Size(118, 24);
+            this.cboSalvo.Size = new System.Drawing.Size(95, 21);
             this.cboSalvo.TabIndex = 42;
             this.cboSalvo.Text = "Salvar login";
             this.cboSalvo.UseVisualStyleBackColor = true;
@@ -150,10 +129,11 @@
             this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSenha.BackColor = System.Drawing.SystemColors.Control;
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.Black;
-            this.txtSenha.Location = new System.Drawing.Point(388, 253);
+            this.txtSenha.Location = new System.Drawing.Point(369, 235);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(190, 13);
+            this.txtSenha.Size = new System.Drawing.Size(190, 15);
             this.txtSenha.TabIndex = 45;
             this.txtSenha.Text = "Senha";
             this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
@@ -164,10 +144,11 @@
             this.txtLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLogin.BackColor = System.Drawing.SystemColors.Control;
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.Color.Black;
-            this.txtLogin.Location = new System.Drawing.Point(388, 205);
+            this.txtLogin.Location = new System.Drawing.Point(369, 187);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(190, 13);
+            this.txtLogin.Size = new System.Drawing.Size(190, 15);
             this.txtLogin.TabIndex = 44;
             this.txtLogin.Text = "Login";
             this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
@@ -177,7 +158,7 @@
             // 
             this.picSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSenha.Location = new System.Drawing.Point(358, 248);
+            this.picSenha.Location = new System.Drawing.Point(339, 230);
             this.picSenha.Name = "picSenha";
             this.picSenha.Size = new System.Drawing.Size(24, 24);
             this.picSenha.TabIndex = 50;
@@ -187,7 +168,7 @@
             // 
             this.picLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogin.Location = new System.Drawing.Point(358, 200);
+            this.picLogin.Location = new System.Drawing.Point(339, 182);
             this.picLogin.Name = "picLogin";
             this.picLogin.Size = new System.Drawing.Size(24, 24);
             this.picLogin.TabIndex = 49;
@@ -209,7 +190,8 @@
             // 
             this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Location = new System.Drawing.Point(415, 338);
+            this.btnEntrar.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Location = new System.Drawing.Point(414, 314);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(89, 36);
             this.btnEntrar.TabIndex = 55;
@@ -225,9 +207,7 @@
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblCadastre);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.lblBemVindo);
             this.Controls.Add(this.TelaLogin);
-            this.Controls.Add(this.lblCadastro);
             this.Controls.Add(this.BordaSenha);
             this.Controls.Add(this.BordaLogin);
             this.Controls.Add(this.cboSalvo);
@@ -255,10 +235,8 @@
 
         private System.Windows.Forms.Label lblCadastre;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblBemVindo;
         private System.Windows.Forms.Panel TelaLogin;
         private System.Windows.Forms.PictureBox picImagemLogin;
-        private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.Panel BordaSenha;
         private System.Windows.Forms.Panel BordaLogin;
         private System.Windows.Forms.CheckBox cboSalvo;

@@ -37,7 +37,7 @@ namespace NewGlicNow
             
 
             */
-            Application.Run(new FrmCadastro());
+            Application.Run(new frmPrincipal());
 
 
 

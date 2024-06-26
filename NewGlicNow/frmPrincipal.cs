@@ -49,7 +49,8 @@ namespace NewGlicNow
         {
             pnlEnfeite.Height = btnAgenda.Height;
             pnlEnfeite.Top = btnAgenda.Top;
-            
+            //Puxar User Control 
+            //Colocar cor nova
         }
         private void btnGlicemia_Click(object sender, EventArgs e)
         {
