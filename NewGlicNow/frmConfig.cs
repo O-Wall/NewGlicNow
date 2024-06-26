@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -19,28 +20,8 @@ namespace FinalGlicNow
         {
             InitializeComponent();
         }
-
-        /*TAREFAS
-            
-            //ASSIM QUE ABRIR O FORMULÁRIO DE CONFIGURAÇÕES, CARREGAR AS INFORMAÇÕES QUE ESTÃO NO BANCO.
-
-            //FAZER O VALIDAR PREENCHIMENTO [LOGIN] ---> Verificar no banco se não existe algum nome que já existe.
-
-            //APAGAR AS MENSAGENS ASSIM QUE CLICAR NO TEXTBOX
-
-           //ATIVAR AS BOLINHAS NA "SENHA" e "CONFIRMAÇÃO"
-
-           //COLOCAR SOMENTE NÚMEROS EM: Celular, CPF, CEP, N°, 
-
-           //TIRAR O NOME "frm..", usar somente o nome da página
-
-         */ 
-
-
         bool load = false;
         Usuario usuario = new Usuario();
-        Log_in log_In = new Log_in();
-        Endereco endereco = new Endereco();
 
         private void PreencherClasse()
         {
@@ -78,26 +59,65 @@ namespace FinalGlicNow
             txtCEP.Text = usuario.endereco.CEP;
             cboCidade.SelectedIndex = usuario.endereco.CidadeId;
         }
+        public static bool ValidarCPF(string cpf)
+        {
+            cpf = cpf.Replace(".", "").Replace("-", "");
+            if (cpf.Length != 11)
+                return false;
 
+            for (int j = 0; j < 10; j++)
+                if (new string(j.ToString()[0], 11) == cpf)
+                    return false;
 
-        //ARRUMAR ESSE PROBLEMINHA AQUI:
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+
+            string tempCpf = cpf.Substring(0, 9);
+            int soma = 0;
+
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+
+            int resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            string digito = resto.ToString();
+            tempCpf = tempCpf + digito;
+            soma = 0;
+
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            return cpf.EndsWith(digito);
+        }
         private string ValidarPreenchimento()
         {
             try
             {
                 string msgErro = string.Empty;
 
-                if (txtNome.Text == string.Empty)
+                if (txtNome.Text == string.Empty || txtNome.Text == "Nome Completo")
                 {
-                    msgErro += "Preencha o campo: NOME COMPLETO.\n";
+                    msgErro = "Preencha o campo: NOME COMPLETO.\n";
                 }
 
-                if (txtSenha.Text == string.Empty)
+                if (txtSenha.Text == string.Empty || txtSenha.Text == "Senha")
                 {
                     msgErro += "Preencha o campo: SENHA.\n";
                 }
 
-                if (txtConfSenha.Text == string.Empty)
+                if (txtConfSenha.Text == string.Empty || txtConfSenha.Text == "Confirmar senha")
                 {
                     msgErro += "Preencha o campo: CONFIRMAR SENHA.\n";
                 }
@@ -105,31 +125,31 @@ namespace FinalGlicNow
                 {
                     msgErro += "Confirmação da senha não confere.\n";
                 }
-
-                /* VERIFICAR ISSO AQUI [LOGIN]
-                 * if (txtLogin.Text == string.Empty)
+                if (txtLogin.Text == string.Empty || txtLogin.Text == "Login")
                 {
-                    msgErro = "Preencha o USUÁRIO.\n";
+                    msgErro = "Preencha o campo: LOGIN.\n";
                 }
                 else
                 {
                     Usuario u = new Usuario();
-                    u.Login = txtLogin.Text;
+                    u.log_In.Login = txtLogin.Text;
                     u.Consultar();
                     if (usuario.Id == 0 && u.Id != 0 ||
                         usuario.Id != 0 && u.Id != 0 && usuario.Id != u.Id)
                     {
-                        msgErro += "Usuário já existente.\n";
+                        msgErro += "Login já existente.\n";
                     }
                 }
-                */
-
-                if (txtCPF.Text == string.Empty)
+                if (txtCPF.Text == string.Empty || txtCPF.Text == "CPF")
                 {
                     msgErro += "Preencha o campo: CPF.\n";
                 }
+                else if (!ValidarCPF(txtCPF.Text))
+                {
+                    msgErro += "CPF inválido.\n";
+                }
 
-                if (txtEmail.Text == string.Empty)
+                if (txtEmail.Text == string.Empty || txtEmail.Text == "E-mail")
                 {
                     msgErro += "Preencha o campo E-MAIL.\n";
                 }
@@ -144,8 +164,12 @@ namespace FinalGlicNow
                         msgErro += "Email inválido.\n";
                     }
                 }
+                if (txtNumero.Text == string.Empty || txtNumero.Text == "Nº")
+                {
+                    msgErro += "Preencha o campo NÚMERO.\n";
+                }
 
-                if (dtpDataNascimento.Value == DateTime.Parse("01/01/1900"))
+                if (dtpDataNascimento.Value == DateTime.Parse("01/01/1999"))
                 {
                     msgErro += "Preencha o campo: DATA DE NASCIMENTO.\n";
                 }
@@ -160,27 +184,27 @@ namespace FinalGlicNow
                     msgErro += "Selecione o campo: Gênero.\n";
                 }
 
-                if (txtCelular.Text == string.Empty)
+                if (txtCelular.Text == string.Empty || txtCelular.Text == "Celular")
                 {
-                    msgErro += "Preencha o campo NÚMERO.\n";
+                    msgErro += "Preencha o campo Celular.\n";
                 }
 
-                if (txtEndereco.Text == string.Empty)
+                if (txtEndereco.Text == string.Empty || txtEndereco.Text == "Endereço")
                 {
                     msgErro += "Preencha o campo: ENDEREÇO.\n";
                 }
 
-                if (txtComplemento.Text == string.Empty)
+                if (txtComplemento.Text == string.Empty || txtComplemento.Text == "Complemento")
                 {
                     msgErro += "Preencha o campo: COMPLEMENTO.\n";
                 }
 
-                if (txtBairro.Text == string.Empty)
+                if (txtBairro.Text == string.Empty || txtBairro.Text == "Bairro")
                 {
                     msgErro += "Preencha o campo: BAIRRO.\n";
                 }
 
-                if (txtCEP.Text == string.Empty)
+                if (txtCEP.Text == string.Empty || txtCEP.Text == "CEP")
                 {
                     msgErro += "Preencha o campo: CEP.\n";
                 }
@@ -200,20 +224,8 @@ namespace FinalGlicNow
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-
             }
-
         }
-        //==============================
-
-
-        //ARRUMAR ESSE PROBLEMINHA AQUI:
-        /* CARREGAR O TIPO DE DIABATE
-         
-         */
-        //==============================
-
-
         private void CarregarEstados()
         {
             try
@@ -279,28 +291,19 @@ namespace FinalGlicNow
             }
 
         }
-
-
-
-        //RESOLVER ESSE PROBLEMINHA AQUI:
         private void frmConfig_Load(object sender, EventArgs e)
         {
             CarregarEstados();
+            load = true;
+            CarregarCidades();
             CarregarSexos();
             CarregarTipoDiabetes();
-            //PreencherFormulario();
-            load = true;
+            PreencherFormulario();        
         }
-        //===============================
-
-
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarCidades();
         }
-
-
-
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
@@ -313,9 +316,6 @@ namespace FinalGlicNow
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
-
-
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             string MsgErro = ValidarPreenchimento();
@@ -326,12 +326,9 @@ namespace FinalGlicNow
             }
             PreencherClasse();
             usuario.Gravar();
-            usuario.log_In.Gravar();
-            usuario.endereco.Gravar();
             MessageBox.Show("Usuário atualizado com sucesso!", "Configuração de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
             PreencherFormulario();
         }
-
         private void picClose_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("Deseja fechar a aba configuração?",
@@ -342,6 +339,47 @@ namespace FinalGlicNow
             if (DialogResult == DialogResult.Yes)
             {
                 Close();
+            }
+        }
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
+        }
+        private void picEditar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog abrirImg = new OpenFileDialog();
+            abrirImg.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            string profile = "";
+
+            if (abrirImg.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            profile = abrirImg.FileName;
+            FileInfo fileInfo = new FileInfo(profile);
+
+            // Verifique se o tamanho da imagem é maior que 1 MB (1048576 bytes)
+            if (fileInfo.Length > 1048576)
+            {
+                MessageBox.Show("A imagem selecionada é muito grande. Por favor, selecione uma imagem com tamanho menor que 1 MB.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                byte[] imageBytes;
+                using (FileStream fs = new FileStream(profile, FileMode.Open, FileAccess.Read))
+                {
+                    imageBytes = new byte[fs.Length];
+                    fs.Read(imageBytes, 0, Convert.ToInt32(fs.Length));
+                }
+                usuario.FotoPerfil = imageBytes;
+                picPerfil.Image = Global.BytesToImage(imageBytes);
+                picPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+                MessageBox.Show("Imagem carregada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

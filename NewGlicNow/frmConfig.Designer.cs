@@ -145,6 +145,7 @@
             this.txtNumero.Size = new System.Drawing.Size(109, 20);
             this.txtNumero.TabIndex = 122;
             this.txtNumero.Text = "Nº";
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // txtComplemento
             // 
@@ -370,6 +371,7 @@
             this.picEditar.Size = new System.Drawing.Size(24, 24);
             this.picEditar.TabIndex = 103;
             this.picEditar.TabStop = false;
+            this.picEditar.Click += new System.EventHandler(this.picEditar_Click);
             // 
             // picLogin
             // 

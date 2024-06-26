@@ -19,29 +19,8 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-
-        /* TAREFAS
-         
-                //DEIXAR A OPÇÃO DE APARECER CASO O USUÁRIO QUEIRA [PLUS]
-
-                //VALIDAR PREENCHIMENTO [LOGIN]
-
-                //AO CLICAR EM QUALQUER TEXTBOX PELA PRIMEIRA VEZ, ELE APAGA E EU ESCREVO, ASSIM QUE EU SAIO E CLICO NOVAMENTE, 
-                        ELE APAGA NOVAMENTE PARA EU ESCREVER.
-
-                //ARRUMAR A GRAVAÇÃO DA DATA DE NASCIMENTO (Não lembro se ainda está gravando "01/01/0001")
-                     É possível colocar o nome "Data de nascimento" e assim que ele clicar mostrar a data?
-
-                //FAZER BOTÃO LIMPAR CAMPOS?
-          
-          
-         */ 
-
-
-
         bool load = false;
         Usuario usuario = new Usuario();
-
         private void PreencherClasse()
         {
             usuario.NomeCompleto = txtNome.Text;
@@ -59,10 +38,49 @@ namespace NewGlicNow
             usuario.endereco.Bairro = txtBairro.Text;
             usuario.endereco.CEP = txtCEP.Text;
             usuario.endereco.CidadeId = cboCidade.SelectedIndex;
-
         }
+        public static bool ValidarCPF(string cpf)
+        {
+            cpf = cpf.Replace(".", "").Replace("-", "");
+            if (cpf.Length != 11)
+                return false;
 
-        //ARRUMAR ESSE PROBLEMINHA AQUI:
+            for (int j = 0; j < 10; j++)
+                if (new string(j.ToString()[0], 11) == cpf)
+                    return false;
+
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+
+            string tempCpf = cpf.Substring(0, 9);
+            int soma = 0;
+
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+
+            int resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            string digito = resto.ToString();
+            tempCpf = tempCpf + digito;
+            soma = 0;
+
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            return cpf.EndsWith(digito);
+        }
         private string ValidarPreenchimento()
         {
             try
@@ -107,6 +125,10 @@ namespace NewGlicNow
                 {
                     msgErro += "Preencha o campo: CPF.\n";
                 }
+                else if (!ValidarCPF(txtCPF.Text))
+                {
+                    msgErro += "CPF inválido.\n";
+                }
 
                 if (txtEmail.Text == string.Empty || txtEmail.Text == "E-mail")
                 {
@@ -128,7 +150,7 @@ namespace NewGlicNow
                     msgErro += "Preencha o campo NÚMERO.\n";
                 }
 
-                if (dtpDataNascimento.Value == DateTime.Parse("01/01/1900"))
+                if (dtpDataNascimento.Value == DateTime.Parse("01/01/1999"))
                 {
                     msgErro += "Preencha o campo: DATA DE NASCIMENTO.\n";
                 }
@@ -183,13 +205,8 @@ namespace NewGlicNow
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-
             }
-
         }
-        //==============================
-
-
         private void CarregarEstados()
         {
             try
@@ -325,6 +342,14 @@ namespace NewGlicNow
                 return;
             }
             profile = abrirImg.FileName;
+            FileInfo fileInfo = new FileInfo(profile);
+
+            // Verifique se o tamanho da imagem é maior que 1 MB (1048576 bytes)
+            if (fileInfo.Length > 1048576)
+            {
+                MessageBox.Show("A imagem selecionada é muito grande. Por favor, selecione uma imagem com tamanho menor que 1 MB.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 byte[] imageBytes;
@@ -343,13 +368,11 @@ namespace NewGlicNow
                 MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
         }
-
-
-
         private void txtNome_Leave(object sender, EventArgs e)
         {
                 Global.ResetMensagem(txtNome);           
@@ -359,8 +382,6 @@ namespace NewGlicNow
                 Global.LimparTexto(txtNome);
 
         }
-
-
         private void txtSenha_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtSenha);
@@ -369,7 +390,6 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtSenha);
         }
-
         private void txtConfSenha_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtConfSenha);
@@ -378,7 +398,6 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtConfSenha);
         }
-
         private void txtLogin_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtLogin);
@@ -387,41 +406,31 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtLogin);
         }
-
-
         private void txtCPF_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtCPF);
         }
         private void txtCPF_Enter(object sender, EventArgs e)
         {
-            if (txtCPF.Text == "CPF") ;
             Global.LimparTexto(txtCPF);
         }
-
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "Email")
-            {
-                Global.ResetMensagem(txtEmail);
-            }
+            Global.ResetMensagem(txtEmail);
 
         }
         private void txtEmail_Enter(object sender, EventArgs e)
         {
-                Global.ResetMensagem(txtEmail);           
+            Global.LimparTexto(txtEmail);
         }
-
         private void txtCelular_Leave(object sender, EventArgs e)
         {
-            if (txtCelular.Text == "Celular") ;
             Global.ResetMensagem(txtCelular);
         }
         private void txtCelular_Enter(object sender, EventArgs e)
         {
             Global.LimparTexto(txtCelular);
         }
-
         private void txtEndereco_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtEndereco);
@@ -430,7 +439,6 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtEndereco);
         }
-
         private void txtNumero_Enter(object sender, EventArgs e)
         {
             Global.LimparTexto(txtNumero);
@@ -439,7 +447,6 @@ namespace NewGlicNow
         {
             Global.ResetMensagem(txtNumero);
         }
-
         private void txtComplemento_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtComplemento);
@@ -448,7 +455,6 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtComplemento);
         }
-
         private void txtBairro_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtBairro);
@@ -457,7 +463,6 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtBairro);
         }
-
         private void txtCEP_Leave(object sender, EventArgs e)
         {
             Global.ResetMensagem(txtCEP);
@@ -466,7 +471,5 @@ namespace NewGlicNow
         {
             Global.LimparTexto(txtCEP);
         }
-
-
     }
 }
