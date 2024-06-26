@@ -230,31 +230,44 @@ namespace NewGlicNow
                 // Se o nome do arquivo não for vazio, exporta os dados
                 if (saveFileDialog1.FileName != "")
                 {
-                    // Cria um StringBuilder para construir o conteúdo CSV
-                    StringBuilder sb = new StringBuilder();
-
-                    // Cabeçalhos das colunas
-                    for (int i = 0; i < dgvMapaGlic.Columns.Count; i++)
+                    // Cria um StreamWriter para escrever no arquivo CSV
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName, false, Encoding.UTF8))
                     {
-                        sb.Append(dgvMapaGlic.Columns[i].HeaderText + ",");
-                    }
-                    sb.AppendLine();
-
-                    // Linhas de dados
-                    foreach (DataGridViewRow row in dgvMapaGlic.Rows)
-                    {
-                        for (int j = 0; j < dgvMapaGlic.Columns.Count; j++)
+                        // Cabeçalhos das colunas
+                        for (int i = 0; i < dgvMapaGlic.Columns.Count; i++)
                         {
-                            sb.Append(row.Cells[j].Value.ToString() + ",");
+                            sw.Write(dgvMapaGlic.Columns[i].HeaderText);
+                            if (i < dgvMapaGlic.Columns.Count - 1)
+                                sw.Write(",");
                         }
-                        sb.AppendLine();
+                        sw.WriteLine();
+
+                        // Linhas de dados
+                        foreach (DataGridViewRow row in dgvMapaGlic.Rows)
+                        {
+                            for (int j = 0; j < dgvMapaGlic.Columns.Count; j++)
+                            {
+                                if (dgvMapaGlic.Columns[j].ValueType == typeof(DateTime))
+                                {
+                                    // Se for uma coluna de DateTime, formate como desejado
+                                    sw.Write(((DateTime)row.Cells[j].Value).ToString("dd-MM"));
+                                }
+                                else
+                                {
+                                    // Para outros tipos, apenas converte para string
+                                    sw.Write(row.Cells[j].Value.ToString());
+                                }
+
+                                if (j < dgvMapaGlic.Columns.Count - 1)
+                                    sw.Write(",");
+                            }
+                            sw.WriteLine();
+                        }
+
+                        // Mensagem de sucesso
+                        MessageBox.Show("Dados exportados para CSV com sucesso!", "Exportação",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    // Escreve o conteúdo no arquivo CSV
-                    File.WriteAllText(saveFileDialog1.FileName, sb.ToString(), Encoding.UTF8);
-
-                    MessageBox.Show("Dados exportados para CSV com sucesso!", "Exportação",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
