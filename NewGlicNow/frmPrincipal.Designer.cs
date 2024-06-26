@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnlBordaForm = new System.Windows.Forms.Panel();
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
@@ -49,7 +48,6 @@
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ucAgenda1 = new FinalGlicNow.ucAgenda();
             this.ucCadastroMapGlic1 = new NewGlicNow.ucCadastroMapGlic();
             this.pnlBordaForm.SuspendLayout();
@@ -276,13 +274,6 @@
             this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
             this.pnlBordaPerfil4.TabIndex = 34;
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = null;
-            this.bunifuDragControl1.Vertical = true;
-            // 
             // ucAgenda1
             // 
             this.ucAgenda1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(96)))), ((int)(((byte)(88)))));
@@ -356,7 +347,6 @@
         private System.Windows.Forms.Panel pnlBordaPerfil4;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.PictureBox picMinimize;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private FinalGlicNow.ucAgenda ucAgenda1;
         private ucCadastroMapGlic ucCadastroMapGlic1;
     }
