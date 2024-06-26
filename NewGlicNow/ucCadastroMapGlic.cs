@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,44 +52,53 @@ namespace NewGlicNow
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro -->" + ex.Message,"Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao carregar dados da grade: " + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void PreencherClasse()
         {
-            if(cboPeriodo.SelectedIndex == 0)
+            try
             {
-                usuario.mapaGlic.PreCafe = Convert.ToInt32(txtValores.Text);
+                if (cboPeriodo.SelectedIndex == 0)
+                {
+                    usuario.mapaGlic.PreCafe = Convert.ToInt32(txtValores.Text);
+                }
+                else if (cboPeriodo.SelectedIndex == 1)
+                {
+                    usuario.mapaGlic.PosCafe = Convert.ToInt32(txtValores.Text);
+                }
+                else if (cboPeriodo.SelectedIndex == 2)
+                {
+                    usuario.mapaGlic.PreAlmoco = Convert.ToInt32(txtValores.Text);
+                }
+                else if (cboPeriodo.SelectedIndex == 3)
+                {
+                    usuario.mapaGlic.PosAlmoco = Convert.ToInt32(txtValores.Text);
+                }
+                else if (cboPeriodo.SelectedIndex == 4)
+                {
+                    usuario.mapaGlic.PreJantar = Convert.ToInt32(txtValores.Text);
+                }
+                else if (cboPeriodo.SelectedIndex == 5)
+                {
+                    usuario.mapaGlic.PosJantar = Convert.ToInt32(txtValores.Text);
+                }
+                else if (cboPeriodo.SelectedIndex == 6)
+                {
+                    usuario.mapaGlic.BasalMatutino = Convert.ToInt32(txtValores.Text);
+                }
+                else if (cboPeriodo.SelectedIndex == 7)
+                {
+                    usuario.mapaGlic.BasalNoturno = Convert.ToInt32(txtValores.Text);
+                }
+                usuario.mapaGlic.Observacao = txtObservacao.Text;
             }
-            else if (cboPeriodo.SelectedIndex == 1)
+            catch(Exception ex)
             {
-                usuario.mapaGlic.PosCafe = Convert.ToInt32(txtValores.Text);
+                MessageBox.Show("Erro ao preencher dados da classe: " + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (cboPeriodo.SelectedIndex == 2)
-            {
-                usuario.mapaGlic.PreAlmoco = Convert.ToInt32(txtValores.Text);
-            }
-            else if (cboPeriodo.SelectedIndex == 3)
-            {
-                usuario.mapaGlic.PosAlmoco = Convert.ToInt32(txtValores.Text);
-            }
-            else if (cboPeriodo.SelectedIndex == 4)
-            {
-                usuario.mapaGlic.PreJantar = Convert.ToInt32(txtValores.Text);
-            }
-            else if (cboPeriodo.SelectedIndex == 5)
-            {
-                usuario.mapaGlic.PosJantar = Convert.ToInt32(txtValores.Text);
-            }
-            else if (cboPeriodo.SelectedIndex == 6)
-            {
-                usuario.mapaGlic.BasalMatutino = Convert.ToInt32(txtValores.Text);
-            }
-            else if (cboPeriodo.SelectedIndex == 7)
-            {
-                usuario.mapaGlic.BasalNoturno = Convert.ToInt32(txtValores.Text);
-            }
-            usuario.mapaGlic.Observacao = txtObservacao.Text;
         }
         private void PreencherFormulario()
         {
@@ -169,16 +179,25 @@ namespace NewGlicNow
                 CarregarGridGlic();
             }
             catch(Exception ex) 
-            { 
-                MessageBox.Show("Erro -->"+ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show("Erro ao gravar dados: " + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            usuario = new Usuario();
-            usuario.mapaGlic.DataInicio = dtpDataInicio.Value;
-            usuario.mapaGlic.DataFim = dtpDataFim.Value;
-            CarregarGridGlic();
+            try
+            {
+                usuario = new Usuario();
+                usuario.mapaGlic.DataInicio = dtpDataInicio.Value;
+                usuario.mapaGlic.DataFim = dtpDataFim.Value;
+                CarregarGridGlic();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar dados: " + ex.Message, "Erro",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void dgvMapaGlic_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -193,9 +212,56 @@ namespace NewGlicNow
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao selecionar a Glicemia: {ex.Message}", "Erro",
+                MessageBox.Show("Erro ao selecionar a Glicemia: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
+        }
+
+        private void btnMapa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Abre o diálogo para salvar o arquivo CSV
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "Arquivo CSV (*.csv)|*.csv";
+                saveFileDialog1.Title = "Salvar arquivo CSV";
+                saveFileDialog1.ShowDialog();
+
+                // Se o nome do arquivo não for vazio, exporta os dados
+                if (saveFileDialog1.FileName != "")
+                {
+                    // Cria um StringBuilder para construir o conteúdo CSV
+                    StringBuilder sb = new StringBuilder();
+
+                    // Cabeçalhos das colunas
+                    for (int i = 0; i < dgvMapaGlic.Columns.Count; i++)
+                    {
+                        sb.Append(dgvMapaGlic.Columns[i].HeaderText + ",");
+                    }
+                    sb.AppendLine();
+
+                    // Linhas de dados
+                    foreach (DataGridViewRow row in dgvMapaGlic.Rows)
+                    {
+                        for (int j = 0; j < dgvMapaGlic.Columns.Count; j++)
+                        {
+                            sb.Append(row.Cells[j].Value.ToString() + ",");
+                        }
+                        sb.AppendLine();
+                    }
+
+                    // Escreve o conteúdo no arquivo CSV
+                    File.WriteAllText(saveFileDialog1.FileName, sb.ToString(), Encoding.UTF8);
+
+                    MessageBox.Show("Dados exportados para CSV com sucesso!", "Exportação",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao exportar para CSV: " + ex.Message, "Erro",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
