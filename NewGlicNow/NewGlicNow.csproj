@@ -96,6 +96,12 @@
     <Compile Include="ucAgenda.Designer.cs">
       <DependentUpon>ucAgenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucAgendaFalhou.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAgendaFalhou.Designer.cs">
+      <DependentUpon>ucAgendaFalhou.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucCadastroMapGlic.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucAgenda.resx">
       <DependentUpon>ucAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAgendaFalhou.resx">
+      <DependentUpon>ucAgendaFalhou.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucCadastroMapGlic.resx">
       <DependentUpon>ucCadastroMapGlic.cs</DependentUpon>

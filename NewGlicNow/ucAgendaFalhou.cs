@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewGlicNow;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,15 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NewGlicNow
+namespace FinalGlicNow
 {
-    public partial class ucAgenda : UserControl
+    public partial class ucAgendaFalhou : UserControl
     {
-        public ucAgenda()
+        public ucAgendaFalhou()
         {
             InitializeComponent();
         }
-
         Usuario usuario = new Usuario();
         private string ValidarPreenchimento()
         {
@@ -48,7 +48,7 @@ namespace NewGlicNow
             {
                 throw new Exception(ex.Message);
             }
-        }
+        }        
         private void PreencherFormulario()
         {
             txtTitulo.Text = usuario.agenda.Titulo;
@@ -77,7 +77,7 @@ namespace NewGlicNow
                 grdAgenda.Columns[2].HeaderText = "Título";
                 //Definindo largura das colunas               
                 grdAgenda.Columns[1].Width = 100;
-                grdAgenda.Columns[2].Width = 200;
+                grdAgenda.Columns[2].Width = 200;                
             }
             catch (Exception ex)
             {
@@ -93,12 +93,10 @@ namespace NewGlicNow
             txtObservacao.Clear();
             txtTitulo.Focus();
         }
-
         private void ucAgenda_Load(object sender, EventArgs e)
         {
             CarregarGridAgenda();
         }
-
         private void grdAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -116,9 +114,8 @@ namespace NewGlicNow
             {
                 MessageBox.Show($"Erro ao selecionar a agenda: {ex.Message}", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }            
         }
-
         private void btnGravar_Click(object sender, EventArgs e)
         {
             try
@@ -144,16 +141,14 @@ namespace NewGlicNow
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             usuario = new Usuario();
-            if (txtPesquisaTitulo.Text != string.Empty)
+            if(txtPesquisaTitulo.Text != string.Empty)
             {
                 usuario.agenda.Titulo = txtPesquisaTitulo.Text;
             }
