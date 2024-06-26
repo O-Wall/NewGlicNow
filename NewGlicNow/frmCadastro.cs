@@ -305,6 +305,7 @@ namespace NewGlicNow
                 PreencherClasse();                
                 usuario.Gravar();
                 MessageBox.Show("Usuário Cadastrado com sucesso!", "Cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Global.IdUsuarioLogado = usuario.Id;
                 DialogResult = DialogResult.OK;
                 Close();
             }
