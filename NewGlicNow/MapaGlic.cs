@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace NewGlicNow
 {
@@ -12,6 +13,8 @@ namespace NewGlicNow
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataFim { get; set; }
         public int PreCafe {  get; set; }
         public int PosCafe { get; set;}
         public int PreAlmoco { get; set; }
@@ -27,7 +30,8 @@ namespace NewGlicNow
         {
             Id = 0;
             Data = DateTime.Now;
-            DataInicio = DateTime
+            DataInicio = DateTime.Now;
+            DataFim = DateTime.Now;
             PreCafe = 0;
             PosCafe = 0;
             PreAlmoco = 0;
@@ -54,9 +58,10 @@ namespace NewGlicNow
                     "Observacao, UsuarioId \n";
                 sql += "from tblGlicemia \n";
                 sql += "where UsuarioId = @usuarioId \n";
-                //sql += " and data beetwen ";
-                parameters.Add(new SqlParameter("@UsuarioId", UsuarioId));
-                parameters.Add(new SqlParameter("@data", Data));
+                sql += " and data beetwen @dataInicio AND @dataFim \n";
+                parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
+                parameters.Add(new SqlParameter("@dataInicio", DataInicio));
+                parameters.Add(new SqlParameter("@dataFim", DataFim));
                 dt = acesso.Consultar(sql, parameters);
                 if(dt.Rows.Count==1)
                 {
