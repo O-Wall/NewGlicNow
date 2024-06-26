@@ -19,6 +19,20 @@ namespace NewGlicNow
         }
         bool passwordchar = true;
 
+        private string ValidarCampos()
+        {
+            string msgErro = string.Empty;
+            if(txtLogin.Text == string.Empty)
+            {
+                msgErro = "Preencha o campo: Login! \n";
+            }
+            if(txtSenha.Text  == string.Empty)
+            {
+                msgErro += "Preencha o campo: Senha! \n";
+            }
+            return msgErro;
+        }
+
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             Tag = "";
@@ -94,6 +108,13 @@ namespace NewGlicNow
         {
             try
             {
+                string msgErro = ValidarCampos();
+                if(msgErro != string.Empty)
+                {
+                    MessageBox.Show(msgErro, "Erro de Preenchimento",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 string PasswordCriptografada = txtSenha.Text;
                 Usuario usuario = new Usuario();
                 usuario.log_In.Login = txtLogin.Text;
