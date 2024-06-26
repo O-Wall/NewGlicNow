@@ -46,6 +46,11 @@ namespace NewGlicNow
                     " Observacao, UsuarioId \n";
                 sql += "from tblAgenda \n";
 
+                sql += "where UsuarioId = @usuarioId \n";
+                //sql += " and data beetwen ";
+                parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
+                parameters.Add(new SqlParameter("@dataHora", DataHora));
+
                 if (Id != 0)
                 {
                     sql += "where @id = Id \n";
@@ -53,13 +58,13 @@ namespace NewGlicNow
                 }
                 else if (Titulo != string.Empty)
                 {
-                    sql += "Where @Titulo = Titulo \n";
-                    parameters.Add(new SqlParameter("@Titulo", Titulo));
+                    sql += "Where @titulo = Titulo \n";
+                    parameters.Add(new SqlParameter("@titulo", Titulo));
                 }
                 else if (DataHora != DateTime.MinValue)
                 {
-                    sql += "Where @DataHora = DataHora \n";
-                    parameters.Add(new SqlParameter("@DataHora", DataHora));
+                    sql += "Where @dataHora = DataHora \n";
+                    parameters.Add(new SqlParameter("@dataHora", DataHora));
                 }
 
                 dt = acesso.Consultar(sql, parameters);

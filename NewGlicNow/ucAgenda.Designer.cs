@@ -75,7 +75,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(84, 424);
+            this.btnLimpar.Location = new System.Drawing.Point(73, 424);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(107, 41);
             this.btnLimpar.TabIndex = 135;
@@ -84,7 +84,7 @@
             // 
             // btnGravar
             // 
-            this.btnGravar.Location = new System.Drawing.Point(575, 424);
+            this.btnGravar.Location = new System.Drawing.Point(584, 424);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(107, 41);
             this.btnGravar.TabIndex = 134;
@@ -141,11 +141,18 @@
             // 
             // grdAgenda
             // 
+            this.grdAgenda.AllowUserToAddRows = false;
+            this.grdAgenda.AllowUserToDeleteRows = false;
+            this.grdAgenda.AllowUserToResizeColumns = false;
+            this.grdAgenda.AllowUserToResizeRows = false;
             this.grdAgenda.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.grdAgenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdAgenda.Location = new System.Drawing.Point(73, 89);
             this.grdAgenda.Name = "grdAgenda";
+            this.grdAgenda.ReadOnly = true;
+            this.grdAgenda.RowHeadersVisible = false;
+            this.grdAgenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdAgenda.Size = new System.Drawing.Size(618, 144);
             this.grdAgenda.TabIndex = 136;
             this.grdAgenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdAgenda_CellClick);
