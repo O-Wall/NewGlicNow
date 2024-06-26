@@ -27,6 +27,7 @@ namespace NewGlicNow
         {
             Id = 0;
             Data = DateTime.Now;
+            DataInicio = DateTime
             PreCafe = 0;
             PosCafe = 0;
             PreAlmoco = 0;

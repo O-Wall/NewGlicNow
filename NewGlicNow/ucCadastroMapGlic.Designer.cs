@@ -90,7 +90,7 @@
             // 
             // btnGravar
             // 
-            this.btnGravar.Location = new System.Drawing.Point(602, 428);
+            this.btnGravar.Location = new System.Drawing.Point(614, 428);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(103, 35);
             this.btnGravar.TabIndex = 15;
