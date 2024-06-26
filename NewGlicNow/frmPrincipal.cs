@@ -40,8 +40,7 @@ namespace NewGlicNow
                 picPerfil.Image = Global.BytesToImage(user.FotoPerfil);
             }
 
-            lblNomePerfil.Text = user.NomeCompleto; 
-            ucAgenda1.BringToFront();            
+            lblNomePerfil.Text = user.NomeCompleto;   
         }
 
 
@@ -50,14 +49,12 @@ namespace NewGlicNow
         {
             pnlEnfeite.Height = btnAgenda.Height;
             pnlEnfeite.Top = btnAgenda.Top;
-            ucAgenda1.BringToFront();
             
         }
         private void btnGlicemia_Click(object sender, EventArgs e)
         {
             pnlEnfeite.Height = btnGlicemia.Height;
-            pnlEnfeite.Top = btnGlicemia.Top;
-            ucCadastroMapGlic1.BringToFront();            
+            pnlEnfeite.Top = btnGlicemia.Top;            
         }
         private void btnConfiguracao_Click(object sender, EventArgs e)
         {
