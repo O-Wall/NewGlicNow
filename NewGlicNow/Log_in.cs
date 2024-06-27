@@ -97,7 +97,7 @@ namespace NewGlicNow
                 parameters.Add(new SqlParameter("@login", Login));                
                 parameters.Add(new SqlParameter("@password", Password));
                 parameters.Add(new SqlParameter("@salvo", Salvo));
-                parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
+                parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
                 acesso.Executar(sql, parameters);
             }
             catch (Exception ex)

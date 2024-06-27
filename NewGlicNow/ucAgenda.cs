@@ -62,6 +62,7 @@ namespace NewGlicNow
                 grdAgenda.Columns[0].Visible = false;
                 grdAgenda.Columns[3].Visible = false;
                 grdAgenda.Columns[4].Visible = false;
+                grdAgenda.Columns[5].Visible = false;
                 // Definindo cabeçalhos
                 grdAgenda.Columns[1].HeaderText = "Data";
                 grdAgenda.Columns[2].HeaderText = "Título";
@@ -146,7 +147,7 @@ namespace NewGlicNow
             try
             {
                 usuario = new Usuario();
-                if (!string.IsNullOrEmpty(txtPesquisaTitulo.Text))
+                if (!string.IsNullOrEmpty(txtPesquisaTitulo.Text) || txtPesquisaTitulo.Text != "Título")
                 {
                     usuario.agenda.Titulo = txtPesquisaTitulo.Text;
                 }

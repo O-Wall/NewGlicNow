@@ -53,6 +53,7 @@ namespace NewGlicNow
 
             usuario.endereco.Logradouro = txtEndereco.Text;
             usuario.endereco.Complemento = txtComplemento.Text;
+            usuario.endereco.Numero = txtNumero.Text;
             usuario.endereco.Bairro = txtBairro.Text;
             usuario.endereco.CEP = txtCEP.Text;
             usuario.endereco.CidadeId = cboCidade.SelectedIndex;

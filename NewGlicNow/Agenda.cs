@@ -57,7 +57,7 @@ namespace NewGlicNow
                 else
                 {
                     sql += "where UsuarioId = @usuarioId \n";
-                    sql += " and data between @dataInicio and @dataFim \n";
+                    sql += " and DataHora between @dataInicio and @dataFim \n";
                     parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
                     parameters.Add(new SqlParameter("@dataInicio", DataInicio));
                     parameters.Add(new SqlParameter("@dataFim", DataFim));
@@ -70,7 +70,7 @@ namespace NewGlicNow
                     DataHora = Convert.ToDateTime(dt.Rows[0]["DataHora"]);
                     NomeMedico = dt.Rows[0]["NomeMedico"].ToString();
                     Observacao = dt.Rows[0]["Observacao"].ToString();
-                    UsuarioId = Convert.ToInt32(dt.Rows[0]["SexoId"]);
+                    UsuarioId = Convert.ToInt32(dt.Rows[0]["UsuarioId"]);
                 }
                 return dt;
             }

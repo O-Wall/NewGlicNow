@@ -107,6 +107,7 @@ namespace NewGlicNow
                     sql += "values \n";
                     sql += "(@data, @preCafe, @posCafe, @preAlmoco, @posAlmoco," +
                         " @preJantar, @posJantar, @basalMatutino, @basalNoturno, @observacao, @usuarioId) \n";
+                    parameters.Add(new SqlParameter("@data", Data));
                 }
                 else
                 {
