@@ -121,7 +121,8 @@
             this.txtCelular.Size = new System.Drawing.Size(206, 22);
             this.txtCelular.TabIndex = 10;
             this.txtCelular.Text = "Celular";
-            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Leave);
+            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
+            this.txtCelular.Leave += new System.EventHandler(this.txtCelular_Leave);
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtBairro
@@ -135,7 +136,8 @@
             this.txtBairro.Size = new System.Drawing.Size(239, 22);
             this.txtBairro.TabIndex = 14;
             this.txtBairro.Text = "Bairro";
-            this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Leave);
+            this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
+            this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
             // 
             // txtComplemento
             // 
@@ -147,7 +149,8 @@
             this.txtComplemento.Size = new System.Drawing.Size(256, 22);
             this.txtComplemento.TabIndex = 13;
             this.txtComplemento.Text = "Complemento";
-            this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Leave);
+            this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Enter);
+            this.txtComplemento.Leave += new System.EventHandler(this.txtComplemento_Leave);
             // 
             // txtCEP
             // 
@@ -160,7 +163,8 @@
             this.txtCEP.Size = new System.Drawing.Size(157, 22);
             this.txtCEP.TabIndex = 15;
             this.txtCEP.Text = "CEP";
-            this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Leave);
+            this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Enter);
+            this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
             this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEP_KeyPress);
             // 
             // txtEndereco
@@ -174,7 +178,8 @@
             this.txtEndereco.Size = new System.Drawing.Size(432, 22);
             this.txtEndereco.TabIndex = 11;
             this.txtEndereco.Text = "Endereço";
-            this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Leave);
+            this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Enter);
+            this.txtEndereco.Leave += new System.EventHandler(this.txtEndereco_Leave);
             // 
             // btnCadastro
             // 
@@ -237,7 +242,8 @@
             this.txtEmail.Size = new System.Drawing.Size(432, 22);
             this.txtEmail.TabIndex = 6;
             this.txtEmail.Text = "E-mail";
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Leave);
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtCPF
             // 
@@ -250,7 +256,8 @@
             this.txtCPF.Size = new System.Drawing.Size(198, 22);
             this.txtCPF.TabIndex = 5;
             this.txtCPF.Text = "CPF";
-            this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Leave);
+            this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Enter);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // txtLogin
@@ -265,6 +272,7 @@
             this.txtLogin.TabIndex = 4;
             this.txtLogin.Text = "Login";
             this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
+            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
             // 
             // txtConfSenha
             // 
@@ -277,7 +285,9 @@
             this.txtConfSenha.Size = new System.Drawing.Size(198, 22);
             this.txtConfSenha.TabIndex = 3;
             this.txtConfSenha.Text = "Confirmar senha";
-            this.txtConfSenha.Enter += new System.EventHandler(this.txtConfSenha_Leave);
+            this.txtConfSenha.Enter += new System.EventHandler(this.txtConfSenha_Enter);
+            this.txtConfSenha.Leave += new System.EventHandler(this.txtConfSenha_Leave);
+
             // 
             // txtSenha
             // 
@@ -290,7 +300,8 @@
             this.txtSenha.Size = new System.Drawing.Size(180, 22);
             this.txtSenha.TabIndex = 2;
             this.txtSenha.Text = "Senha";
-            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Leave);
+            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
+            this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
             // 
             // txtNome
             // 

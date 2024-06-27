@@ -17,6 +17,9 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
+
+        //colocar mais um botão vermelho (claro)
+
         bool passwordchar = true;
 
         private string ValidarCampos()

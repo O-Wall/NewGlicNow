@@ -21,6 +21,12 @@ namespace NewGlicNow
         }
         bool load = false;
         Usuario usuario = new Usuario();
+          
+
+        //CEP
+
+
+
         private void PreencherClasse()
         {
             usuario.NomeCompleto = txtNome.Text;
@@ -387,11 +393,13 @@ namespace NewGlicNow
         {
             Global.TextBoxLeave(txtSenha, "Senha");
         }
+
         private void txtSenha_Enter(object sender, EventArgs e)
         {
             Global.TextBoxEnter(txtSenha, "Senha");
         }
 
+        
 
 
         private void txtConfSenha_Leave(object sender, EventArgs e)
@@ -407,12 +415,12 @@ namespace NewGlicNow
 
         private void txtLogin_Leave(object sender, EventArgs e)
         {
-            Global.TextBoxLeave(txtCPF, "Login");
+            Global.TextBoxLeave(txtLogin, "Login");
 
         }
         private void txtLogin_Enter(object sender, EventArgs e)
         {
-            Global.TextBoxEnter(txtCPF, "Login");
+            Global.TextBoxEnter(txtLogin, "Login");
         }
 
 
@@ -430,12 +438,12 @@ namespace NewGlicNow
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            Global.TextBoxLeave(txtEmail, "Email");
+            Global.TextBoxLeave(txtEmail, "E-mail");
 
         }
         private void txtEmail_Enter(object sender, EventArgs e)
         {
-            Global.TextBoxEnter(txtEmail, "Email");
+            Global.TextBoxEnter(txtEmail, "E-mail");
         }
 
 
@@ -445,7 +453,7 @@ namespace NewGlicNow
         }
         private void txtCelular_Enter(object sender, EventArgs e)
         {
-            Global.TextBoxEnter(txtEndereco, "Celular");
+            Global.TextBoxEnter(txtCelular, "Celular");
         }
 
 
@@ -502,5 +510,8 @@ namespace NewGlicNow
         {
             CarregarCidades();
         }
+
+
+
     }
 }
