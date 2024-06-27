@@ -65,7 +65,7 @@ namespace NewGlicNow
                 else
                 {
                     sql += "where UsuarioId = @usuarioId \n";
-                    sql += " and data between cast(@dataInicio as date) AND cast(@dataFim as date)\n";
+                    sql += " and Data between cast(@dataInicio as date) AND cast(@dataFim as date)\n";
                     parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
                     parameters.Add(new SqlParameter("@dataInicio", DataInicio));
                     parameters.Add(new SqlParameter("@dataFim", DataFim));
