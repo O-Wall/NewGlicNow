@@ -16,7 +16,9 @@ namespace NewGlicNow
         {
             Global.LerAppConfig();
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);            
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            /*
             Form login = new FrmLogin();
             Application.Run(login);
 
@@ -29,6 +31,9 @@ namespace NewGlicNow
             {
                 Application.Run(new frmPrincipal());
             }
+            */
+
+            Application.Run(new frmPrincipal());
         }
     }
 }

@@ -19,7 +19,20 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-        
+
+        private void TrocaCorBtn(Button activeButton)
+        {
+            if (activeButton == btnAgenda)
+            {
+                btnAgenda.BackColor = Color.FromArgb(181, 63, 59);
+                btnGlicemia.BackColor = Color.FromArgb(137, 21, 32);
+            }
+            else if (activeButton == btnGlicemia)
+            {
+                btnGlicemia.BackColor = Color.FromArgb(162, 46, 44);
+                btnAgenda.BackColor = Color.FromArgb(137, 21, 32);
+            }
+        }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {

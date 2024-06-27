@@ -48,7 +48,7 @@ namespace NewGlicNow
         List<SqlParameter> parameters = new List<SqlParameter>();
         string sql = string.Empty;       
 
-
+        
         public DataTable Consultar()
         {
             try
@@ -95,6 +95,7 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
+        
 
         public void Gravar()
         {

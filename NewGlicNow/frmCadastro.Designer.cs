@@ -35,7 +35,6 @@
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.cboGenero = new System.Windows.Forms.ComboBox();
             this.cboTipoDiabete = new System.Windows.Forms.ComboBox();
@@ -176,17 +175,6 @@
             this.txtEndereco.TabIndex = 11;
             this.txtEndereco.Text = "Endereço";
             this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Leave);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.White;
-            this.btnLimpar.FlatAppearance.BorderSize = 0;
-            this.btnLimpar.Location = new System.Drawing.Point(310, 520);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(113, 36);
-            this.btnLimpar.TabIndex = 0;
-            this.btnLimpar.Text = "&Limpar Campos";
-            this.btnLimpar.UseVisualStyleBackColor = false;
             // 
             // btnCadastro
             // 
@@ -345,7 +333,7 @@
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
-            this.picClose.Location = new System.Drawing.Point(588, 5);
+            this.picClose.Location = new System.Drawing.Point(584, 2);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(30, 30);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -569,7 +557,6 @@
             this.Controls.Add(this.picCep);
             this.Controls.Add(this.picEndereco);
             this.Controls.Add(this.txtEndereco);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.cboGenero);
             this.Controls.Add(this.cboTipoDiabete);
@@ -631,7 +618,6 @@
         private System.Windows.Forms.PictureBox picCep;
         private System.Windows.Forms.PictureBox picEndereco;
         private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.ComboBox cboGenero;
         private System.Windows.Forms.ComboBox cboTipoDiabete;

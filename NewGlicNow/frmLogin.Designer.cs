@@ -31,13 +31,13 @@
             this.lblCadastre = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.TelaLogin = new System.Windows.Forms.Panel();
+            this.picImagemLogin = new System.Windows.Forms.PictureBox();
             this.BordaSenha = new System.Windows.Forms.Panel();
             this.BordaLogin = new System.Windows.Forms.Panel();
             this.cboSalvo = new System.Windows.Forms.CheckBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.picImagemLogin = new System.Windows.Forms.PictureBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
@@ -60,6 +60,8 @@
             this.lblCadastre.TabIndex = 47;
             this.lblCadastre.Text = "Criar conta";
             this.lblCadastre.Click += new System.EventHandler(this.lblCadastre_Click);
+            this.lblCadastre.MouseEnter += new System.EventHandler(this.lblCadastre_MouseEnter);
+            this.lblCadastre.MouseLeave += new System.EventHandler(this.lblCadastre_MouseLeave);
             // 
             // lblTitulo
             // 
@@ -82,6 +84,17 @@
             this.TelaLogin.Name = "TelaLogin";
             this.TelaLogin.Size = new System.Drawing.Size(257, 549);
             this.TelaLogin.TabIndex = 41;
+            // 
+            // picImagemLogin
+            // 
+            this.picImagemLogin.BackColor = System.Drawing.Color.Transparent;
+            this.picImagemLogin.Image = global::NewGlicNow.Properties.Resources.LoginDocumentacao;
+            this.picImagemLogin.Location = new System.Drawing.Point(3, 67);
+            this.picImagemLogin.Name = "picImagemLogin";
+            this.picImagemLogin.Size = new System.Drawing.Size(257, 390);
+            this.picImagemLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImagemLogin.TabIndex = 41;
+            this.picImagemLogin.TabStop = false;
             // 
             // BordaSenha
             // 
@@ -157,17 +170,6 @@
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
-            // 
-            // picImagemLogin
-            // 
-            this.picImagemLogin.BackColor = System.Drawing.Color.Transparent;
-            this.picImagemLogin.Image = global::NewGlicNow.Properties.Resources.LoginDocumentacao;
-            this.picImagemLogin.Location = new System.Drawing.Point(3, 67);
-            this.picImagemLogin.Name = "picImagemLogin";
-            this.picImagemLogin.Size = new System.Drawing.Size(257, 390);
-            this.picImagemLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImagemLogin.TabIndex = 41;
-            this.picImagemLogin.TabStop = false;
             // 
             // picSenha
             // 
