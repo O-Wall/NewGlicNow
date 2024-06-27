@@ -397,11 +397,13 @@
             // 
             // picEditar
             // 
-            this.picEditar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.picEditar.BackColor = System.Drawing.Color.Transparent;
             this.picEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEditar.Image = global::NewGlicNow.Properties.Resources.Pincel_editar___Cadastro;
             this.picEditar.Location = new System.Drawing.Point(139, 82);
             this.picEditar.Name = "picEditar";
             this.picEditar.Size = new System.Drawing.Size(24, 24);
+            this.picEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEditar.TabIndex = 103;
             this.picEditar.TabStop = false;
             this.picEditar.Click += new System.EventHandler(this.picEditar_Click);
@@ -409,9 +411,11 @@
             // picLogin
             // 
             this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogin.Image = global::NewGlicNow.Properties.Resources.Perfil_Cadastro_Vermelho;
             this.picLogin.Location = new System.Drawing.Point(18, 115);
             this.picLogin.Name = "picLogin";
-            this.picLogin.Size = new System.Drawing.Size(24, 24);
+            this.picLogin.Size = new System.Drawing.Size(30, 30);
+            this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogin.TabIndex = 102;
             this.picLogin.TabStop = false;
             // 
@@ -427,9 +431,11 @@
             // picPerfil
             // 
             this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPerfil.Image = global::NewGlicNow.Properties.Resources.Foto_Perfil_100___Vermelho;
             this.picPerfil.Location = new System.Drawing.Point(93, 36);
             this.picPerfil.Name = "picPerfil";
             this.picPerfil.Size = new System.Drawing.Size(70, 70);
+            this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPerfil.TabIndex = 2;
             this.picPerfil.TabStop = false;
             // 

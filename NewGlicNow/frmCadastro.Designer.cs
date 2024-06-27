@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastro));
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.cboCidade = new System.Windows.Forms.ComboBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
@@ -50,6 +49,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.pictureCelular = new System.Windows.Forms.PictureBox();
+            this.picNumero = new System.Windows.Forms.PictureBox();
             this.picEstado = new System.Windows.Forms.PictureBox();
             this.picCelular = new System.Windows.Forms.PictureBox();
             this.picCidade = new System.Windows.Forms.PictureBox();
@@ -64,10 +66,10 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picEditar = new System.Windows.Forms.PictureBox();
             this.picProfile = new System.Windows.Forms.PictureBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.picNumero = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCidade)).BeginInit();
@@ -82,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picNumero)).BeginInit();
             this.SuspendLayout();
             // 
             // cboEstado
@@ -341,145 +342,16 @@
             // picClose
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
             this.picClose.Location = new System.Drawing.Point(588, 5);
             this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(24, 24);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picClose.Size = new System.Drawing.Size(30, 30);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picClose.TabIndex = 42;
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.PicClose_Click);
-            // 
-            // picEstado
-            // 
-            this.picEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEstado.Location = new System.Drawing.Point(285, 461);
-            this.picEstado.Name = "picEstado";
-            this.picEstado.Size = new System.Drawing.Size(24, 24);
-            this.picEstado.TabIndex = 73;
-            this.picEstado.TabStop = false;
-            // 
-            // picCelular
-            // 
-            this.picCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCelular.Location = new System.Drawing.Point(305, 297);
-            this.picCelular.Name = "picCelular";
-            this.picCelular.Size = new System.Drawing.Size(24, 24);
-            this.picCelular.TabIndex = 70;
-            this.picCelular.TabStop = false;
-            // 
-            // picCidade
-            // 
-            this.picCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCidade.Location = new System.Drawing.Point(79, 461);
-            this.picCidade.Name = "picCidade";
-            this.picCidade.Size = new System.Drawing.Size(24, 24);
-            this.picCidade.TabIndex = 69;
-            this.picCidade.TabStop = false;
-            // 
-            // picBairro
-            // 
-            this.picBairro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBairro.Location = new System.Drawing.Point(79, 424);
-            this.picBairro.Name = "picBairro";
-            this.picBairro.Size = new System.Drawing.Size(24, 24);
-            this.picBairro.TabIndex = 67;
-            this.picBairro.TabStop = false;
-            // 
-            // picComplemento
-            // 
-            this.picComplemento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picComplemento.Location = new System.Drawing.Point(255, 386);
-            this.picComplemento.Name = "picComplemento";
-            this.picComplemento.Size = new System.Drawing.Size(24, 24);
-            this.picComplemento.TabIndex = 66;
-            this.picComplemento.TabStop = false;
-            // 
-            // picCep
-            // 
-            this.picCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCep.Location = new System.Drawing.Point(355, 423);
-            this.picCep.Name = "picCep";
-            this.picCep.Size = new System.Drawing.Size(24, 24);
-            this.picCep.TabIndex = 63;
-            this.picCep.TabStop = false;
-            // 
-            // picEndereco
-            // 
-            this.picEndereco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEndereco.Location = new System.Drawing.Point(79, 350);
-            this.picEndereco.Name = "picEndereco";
-            this.picEndereco.Size = new System.Drawing.Size(24, 24);
-            this.picEndereco.TabIndex = 62;
-            this.picEndereco.TabStop = false;
-            // 
-            // picEmail
-            // 
-            this.picEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEmail.Location = new System.Drawing.Point(79, 219);
-            this.picEmail.Name = "picEmail";
-            this.picEmail.Size = new System.Drawing.Size(24, 24);
-            this.picEmail.TabIndex = 55;
-            this.picEmail.TabStop = false;
-            // 
-            // picCpf
-            // 
-            this.picCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCpf.Location = new System.Drawing.Point(313, 181);
-            this.picCpf.Name = "picCpf";
-            this.picCpf.Size = new System.Drawing.Size(24, 24);
-            this.picCpf.TabIndex = 52;
-            this.picCpf.TabStop = false;
-            // 
-            // picConfSenha
-            // 
-            this.picConfSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picConfSenha.Location = new System.Drawing.Point(313, 146);
-            this.picConfSenha.Name = "picConfSenha";
-            this.picConfSenha.Size = new System.Drawing.Size(24, 24);
-            this.picConfSenha.TabIndex = 49;
-            this.picConfSenha.TabStop = false;
-            // 
-            // picSenha
-            // 
-            this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSenha.Location = new System.Drawing.Point(79, 146);
-            this.picSenha.Name = "picSenha";
-            this.picSenha.Size = new System.Drawing.Size(24, 24);
-            this.picSenha.TabIndex = 46;
-            this.picSenha.TabStop = false;
-            // 
-            // picLogin
-            // 
-            this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogin.Location = new System.Drawing.Point(79, 180);
-            this.picLogin.Name = "picLogin";
-            this.picLogin.Size = new System.Drawing.Size(24, 24);
-            this.picLogin.TabIndex = 45;
-            this.picLogin.TabStop = false;
-            // 
-            // picEditar
-            // 
-            this.picEditar.BackColor = System.Drawing.Color.Black;
-            this.picEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEditar.Location = new System.Drawing.Point(119, 104);
-            this.picEditar.Name = "picEditar";
-            this.picEditar.Size = new System.Drawing.Size(24, 24);
-            this.picEditar.TabIndex = 44;
-            this.picEditar.TabStop = false;
-            this.picEditar.Click += new System.EventHandler(this.picEditar_Click);
-            // 
-            // picProfile
-            // 
-            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picProfile.Location = new System.Drawing.Point(79, 64);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(64, 64);
-            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProfile.TabIndex = 43;
-            this.picProfile.TabStop = false;
             // 
             // txtNumero
             // 
@@ -496,14 +368,182 @@
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
             // 
+            // pictureCelular
+            // 
+            this.pictureCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureCelular.Image = global::NewGlicNow.Properties.Resources.Celular___Cadastro___Vermelho;
+            this.pictureCelular.Location = new System.Drawing.Point(305, 295);
+            this.pictureCelular.Name = "pictureCelular";
+            this.pictureCelular.Size = new System.Drawing.Size(24, 24);
+            this.pictureCelular.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCelular.TabIndex = 76;
+            this.pictureCelular.TabStop = false;
+            // 
             // picNumero
             // 
             this.picNumero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picNumero.Location = new System.Drawing.Point(79, 386);
+            this.picNumero.Image = global::NewGlicNow.Properties.Resources.Numero_Cadastro_Vermelho;
+            this.picNumero.Location = new System.Drawing.Point(79, 387);
             this.picNumero.Name = "picNumero";
             this.picNumero.Size = new System.Drawing.Size(24, 24);
+            this.picNumero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNumero.TabIndex = 75;
             this.picNumero.TabStop = false;
+            // 
+            // picEstado
+            // 
+            this.picEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEstado.Image = global::NewGlicNow.Properties.Resources.Estado___Cadastro___Vermleho;
+            this.picEstado.Location = new System.Drawing.Point(285, 461);
+            this.picEstado.Name = "picEstado";
+            this.picEstado.Size = new System.Drawing.Size(24, 24);
+            this.picEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEstado.TabIndex = 73;
+            this.picEstado.TabStop = false;
+            // 
+            // picCelular
+            // 
+            this.picCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCelular.Image = global::NewGlicNow.Properties.Resources.CPF_CADASTRO_VERMELHO;
+            this.picCelular.Location = new System.Drawing.Point(313, 181);
+            this.picCelular.Name = "picCelular";
+            this.picCelular.Size = new System.Drawing.Size(24, 24);
+            this.picCelular.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCelular.TabIndex = 70;
+            this.picCelular.TabStop = false;
+            // 
+            // picCidade
+            // 
+            this.picCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCidade.Image = global::NewGlicNow.Properties.Resources.Estado___Cadastro___Vermleho;
+            this.picCidade.Location = new System.Drawing.Point(79, 461);
+            this.picCidade.Name = "picCidade";
+            this.picCidade.Size = new System.Drawing.Size(24, 24);
+            this.picCidade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCidade.TabIndex = 69;
+            this.picCidade.TabStop = false;
+            // 
+            // picBairro
+            // 
+            this.picBairro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBairro.Image = global::NewGlicNow.Properties.Resources.Endereço_Cadastro;
+            this.picBairro.Location = new System.Drawing.Point(79, 424);
+            this.picBairro.Name = "picBairro";
+            this.picBairro.Size = new System.Drawing.Size(24, 24);
+            this.picBairro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBairro.TabIndex = 67;
+            this.picBairro.TabStop = false;
+            // 
+            // picComplemento
+            // 
+            this.picComplemento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picComplemento.Image = global::NewGlicNow.Properties.Resources.Complemento___Cadastro___Vermelho;
+            this.picComplemento.Location = new System.Drawing.Point(255, 386);
+            this.picComplemento.Name = "picComplemento";
+            this.picComplemento.Size = new System.Drawing.Size(24, 24);
+            this.picComplemento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picComplemento.TabIndex = 66;
+            this.picComplemento.TabStop = false;
+            // 
+            // picCep
+            // 
+            this.picCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCep.Image = global::NewGlicNow.Properties.Resources.Endereço_Cadastro;
+            this.picCep.Location = new System.Drawing.Point(355, 423);
+            this.picCep.Name = "picCep";
+            this.picCep.Size = new System.Drawing.Size(24, 24);
+            this.picCep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCep.TabIndex = 63;
+            this.picCep.TabStop = false;
+            // 
+            // picEndereco
+            // 
+            this.picEndereco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEndereco.Image = global::NewGlicNow.Properties.Resources.Endereco___Cadastro_2;
+            this.picEndereco.Location = new System.Drawing.Point(79, 350);
+            this.picEndereco.Name = "picEndereco";
+            this.picEndereco.Size = new System.Drawing.Size(24, 24);
+            this.picEndereco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEndereco.TabIndex = 62;
+            this.picEndereco.TabStop = false;
+            // 
+            // picEmail
+            // 
+            this.picEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEmail.Image = global::NewGlicNow.Properties.Resources.Email_Cadastro_Vermelho;
+            this.picEmail.Location = new System.Drawing.Point(79, 219);
+            this.picEmail.Name = "picEmail";
+            this.picEmail.Size = new System.Drawing.Size(24, 24);
+            this.picEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEmail.TabIndex = 55;
+            this.picEmail.TabStop = false;
+            // 
+            // picCpf
+            // 
+            this.picCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCpf.Location = new System.Drawing.Point(313, 181);
+            this.picCpf.Name = "picCpf";
+            this.picCpf.Size = new System.Drawing.Size(24, 24);
+            this.picCpf.TabIndex = 52;
+            this.picCpf.TabStop = false;
+            // 
+            // picConfSenha
+            // 
+            this.picConfSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picConfSenha.Image = global::NewGlicNow.Properties.Resources.Senha_Cadastro_Vermelho2;
+            this.picConfSenha.Location = new System.Drawing.Point(313, 146);
+            this.picConfSenha.Name = "picConfSenha";
+            this.picConfSenha.Size = new System.Drawing.Size(24, 24);
+            this.picConfSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picConfSenha.TabIndex = 49;
+            this.picConfSenha.TabStop = false;
+            // 
+            // picSenha
+            // 
+            this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSenha.Image = global::NewGlicNow.Properties.Resources.Senha_Cadastro_Vermelho2;
+            this.picSenha.Location = new System.Drawing.Point(79, 146);
+            this.picSenha.Name = "picSenha";
+            this.picSenha.Size = new System.Drawing.Size(24, 24);
+            this.picSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSenha.TabIndex = 46;
+            this.picSenha.TabStop = false;
+            // 
+            // picLogin
+            // 
+            this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogin.Image = global::NewGlicNow.Properties.Resources.Perfil_Cadastro_Vermelho;
+            this.picLogin.Location = new System.Drawing.Point(76, 179);
+            this.picLogin.Name = "picLogin";
+            this.picLogin.Size = new System.Drawing.Size(30, 30);
+            this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogin.TabIndex = 45;
+            this.picLogin.TabStop = false;
+            // 
+            // picEditar
+            // 
+            this.picEditar.BackColor = System.Drawing.Color.Transparent;
+            this.picEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEditar.Image = global::NewGlicNow.Properties.Resources.Pincel_editar___Cadastro;
+            this.picEditar.Location = new System.Drawing.Point(120, 106);
+            this.picEditar.Name = "picEditar";
+            this.picEditar.Size = new System.Drawing.Size(24, 24);
+            this.picEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEditar.TabIndex = 44;
+            this.picEditar.TabStop = false;
+            this.picEditar.Click += new System.EventHandler(this.picEditar_Click);
+            // 
+            // picProfile
+            // 
+            this.picProfile.BackColor = System.Drawing.Color.Transparent;
+            this.picProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picProfile.Image = global::NewGlicNow.Properties.Resources.Foto_Perfil_100___Vermelho;
+            this.picProfile.Location = new System.Drawing.Point(74, 60);
+            this.picProfile.Name = "picProfile";
+            this.picProfile.Size = new System.Drawing.Size(70, 70);
+            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProfile.TabIndex = 43;
+            this.picProfile.TabStop = false;
             // 
             // FrmCadastro
             // 
@@ -511,6 +551,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(618, 575);
+            this.Controls.Add(this.pictureCelular);
             this.Controls.Add(this.picNumero);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.panel2);
@@ -554,6 +595,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCidade)).EndInit();
@@ -568,7 +611,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picNumero)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,5 +654,6 @@
         private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.PictureBox picNumero;
+        private System.Windows.Forms.PictureBox pictureCelular;
     }
 }

@@ -237,9 +237,11 @@
             // 
             // picPesquisa
             // 
+            this.picPesquisa.Image = global::NewGlicNow.Properties.Resources.Pesquisa___MapaGlic___Branco2;
             this.picPesquisa.Location = new System.Drawing.Point(151, 13);
             this.picPesquisa.Name = "picPesquisa";
             this.picPesquisa.Size = new System.Drawing.Size(24, 24);
+            this.picPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPesquisa.TabIndex = 139;
             this.picPesquisa.TabStop = false;
             // 

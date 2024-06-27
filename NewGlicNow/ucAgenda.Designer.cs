@@ -32,19 +32,19 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.gprPesquisar = new System.Windows.Forms.GroupBox();
+            this.lblDataFim = new System.Windows.Forms.Label();
+            this.dtpDataAgendaFim = new System.Windows.Forms.DateTimePicker();
+            this.lblDataInicio = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.dtpDataAgendaInicio = new System.Windows.Forms.DateTimePicker();
             this.txtPesquisaTitulo = new System.Windows.Forms.TextBox();
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
-            this.picMedico = new System.Windows.Forms.PictureBox();
             this.txtMedico = new System.Windows.Forms.TextBox();
-            this.picCalendario = new System.Windows.Forms.PictureBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.dtpDataAgendaFim = new System.Windows.Forms.DateTimePicker();
-            this.dtpDataAgendaInicio = new System.Windows.Forms.DateTimePicker();
-            this.lblDataFim = new System.Windows.Forms.Label();
-            this.lblDataInicio = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.picMedico = new System.Windows.Forms.PictureBox();
+            this.picCalendario = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).BeginInit();
             this.gprPesquisar.SuspendLayout();
             this.grpRegistrar.SuspendLayout();
@@ -111,6 +111,63 @@
             this.gprPesquisar.TabStop = false;
             this.gprPesquisar.Text = "Pesquisar por";
             // 
+            // lblDataFim
+            // 
+            this.lblDataFim.AutoSize = true;
+            this.lblDataFim.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataFim.ForeColor = System.Drawing.Color.White;
+            this.lblDataFim.Location = new System.Drawing.Point(278, 51);
+            this.lblDataFim.Name = "lblDataFim";
+            this.lblDataFim.Size = new System.Drawing.Size(64, 12);
+            this.lblDataFim.TabIndex = 135;
+            this.lblDataFim.Text = "Data Final:";
+            // 
+            // dtpDataAgendaFim
+            // 
+            this.dtpDataAgendaFim.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dtpDataAgendaFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataAgendaFim.Location = new System.Drawing.Point(345, 48);
+            this.dtpDataAgendaFim.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaFim.Name = "dtpDataAgendaFim";
+            this.dtpDataAgendaFim.Size = new System.Drawing.Size(97, 20);
+            this.dtpDataAgendaFim.TabIndex = 133;
+            this.dtpDataAgendaFim.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            // 
+            // lblDataInicio
+            // 
+            this.lblDataInicio.AutoSize = true;
+            this.lblDataInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataInicio.ForeColor = System.Drawing.Color.White;
+            this.lblDataInicio.Location = new System.Drawing.Point(94, 50);
+            this.lblDataInicio.Name = "lblDataInicio";
+            this.lblDataInicio.Size = new System.Drawing.Size(70, 12);
+            this.lblDataInicio.TabIndex = 134;
+            this.lblDataInicio.Text = "Data Inicial:";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.White;
+            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPesquisar.ForeColor = System.Drawing.Color.Black;
+            this.btnPesquisar.Location = new System.Drawing.Point(11, 43);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(77, 26);
+            this.btnPesquisar.TabIndex = 131;
+            this.btnPesquisar.Text = "&Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // dtpDataAgendaInicio
+            // 
+            this.dtpDataAgendaInicio.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dtpDataAgendaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataAgendaInicio.Location = new System.Drawing.Point(166, 47);
+            this.dtpDataAgendaInicio.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaInicio.Name = "dtpDataAgendaInicio";
+            this.dtpDataAgendaInicio.Size = new System.Drawing.Size(97, 20);
+            this.dtpDataAgendaInicio.TabIndex = 132;
+            this.dtpDataAgendaInicio.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            // 
             // txtPesquisaTitulo
             // 
             this.txtPesquisaTitulo.BackColor = System.Drawing.Color.White;
@@ -152,38 +209,23 @@
             // dtpData
             // 
             this.dtpData.Font = new System.Drawing.Font("Arial", 8F);
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpData.Location = new System.Drawing.Point(41, 49);
             this.dtpData.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(212, 20);
+            this.dtpData.Size = new System.Drawing.Size(92, 20);
             this.dtpData.TabIndex = 131;
             this.dtpData.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            // 
-            // picMedico
-            // 
-            this.picMedico.Location = new System.Drawing.Point(283, 45);
-            this.picMedico.Name = "picMedico";
-            this.picMedico.Size = new System.Drawing.Size(24, 24);
-            this.picMedico.TabIndex = 139;
-            this.picMedico.TabStop = false;
             // 
             // txtMedico
             // 
             this.txtMedico.BackColor = System.Drawing.Color.White;
             this.txtMedico.Font = new System.Drawing.Font("Arial", 8F);
-            this.txtMedico.Location = new System.Drawing.Point(313, 49);
+            this.txtMedico.Location = new System.Drawing.Point(353, 49);
             this.txtMedico.Name = "txtMedico";
-            this.txtMedico.Size = new System.Drawing.Size(296, 20);
+            this.txtMedico.Size = new System.Drawing.Size(256, 20);
             this.txtMedico.TabIndex = 132;
             this.txtMedico.Text = "Nome do Medico";
-            // 
-            // picCalendario
-            // 
-            this.picCalendario.Location = new System.Drawing.Point(11, 45);
-            this.picCalendario.Name = "picCalendario";
-            this.picCalendario.Size = new System.Drawing.Size(24, 24);
-            this.picCalendario.TabIndex = 138;
-            this.picCalendario.TabStop = false;
             // 
             // txtTitulo
             // 
@@ -195,62 +237,25 @@
             this.txtTitulo.TabIndex = 130;
             this.txtTitulo.Text = "Título";
             // 
-            // dtpDataAgendaFim
+            // picMedico
             // 
-            this.dtpDataAgendaFim.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtpDataAgendaFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAgendaFim.Location = new System.Drawing.Point(345, 48);
-            this.dtpDataAgendaFim.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            this.dtpDataAgendaFim.Name = "dtpDataAgendaFim";
-            this.dtpDataAgendaFim.Size = new System.Drawing.Size(97, 20);
-            this.dtpDataAgendaFim.TabIndex = 133;
-            this.dtpDataAgendaFim.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            this.picMedico.Image = global::NewGlicNow.Properties.Resources.Medico____ucAgenda___Branco;
+            this.picMedico.Location = new System.Drawing.Point(325, 47);
+            this.picMedico.Name = "picMedico";
+            this.picMedico.Size = new System.Drawing.Size(22, 22);
+            this.picMedico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMedico.TabIndex = 139;
+            this.picMedico.TabStop = false;
             // 
-            // dtpDataAgendaInicio
+            // picCalendario
             // 
-            this.dtpDataAgendaInicio.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtpDataAgendaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAgendaInicio.Location = new System.Drawing.Point(166, 47);
-            this.dtpDataAgendaInicio.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            this.dtpDataAgendaInicio.Name = "dtpDataAgendaInicio";
-            this.dtpDataAgendaInicio.Size = new System.Drawing.Size(97, 20);
-            this.dtpDataAgendaInicio.TabIndex = 132;
-            this.dtpDataAgendaInicio.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
-            // 
-            // lblDataFim
-            // 
-            this.lblDataFim.AutoSize = true;
-            this.lblDataFim.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataFim.ForeColor = System.Drawing.Color.White;
-            this.lblDataFim.Location = new System.Drawing.Point(278, 51);
-            this.lblDataFim.Name = "lblDataFim";
-            this.lblDataFim.Size = new System.Drawing.Size(64, 12);
-            this.lblDataFim.TabIndex = 135;
-            this.lblDataFim.Text = "Data Final:";
-            // 
-            // lblDataInicio
-            // 
-            this.lblDataInicio.AutoSize = true;
-            this.lblDataInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataInicio.ForeColor = System.Drawing.Color.White;
-            this.lblDataInicio.Location = new System.Drawing.Point(94, 50);
-            this.lblDataInicio.Name = "lblDataInicio";
-            this.lblDataInicio.Size = new System.Drawing.Size(70, 12);
-            this.lblDataInicio.TabIndex = 134;
-            this.lblDataInicio.Text = "Data Inicial:";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.White;
-            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPesquisar.ForeColor = System.Drawing.Color.Black;
-            this.btnPesquisar.Location = new System.Drawing.Point(11, 43);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(77, 26);
-            this.btnPesquisar.TabIndex = 131;
-            this.btnPesquisar.Text = "&Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            this.picCalendario.Image = global::NewGlicNow.Properties.Resources.Calendario___ucAgenda___Branco;
+            this.picCalendario.Location = new System.Drawing.Point(11, 46);
+            this.picCalendario.Name = "picCalendario";
+            this.picCalendario.Size = new System.Drawing.Size(24, 24);
+            this.picCalendario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCalendario.TabIndex = 138;
+            this.picCalendario.TabStop = false;
             // 
             // ucAgenda
             // 

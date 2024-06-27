@@ -93,12 +93,6 @@
     <Compile Include="ucAgenda.Designer.cs">
       <DependentUpon>ucAgenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucAgendaFalhou.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucAgendaFalhou.Designer.cs">
-      <DependentUpon>ucAgendaFalhou.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucCadastroMapGlic.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucAgenda.resx">
       <DependentUpon>ucAgenda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucAgendaFalhou.resx">
-      <DependentUpon>ucAgendaFalhou.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucCadastroMapGlic.resx">
       <DependentUpon>ucCadastroMapGlic.cs</DependentUpon>
@@ -163,6 +154,81 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-back-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginDocumentacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close-vermelho-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_login-64-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_senha_48-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foto-Perfil-100 - Vermelho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pincel_editar - Cadastro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Senha-Cadastro-Vermelho2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perfil-Cadastro-Vermelho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email-Cadastro-Vermelho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPF-CADASTRO-VERMELHO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Celular - Cadastro - Vermelho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Endereco - Cadastro 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Numero-Cadastro-Vermelho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Endereço-Cadastro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estado - Cadastro - Vermleho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Complemento - Cadastro - Vermelho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agenda - Principal - Branco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MapaGlic - Principal - Branco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuracao - Principal - Glic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foto Agenda - Principal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foto-Perfil-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize - Principal - Branco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pesquisa - MapaGlic - Branco2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendario - ucAgenda - Branco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medico  - ucAgenda - Branco.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

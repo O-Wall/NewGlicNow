@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlBordaForm = new System.Windows.Forms.Panel();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.pnlBordaPerfil1 = new System.Windows.Forms.Panel();
             this.pnlBordaPerfil2 = new System.Windows.Forms.Panel();
@@ -39,21 +37,23 @@
             this.pnlBordaMenu1 = new System.Windows.Forms.Panel();
             this.pnlBordaUcers = new System.Windows.Forms.Panel();
             this.pnlBordaMenu3 = new System.Windows.Forms.Panel();
-            this.picPerfil = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnConfiguracao = new System.Windows.Forms.Button();
-            this.btnGlicemia = new System.Windows.Forms.Button();
-            this.btnAgenda = new System.Windows.Forms.Button();
             this.pnlEnfeite = new System.Windows.Forms.Panel();
-            this.picProfile = new System.Windows.Forms.PictureBox();
             this.lblNomePerfil = new System.Windows.Forms.Label();
             this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picPerfil = new System.Windows.Forms.PictureBox();
+            this.btnConfiguracao = new System.Windows.Forms.Button();
+            this.btnGlicemia = new System.Windows.Forms.Button();
+            this.btnAgenda = new System.Windows.Forms.Button();
+            this.picProfile = new System.Windows.Forms.PictureBox();
             this.pnlBordaForm.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
-            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,32 +68,6 @@
             this.pnlBordaForm.Name = "pnlBordaForm";
             this.pnlBordaForm.Size = new System.Drawing.Size(954, 36);
             this.pnlBordaForm.TabIndex = 119;
-            // 
-            // picMinimize
-            // 
-            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimize.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picMinimize.Location = new System.Drawing.Point(894, 5);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(24, 24);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picMinimize.TabIndex = 45;
-            this.picMinimize.TabStop = false;
-            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
-            // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Location = new System.Drawing.Point(924, 5);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(24, 24);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picClose.TabIndex = 44;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // lblDashboard
             // 
@@ -167,17 +141,6 @@
             this.pnlBordaMenu3.Size = new System.Drawing.Size(2, 503);
             this.pnlBordaMenu3.TabIndex = 114;
             // 
-            // picPerfil
-            // 
-            this.picPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picPerfil.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPerfil.Location = new System.Drawing.Point(59, 57);
-            this.picPerfil.Name = "picPerfil";
-            this.picPerfil.Size = new System.Drawing.Size(64, 64);
-            this.picPerfil.TabIndex = 110;
-            this.picPerfil.TabStop = false;
-            // 
             // pnlMenu
             // 
             this.pnlMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -195,51 +158,6 @@
             this.pnlMenu.Size = new System.Drawing.Size(186, 504);
             this.pnlMenu.TabIndex = 113;
             // 
-            // btnConfiguracao
-            // 
-            this.btnConfiguracao.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracao.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguracao.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracao.Location = new System.Drawing.Point(13, 208);
-            this.btnConfiguracao.Name = "btnConfiguracao";
-            this.btnConfiguracao.Size = new System.Drawing.Size(173, 45);
-            this.btnConfiguracao.TabIndex = 112;
-            this.btnConfiguracao.Text = "Configurações";
-            this.btnConfiguracao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracao.UseVisualStyleBackColor = true;
-            this.btnConfiguracao.Click += new System.EventHandler(this.btnConfiguracao_Click);
-            // 
-            // btnGlicemia
-            // 
-            this.btnGlicemia.FlatAppearance.BorderSize = 0;
-            this.btnGlicemia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGlicemia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGlicemia.ForeColor = System.Drawing.Color.White;
-            this.btnGlicemia.Location = new System.Drawing.Point(13, 141);
-            this.btnGlicemia.Name = "btnGlicemia";
-            this.btnGlicemia.Size = new System.Drawing.Size(173, 45);
-            this.btnGlicemia.TabIndex = 111;
-            this.btnGlicemia.Text = "Mapa de Glicemia";
-            this.btnGlicemia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGlicemia.UseVisualStyleBackColor = true;
-            this.btnGlicemia.Click += new System.EventHandler(this.btnGlicemia_Click);
-            // 
-            // btnAgenda
-            // 
-            this.btnAgenda.FlatAppearance.BorderSize = 0;
-            this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgenda.ForeColor = System.Drawing.Color.White;
-            this.btnAgenda.Location = new System.Drawing.Point(14, 74);
-            this.btnAgenda.Name = "btnAgenda";
-            this.btnAgenda.Size = new System.Drawing.Size(173, 45);
-            this.btnAgenda.TabIndex = 110;
-            this.btnAgenda.Text = "Agenda";
-            this.btnAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgenda.UseVisualStyleBackColor = true;
-            this.btnAgenda.Click += new System.EventHandler(this.btnAgenda_Click);
-            // 
             // pnlEnfeite
             // 
             this.pnlEnfeite.BackColor = System.Drawing.Color.OrangeRed;
@@ -247,14 +165,6 @@
             this.pnlEnfeite.Name = "pnlEnfeite";
             this.pnlEnfeite.Size = new System.Drawing.Size(8, 45);
             this.pnlEnfeite.TabIndex = 20;
-            // 
-            // picProfile
-            // 
-            this.picProfile.Location = new System.Drawing.Point(4, 295);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(182, 202);
-            this.picProfile.TabIndex = 37;
-            this.picProfile.TabStop = false;
             // 
             // lblNomePerfil
             // 
@@ -285,6 +195,108 @@
             this.panel1.Size = new System.Drawing.Size(771, 3);
             this.panel1.TabIndex = 115;
             // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picMinimize.Image = global::NewGlicNow.Properties.Resources.Minimize___Principal___Branco;
+            this.picMinimize.Location = new System.Drawing.Point(882, 4);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(29, 29);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinimize.TabIndex = 45;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.BackColor = System.Drawing.Color.Transparent;
+            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
+            this.picClose.Location = new System.Drawing.Point(915, 3);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(30, 30);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picClose.TabIndex = 44;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // picPerfil
+            // 
+            this.picPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPerfil.Image = global::NewGlicNow.Properties.Resources.Foto_Perfil_100;
+            this.picPerfil.Location = new System.Drawing.Point(59, 57);
+            this.picPerfil.Name = "picPerfil";
+            this.picPerfil.Size = new System.Drawing.Size(64, 64);
+            this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPerfil.TabIndex = 110;
+            this.picPerfil.TabStop = false;
+            // 
+            // btnConfiguracao
+            // 
+            this.btnConfiguracao.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracao.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracao.ForeColor = System.Drawing.Color.White;
+            this.btnConfiguracao.Image = global::NewGlicNow.Properties.Resources.Configuracao___Principal___Glic;
+            this.btnConfiguracao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConfiguracao.Location = new System.Drawing.Point(13, 208);
+            this.btnConfiguracao.Name = "btnConfiguracao";
+            this.btnConfiguracao.Size = new System.Drawing.Size(173, 45);
+            this.btnConfiguracao.TabIndex = 112;
+            this.btnConfiguracao.Text = "Configurações";
+            this.btnConfiguracao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracao.UseVisualStyleBackColor = true;
+            this.btnConfiguracao.Click += new System.EventHandler(this.btnConfiguracao_Click);
+            // 
+            // btnGlicemia
+            // 
+            this.btnGlicemia.FlatAppearance.BorderSize = 0;
+            this.btnGlicemia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGlicemia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGlicemia.ForeColor = System.Drawing.Color.White;
+            this.btnGlicemia.Image = global::NewGlicNow.Properties.Resources.MapaGlic___Principal___Branco;
+            this.btnGlicemia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGlicemia.Location = new System.Drawing.Point(13, 141);
+            this.btnGlicemia.Name = "btnGlicemia";
+            this.btnGlicemia.Size = new System.Drawing.Size(173, 45);
+            this.btnGlicemia.TabIndex = 111;
+            this.btnGlicemia.Text = "Mapa de Glicemia";
+            this.btnGlicemia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGlicemia.UseVisualStyleBackColor = true;
+            this.btnGlicemia.Click += new System.EventHandler(this.btnGlicemia_Click);
+            // 
+            // btnAgenda
+            // 
+            this.btnAgenda.FlatAppearance.BorderSize = 0;
+            this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgenda.ForeColor = System.Drawing.Color.White;
+            this.btnAgenda.Image = global::NewGlicNow.Properties.Resources.Agenda___Principal___Branco;
+            this.btnAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgenda.Location = new System.Drawing.Point(14, 74);
+            this.btnAgenda.Name = "btnAgenda";
+            this.btnAgenda.Size = new System.Drawing.Size(173, 45);
+            this.btnAgenda.TabIndex = 110;
+            this.btnAgenda.Text = "Agenda";
+            this.btnAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgenda.UseVisualStyleBackColor = true;
+            this.btnAgenda.Click += new System.EventHandler(this.btnAgenda_Click);
+            // 
+            // picProfile
+            // 
+            this.picProfile.Image = global::NewGlicNow.Properties.Resources.Foto_Agenda___Principal;
+            this.picProfile.Location = new System.Drawing.Point(4, 295);
+            this.picProfile.Name = "picProfile";
+            this.picProfile.Size = new System.Drawing.Size(182, 202);
+            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProfile.TabIndex = 37;
+            this.picProfile.TabStop = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,11 +321,11 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlBordaForm.ResumeLayout(false);
             this.pnlBordaForm.PerformLayout();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
-            this.pnlMenu.ResumeLayout(false);
-            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
             this.ResumeLayout(false);
 

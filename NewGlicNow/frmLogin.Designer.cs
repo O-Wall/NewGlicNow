@@ -31,16 +31,16 @@
             this.lblCadastre = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.TelaLogin = new System.Windows.Forms.Panel();
-            this.picImagemLogin = new System.Windows.Forms.PictureBox();
             this.BordaSenha = new System.Windows.Forms.Panel();
             this.BordaLogin = new System.Windows.Forms.Panel();
             this.cboSalvo = new System.Windows.Forms.CheckBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
+            this.btnEntrar = new System.Windows.Forms.Button();
+            this.picImagemLogin = new System.Windows.Forms.PictureBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
-            this.btnEntrar = new System.Windows.Forms.Button();
             this.TelaLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagemLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).BeginInit();
@@ -82,15 +82,6 @@
             this.TelaLogin.Name = "TelaLogin";
             this.TelaLogin.Size = new System.Drawing.Size(257, 549);
             this.TelaLogin.TabIndex = 41;
-            // 
-            // picImagemLogin
-            // 
-            this.picImagemLogin.BackColor = System.Drawing.Color.White;
-            this.picImagemLogin.Location = new System.Drawing.Point(22, 100);
-            this.picImagemLogin.Name = "picImagemLogin";
-            this.picImagemLogin.Size = new System.Drawing.Size(204, 341);
-            this.picImagemLogin.TabIndex = 41;
-            this.picImagemLogin.TabStop = false;
             // 
             // BordaSenha
             // 
@@ -154,38 +145,6 @@
             this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
             this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
             // 
-            // picSenha
-            // 
-            this.picSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSenha.Location = new System.Drawing.Point(339, 230);
-            this.picSenha.Name = "picSenha";
-            this.picSenha.Size = new System.Drawing.Size(24, 24);
-            this.picSenha.TabIndex = 50;
-            this.picSenha.TabStop = false;
-            // 
-            // picLogin
-            // 
-            this.picLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogin.Location = new System.Drawing.Point(339, 182);
-            this.picLogin.Name = "picLogin";
-            this.picLogin.Size = new System.Drawing.Size(24, 24);
-            this.picLogin.TabIndex = 49;
-            this.picLogin.TabStop = false;
-            // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.BackColor = System.Drawing.Color.Gray;
-            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Location = new System.Drawing.Point(600, 12);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(24, 24);
-            this.picClose.TabIndex = 48;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
             // btnEntrar
             // 
             this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -198,6 +157,55 @@
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            // 
+            // picImagemLogin
+            // 
+            this.picImagemLogin.BackColor = System.Drawing.Color.Transparent;
+            this.picImagemLogin.Image = global::NewGlicNow.Properties.Resources.LoginDocumentacao;
+            this.picImagemLogin.Location = new System.Drawing.Point(3, 67);
+            this.picImagemLogin.Name = "picImagemLogin";
+            this.picImagemLogin.Size = new System.Drawing.Size(257, 390);
+            this.picImagemLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImagemLogin.TabIndex = 41;
+            this.picImagemLogin.TabStop = false;
+            // 
+            // picSenha
+            // 
+            this.picSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSenha.Image = global::NewGlicNow.Properties.Resources.Login_senha_48_black;
+            this.picSenha.Location = new System.Drawing.Point(336, 230);
+            this.picSenha.Name = "picSenha";
+            this.picSenha.Size = new System.Drawing.Size(26, 26);
+            this.picSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSenha.TabIndex = 50;
+            this.picSenha.TabStop = false;
+            // 
+            // picLogin
+            // 
+            this.picLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogin.Image = global::NewGlicNow.Properties.Resources.Login_login_64_black;
+            this.picLogin.Location = new System.Drawing.Point(335, 182);
+            this.picLogin.Name = "picLogin";
+            this.picLogin.Size = new System.Drawing.Size(30, 30);
+            this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogin.TabIndex = 49;
+            this.picLogin.TabStop = false;
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.BackColor = System.Drawing.Color.Transparent;
+            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
+            this.picClose.Location = new System.Drawing.Point(593, 10);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(32, 32);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picClose.TabIndex = 48;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // FrmLogin
             // 
