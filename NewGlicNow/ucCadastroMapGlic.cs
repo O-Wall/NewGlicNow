@@ -234,28 +234,12 @@ namespace NewGlicNow
                     // Cria um StreamWriter para escrever no arquivo CSV
                     using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName, false, Encoding.UTF8))
                     {
-                        // Obtém o comprimento máximo de cada coluna para formatação
-                        int[] columnWidths = new int[dgvMapaGlic.Columns.Count];
-                        for (int i = 0; i < dgvMapaGlic.Columns.Count; i++)
-                        {
-                            columnWidths[i] = dgvMapaGlic.Columns[i].HeaderText.Length;
-                            foreach (DataGridViewRow row in dgvMapaGlic.Rows)
-                            {
-                                if (row.Cells[i].Value != null)
-                                {
-                                    int cellLength = row.Cells[i].Value.ToString().Length;
-                                    if (cellLength > columnWidths[i])
-                                    {
-                                        columnWidths[i] = cellLength;
-                                    }
-                                }
-                            }
-                        }
-
                         // Cabeçalhos das colunas
                         for (int i = 0; i < dgvMapaGlic.Columns.Count; i++)
                         {
-                            sw.Write(dgvMapaGlic.Columns[i].HeaderText.PadRight(columnWidths[i] + 2));
+                            sw.Write(dgvMapaGlic.Columns[i].HeaderText);
+                            if (i < dgvMapaGlic.Columns.Count - 1)
+                                sw.Write(","); // Usar vírgula como delimitador
                         }
                         sw.WriteLine();
 
@@ -264,16 +248,22 @@ namespace NewGlicNow
                         {
                             for (int j = 0; j < dgvMapaGlic.Columns.Count; j++)
                             {
+                                // Checa se a célula é nula e escreve uma string vazia se for
                                 var cellValue = row.Cells[j].Value ?? "";
 
                                 if (dgvMapaGlic.Columns[j].ValueType == typeof(DateTime))
                                 {
-                                    sw.Write(Convert.ToDateTime(cellValue).ToString("yyyy-MM-dd").PadRight(columnWidths[j] + 2));
+                                    // Se for uma coluna de DateTime, formate como desejado
+                                    sw.Write(Convert.ToDateTime(cellValue).ToString("yyyy-MM-dd"));
                                 }
                                 else
                                 {
-                                    sw.Write(cellValue.ToString().PadRight(columnWidths[j] + 2));
+                                    // Para outros tipos, apenas converte para string
+                                    sw.Write(cellValue.ToString());
                                 }
+
+                                if (j < dgvMapaGlic.Columns.Count - 1)
+                                    sw.Write(","); // Usar vírgula como delimitador
                             }
                             sw.WriteLine();
                         }
@@ -290,6 +280,7 @@ namespace NewGlicNow
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
     }
 }
