@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfig));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlBordaConfig = new System.Windows.Forms.Panel();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.gboCadastro = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -48,6 +48,7 @@
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.gboLogin = new System.Windows.Forms.GroupBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
@@ -57,6 +58,8 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picConfSenha = new System.Windows.Forms.PictureBox();
             this.picPerfil = new System.Windows.Forms.PictureBox();
+            this.lblResidencia = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnlBordaConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.gboCadastro.SuspendLayout();
@@ -88,19 +91,19 @@
             this.pnlBordaConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBordaConfig.Location = new System.Drawing.Point(0, 0);
             this.pnlBordaConfig.Name = "pnlBordaConfig";
-            this.pnlBordaConfig.Size = new System.Drawing.Size(934, 35);
+            this.pnlBordaConfig.Size = new System.Drawing.Size(934, 38);
             this.pnlBordaConfig.TabIndex = 102;
             // 
             // picClose
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(903, 5);
+            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
+            this.picClose.Location = new System.Drawing.Point(895, 4);
             this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(24, 24);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picClose.Size = new System.Drawing.Size(30, 30);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picClose.TabIndex = 44;
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.picClose_Click);
@@ -119,6 +122,7 @@
             // 
             // gboCadastro
             // 
+            this.gboCadastro.Controls.Add(this.label1);
             this.gboCadastro.Controls.Add(this.txtNumero);
             this.gboCadastro.Controls.Add(this.txtComplemento);
             this.gboCadastro.Controls.Add(this.txtBairro);
@@ -133,23 +137,38 @@
             this.gboCadastro.Controls.Add(this.txtCelular);
             this.gboCadastro.Controls.Add(this.cboEstado);
             this.gboCadastro.Controls.Add(this.dtpDataNascimento);
+            this.gboCadastro.Controls.Add(this.label2);
+            this.gboCadastro.Controls.Add(this.lblResidencia);
+            this.gboCadastro.Controls.Add(this.label4);
             this.gboCadastro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboCadastro.Location = new System.Drawing.Point(397, 69);
+            this.gboCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.gboCadastro.Location = new System.Drawing.Point(397, 57);
             this.gboCadastro.Name = "gboCadastro";
-            this.gboCadastro.Size = new System.Drawing.Size(485, 426);
+            this.gboCadastro.Size = new System.Drawing.Size(485, 464);
             this.gboCadastro.TabIndex = 126;
             this.gboCadastro.TabStop = false;
             this.gboCadastro.Text = "Cadastro";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 17);
+            this.label1.TabIndex = 123;
+            this.label1.Text = "Dados Pessoais";
             // 
             // txtNumero
             // 
             this.txtNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtNumero.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtNumero.ForeColor = System.Drawing.Color.Gray;
-            this.txtNumero.Location = new System.Drawing.Point(32, 300);
+            this.txtNumero.Location = new System.Drawing.Point(31, 333);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(109, 22);
+            this.txtNumero.Size = new System.Drawing.Size(80, 22);
             this.txtNumero.TabIndex = 122;
             this.txtNumero.Text = "Nº";
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
@@ -159,9 +178,9 @@
             this.txtComplemento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtComplemento.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtComplemento.ForeColor = System.Drawing.Color.Gray;
-            this.txtComplemento.Location = new System.Drawing.Point(173, 300);
+            this.txtComplemento.Location = new System.Drawing.Point(147, 333);
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(291, 22);
+            this.txtComplemento.Size = new System.Drawing.Size(274, 22);
             this.txtComplemento.TabIndex = 121;
             this.txtComplemento.Text = "Complemento";
             // 
@@ -170,7 +189,7 @@
             this.txtBairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtBairro.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtBairro.ForeColor = System.Drawing.Color.Gray;
-            this.txtBairro.Location = new System.Drawing.Point(32, 339);
+            this.txtBairro.Location = new System.Drawing.Point(31, 372);
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(228, 22);
@@ -182,10 +201,10 @@
             this.txtCEP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtCEP.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtCEP.ForeColor = System.Drawing.Color.Gray;
-            this.txtCEP.Location = new System.Drawing.Point(284, 339);
+            this.txtCEP.Location = new System.Drawing.Point(283, 372);
             this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(180, 22);
+            this.txtCEP.Size = new System.Drawing.Size(138, 22);
             this.txtCEP.TabIndex = 115;
             this.txtCEP.Text = "CEP";
             // 
@@ -201,9 +220,9 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboCidade.Location = new System.Drawing.Point(32, 381);
+            this.cboCidade.Location = new System.Drawing.Point(31, 412);
             this.cboCidade.Name = "cboCidade";
-            this.cboCidade.Size = new System.Drawing.Size(258, 24);
+            this.cboCidade.Size = new System.Drawing.Size(228, 24);
             this.cboCidade.TabIndex = 119;
             this.cboCidade.Text = "Cidade";
             // 
@@ -218,7 +237,7 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboTipoDiabete.Location = new System.Drawing.Point(258, 148);
+            this.cboTipoDiabete.Location = new System.Drawing.Point(257, 174);
             this.cboTipoDiabete.Name = "cboTipoDiabete";
             this.cboTipoDiabete.Size = new System.Drawing.Size(206, 24);
             this.cboTipoDiabete.TabIndex = 112;
@@ -229,7 +248,7 @@
             this.txtEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtEndereco.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtEndereco.ForeColor = System.Drawing.Color.Gray;
-            this.txtEndereco.Location = new System.Drawing.Point(32, 262);
+            this.txtEndereco.Location = new System.Drawing.Point(31, 295);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(432, 22);
@@ -246,9 +265,9 @@
             "Masculino",
             "Feminino",
             "Prefiro não informar"});
-            this.cboGenero.Location = new System.Drawing.Point(32, 148);
+            this.cboGenero.Location = new System.Drawing.Point(31, 174);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(200, 24);
+            this.cboGenero.Size = new System.Drawing.Size(198, 24);
             this.cboGenero.TabIndex = 113;
             this.cboGenero.Text = "Gênero";
             // 
@@ -257,7 +276,7 @@
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtEmail.ForeColor = System.Drawing.Color.Gray;
-            this.txtEmail.Location = new System.Drawing.Point(32, 104);
+            this.txtEmail.Location = new System.Drawing.Point(31, 134);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(432, 22);
@@ -269,7 +288,7 @@
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtNome.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtNome.ForeColor = System.Drawing.Color.Gray;
-            this.txtNome.Location = new System.Drawing.Point(30, 29);
+            this.txtNome.Location = new System.Drawing.Point(29, 59);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(432, 22);
@@ -281,7 +300,7 @@
             this.txtCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtCPF.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtCPF.ForeColor = System.Drawing.Color.Gray;
-            this.txtCPF.Location = new System.Drawing.Point(32, 68);
+            this.txtCPF.Location = new System.Drawing.Point(31, 96);
             this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(198, 22);
@@ -293,10 +312,10 @@
             this.txtCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtCelular.Font = new System.Drawing.Font("Arial", 9.75F);
             this.txtCelular.ForeColor = System.Drawing.Color.Gray;
-            this.txtCelular.Location = new System.Drawing.Point(256, 191);
+            this.txtCelular.Location = new System.Drawing.Point(257, 215);
             this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(208, 22);
+            this.txtCelular.Size = new System.Drawing.Size(206, 22);
             this.txtCelular.TabIndex = 118;
             this.txtCelular.Text = "Celular";
             // 
@@ -312,7 +331,7 @@
             "Diabetes tipo 2",
             "Diabetes Gestacional",
             ""});
-            this.cboEstado.Location = new System.Drawing.Point(324, 381);
+            this.cboEstado.Location = new System.Drawing.Point(283, 412);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(138, 24);
             this.cboEstado.TabIndex = 120;
@@ -323,13 +342,25 @@
             // 
             this.dtpDataNascimento.Font = new System.Drawing.Font("Arial", 9.75F);
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(256, 68);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(257, 96);
             this.dtpDataNascimento.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(206, 22);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(204, 22);
             this.dtpDataNascimento.TabIndex = 111;
             this.dtpDataNascimento.UseWaitCursor = true;
-            this.dtpDataNascimento.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataNascimento.Value = new System.DateTime(2024, 6, 27, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.label2.Location = new System.Drawing.Point(24, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 20);
+            this.label2.TabIndex = 124;
+            this.label2.Text = "------------------------------------";
             // 
             // gboLogin
             // 
@@ -343,6 +374,7 @@
             this.gboLogin.Controls.Add(this.picConfSenha);
             this.gboLogin.Controls.Add(this.picPerfil);
             this.gboLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gboLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.gboLogin.Location = new System.Drawing.Point(60, 109);
             this.gboLogin.Name = "gboLogin";
             this.gboLogin.Size = new System.Drawing.Size(261, 258);
@@ -353,9 +385,11 @@
             // picSenha
             // 
             this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSenha.Location = new System.Drawing.Point(18, 158);
+            this.picSenha.Image = global::NewGlicNow.Properties.Resources.Senha_Cadastro_Vermelho2;
+            this.picSenha.Location = new System.Drawing.Point(21, 158);
             this.picSenha.Name = "picSenha";
             this.picSenha.Size = new System.Drawing.Size(24, 24);
+            this.picSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSenha.TabIndex = 103;
             this.picSenha.TabStop = false;
             // 
@@ -412,7 +446,7 @@
             // 
             this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picLogin.Image = global::NewGlicNow.Properties.Resources.Perfil_Cadastro_Vermelho;
-            this.picLogin.Location = new System.Drawing.Point(18, 115);
+            this.picLogin.Location = new System.Drawing.Point(18, 113);
             this.picLogin.Name = "picLogin";
             this.picLogin.Size = new System.Drawing.Size(30, 30);
             this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -422,9 +456,11 @@
             // picConfSenha
             // 
             this.picConfSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picConfSenha.Location = new System.Drawing.Point(18, 202);
+            this.picConfSenha.Image = global::NewGlicNow.Properties.Resources.Senha_Cadastro_Vermelho2;
+            this.picConfSenha.Location = new System.Drawing.Point(21, 202);
             this.picConfSenha.Name = "picConfSenha";
             this.picConfSenha.Size = new System.Drawing.Size(24, 24);
+            this.picConfSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picConfSenha.TabIndex = 106;
             this.picConfSenha.TabStop = false;
             // 
@@ -438,6 +474,29 @@
             this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPerfil.TabIndex = 2;
             this.picPerfil.TabStop = false;
+            // 
+            // lblResidencia
+            // 
+            this.lblResidencia.AutoSize = true;
+            this.lblResidencia.BackColor = System.Drawing.Color.Transparent;
+            this.lblResidencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.lblResidencia.Location = new System.Drawing.Point(29, 270);
+            this.lblResidencia.Name = "lblResidencia";
+            this.lblResidencia.Size = new System.Drawing.Size(122, 17);
+            this.lblResidencia.TabIndex = 125;
+            this.lblResidencia.Text = "Dados Residenciais";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.label4.Location = new System.Drawing.Point(29, 278);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(225, 20);
+            this.label4.TabIndex = 126;
+            this.label4.Text = "------------------------------------";
             // 
             // frmConfig
             // 
@@ -498,5 +557,9 @@
         private System.Windows.Forms.PictureBox picPerfil;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblResidencia;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -20,8 +20,8 @@ namespace NewGlicNow
 
             
             Form login = new FrmLogin();
-            Application.Run(new frmPrincipal());
-            /*
+            Application.Run(login);
+            
             Form cadastro = new FrmCadastro();
             if (login.Tag.ToString() == "Cadastro")
             {
@@ -31,7 +31,7 @@ namespace NewGlicNow
             {
                 Application.Run(new frmPrincipal());
             }
-            */
+            
             /*
             Application.Run(new frmPrincipal());
             */
