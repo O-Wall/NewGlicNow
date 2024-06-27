@@ -288,7 +288,7 @@ namespace FinalGlicNow
                 cboEstado.DataSource = Global.ConsultarEstados();
                 cboEstado.DisplayMember = "Estado";
                 cboEstado.ValueMember = "Id";
-                cboEstado.SelectedIndex = -1;
+                cboEstado.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -309,7 +309,7 @@ namespace FinalGlicNow
                 cboCidade.DataSource = Global.ConsultarCidades(estado);
                 cboCidade.DisplayMember = "Cidade";
                 cboCidade.ValueMember = "Id";
-                cboCidade.SelectedIndex = -1;
+                cboCidade.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -324,7 +324,7 @@ namespace FinalGlicNow
                 cboGenero.DataSource = Global.ConsultarSexo();
                 cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
-                cboGenero.SelectedIndex = -1;
+                cboGenero.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -338,7 +338,7 @@ namespace FinalGlicNow
                 cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
                 cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
-                cboTipoDiabete.SelectedIndex = -1;
+                cboTipoDiabete.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -362,8 +362,6 @@ namespace FinalGlicNow
             PreencherFormulario();
             txtSenha.UseSystemPasswordChar = true;
             txtConfSenha.UseSystemPasswordChar = true;
-            picClose.Visible = true;
-            picCloseHouver.Visible = false; 
         }
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -566,10 +564,16 @@ namespace FinalGlicNow
             }
         }
 
-        private void picClose_MouseHover(object sender, EventArgs e)
+        private void picClose_MouseEnter(object sender, EventArgs e)
         {
-            picCloseHouver.Visible = true;
-            picClose.Visible = false;
+            picClose.Image = NewGlicNow.Properties.Resources.icons8_cancelar_48;
+
+        }
+
+        private void picClose_MouseLeave(object sender, EventArgs e)
+        {
+            picClose.Image = NewGlicNow.Properties.Resources.Close_vermelho_48;
+
         }
     }
 }

@@ -187,5 +187,14 @@ namespace NewGlicNow
             this.Cursor = Cursors.Default;
         }
 
+        private void picClose_MouseEnter(object sender, EventArgs e)
+        {
+            picClose.Image = Properties.Resources.icons8_cancelar_48;
+        }
+
+        private void picClose_MouseLeave(object sender, EventArgs e)
+        {
+            picClose.Image = Properties.Resources.Close_vermelho_48;
+        }
     }
 }

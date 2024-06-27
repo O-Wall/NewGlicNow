@@ -174,7 +174,7 @@ namespace NewGlicNow
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtValores.Clear();
                 txtObservacao.Clear();
-                cboPeriodo.SelectedIndex = -1;
+                cboPeriodo.SelectedIndex = 0;
                 CarregarGridGlic();
             }
             catch (Exception ex)
