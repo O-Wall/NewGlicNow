@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace FinalGlicNow
 {
@@ -23,10 +24,19 @@ namespace FinalGlicNow
         private int targetWidth;
         private int animationStep = 30;
 
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+
         public frmConfig()
         {
             InitializeComponent();
-            InitializeTimer();
+            InitializeTimer();            
         }     
 
         bool load = false;
@@ -49,7 +59,6 @@ namespace FinalGlicNow
             this.ResumeLayout();
 
         }
-
         private void InitializeTimer()
         {
             animationTimer = new Timer();
@@ -353,6 +362,8 @@ namespace FinalGlicNow
             PreencherFormulario();
             txtSenha.UseSystemPasswordChar = true;
             txtConfSenha.UseSystemPasswordChar = true;
+            picClose.Visible = true;
+            picCloseHouver.Visible = false; 
         }
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -544,6 +555,21 @@ namespace FinalGlicNow
         private void txtConfSenha_Leave(object sender, EventArgs e)
         {
             Global.TextBoxLeave(txtConfSenha, "Confirmar senha");
+        }
+
+        private void pnlBordaConfig_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        private void picClose_MouseHover(object sender, EventArgs e)
+        {
+            picCloseHouver.Visible = true;
+            picClose.Visible = false;
         }
     }
 }

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfig));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlBordaConfig = new System.Windows.Forms.Panel();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.picCloseHouver = new System.Windows.Forms.PictureBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.gboCadastro = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,9 +63,9 @@
             this.picConfSenha = new System.Windows.Forms.PictureBox();
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.btnExpandir = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlBordaConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).BeginInit();
             this.gboCadastro.SuspendLayout();
             this.gboLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).BeginInit();
@@ -71,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picConfSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -89,27 +90,43 @@
             // pnlBordaConfig
             // 
             this.pnlBordaConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.pnlBordaConfig.Controls.Add(this.picClose);
             this.pnlBordaConfig.Controls.Add(this.lblTitulo);
+            this.pnlBordaConfig.Controls.Add(this.picClose);
+            this.pnlBordaConfig.Controls.Add(this.picCloseHouver);
             this.pnlBordaConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBordaConfig.Location = new System.Drawing.Point(0, 0);
             this.pnlBordaConfig.Name = "pnlBordaConfig";
-            this.pnlBordaConfig.Size = new System.Drawing.Size(949, 38);
+            this.pnlBordaConfig.Size = new System.Drawing.Size(387, 38);
             this.pnlBordaConfig.TabIndex = 102;
+            this.pnlBordaConfig.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBordaConfig_MouseDown);
             // 
             // picClose
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
-            this.picClose.Location = new System.Drawing.Point(910, 4);
+            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+            this.picClose.Location = new System.Drawing.Point(348, 4);
             this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(30, 30);
+            this.picClose.Size = new System.Drawing.Size(31, 30);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picClose.TabIndex = 44;
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.MouseHover += new System.EventHandler(this.picClose_MouseHover);
+            // 
+            // picCloseHouver
+            // 
+            this.picCloseHouver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picCloseHouver.BackColor = System.Drawing.Color.Transparent;
+            this.picCloseHouver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCloseHouver.Image = global::NewGlicNow.Properties.Resources.icons8_cancelar_48;
+            this.picCloseHouver.Location = new System.Drawing.Point(348, 4);
+            this.picCloseHouver.Name = "picCloseHouver";
+            this.picCloseHouver.Size = new System.Drawing.Size(31, 30);
+            this.picCloseHouver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCloseHouver.TabIndex = 129;
+            this.picCloseHouver.TabStop = false;
             // 
             // btnConfirmar
             // 
@@ -428,7 +445,7 @@
             // picSenha
             // 
             this.picSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSenha.Image = global::NewGlicNow.Properties.Resources.Senha_Cadastro_Vermelho2;
+            this.picSenha.Image = ((System.Drawing.Image)(resources.GetObject("picSenha.Image")));
             this.picSenha.Location = new System.Drawing.Point(21, 158);
             this.picSenha.Name = "picSenha";
             this.picSenha.Size = new System.Drawing.Size(24, 24);
@@ -482,7 +499,7 @@
             // 
             this.picEditar.BackColor = System.Drawing.Color.Transparent;
             this.picEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEditar.Image = global::NewGlicNow.Properties.Resources.Pincel_editar___Cadastro;
+            this.picEditar.Image = ((System.Drawing.Image)(resources.GetObject("picEditar.Image")));
             this.picEditar.Location = new System.Drawing.Point(139, 82);
             this.picEditar.Name = "picEditar";
             this.picEditar.Size = new System.Drawing.Size(24, 24);
@@ -494,7 +511,7 @@
             // picLogin
             // 
             this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogin.Image = global::NewGlicNow.Properties.Resources.Perfil_Cadastro_Vermelho;
+            this.picLogin.Image = ((System.Drawing.Image)(resources.GetObject("picLogin.Image")));
             this.picLogin.Location = new System.Drawing.Point(18, 114);
             this.picLogin.Name = "picLogin";
             this.picLogin.Size = new System.Drawing.Size(30, 30);
@@ -505,7 +522,7 @@
             // picConfSenha
             // 
             this.picConfSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picConfSenha.Image = global::NewGlicNow.Properties.Resources.Senha_Cadastro_Vermelho2;
+            this.picConfSenha.Image = ((System.Drawing.Image)(resources.GetObject("picConfSenha.Image")));
             this.picConfSenha.Location = new System.Drawing.Point(21, 202);
             this.picConfSenha.Name = "picConfSenha";
             this.picConfSenha.Size = new System.Drawing.Size(24, 24);
@@ -516,7 +533,7 @@
             // picPerfil
             // 
             this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPerfil.Image = global::NewGlicNow.Properties.Resources.Foto_Perfil_100___Vermelho;
+            this.picPerfil.Image = ((System.Drawing.Image)(resources.GetObject("picPerfil.Image")));
             this.picPerfil.Location = new System.Drawing.Point(93, 36);
             this.picPerfil.Name = "picPerfil";
             this.picPerfil.Size = new System.Drawing.Size(70, 70);
@@ -536,26 +553,12 @@
             this.btnExpandir.UseVisualStyleBackColor = false;
             this.btnExpandir.Click += new System.EventHandler(this.btnExpandir_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::NewGlicNow.Properties.Resources.icons8_cancelar_48;
-            this.pictureBox1.Location = new System.Drawing.Point(910, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 129;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(949, 546);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(387, 546);
             this.Controls.Add(this.btnExpandir);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.gboCadastro);
@@ -568,6 +571,7 @@
             this.pnlBordaConfig.ResumeLayout(false);
             this.pnlBordaConfig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).EndInit();
             this.gboCadastro.ResumeLayout(false);
             this.gboCadastro.PerformLayout();
             this.gboLogin.ResumeLayout(false);
@@ -577,7 +581,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picConfSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -616,6 +619,6 @@
         private System.Windows.Forms.Label lblResidencia;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnExpandir;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picCloseHouver;
     }
 }

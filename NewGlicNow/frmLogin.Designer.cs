@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.lblCadastre = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.TelaLogin = new System.Windows.Forms.Panel();
@@ -200,7 +201,7 @@
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
+            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
             this.picClose.Location = new System.Drawing.Point(593, 10);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(32, 32);

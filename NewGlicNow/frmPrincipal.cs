@@ -10,6 +10,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+
 
 namespace NewGlicNow
 {
@@ -17,6 +19,16 @@ namespace NewGlicNow
     {
         private ucAgenda ucAgenda;
         private ucCadastroMapGlic ucCadastroMapGlic;
+
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -59,7 +71,9 @@ namespace NewGlicNow
                 picPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
                 picPerfil.BackColor = Color.Transparent;
             }
-            lblNomePerfil.Text = usuario.NomeCompleto;   
+            lblNomePerfil.Text = usuario.NomeCompleto;
+            picClose.Visible = true;
+            picCloseHouver.Visible = false;
         }
 
 
@@ -112,6 +126,13 @@ namespace NewGlicNow
         private void picClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void picClose_MouseHover(object sender, EventArgs e)
+        {
+            picClose.Visible = false;
+            picCloseHouver.Visible = true;
+            
         }
     }
 }

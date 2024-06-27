@@ -117,6 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAANlSURBVGhD7VnNbtNAEF6BXRoOSE3WpeXvLajgwAPwAFWr
+        IoEE4sATgLhwa7i3Vam4cYKgOFULXDggjlRcQPAApZyg4UxpUjOfPRaOO07WP3GLlE/6pCTenfnG3p0d
+        T9QII4yQHw2lTrrW5NWWpR8Sm67lfHVt51fLdv6A+Oxa+guuYUzTmrzySKkTPP3o0BqfuOja+jEJ/k5C
+        vVS0nJ2WrevNSvUCmysPDTXlkIg14l6PqGwkG3p1Q01rNj9ctOzaAjltx0QUQL3btPU8uykea0rZtFSe
+        ys6LI+2XJ/DFbosBPd7TZPxN3NmwSEG8hk92nw+4G2S0NPEhKTm8pew2xjKyo4xlk0y9yjKyoWnXbsiG
+        y6SeYznp4KpzNXqMP2WjpbKdKcXSROR5yWDppBu5wrLMgNORJhofUuunznrvr10Xr0nEWMyRriVwb2N8
+        4hLLGwyUB4IRkRCy/ey5d9DpeB9v3RPHRLk1f8c72N/3dl643nplWhwjU9dZXn+gyArqFMlIL0PxIQYF
+        EYoPkSYI1FsoGllmMvyqUjAgEUshKgjA962Fu4fG4jdpbJql51rVGZaZDL8kFiYn8cPc7cPCYk8ifucB
+        f8zNwUsuSnoKD1hmMqhud6XJ/dgviKLEg6TtJctMhv/iIUweRDGIbtcXG0VW8SBp+8wyk0EDM5fKUhBR
+        5BEP4mBlmcmggbleUvwgOl2W/A94GnnEgxTAb5aZDBqYKwB/zceWDeAHYHBO9KNpAJmXkLRho/CXUI4g
+        jJZQ1k0sZht/E/cupzxBGG1iGpQ6jfZLlSbnhClJ2+A0mvYgM8nzhQVhOfdZZjLQdBInCyy7lGhatcss
+        Mxko5ujI/iYZiFMs5vqkyviT8Iu58SlxbJykadu4m4fSVTIisaecNsjzYRBpxAfUiyxvMI7bCw3y/2al
+        ep7lmQEdAcnY0VAvsSxzNNSZKg4O2WCZ1LuZ+6boVcpGy6M75syynGxAr1IyXA71MsvIjuDPC92SHQyV
+        r94pZbGMfECjFQ1XwcmwuFlYczdE0OQtIzPp5cLuvARyMDec7KR/5N6wpuC+6QoOGFmMOQMbeglpm82X
+        B5yO5LxuWjtFGczRi6lP2GEgKACrM+jboGbHiweJxJsdyhGwTb99wjWUxKgqj8XfrCOM8N9Dqb+aMywZ
+        e735zgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

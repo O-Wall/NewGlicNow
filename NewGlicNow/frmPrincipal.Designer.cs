@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlBordaForm = new System.Windows.Forms.Panel();
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
@@ -50,12 +51,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.picCloseHouver = new System.Windows.Forms.PictureBox();
             this.pnlBordaForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBordaForm
@@ -64,6 +67,7 @@
             this.pnlBordaForm.Controls.Add(this.picMinimize);
             this.pnlBordaForm.Controls.Add(this.picClose);
             this.pnlBordaForm.Controls.Add(this.lblDashboard);
+            this.pnlBordaForm.Controls.Add(this.picCloseHouver);
             this.pnlBordaForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBordaForm.Location = new System.Drawing.Point(0, 0);
             this.pnlBordaForm.Name = "pnlBordaForm";
@@ -89,7 +93,7 @@
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
+            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
             this.picClose.Location = new System.Drawing.Point(915, 3);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(30, 30);
@@ -97,6 +101,7 @@
             this.picClose.TabIndex = 44;
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.MouseHover += new System.EventHandler(this.picClose_MouseHover);
             // 
             // lblDashboard
             // 
@@ -306,6 +311,19 @@
             this.pnlPrincipal.Size = new System.Drawing.Size(769, 485);
             this.pnlPrincipal.TabIndex = 120;
             // 
+            // picCloseHouver
+            // 
+            this.picCloseHouver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picCloseHouver.BackColor = System.Drawing.Color.Transparent;
+            this.picCloseHouver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCloseHouver.Image = global::NewGlicNow.Properties.Resources.icons8_cancelar_48;
+            this.picCloseHouver.Location = new System.Drawing.Point(915, 3);
+            this.picCloseHouver.Name = "picCloseHouver";
+            this.picCloseHouver.Size = new System.Drawing.Size(30, 30);
+            this.picCloseHouver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCloseHouver.TabIndex = 121;
+            this.picCloseHouver.TabStop = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +355,7 @@
             this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,5 +384,6 @@
         private System.Windows.Forms.PictureBox picMinimize;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.PictureBox picCloseHouver;
     }
 }
