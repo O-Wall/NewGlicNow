@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NewGlicNow
 {
@@ -64,6 +65,8 @@ namespace NewGlicNow
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+                /*MessageBox.Show("Erro -->" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);*/
+                
             }
         }
         public void Gravar()

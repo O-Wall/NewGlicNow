@@ -16,14 +16,47 @@ namespace FinalGlicNow
 
     public partial class frmConfig : Form
     {
+        private bool Expandido = false;
+        private const int initialWidth = 387;
+        private const int expandedWidth = 949;
+        private Timer animationTimer;
+        private int targetWidth;
+        private int animationStep = 30;
+
         public frmConfig()
         {
             InitializeComponent();
-        }
+            InitializeTimer();
+        }     
+
         bool load = false;
-        Usuario usuario = new Usuario();  
-        
-        //ele está fechando mesmo se clicar em não
+        Usuario usuario = new Usuario();
+
+        private void AnimationTick(object sender, EventArgs e)
+        {
+            this.SuspendLayout();
+
+            if (this.Width < targetWidth && this.Width + animationStep >= targetWidth ||
+                this.Width > targetWidth && this.Width - animationStep <= targetWidth)
+            {
+                this.Width = targetWidth;
+                animationTimer.Stop();
+            }
+            else
+            {
+                this.Width += Expandido ? animationStep : -animationStep;
+            }
+            this.ResumeLayout();
+
+        }
+
+        private void InitializeTimer()
+        {
+            animationTimer = new Timer();
+            animationTimer.Interval = 1; // Ajuste para a suavidade desejada
+            animationTimer.Tick += new EventHandler(AnimationTick);
+        }
+
 
 
         private void PreencherClasse()
@@ -405,5 +438,12 @@ namespace FinalGlicNow
             PreencherFormulario();
         }
 
+        private void btnExpandir_Click(object sender, EventArgs e)
+        {
+            Expandido = !Expandido;
+            targetWidth = Expandido ? expandedWidth : initialWidth;
+            gboCadastro.Visible = Expandido;
+            animationTimer.Start();
+        }
     }
 }

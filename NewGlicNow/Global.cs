@@ -194,6 +194,8 @@ namespace NewGlicNow
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+                /*MessageBox.Show("Erro -->" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;*/
             }
         }
     }

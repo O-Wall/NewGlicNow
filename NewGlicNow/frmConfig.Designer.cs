@@ -49,6 +49,8 @@
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblResidencia = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.gboLogin = new System.Windows.Forms.GroupBox();
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
@@ -58,8 +60,7 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picConfSenha = new System.Windows.Forms.PictureBox();
             this.picPerfil = new System.Windows.Forms.PictureBox();
-            this.lblResidencia = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnExpandir = new System.Windows.Forms.Button();
             this.pnlBordaConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.gboCadastro.SuspendLayout();
@@ -91,7 +92,7 @@
             this.pnlBordaConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBordaConfig.Location = new System.Drawing.Point(0, 0);
             this.pnlBordaConfig.Name = "pnlBordaConfig";
-            this.pnlBordaConfig.Size = new System.Drawing.Size(934, 38);
+            this.pnlBordaConfig.Size = new System.Drawing.Size(387, 38);
             this.pnlBordaConfig.TabIndex = 102;
             // 
             // picClose
@@ -100,7 +101,7 @@
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
-            this.picClose.Location = new System.Drawing.Point(895, 4);
+            this.picClose.Location = new System.Drawing.Point(348, 4);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(30, 30);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,9 +113,9 @@
             // 
             this.btnConfirmar.BackColor = System.Drawing.Color.White;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnConfirmar.Location = new System.Drawing.Point(140, 410);
+            this.btnConfirmar.Location = new System.Drawing.Point(224, 390);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(100, 33);
+            this.btnConfirmar.Size = new System.Drawing.Size(100, 41);
             this.btnConfirmar.TabIndex = 125;
             this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
@@ -148,6 +149,7 @@
             this.gboCadastro.TabIndex = 126;
             this.gboCadastro.TabStop = false;
             this.gboCadastro.Text = "Cadastro";
+            this.gboCadastro.Visible = false;
             // 
             // label1
             // 
@@ -362,6 +364,29 @@
             this.label2.TabIndex = 124;
             this.label2.Text = "------------------------------------";
             // 
+            // lblResidencia
+            // 
+            this.lblResidencia.AutoSize = true;
+            this.lblResidencia.BackColor = System.Drawing.Color.Transparent;
+            this.lblResidencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.lblResidencia.Location = new System.Drawing.Point(29, 270);
+            this.lblResidencia.Name = "lblResidencia";
+            this.lblResidencia.Size = new System.Drawing.Size(122, 17);
+            this.lblResidencia.TabIndex = 125;
+            this.lblResidencia.Text = "Dados Residenciais";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.label4.Location = new System.Drawing.Point(29, 278);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(225, 20);
+            this.label4.TabIndex = 126;
+            this.label4.Text = "------------------------------------";
+            // 
             // gboLogin
             // 
             this.gboLogin.BackColor = System.Drawing.SystemColors.Control;
@@ -375,7 +400,7 @@
             this.gboLogin.Controls.Add(this.picPerfil);
             this.gboLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gboLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.gboLogin.Location = new System.Drawing.Point(60, 109);
+            this.gboLogin.Location = new System.Drawing.Point(63, 111);
             this.gboLogin.Name = "gboLogin";
             this.gboLogin.Size = new System.Drawing.Size(261, 258);
             this.gboLogin.TabIndex = 127;
@@ -475,35 +500,25 @@
             this.picPerfil.TabIndex = 2;
             this.picPerfil.TabStop = false;
             // 
-            // lblResidencia
+            // btnExpandir
             // 
-            this.lblResidencia.AutoSize = true;
-            this.lblResidencia.BackColor = System.Drawing.Color.Transparent;
-            this.lblResidencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.lblResidencia.Location = new System.Drawing.Point(29, 270);
-            this.lblResidencia.Name = "lblResidencia";
-            this.lblResidencia.Size = new System.Drawing.Size(122, 17);
-            this.lblResidencia.TabIndex = 125;
-            this.lblResidencia.Text = "Dados Residenciais";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.label4.Location = new System.Drawing.Point(29, 278);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(225, 20);
-            this.label4.TabIndex = 126;
-            this.label4.Text = "------------------------------------";
+            this.btnExpandir.BackColor = System.Drawing.Color.White;
+            this.btnExpandir.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExpandir.Location = new System.Drawing.Point(63, 390);
+            this.btnExpandir.Name = "btnExpandir";
+            this.btnExpandir.Size = new System.Drawing.Size(100, 41);
+            this.btnExpandir.TabIndex = 128;
+            this.btnExpandir.Text = "&Editar outros dados";
+            this.btnExpandir.UseVisualStyleBackColor = false;
+            this.btnExpandir.Click += new System.EventHandler(this.btnExpandir_Click);
             // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(934, 546);
+            this.ClientSize = new System.Drawing.Size(387, 546);
+            this.Controls.Add(this.btnExpandir);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.gboCadastro);
             this.Controls.Add(this.pnlBordaConfig);
@@ -561,5 +576,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblResidencia;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnExpandir;
     }
 }

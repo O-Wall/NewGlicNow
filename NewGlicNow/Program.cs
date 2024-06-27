@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalGlicNow;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,10 +32,11 @@ namespace NewGlicNow
             {
                 Application.Run(new frmPrincipal());
             }
-            
+
             /*
-            Application.Run(new frmPrincipal());
+            Application.Run(new frmConfig());
             */
+
         }
     }
 }
