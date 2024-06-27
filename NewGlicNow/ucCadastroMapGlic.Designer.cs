@@ -151,6 +151,7 @@
             // 
             // cboPeriodo
             // 
+            this.cboPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPeriodo.Font = new System.Drawing.Font("Arial", 8F);
             this.cboPeriodo.FormattingEnabled = true;
             this.cboPeriodo.Items.AddRange(new object[] {

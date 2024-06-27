@@ -115,7 +115,7 @@
             this.txtCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtCelular.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.ForeColor = System.Drawing.Color.Gray;
-            this.txtCelular.Location = new System.Drawing.Point(335, 299);
+            this.txtCelular.Location = new System.Drawing.Point(335, 294);
             this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(206, 22);
@@ -192,9 +192,9 @@
             // 
             this.cboGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.cboGenero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGenero.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cboGenero.ForeColor = System.Drawing.Color.Gray;
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(79, 298);
+            this.cboGenero.Location = new System.Drawing.Point(79, 293);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(200, 24);
             this.cboGenero.TabIndex = 9;
@@ -210,6 +210,7 @@
             this.cboTipoDiabete.Name = "cboTipoDiabete";
             this.cboTipoDiabete.Size = new System.Drawing.Size(256, 23);
             this.cboTipoDiabete.TabIndex = 8;
+            this.cboTipoDiabete.Tag = "";
             this.cboTipoDiabete.Text = "Tipo de Diabete";
             // 
             // dtpDataNascimento
@@ -360,7 +361,7 @@
             // 
             this.pictureCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureCelular.Image = global::NewGlicNow.Properties.Resources.Celular___Cadastro___Vermelho;
-            this.pictureCelular.Location = new System.Drawing.Point(305, 295);
+            this.pictureCelular.Location = new System.Drawing.Point(306, 293);
             this.pictureCelular.Name = "pictureCelular";
             this.pictureCelular.Size = new System.Drawing.Size(24, 24);
             this.pictureCelular.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

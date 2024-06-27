@@ -41,10 +41,10 @@
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
-            this.txtMedico = new System.Windows.Forms.TextBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.picMedico = new System.Windows.Forms.PictureBox();
+            this.txtMedico = new System.Windows.Forms.TextBox();
             this.picCalendario = new System.Windows.Forms.PictureBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).BeginInit();
             this.gprPesquisar.SuspendLayout();
             this.grpRegistrar.SuspendLayout();
@@ -173,6 +173,7 @@
             this.txtPesquisaTitulo.BackColor = System.Drawing.Color.White;
             this.txtPesquisaTitulo.Font = new System.Drawing.Font("Arial", 8F);
             this.txtPesquisaTitulo.Location = new System.Drawing.Point(11, 19);
+            this.txtPesquisaTitulo.MaxLength = 150;
             this.txtPesquisaTitulo.Name = "txtPesquisaTitulo";
             this.txtPesquisaTitulo.Size = new System.Drawing.Size(598, 20);
             this.txtPesquisaTitulo.TabIndex = 128;
@@ -200,6 +201,7 @@
             this.txtObservacao.BackColor = System.Drawing.Color.White;
             this.txtObservacao.Font = new System.Drawing.Font("Arial", 8F);
             this.txtObservacao.Location = new System.Drawing.Point(11, 75);
+            this.txtObservacao.MaxLength = 1000;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(598, 86);
@@ -217,26 +219,6 @@
             this.dtpData.TabIndex = 131;
             this.dtpData.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
-            // txtMedico
-            // 
-            this.txtMedico.BackColor = System.Drawing.Color.White;
-            this.txtMedico.Font = new System.Drawing.Font("Arial", 8F);
-            this.txtMedico.Location = new System.Drawing.Point(353, 49);
-            this.txtMedico.Name = "txtMedico";
-            this.txtMedico.Size = new System.Drawing.Size(256, 20);
-            this.txtMedico.TabIndex = 132;
-            this.txtMedico.Text = "Nome do Medico";
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.BackColor = System.Drawing.Color.White;
-            this.txtTitulo.Font = new System.Drawing.Font("Arial", 8F);
-            this.txtTitulo.Location = new System.Drawing.Point(11, 19);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(598, 20);
-            this.txtTitulo.TabIndex = 130;
-            this.txtTitulo.Text = "Título";
-            // 
             // picMedico
             // 
             this.picMedico.Image = global::NewGlicNow.Properties.Resources.Medico____ucAgenda___Branco;
@@ -247,6 +229,17 @@
             this.picMedico.TabIndex = 139;
             this.picMedico.TabStop = false;
             // 
+            // txtMedico
+            // 
+            this.txtMedico.BackColor = System.Drawing.Color.White;
+            this.txtMedico.Font = new System.Drawing.Font("Arial", 8F);
+            this.txtMedico.Location = new System.Drawing.Point(353, 49);
+            this.txtMedico.MaxLength = 100;
+            this.txtMedico.Name = "txtMedico";
+            this.txtMedico.Size = new System.Drawing.Size(256, 20);
+            this.txtMedico.TabIndex = 132;
+            this.txtMedico.Text = "Nome do Medico";
+            // 
             // picCalendario
             // 
             this.picCalendario.Image = global::NewGlicNow.Properties.Resources.Calendario___ucAgenda___Branco;
@@ -256,6 +249,17 @@
             this.picCalendario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCalendario.TabIndex = 138;
             this.picCalendario.TabStop = false;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.BackColor = System.Drawing.Color.White;
+            this.txtTitulo.Font = new System.Drawing.Font("Arial", 8F);
+            this.txtTitulo.Location = new System.Drawing.Point(11, 19);
+            this.txtTitulo.MaxLength = 150;
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(598, 20);
+            this.txtTitulo.TabIndex = 130;
+            this.txtTitulo.Text = "Título";
             // 
             // ucAgenda
             // 
