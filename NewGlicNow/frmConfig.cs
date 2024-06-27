@@ -445,5 +445,105 @@ namespace FinalGlicNow
             gboCadastro.Visible = Expandido;
             animationTimer.Start();
         }
+
+
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtNome, "Nome Completo");
+        }
+        private void txtNome_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtNome, "Nome Completo");
+        }
+
+        private void txtCPF_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtCPF, "CPF");
+        }
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtNome, "CPF");
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtEmail, "E-mail");
+        }
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtEmail, "E-mail");
+        }
+
+        private void txtCelular_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtCelular, "Celular");
+        }
+        private void txtCelular_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtCelular, "Celular");
+        }
+
+        private void txtEndereco_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtEndereco, "Endereco");
+        }
+        private void txtEndereco_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtEndereco, "Endereco");
+        }
+
+        private void txtNumero_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtNumero, "Numero");
+        }
+        private void txtNumero_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtNumero, "Numero");
+        }
+
+        private void txtComplemento_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtComplemento, "Complemento");
+        }
+        private void txtComplemento_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtComplemento, "Complemento");
+        }
+
+        private void txtCEP_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtCEP, "CEP");
+        }
+        private void txtCEP_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtCEP, "CEP");
+        }
+
+        private void txtLogin_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtLogin, "Login");
+        }
+        private void txtLogin_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtLogin, "Login");
+        }
+
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtSenha, "Senha");
+        }
+        private void txtSenha_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtSenha, "Senha");
+        }
+
+        private void txtConfSenha_Enter(object sender, EventArgs e)
+        {
+            Global.TextBoxEnter(txtConfSenha, "Confirmar senha");
+        }
+        private void txtConfSenha_Leave(object sender, EventArgs e)
+        {
+            Global.TextBoxLeave(txtConfSenha, "Confirmar senha");
+        }
     }
 }

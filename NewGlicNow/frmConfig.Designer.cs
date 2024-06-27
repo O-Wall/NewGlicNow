@@ -92,7 +92,7 @@
             this.pnlBordaConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBordaConfig.Location = new System.Drawing.Point(0, 0);
             this.pnlBordaConfig.Name = "pnlBordaConfig";
-            this.pnlBordaConfig.Size = new System.Drawing.Size(387, 38);
+            this.pnlBordaConfig.Size = new System.Drawing.Size(949, 38);
             this.pnlBordaConfig.TabIndex = 102;
             // 
             // picClose
@@ -101,7 +101,7 @@
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
-            this.picClose.Location = new System.Drawing.Point(348, 4);
+            this.picClose.Location = new System.Drawing.Point(910, 4);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(30, 30);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -173,7 +173,9 @@
             this.txtNumero.Size = new System.Drawing.Size(80, 22);
             this.txtNumero.TabIndex = 122;
             this.txtNumero.Text = "Nº";
+            this.txtNumero.Enter += new System.EventHandler(this.txtNumero_Enter);
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
             // 
             // txtComplemento
             // 
@@ -185,6 +187,8 @@
             this.txtComplemento.Size = new System.Drawing.Size(274, 22);
             this.txtComplemento.TabIndex = 121;
             this.txtComplemento.Text = "Complemento";
+            this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Enter);
+            this.txtComplemento.Leave += new System.EventHandler(this.txtComplemento_Leave);
             // 
             // txtBairro
             // 
@@ -209,6 +213,8 @@
             this.txtCEP.Size = new System.Drawing.Size(138, 22);
             this.txtCEP.TabIndex = 115;
             this.txtCEP.Text = "CEP";
+            this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Enter);
+            this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
             // 
             // cboCidade
             // 
@@ -256,6 +262,8 @@
             this.txtEndereco.Size = new System.Drawing.Size(432, 22);
             this.txtEndereco.TabIndex = 114;
             this.txtEndereco.Text = "Endereço";
+            this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Enter);
+            this.txtEndereco.Leave += new System.EventHandler(this.txtEndereco_Leave);
             // 
             // cboGenero
             // 
@@ -284,6 +292,8 @@
             this.txtEmail.Size = new System.Drawing.Size(432, 22);
             this.txtEmail.TabIndex = 110;
             this.txtEmail.Text = "E-mail";
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtNome
             // 
@@ -296,6 +306,8 @@
             this.txtNome.Size = new System.Drawing.Size(432, 22);
             this.txtNome.TabIndex = 104;
             this.txtNome.Text = "Nome Completo";
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // txtCPF
             // 
@@ -308,6 +320,8 @@
             this.txtCPF.Size = new System.Drawing.Size(198, 22);
             this.txtCPF.TabIndex = 109;
             this.txtCPF.Text = "CPF";
+            this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Enter);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // txtCelular
             // 
@@ -320,6 +334,8 @@
             this.txtCelular.Size = new System.Drawing.Size(206, 22);
             this.txtCelular.TabIndex = 118;
             this.txtCelular.Text = "Celular";
+            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
+            this.txtCelular.Leave += new System.EventHandler(this.txtCelular_Leave);
             // 
             // cboEstado
             // 
@@ -429,6 +445,8 @@
             this.txtLogin.Size = new System.Drawing.Size(180, 22);
             this.txtLogin.TabIndex = 108;
             this.txtLogin.Text = "Login";
+            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
+            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
             // 
             // txtSenha
             // 
@@ -441,6 +459,8 @@
             this.txtSenha.Size = new System.Drawing.Size(180, 22);
             this.txtSenha.TabIndex = 105;
             this.txtSenha.Text = "Senha";
+            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
+            this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
             // 
             // txtConfSenha
             // 
@@ -453,6 +473,8 @@
             this.txtConfSenha.Size = new System.Drawing.Size(180, 22);
             this.txtConfSenha.TabIndex = 107;
             this.txtConfSenha.Text = "Confirmar senha";
+            this.txtConfSenha.Enter += new System.EventHandler(this.txtConfSenha_Enter);
+            this.txtConfSenha.Leave += new System.EventHandler(this.txtConfSenha_Leave);
             // 
             // picEditar
             // 
@@ -471,7 +493,7 @@
             // 
             this.picLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picLogin.Image = global::NewGlicNow.Properties.Resources.Perfil_Cadastro_Vermelho;
-            this.picLogin.Location = new System.Drawing.Point(18, 113);
+            this.picLogin.Location = new System.Drawing.Point(18, 114);
             this.picLogin.Name = "picLogin";
             this.picLogin.Size = new System.Drawing.Size(30, 30);
             this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -517,7 +539,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(387, 546);
+            this.ClientSize = new System.Drawing.Size(949, 546);
             this.Controls.Add(this.btnExpandir);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.gboCadastro);
