@@ -29,8 +29,8 @@ namespace NewGlicNow
             usuario.CPF = txtCPF.Text;
             usuario.Email = txtEmail.Text;
             usuario.DataNascimento = dtpDataNascimento.Value;
-            usuario.TipoDiabeteId = cboTipoDiabete.SelectedIndex;
-            usuario.SexoId = cboGenero.SelectedIndex;
+            usuario.TipoDiabeteId = Convert.ToInt32(cboTipoDiabete.SelectedValue);
+            usuario.SexoId = Convert.ToInt32(cboGenero.SelectedValue);
             usuario.Celular = txtCelular.Text;
 
             usuario.endereco.Logradouro = txtEndereco.Text;
@@ -291,10 +291,6 @@ namespace NewGlicNow
                 Close();
             }
         }
-        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CarregarCidades();
-        }
         private void txtCEP_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
@@ -502,7 +498,9 @@ namespace NewGlicNow
             Global.TextBoxEnter(txtCEP, "CEP");
         }
 
-
-
+        private void cboEstado_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CarregarCidades();
+        }
     }
 }

@@ -260,10 +260,10 @@
             // 
             this.lblNomePerfil.AutoSize = true;
             this.lblNomePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomePerfil.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePerfil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomePerfil.Location = new System.Drawing.Point(40, 34);
             this.lblNomePerfil.Name = "lblNomePerfil";
-            this.lblNomePerfil.Size = new System.Drawing.Size(110, 17);
+            this.lblNomePerfil.Size = new System.Drawing.Size(126, 16);
             this.lblNomePerfil.TabIndex = 35;
             this.lblNomePerfil.Text = "Nome do Sujeito";
             // 

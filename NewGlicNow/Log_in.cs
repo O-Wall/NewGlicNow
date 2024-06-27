@@ -48,7 +48,7 @@ namespace NewGlicNow
                     parameters.Add(new SqlParameter("@login", Login));
                 }
                 dt = acesso.Consultar(sql, parameters);
-                if (Id != 0 || (Login != string.Empty && dt.Rows.Count > 0))
+                if (UsuarioId != 0 || (Login != string.Empty && dt.Rows.Count > 0))
                 {
                     Id = Convert.ToInt32(dt.Rows[0]["id"]);
                     Login = dt.Rows[0]["login"].ToString();                    
@@ -94,7 +94,7 @@ namespace NewGlicNow
                 parameters.Add(new SqlParameter("@login", Login));                
                 parameters.Add(new SqlParameter("@password", Password));
                 parameters.Add(new SqlParameter("@salvo", Salvo));
-                parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
+                parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
                 acesso.Executar(sql, parameters);
             }
             catch (Exception ex)

@@ -42,14 +42,14 @@ namespace NewGlicNow
                 try
                 {
                     Usuario usuario = new Usuario();
-                    usuario.log_In.Id = Convert.ToInt32(Global.UltimoIdLogado);
+                    usuario.log_In.UsuarioId = Convert.ToInt32(Global.UltimoIdLogado);
                     usuario.log_In.Consultar();
                     if (usuario.log_In.Salvo == true)
                     {
                         txtLogin.Text = usuario.log_In.Login;
                         txtSenha.Text = usuario.log_In.Password;
+                        txtSenha.UseSystemPasswordChar = true;
                     }
-                    txtSenha.UseSystemPasswordChar = true;
                 }
                 catch (Exception ex)
                 {

@@ -173,22 +173,28 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
-         
-        /*ARRUMAR ESSE PROBLEMINHAS AQUI
-        public static DataTable ConsultarGlicemia()
+        public static int ConsultarEstado(int cidadeId)
         {
             try
             {
-                string sql = "select id, PreCafe, PosCafe, PreAlmoco, PosAlmoco, PreJantar, PosJantar, BasalMatutino,";
-                       sql += " BasalNoturno, Carboidrato, Observacao";
-                       sql += " from tblGlicemia \n";
-                return new AcessoBanco().Consultar(sql, new List<SqlParameter>());
-                    
-
+                int estado = 0;
+                string sql = "select EstadoId from tblCidade \n";
+                sql += "where Id = @Id";
+                DataTable dt = new DataTable();
+                AcessoBanco acesso = new AcessoBanco();
+                List<SqlParameter> lista = new List<SqlParameter>();
+                lista.Add(new SqlParameter("@Id", cidadeId));
+                dt = acesso.Consultar(sql, lista);
+                if (dt.Rows.Count > 0)
+                {
+                    estado = Convert.ToInt32(dt.Rows[0]["EstadoId"]);
+                }
+                return estado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
-        */
-
-
     }
 }

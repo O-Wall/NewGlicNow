@@ -31,7 +31,7 @@ namespace NewGlicNow
             Id = 0;
             NomeCompleto = string.Empty;
             CPF = string.Empty;
-            DataNascimento = DateTime.MinValue;
+            DataNascimento = DateTime.Now;
             Email = string.Empty;
             FotoPerfil = null;
             Celular = string.Empty;
@@ -155,8 +155,5 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
-
-
-
     }
 }

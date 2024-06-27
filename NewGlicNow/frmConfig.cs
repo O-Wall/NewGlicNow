@@ -21,7 +21,10 @@ namespace FinalGlicNow
             InitializeComponent();
         }
         bool load = false;
-        Usuario usuario = new Usuario();
+        Usuario usuario = new Usuario();  
+        
+        //ele está fechando mesmo se clicar em não
+
 
         private void PreencherClasse()
         {
@@ -31,33 +34,43 @@ namespace FinalGlicNow
             usuario.CPF = txtCPF.Text;
             usuario.Email = txtEmail.Text;
             usuario.DataNascimento = dtpDataNascimento.Value;
-            usuario.TipoDiabeteId = cboTipoDiabete.SelectedIndex;
-            usuario.SexoId = cboGenero.SelectedIndex;
+            usuario.TipoDiabeteId = Convert.ToInt32(cboTipoDiabete.SelectedValue);
+            usuario.SexoId = Convert.ToInt32(cboGenero.SelectedValue);
             usuario.Celular = txtCelular.Text;
 
             usuario.endereco.Logradouro = txtEndereco.Text;
+            usuario.endereco.Numero = txtNumero.Text;
             usuario.endereco.Complemento = txtComplemento.Text;
             usuario.endereco.Bairro = txtBairro.Text;
             usuario.endereco.CEP = txtCEP.Text;
-            usuario.endereco.CidadeId = cboCidade.SelectedIndex;
+            usuario.endereco.CidadeId = Convert.ToInt32(cboCidade.SelectedValue);
         }
         private void PreencherFormulario()
         {
             txtNome.Text = usuario.NomeCompleto;
-            txtSenha.Text = usuario.log_In.Password;
-            txtLogin.Text = usuario.log_In.Login;
             txtCPF.Text = usuario.CPF;
             txtEmail.Text = usuario.Email;
             dtpDataNascimento.Value = usuario.DataNascimento;
-            cboTipoDiabete.SelectedIndex = usuario.TipoDiabeteId;
-            cboGenero.SelectedIndex = usuario.SexoId;
+            cboTipoDiabete.SelectedValue = usuario.TipoDiabeteId;
+            cboGenero.SelectedValue = usuario.SexoId;
             txtCelular.Text = usuario.Celular;
 
             txtEndereco.Text = usuario.endereco.Logradouro;
+            txtNumero.Text = usuario.endereco.Numero;
             txtComplemento.Text = usuario.endereco.Complemento;
             txtBairro.Text = usuario.endereco.Bairro;
             txtCEP.Text = usuario.endereco.CEP;
-            cboCidade.SelectedIndex = usuario.endereco.CidadeId;
+            cboEstado.SelectedValue = Global.ConsultarEstado(usuario.endereco.CidadeId);
+            cboCidade.SelectedValue = usuario.endereco.CidadeId;
+            if (usuario.FotoPerfil != null)
+            {
+                picPerfil.Image = Global.BytesToImage(usuario.FotoPerfil);
+                picPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
+                picPerfil.BackColor = Color.Transparent;
+            }
+            txtLogin.Text = usuario.log_In.Login;
+            txtSenha.Text = usuario.log_In.Password;
+            txtConfSenha.Text = usuario.log_In.Password;
         }
         public static bool ValidarCPF(string cpf)
         {
@@ -267,7 +280,7 @@ namespace FinalGlicNow
             try
             {
                 cboGenero.DataSource = Global.ConsultarSexo();
-                cboGenero.DisplayMember = "Gênero";
+                cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
                 cboGenero.SelectedIndex = -1;
             }
@@ -281,7 +294,7 @@ namespace FinalGlicNow
             try
             {
                 cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
-                cboTipoDiabete.DisplayMember = "Tipo Diabete";
+                cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
                 cboTipoDiabete.SelectedIndex = -1;
             }
@@ -293,12 +306,20 @@ namespace FinalGlicNow
         }
         private void frmConfig_Load(object sender, EventArgs e)
         {
+            usuario.Id = Global.IdUsuarioLogado;
+            usuario.Consultar();
+            usuario.endereco.UsuarioId = usuario.Id;
+            usuario.endereco.Consultar();
+            usuario.log_In.UsuarioId = usuario.Id;
+            usuario.log_In.Consultar();
             CarregarEstados();
             load = true;
             CarregarCidades();
             CarregarSexos();
             CarregarTipoDiabetes();
-            PreencherFormulario();        
+            PreencherFormulario();
+            txtSenha.UseSystemPasswordChar = true;
+            txtConfSenha.UseSystemPasswordChar = true;
         }
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -315,20 +336,7 @@ namespace FinalGlicNow
         private void txtCEP_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
-        }
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-            string MsgErro = ValidarPreenchimento();
-            if (MsgErro != string.Empty)
-            {
-                MessageBox.Show(MsgErro, "Erro de Preenchimento!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            PreencherClasse();
-            usuario.Gravar();
-            MessageBox.Show("Usuário atualizado com sucesso!", "Configuração de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            PreencherFormulario();
-        }
+        }        
         private void picClose_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("Deseja fechar a aba configuração?",
@@ -374,13 +382,27 @@ namespace FinalGlicNow
                 }
                 usuario.FotoPerfil = imageBytes;
                 picPerfil.Image = Global.BytesToImage(imageBytes);
-                picPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+                picPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
                 MessageBox.Show("Imagem carregada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string MsgErro = ValidarPreenchimento();
+            if (MsgErro != string.Empty)
+            {
+                MessageBox.Show(MsgErro, "Erro de Preenchimento!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            PreencherClasse();
+            usuario.Gravar();
+            MessageBox.Show("Usuário atualizado com sucesso!", "Configuração de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PreencherFormulario();
         }
     }
 }

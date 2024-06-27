@@ -96,7 +96,7 @@
             this.cboEstado.Size = new System.Drawing.Size(170, 23);
             this.cboEstado.TabIndex = 16;
             this.cboEstado.Text = "Estado";
-            this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
+            this.cboEstado.SelectedValueChanged += new System.EventHandler(this.cboEstado_SelectedValueChanged);
             // 
             // cboCidade
             // 

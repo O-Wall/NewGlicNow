@@ -16,10 +16,7 @@ namespace NewGlicNow
         {
             Global.LerAppConfig();
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-
-            /*
+            Application.SetCompatibleTextRenderingDefault(false);            
             Form login = new FrmLogin();
             Application.Run(login);
 
@@ -28,19 +25,10 @@ namespace NewGlicNow
             {
                 Application.Run(cadastro);
             }
-
             if (login.DialogResult == DialogResult.OK || cadastro.DialogResult == DialogResult.OK)
             {
                 Application.Run(new frmPrincipal());
             }
-
-            
-
-            */
-            Application.Run(new frmPrincipal());
-
-
-
         }
     }
 }

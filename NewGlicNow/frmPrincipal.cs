@@ -1,4 +1,5 @@
 ﻿using FinalGlicNow;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,29 +19,20 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-
-        Usuario user = new Usuario();
-
-
-        /* AFAZERES
-         
-               //Deixar o botão agenda como "inicial" e trazer a ucAgenda junto, podemos colocar uma mensagem na parte branca.
-               //Olhe o botão agenda
-               //Olhe o botão glicemia
-                       
-         */
-
-
-        //MÉTODOS
+        
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            if (user.FotoPerfil != null)
+            Usuario usuario = new Usuario();
+            usuario.Id = Global.IdUsuarioLogado;
+            usuario.Consultar();
+            if (usuario.FotoPerfil != null)
             {
-                picPerfil.Image = Global.BytesToImage(user.FotoPerfil);
+                picPerfil.Image = Global.BytesToImage(usuario.FotoPerfil);
+                picPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
+                picPerfil.BackColor = Color.Transparent;
             }
-
-            lblNomePerfil.Text = user.NomeCompleto;   
+            lblNomePerfil.Text = usuario.NomeCompleto;   
         }
 
 
@@ -64,7 +56,6 @@ namespace NewGlicNow
 
             frmConfig frmConfig = new frmConfig();
             frmConfig.ShowDialog();
-
         }
 
 

@@ -115,6 +115,7 @@
             this.btnConfirmar.TabIndex = 125;
             this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // gboCadastro
             // 
@@ -316,6 +317,7 @@
             this.cboEstado.Size = new System.Drawing.Size(138, 24);
             this.cboEstado.TabIndex = 120;
             this.cboEstado.Text = "Estado";
+            this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
             // dtpDataNascimento
             // 
@@ -397,7 +399,7 @@
             // 
             this.picEditar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.picEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEditar.Location = new System.Drawing.Point(133, 76);
+            this.picEditar.Location = new System.Drawing.Point(139, 82);
             this.picEditar.Name = "picEditar";
             this.picEditar.Size = new System.Drawing.Size(24, 24);
             this.picEditar.TabIndex = 103;
@@ -427,7 +429,7 @@
             this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPerfil.Location = new System.Drawing.Point(93, 36);
             this.picPerfil.Name = "picPerfil";
-            this.picPerfil.Size = new System.Drawing.Size(64, 64);
+            this.picPerfil.Size = new System.Drawing.Size(70, 70);
             this.picPerfil.TabIndex = 2;
             this.picPerfil.TabStop = false;
             // 
