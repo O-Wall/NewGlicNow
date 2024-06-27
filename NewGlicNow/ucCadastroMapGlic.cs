@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +25,7 @@ namespace NewGlicNow
             {
                 dgvMapaGlic.DataSource = usuario.mapaGlic.Consultar();
                 //Ocultando colunas
-                dgvMapaGlic.Columns[0].Visible = false;                
+                dgvMapaGlic.Columns[0].Visible = false;
                 dgvMapaGlic.Columns[10].Visible = false;
                 dgvMapaGlic.Columns[11].Visible = false;
                 //Definindo cabeçalhos
@@ -94,7 +93,7 @@ namespace NewGlicNow
                 }
                 usuario.mapaGlic.Observacao = txtObservacao.Text;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao preencher dados da classe: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -138,7 +137,7 @@ namespace NewGlicNow
         }
         private void ucCadastroMapGlic_Load(object sender, EventArgs e)
         {
-            CarregarGridGlic();           
+            CarregarGridGlic();
         }
         private void txtValores_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -147,9 +146,9 @@ namespace NewGlicNow
         private string ValidarPreenchimento()
         {
             string msgErro = string.Empty;
-            if(cboPeriodo.SelectedIndex == -1)
+            if (cboPeriodo.SelectedIndex == -1)
             {
-                msgErro = "Selecione um Período!";                
+                msgErro = "Selecione um Período!";
             }
             if (txtValores.Text == string.Empty)
             {
@@ -178,7 +177,7 @@ namespace NewGlicNow
                 cboPeriodo.SelectedIndex = -1;
                 CarregarGridGlic();
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao gravar dados: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -206,7 +205,7 @@ namespace NewGlicNow
                 usuario = new Usuario();
                 txtValores.Text = dgvMapaGlic.SelectedCells[0].Value.ToString();
                 usuario.mapaGlic.Id = Convert.ToInt32(dgvMapaGlic.Rows[dgvMapaGlic.SelectedCells[0].RowIndex].Cells[0].Value);
-                cboPeriodo.SelectedIndex = dgvMapaGlic.SelectedCells[0].ColumnIndex-2;                
+                cboPeriodo.SelectedIndex = dgvMapaGlic.SelectedCells[0].ColumnIndex - 2;
                 usuario.mapaGlic.Consultar();
                 txtObservacao.Text = usuario.mapaGlic.Observacao;
             }
@@ -214,7 +213,7 @@ namespace NewGlicNow
             {
                 MessageBox.Show("Erro ao selecionar a Glicemia: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
         }
 
         private void btnMapa_Click(object sender, EventArgs e)
@@ -247,15 +246,18 @@ namespace NewGlicNow
                         {
                             for (int j = 0; j < dgvMapaGlic.Columns.Count; j++)
                             {
+                                // Checa se a célula é nula e escreve uma string vazia se for
+                                var cellValue = row.Cells[j].Value ?? "";
+
                                 if (dgvMapaGlic.Columns[j].ValueType == typeof(DateTime))
                                 {
                                     // Se for uma coluna de DateTime, formate como desejado
-                                    sw.Write(((DateTime)row.Cells[j].Value).ToString("dd-MM"));
+                                    sw.Write(Convert.ToDateTime(cellValue).ToString("yyyy-MM-dd"));
                                 }
                                 else
                                 {
                                     // Para outros tipos, apenas converte para string
-                                    sw.Write(row.Cells[j].Value.ToString());
+                                    sw.Write(cellValue.ToString());
                                 }
 
                                 if (j < dgvMapaGlic.Columns.Count - 1)
