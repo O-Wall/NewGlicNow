@@ -232,7 +232,7 @@ namespace NewGlicNow
                 cboEstado.DataSource = Global.ConsultarEstados();
                 cboEstado.DisplayMember = "Estado";
                 cboEstado.ValueMember = "Id";
-                cboEstado.SelectedIndex = 0;
+                cboEstado.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -247,7 +247,7 @@ namespace NewGlicNow
                 cboGenero.DataSource = Global.ConsultarSexo();
                 cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
-                cboGenero.SelectedIndex = 0;
+                cboGenero.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -261,7 +261,7 @@ namespace NewGlicNow
                 cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
                 cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
-                cboTipoDiabete.SelectedIndex = 0;
+                cboTipoDiabete.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -282,7 +282,7 @@ namespace NewGlicNow
                 cboCidade.DataSource = Global.ConsultarCidades(estado);
                 cboCidade.DisplayMember = "Cidade";
                 cboCidade.ValueMember = "Id";
-                cboCidade.SelectedIndex = 0;
+                cboCidade.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
