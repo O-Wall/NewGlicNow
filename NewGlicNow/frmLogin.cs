@@ -82,7 +82,7 @@ namespace NewGlicNow
         }
         private void txtSenha_Leave(object sender, EventArgs e)
         {
-            if (txtSenha.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(txtSenha.Text))
             {
                 txtSenha.Text = Global.ResetMsg;
                 Global.ResetMsg = string.Empty;
