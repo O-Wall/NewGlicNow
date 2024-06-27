@@ -15,11 +15,25 @@ namespace NewGlicNow
 {
     public partial class frmPrincipal : Form
     {
+        private ucAgenda ucAgenda;
+        private ucCadastroMapGlic ucCadastroMapGlic;
         public frmPrincipal()
         {
             InitializeComponent();
+            ucAgenda = new ucAgenda();
+            ucCadastroMapGlic = new ucCadastroMapGlic();
+            TrocaUser(ucAgenda);
+            TrocaCorBtn(btnAgenda);
         }
 
+      
+
+        private void TrocaUser(UserControl userControl)
+        {
+            pnlPrincipal.Controls.Clear();
+            userControl.Dock = DockStyle.Fill;
+            pnlPrincipal.Controls.Add(userControl);
+        }
         private void TrocaCorBtn(Button activeButton)
         {
             if (activeButton == btnAgenda)
@@ -54,13 +68,19 @@ namespace NewGlicNow
         {
             pnlEnfeite.Height = btnAgenda.Height;
             pnlEnfeite.Top = btnAgenda.Top;
+            TrocaCorBtn(btnAgenda);
+            TrocaUser(ucAgenda);
+
+
             //Puxar User Control 
             //Colocar cor nova
         }
         private void btnGlicemia_Click(object sender, EventArgs e)
         {
             pnlEnfeite.Height = btnGlicemia.Height;
-            pnlEnfeite.Top = btnGlicemia.Top;            
+            pnlEnfeite.Top = btnGlicemia.Top;
+            TrocaCorBtn(btnGlicemia);
+            TrocaUser(ucCadastroMapGlic);
         }
         private void btnConfiguracao_Click(object sender, EventArgs e)
         {

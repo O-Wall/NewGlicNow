@@ -18,10 +18,10 @@ namespace NewGlicNow
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            /*
+            
             Form login = new FrmLogin();
-            Application.Run(login);
-
+            Application.Run(new frmPrincipal());
+            /*
             Form cadastro = new FrmCadastro();
             if (login.Tag.ToString() == "Cadastro")
             {
@@ -32,8 +32,9 @@ namespace NewGlicNow
                 Application.Run(new frmPrincipal());
             }
             */
-
+            /*
             Application.Run(new frmPrincipal());
+            */
         }
     }
 }

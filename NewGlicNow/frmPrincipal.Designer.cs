@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlBordaForm = new System.Windows.Forms.Panel();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
+            this.picClose = new System.Windows.Forms.PictureBox();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.pnlBordaPerfil1 = new System.Windows.Forms.Panel();
             this.pnlBordaPerfil2 = new System.Windows.Forms.Panel();
@@ -38,23 +40,22 @@
             this.pnlBordaUcers = new System.Windows.Forms.Panel();
             this.pnlBordaMenu3 = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlEnfeite = new System.Windows.Forms.Panel();
-            this.lblNomePerfil = new System.Windows.Forms.Label();
-            this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.picPerfil = new System.Windows.Forms.PictureBox();
             this.btnConfiguracao = new System.Windows.Forms.Button();
             this.btnGlicemia = new System.Windows.Forms.Button();
             this.btnAgenda = new System.Windows.Forms.Button();
+            this.pnlEnfeite = new System.Windows.Forms.Panel();
             this.picProfile = new System.Windows.Forms.PictureBox();
+            this.lblNomePerfil = new System.Windows.Forms.Label();
+            this.pnlBordaPerfil4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picPerfil = new System.Windows.Forms.PictureBox();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlBordaForm.SuspendLayout();
-            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
+            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBordaForm
@@ -68,6 +69,34 @@
             this.pnlBordaForm.Name = "pnlBordaForm";
             this.pnlBordaForm.Size = new System.Drawing.Size(954, 36);
             this.pnlBordaForm.TabIndex = 119;
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picMinimize.Image = global::NewGlicNow.Properties.Resources.Minimize___Principal___Branco;
+            this.picMinimize.Location = new System.Drawing.Point(882, 4);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(29, 29);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinimize.TabIndex = 45;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.BackColor = System.Drawing.Color.Transparent;
+            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
+            this.picClose.Location = new System.Drawing.Point(915, 3);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(30, 30);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picClose.TabIndex = 44;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // lblDashboard
             // 
@@ -158,84 +187,6 @@
             this.pnlMenu.Size = new System.Drawing.Size(186, 504);
             this.pnlMenu.TabIndex = 113;
             // 
-            // pnlEnfeite
-            // 
-            this.pnlEnfeite.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnlEnfeite.Location = new System.Drawing.Point(2, 74);
-            this.pnlEnfeite.Name = "pnlEnfeite";
-            this.pnlEnfeite.Size = new System.Drawing.Size(8, 45);
-            this.pnlEnfeite.TabIndex = 20;
-            // 
-            // lblNomePerfil
-            // 
-            this.lblNomePerfil.AutoSize = true;
-            this.lblNomePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomePerfil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePerfil.Location = new System.Drawing.Point(40, 34);
-            this.lblNomePerfil.Name = "lblNomePerfil";
-            this.lblNomePerfil.Size = new System.Drawing.Size(126, 16);
-            this.lblNomePerfil.TabIndex = 35;
-            this.lblNomePerfil.Text = "Nome do Sujeito";
-            // 
-            // pnlBordaPerfil4
-            // 
-            this.pnlBordaPerfil4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlBordaPerfil4.BackColor = System.Drawing.Color.Black;
-            this.pnlBordaPerfil4.Location = new System.Drawing.Point(63, 29);
-            this.pnlBordaPerfil4.Name = "pnlBordaPerfil4";
-            this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
-            this.pnlBordaPerfil4.TabIndex = 34;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel1.Location = new System.Drawing.Point(183, 107);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(771, 3);
-            this.panel1.TabIndex = 115;
-            // 
-            // picMinimize
-            // 
-            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picMinimize.Image = global::NewGlicNow.Properties.Resources.Minimize___Principal___Branco;
-            this.picMinimize.Location = new System.Drawing.Point(882, 4);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(29, 29);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMinimize.TabIndex = 45;
-            this.picMinimize.TabStop = false;
-            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
-            // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.BackColor = System.Drawing.Color.Transparent;
-            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
-            this.picClose.Location = new System.Drawing.Point(915, 3);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(30, 30);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picClose.TabIndex = 44;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
-            // picPerfil
-            // 
-            this.picPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPerfil.Image = global::NewGlicNow.Properties.Resources.Foto_Perfil_100;
-            this.picPerfil.Location = new System.Drawing.Point(59, 57);
-            this.picPerfil.Name = "picPerfil";
-            this.picPerfil.Size = new System.Drawing.Size(64, 64);
-            this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPerfil.TabIndex = 110;
-            this.picPerfil.TabStop = false;
-            // 
             // btnConfiguracao
             // 
             this.btnConfiguracao.FlatAppearance.BorderSize = 0;
@@ -287,6 +238,14 @@
             this.btnAgenda.UseVisualStyleBackColor = true;
             this.btnAgenda.Click += new System.EventHandler(this.btnAgenda_Click);
             // 
+            // pnlEnfeite
+            // 
+            this.pnlEnfeite.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnlEnfeite.Location = new System.Drawing.Point(2, 74);
+            this.pnlEnfeite.Name = "pnlEnfeite";
+            this.pnlEnfeite.Size = new System.Drawing.Size(8, 45);
+            this.pnlEnfeite.TabIndex = 20;
+            // 
             // picProfile
             // 
             this.picProfile.Image = global::NewGlicNow.Properties.Resources.Foto_Agenda___Principal;
@@ -297,12 +256,63 @@
             this.picProfile.TabIndex = 37;
             this.picProfile.TabStop = false;
             // 
+            // lblNomePerfil
+            // 
+            this.lblNomePerfil.AutoSize = true;
+            this.lblNomePerfil.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomePerfil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePerfil.Location = new System.Drawing.Point(40, 34);
+            this.lblNomePerfil.Name = "lblNomePerfil";
+            this.lblNomePerfil.Size = new System.Drawing.Size(126, 16);
+            this.lblNomePerfil.TabIndex = 35;
+            this.lblNomePerfil.Text = "Nome do Sujeito";
+            // 
+            // pnlBordaPerfil4
+            // 
+            this.pnlBordaPerfil4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlBordaPerfil4.BackColor = System.Drawing.Color.Black;
+            this.pnlBordaPerfil4.Location = new System.Drawing.Point(63, 29);
+            this.pnlBordaPerfil4.Name = "pnlBordaPerfil4";
+            this.pnlBordaPerfil4.Size = new System.Drawing.Size(64, 2);
+            this.pnlBordaPerfil4.TabIndex = 34;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.OrangeRed;
+            this.panel1.Location = new System.Drawing.Point(183, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(771, 3);
+            this.panel1.TabIndex = 115;
+            // 
+            // picPerfil
+            // 
+            this.picPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPerfil.Image = global::NewGlicNow.Properties.Resources.Foto_Perfil_100;
+            this.picPerfil.Location = new System.Drawing.Point(59, 57);
+            this.picPerfil.Name = "picPerfil";
+            this.picPerfil.Size = new System.Drawing.Size(64, 64);
+            this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPerfil.TabIndex = 110;
+            this.picPerfil.TabStop = false;
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPrincipal.Location = new System.Drawing.Point(185, 110);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(769, 485);
+            this.pnlPrincipal.TabIndex = 120;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(954, 594);
+            this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBordaForm);
             this.Controls.Add(this.pnlBordaPerfil1);
@@ -321,12 +331,12 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlBordaForm.ResumeLayout(false);
             this.pnlBordaForm.PerformLayout();
-            this.pnlMenu.ResumeLayout(false);
-            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,5 +364,6 @@
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.PictureBox picMinimize;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlPrincipal;
     }
 }

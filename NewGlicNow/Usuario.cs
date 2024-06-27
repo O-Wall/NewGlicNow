@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Windows.Forms;
 
 namespace NewGlicNow
 {
@@ -86,16 +87,20 @@ namespace NewGlicNow
                     }
                     Celular = dt.Rows[0]["celular"].ToString();
                     TipoDiabeteId = Convert.ToInt32(dt.Rows[0]["tipoDiabeteId"]);
-                    SexoId = Convert.ToInt32(dt.Rows[0]["SexoId"]);                    
+                    SexoId = Convert.ToInt32(dt.Rows[0]["SexoId"]);
                 }
                 return dt;
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+
+                MessageBox.Show("Erro -->" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+
+                /*throw new Exception(ex.Message);*/
             }
         }
-        
+
 
         public void Gravar()
         {
