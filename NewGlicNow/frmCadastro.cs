@@ -31,11 +31,10 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
+
         bool load = false;
         Usuario usuario = new Usuario();
           
-
-        //CEP
 
 
 
@@ -233,7 +232,7 @@ namespace NewGlicNow
                 cboEstado.DataSource = Global.ConsultarEstados();
                 cboEstado.DisplayMember = "Estado";
                 cboEstado.ValueMember = "Id";
-                cboEstado.SelectedIndex = -1;
+                cboEstado.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -248,7 +247,7 @@ namespace NewGlicNow
                 cboGenero.DataSource = Global.ConsultarSexo();
                 cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
-                cboGenero.SelectedIndex = -1;
+                cboGenero.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -262,7 +261,7 @@ namespace NewGlicNow
                 cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
                 cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
-                cboTipoDiabete.SelectedIndex = -1;
+                cboTipoDiabete.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -283,7 +282,7 @@ namespace NewGlicNow
                 cboCidade.DataSource = Global.ConsultarCidades(estado);
                 cboCidade.DisplayMember = "Cidade";
                 cboCidade.ValueMember = "Id";
-                cboCidade.SelectedIndex = -1;
+                cboCidade.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -535,11 +534,15 @@ namespace NewGlicNow
             }
         }
 
-        private void picClose_MouseHover(object sender, EventArgs e)
+
+        private void picClose_MouseEnter(object sender, EventArgs e)
         {
-            picClose.Visible = false;
-            picCloseHouver.Visible = true;
-            
+            picClose.Image = Properties.Resources.icons8_cancelar_48;
+        }
+
+        private void picClose_MouseLeave(object sender, EventArgs e)
+        {
+            picClose.Image = Properties.Resources.Close_vermelho_48;
         }
     }
 }

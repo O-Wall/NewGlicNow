@@ -72,8 +72,7 @@ namespace NewGlicNow
                 picPerfil.BackColor = Color.Transparent;
             }
             lblNomePerfil.Text = usuario.NomeCompleto;
-            picClose.Visible = true;
-            picCloseHouver.Visible = false;
+
         }
 
 
@@ -128,11 +127,14 @@ namespace NewGlicNow
             Close();
         }
 
-        private void picClose_MouseHover(object sender, EventArgs e)
+        private void picClose_MouseEnter(object sender, EventArgs e)
         {
-            picClose.Visible = false;
-            picCloseHouver.Visible = true;
-            
+            picClose.Image = Properties.Resources.icons8_cancelar_48;
+        }
+
+        private void picClose_MouseLeave(object sender, EventArgs e)
+        {
+            picClose.Image = Properties.Resources.Close_vermelho_48;
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.lblCadastre = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.TelaLogin = new System.Windows.Forms.Panel();
@@ -42,11 +41,13 @@
             this.picSenha = new System.Windows.Forms.PictureBox();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.picCloseHouver = new System.Windows.Forms.PictureBox();
             this.TelaLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagemLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCadastre
@@ -201,7 +202,7 @@
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+            this.picClose.Image = global::NewGlicNow.Properties.Resources.Close_vermelho_48;
             this.picClose.Location = new System.Drawing.Point(593, 10);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(32, 32);
@@ -209,6 +210,16 @@
             this.picClose.TabIndex = 48;
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            this.picClose.MouseEnter += new System.EventHandler(this.picClose_MouseEnter);
+            this.picClose.MouseLeave += new System.EventHandler(this.picClose_MouseLeave);
+            // 
+            // picCloseHouver
+            // 
+            this.picCloseHouver.Location = new System.Drawing.Point(0, 0);
+            this.picCloseHouver.Name = "picCloseHouver";
+            this.picCloseHouver.Size = new System.Drawing.Size(100, 50);
+            this.picCloseHouver.TabIndex = 56;
+            this.picCloseHouver.TabStop = false;
             // 
             // FrmLogin
             // 
@@ -227,6 +238,7 @@
             this.Controls.Add(this.picSenha);
             this.Controls.Add(this.picLogin);
             this.Controls.Add(this.picClose);
+            this.Controls.Add(this.picCloseHouver);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -237,6 +249,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,6 +270,7 @@
         private System.Windows.Forms.PictureBox picLogin;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.PictureBox picCloseHouver;
     }
 }
 

@@ -49,6 +49,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.picCloseHouver = new System.Windows.Forms.PictureBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.pictureCelular = new System.Windows.Forms.PictureBox();
             this.picNumero = new System.Windows.Forms.PictureBox();
@@ -66,9 +67,9 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picEditar = new System.Windows.Forms.PictureBox();
             this.picProfile = new System.Windows.Forms.PictureBox();
-            this.picCloseHouver = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
@@ -85,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).BeginInit();
             this.SuspendLayout();
             // 
             // cboEstado
@@ -356,7 +356,21 @@
             this.picClose.TabIndex = 42;
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.PicClose_Click);
-            this.picClose.MouseHover += new System.EventHandler(this.picClose_MouseHover);
+            this.picClose.MouseEnter += new System.EventHandler(this.picClose_MouseEnter);
+            this.picClose.MouseLeave += new System.EventHandler(this.picClose_MouseLeave);
+            // 
+            // picCloseHouver
+            // 
+            this.picCloseHouver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picCloseHouver.BackColor = System.Drawing.Color.Transparent;
+            this.picCloseHouver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCloseHouver.Image = global::NewGlicNow.Properties.Resources.icons8_cancelar_48;
+            this.picCloseHouver.Location = new System.Drawing.Point(582, 1);
+            this.picCloseHouver.Name = "picCloseHouver";
+            this.picCloseHouver.Size = new System.Drawing.Size(30, 30);
+            this.picCloseHouver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCloseHouver.TabIndex = 77;
+            this.picCloseHouver.TabStop = false;
             // 
             // txtNumero
             // 
@@ -550,19 +564,6 @@
             this.picProfile.TabIndex = 43;
             this.picProfile.TabStop = false;
             // 
-            // picCloseHouver
-            // 
-            this.picCloseHouver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picCloseHouver.BackColor = System.Drawing.Color.Transparent;
-            this.picCloseHouver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCloseHouver.Image = global::NewGlicNow.Properties.Resources.icons8_cancelar_48;
-            this.picCloseHouver.Location = new System.Drawing.Point(582, 1);
-            this.picCloseHouver.Name = "picCloseHouver";
-            this.picCloseHouver.Size = new System.Drawing.Size(30, 30);
-            this.picCloseHouver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCloseHouver.TabIndex = 77;
-            this.picCloseHouver.TabStop = false;
-            // 
             // FrmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,6 +613,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
@@ -628,7 +630,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCloseHouver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
