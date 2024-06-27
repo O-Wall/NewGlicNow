@@ -127,14 +127,17 @@
   <data name="Email-Cadastro-Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Email-Cadastro-Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Endereco - Cadastro 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Endereco - Cadastro 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Celular - Cadastro - Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Celular - Cadastro - Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pincel_editar - Cadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pincel_editar - Cadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Foto-Perfil-100 - Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Foto-Perfil-100 - Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CPF-CADASTRO-VERMELHO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CPF-CADASTRO-VERMELHO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Minimize - Principal - Branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minimize - Principal - Branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,17 +157,20 @@
   <data name="Senha-Cadastro-Vermelho2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Senha-Cadastro-Vermelho2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Medico  - ucAgenda - Branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Medico  - ucAgenda - Branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Numero-Cadastro-Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Numero-Cadastro-Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Endereco - Cadastro 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Endereco - Cadastro 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Foto-Perfil-100 - Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Foto-Perfil-100 - Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login_senha_48-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login_senha_48-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Endereço-Cadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Endereço-Cadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LoginDocumentacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginDocumentacao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login_login-64-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login_login-64-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,17 +178,14 @@
   <data name="Perfil-Cadastro-Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Perfil-Cadastro-Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LoginDocumentacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoginDocumentacao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Complemento - Cadastro - Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Complemento - Cadastro - Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Endereço-Cadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Endereço-Cadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Estado - Cadastro - Vermleho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Estado - Cadastro - Vermleho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CPF-CADASTRO-VERMELHO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CPF-CADASTRO-VERMELHO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Complemento - Cadastro - Vermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Complemento - Cadastro - Vermelho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Calendario - ucAgenda - Branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Calendario - ucAgenda - Branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,7 +193,7 @@
   <data name="Foto-Perfil-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Foto-Perfil-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Medico  - ucAgenda - Branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Medico  - ucAgenda - Branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-cancelar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cancelar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
