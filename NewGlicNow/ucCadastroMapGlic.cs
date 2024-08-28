@@ -18,7 +18,6 @@ namespace NewGlicNow
             InitializeComponent();
         }
         Usuario usuario = new Usuario();
-
         private void CarregarGridGlic()
         {
             try
@@ -83,15 +82,24 @@ namespace NewGlicNow
                 {
                     usuario.mapaGlic.PosJantar = Convert.ToInt32(txtValores.Text);
                 }
-                else if (cboPeriodo.SelectedIndex == 6)
-                {
-                    usuario.mapaGlic.BasalMatutino = Convert.ToInt32(txtValores.Text);
-                }
-                else if (cboPeriodo.SelectedIndex == 7)
-                {
-                    usuario.mapaGlic.BasalNoturno = Convert.ToInt32(txtValores.Text);
-                }
                 usuario.mapaGlic.Observacao = txtObservacao.Text;
+                if (ckbNoturno.Checked == true)
+                {
+                    usuario.mapaGlic.BasalNoturno = true;
+                }
+                else
+                {
+                    usuario.mapaGlic.BasalNoturno = false;
+                }
+                if (ckbMatutino.Checked == true)
+                {
+                    usuario.mapaGlic.BasalMatutino = true;
+                }
+                else
+                {
+                    usuario.mapaGlic.BasalMatutino = false;
+                }
+                usuario.mapaGlic.Data = dtpData.Value.Date;
             }
             catch (Exception ex)
             {
@@ -125,15 +133,24 @@ namespace NewGlicNow
             {
                 txtValores.Text = Convert.ToString(usuario.mapaGlic.PosJantar);
             }
-            else if (cboPeriodo.SelectedIndex == 6)
+            if (usuario.mapaGlic.BasalNoturno == true)
             {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.BasalMatutino);
+                ckbNoturno.Checked = true;
             }
-            else if (cboPeriodo.SelectedIndex == 7)
+            else
             {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.BasalNoturno);
+                ckbNoturno.Checked = false;
+            }
+            if (usuario.mapaGlic.BasalMatutino == true)
+            {
+                ckbMatutino.Checked = true;
+            }
+            else
+            {
+                ckbMatutino.Checked = true;
             }
             txtObservacao.Text = usuario.mapaGlic.Observacao;
+            dtpData.Value = usuario.mapaGlic.Data.Date;
         }
         private void ucCadastroMapGlic_Load(object sender, EventArgs e)
         {
@@ -171,26 +188,27 @@ namespace NewGlicNow
                 usuario.mapaGlic.Gravar();
                 MessageBox.Show("Glicemia Gravada com Sucesso!",
                     "Mapa de Glicemia",
-                   MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtValores.Clear();
-                txtObservacao.Clear();
-                cboPeriodo.SelectedIndex = 0;
-                CarregarGridGlic();
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao gravar dados: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            LimparCampo();
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             try
             {
                 usuario = new Usuario();
-                usuario.mapaGlic.DataInicio = dtpDataInicio.Value;
-                usuario.mapaGlic.DataFim = dtpDataFim.Value;
-                CarregarGridGlic();
+                usuario.mapaGlic.DataInicio = dtpDataInicio.Value.Date; 
+                usuario.mapaGlic.DataFim = dtpDataFim.Value.Date; 
+
+                if (usuario.mapaGlic.DataInicio <= usuario.mapaGlic.DataFim)
+                {
+                    CarregarGridGlic();
+                }
             }
             catch (Exception ex)
             {
@@ -203,11 +221,38 @@ namespace NewGlicNow
             try
             {
                 usuario = new Usuario();
-                txtValores.Text = dgvMapaGlic.SelectedCells[0].Value.ToString();
-                usuario.mapaGlic.Id = Convert.ToInt32(dgvMapaGlic.Rows[dgvMapaGlic.SelectedCells[0].RowIndex].Cells[0].Value);
-                cboPeriodo.SelectedIndex = dgvMapaGlic.SelectedCells[0].ColumnIndex - 2;
+
+                var selectedCell = dgvMapaGlic.SelectedCells[0];
+
+                if (selectedCell is DataGridViewCheckBoxCell)
+                {
+                    MessageBox.Show("A célula selecionada é um checkbox.", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (selectedCell.OwningColumn.Name == "Data")
+                {
+                    if (selectedCell.Value != null && DateTime.TryParse(selectedCell.Value.ToString(), out DateTime data))
+                    {
+                        dtpData.Value = data;
+                    }
+                    else
+                    {
+                        MessageBox.Show("O valor da célula não é uma data válida.", "Erro",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {                   
+                    txtValores.Text = selectedCell.Value?.ToString();
+                }
+                usuario.mapaGlic.Id = Convert.ToInt32(dgvMapaGlic.Rows[selectedCell.RowIndex].Cells[0].Value);
+                cboPeriodo.SelectedIndex = selectedCell.ColumnIndex - 2;
                 usuario.mapaGlic.Consultar();
                 txtObservacao.Text = usuario.mapaGlic.Observacao;
+                dtpData.Value = usuario.mapaGlic.Data;
+                ckbNoturno.Checked = usuario.mapaGlic.BasalNoturno;
+                ckbMatutino.Checked = usuario.mapaGlic.BasalMatutino;
             }
             catch (Exception ex)
             {
@@ -215,7 +260,14 @@ namespace NewGlicNow
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void LimparCampo()
+        {
+            Usuario usuario = new Usuario();
+            txtValores.Clear();
+            txtObservacao.Clear();
+            cboPeriodo.SelectedIndex = -1;
+            CarregarGridGlic();
+        }
         private void btnMapa_Click(object sender, EventArgs e)
         {
             try

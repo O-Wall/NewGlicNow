@@ -19,11 +19,6 @@ namespace NewGlicNow
         {
             InitializeComponent();
         }
-
-        //colocar mais um botão vermelho (claro)
-
-        bool passwordchar = true;
-
         private string ValidarCampos()
         {
             string msgErro = string.Empty;
@@ -61,37 +56,7 @@ namespace NewGlicNow
                     MessageBox.Show("Erro --> " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-        private void txtLogin_Enter(object sender, EventArgs e)
-        {
-            if (txtLogin.Text == "Login")
-            {
-                Global.LimparTexto(txtLogin);
-            }
-        }
-        private void txtLogin_Leave(object sender, EventArgs e)
-        {
-            Global.ResetMensagem(txtLogin);
-        }
-        private void txtSenha_Enter(object sender, EventArgs e)
-        {
-            if (passwordchar)
-            {
-                Global.LimparTexto(txtSenha);
-                txtSenha.UseSystemPasswordChar = true;
-                passwordchar = false;
-            }
-        }
-        private void txtSenha_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtSenha.Text))
-            {
-                txtSenha.Text = Global.ResetMsg;
-                Global.ResetMsg = string.Empty;
-                txtSenha.UseSystemPasswordChar = false;
-                passwordchar = true;
-            }
-        }
+        }        
         private void lblCadastre_Click(object sender, EventArgs e)
         {
             Tag = "Cadastro";

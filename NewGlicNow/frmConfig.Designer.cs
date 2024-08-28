@@ -120,7 +120,7 @@
             this.btnConfirmar.Location = new System.Drawing.Point(224, 390);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(100, 41);
-            this.btnConfirmar.TabIndex = 125;
+            this.btnConfirmar.TabIndex = 0;
             this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -447,7 +447,7 @@
             this.txtLogin.MaxLength = 50;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(180, 22);
-            this.txtLogin.TabIndex = 108;
+            this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "Login";
             this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
             this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
@@ -461,7 +461,7 @@
             this.txtSenha.MaxLength = 30;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(180, 22);
-            this.txtSenha.TabIndex = 105;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.Text = "Senha";
             this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
@@ -475,7 +475,7 @@
             this.txtConfSenha.MaxLength = 30;
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(180, 22);
-            this.txtConfSenha.TabIndex = 107;
+            this.txtConfSenha.TabIndex = 2;
             this.txtConfSenha.Text = "Confirmar senha";
             this.txtConfSenha.Enter += new System.EventHandler(this.txtConfSenha_Enter);
             this.txtConfSenha.Leave += new System.EventHandler(this.txtConfSenha_Leave);
@@ -533,7 +533,7 @@
             this.btnExpandir.Location = new System.Drawing.Point(63, 390);
             this.btnExpandir.Name = "btnExpandir";
             this.btnExpandir.Size = new System.Drawing.Size(100, 41);
-            this.btnExpandir.TabIndex = 128;
+            this.btnExpandir.TabIndex = 1;
             this.btnExpandir.Text = "&Editar outros dados";
             this.btnExpandir.UseVisualStyleBackColor = false;
             this.btnExpandir.Click += new System.EventHandler(this.btnExpandir_Click);

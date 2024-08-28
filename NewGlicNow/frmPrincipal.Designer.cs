@@ -194,7 +194,7 @@
             // 
             this.btnConfiguracao.FlatAppearance.BorderSize = 0;
             this.btnConfiguracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracao.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracao.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracao.Image = global::NewGlicNow.Properties.Resources.Configuracao___Principal___Glic;
             this.btnConfiguracao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,7 +211,7 @@
             // 
             this.btnGlicemia.FlatAppearance.BorderSize = 0;
             this.btnGlicemia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGlicemia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGlicemia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGlicemia.ForeColor = System.Drawing.Color.White;
             this.btnGlicemia.Image = global::NewGlicNow.Properties.Resources.MapaGlic___Principal___Branco;
             this.btnGlicemia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -228,7 +228,7 @@
             // 
             this.btnAgenda.FlatAppearance.BorderSize = 0;
             this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgenda.ForeColor = System.Drawing.Color.White;
             this.btnAgenda.Image = global::NewGlicNow.Properties.Resources.Agenda___Principal___Branco;
             this.btnAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -263,12 +263,13 @@
             // 
             this.lblNomePerfil.AutoSize = true;
             this.lblNomePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomePerfil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePerfil.Location = new System.Drawing.Point(40, 34);
+            this.lblNomePerfil.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePerfil.Location = new System.Drawing.Point(65, 34);
             this.lblNomePerfil.Name = "lblNomePerfil";
-            this.lblNomePerfil.Size = new System.Drawing.Size(126, 16);
+            this.lblNomePerfil.Size = new System.Drawing.Size(59, 18);
             this.lblNomePerfil.TabIndex = 35;
-            this.lblNomePerfil.Text = "Nome do Sujeito";
+            this.lblNomePerfil.Text = "Nome";
+            this.lblNomePerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlBordaPerfil4
             // 

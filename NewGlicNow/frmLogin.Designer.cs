@@ -42,6 +42,8 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picCloseHouver = new System.Windows.Forms.PictureBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblSenha = new System.Windows.Forms.Label();
             this.TelaLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagemLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenha)).BeginInit();
@@ -59,7 +61,7 @@
             this.lblCadastre.Location = new System.Drawing.Point(421, 368);
             this.lblCadastre.Name = "lblCadastre";
             this.lblCadastre.Size = new System.Drawing.Size(75, 17);
-            this.lblCadastre.TabIndex = 47;
+            this.lblCadastre.TabIndex = 3;
             this.lblCadastre.Text = "Criar conta";
             this.lblCadastre.Click += new System.EventHandler(this.lblCadastre_Click);
             this.lblCadastre.MouseEnter += new System.EventHandler(this.lblCadastre_MouseEnter);
@@ -140,10 +142,8 @@
             this.txtSenha.Location = new System.Drawing.Point(369, 235);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(190, 15);
-            this.txtSenha.TabIndex = 45;
-            this.txtSenha.Text = "Senha";
-            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
-            this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
+            this.txtSenha.TabIndex = 1;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // txtLogin
             // 
@@ -155,10 +155,7 @@
             this.txtLogin.Location = new System.Drawing.Point(369, 187);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(190, 15);
-            this.txtLogin.TabIndex = 44;
-            this.txtLogin.Text = "Login";
-            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
-            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
+            this.txtLogin.TabIndex = 0;
             // 
             // btnEntrar
             // 
@@ -168,7 +165,7 @@
             this.btnEntrar.Location = new System.Drawing.Point(414, 314);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(89, 36);
-            this.btnEntrar.TabIndex = 55;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -221,11 +218,37 @@
             this.picCloseHouver.TabIndex = 56;
             this.picCloseHouver.TabStop = false;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.Black;
+            this.lblUsuario.Location = new System.Drawing.Point(371, 171);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(47, 13);
+            this.lblUsuario.TabIndex = 57;
+            this.lblUsuario.Text = "Usuário";
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.ForeColor = System.Drawing.Color.Black;
+            this.lblSenha.Location = new System.Drawing.Point(371, 219);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(39, 13);
+            this.lblSenha.TabIndex = 58;
+            this.lblSenha.Text = "Senha";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 549);
+            this.Controls.Add(this.lblSenha);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblCadastre);
             this.Controls.Add(this.lblTitulo);
@@ -271,6 +294,8 @@
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.PictureBox picCloseHouver;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblSenha;
     }
 }
 

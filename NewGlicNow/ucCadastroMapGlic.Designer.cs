@@ -44,9 +44,15 @@
             this.lblDataFim = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.picPesquisa = new System.Windows.Forms.PictureBox();
+            this.lblData = new System.Windows.Forms.Label();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.grbBasal = new System.Windows.Forms.GroupBox();
+            this.ckbNoturno = new System.Windows.Forms.CheckBox();
+            this.ckbMatutino = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).BeginInit();
             this.grpRegistrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPesquisa)).BeginInit();
+            this.grbBasal.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtValores
@@ -72,35 +78,35 @@
             // lblValores
             // 
             this.lblValores.AutoSize = true;
-            this.lblValores.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValores.ForeColor = System.Drawing.Color.White;
             this.lblValores.Location = new System.Drawing.Point(27, 67);
             this.lblValores.Name = "lblValores";
-            this.lblValores.Size = new System.Drawing.Size(117, 12);
+            this.lblValores.Size = new System.Drawing.Size(103, 13);
             this.lblValores.TabIndex = 9;
-            this.lblValores.Text = "Valores da Glicemia";
+            this.lblValores.Text = "Valores da Glicemia:";
             // 
             // lblPeriodo
             // 
             this.lblPeriodo.AutoSize = true;
-            this.lblPeriodo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.ForeColor = System.Drawing.Color.White;
             this.lblPeriodo.Location = new System.Drawing.Point(27, 32);
             this.lblPeriodo.Name = "lblPeriodo";
-            this.lblPeriodo.Size = new System.Drawing.Size(48, 12);
+            this.lblPeriodo.Size = new System.Drawing.Size(48, 13);
             this.lblPeriodo.TabIndex = 8;
-            this.lblPeriodo.Text = "Período";
+            this.lblPeriodo.Text = "Período:";
             // 
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObservacao.ForeColor = System.Drawing.Color.White;
             this.lblObservacao.Location = new System.Drawing.Point(27, 98);
             this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Size = new System.Drawing.Size(73, 12);
+            this.lblObservacao.Size = new System.Drawing.Size(68, 13);
             this.lblObservacao.TabIndex = 7;
-            this.lblObservacao.Text = "Observação";
+            this.lblObservacao.Text = "Observação:";
             // 
             // btnGravar
             // 
@@ -134,6 +140,9 @@
             // 
             // grpRegistrar
             // 
+            this.grpRegistrar.Controls.Add(this.grbBasal);
+            this.grpRegistrar.Controls.Add(this.lblData);
+            this.grpRegistrar.Controls.Add(this.dtpData);
             this.grpRegistrar.Controls.Add(this.cboPeriodo);
             this.grpRegistrar.Controls.Add(this.txtValores);
             this.grpRegistrar.Controls.Add(this.txtObservacao);
@@ -160,9 +169,7 @@
             "Pre-Almoço",
             "Pós-Almoço",
             "Pre-Jantar",
-            "Pós-Jantar",
-            "Basal Matutino",
-            "Basal Noturno"});
+            "Pós-Jantar"});
             this.cboPeriodo.Location = new System.Drawing.Point(81, 28);
             this.cboPeriodo.Name = "cboPeriodo";
             this.cboPeriodo.Size = new System.Drawing.Size(169, 22);
@@ -205,22 +212,22 @@
             // lblDataInicio
             // 
             this.lblDataInicio.AutoSize = true;
-            this.lblDataInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataInicio.ForeColor = System.Drawing.Color.White;
             this.lblDataInicio.Location = new System.Drawing.Point(267, 19);
             this.lblDataInicio.Name = "lblDataInicio";
-            this.lblDataInicio.Size = new System.Drawing.Size(70, 12);
+            this.lblDataInicio.Size = new System.Drawing.Size(63, 13);
             this.lblDataInicio.TabIndex = 20;
             this.lblDataInicio.Text = "Data Inicial:";
             // 
             // lblDataFim
             // 
             this.lblDataFim.AutoSize = true;
-            this.lblDataFim.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataFim.ForeColor = System.Drawing.Color.White;
             this.lblDataFim.Location = new System.Drawing.Point(449, 19);
             this.lblDataFim.Name = "lblDataFim";
-            this.lblDataFim.Size = new System.Drawing.Size(64, 12);
+            this.lblDataFim.Size = new System.Drawing.Size(58, 13);
             this.lblDataFim.TabIndex = 21;
             this.lblDataFim.Text = "Data Final:";
             // 
@@ -246,6 +253,59 @@
             this.picPesquisa.TabIndex = 139;
             this.picPesquisa.TabStop = false;
             // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.White;
+            this.lblData.Location = new System.Drawing.Point(276, 32);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(33, 13);
+            this.lblData.TabIndex = 141;
+            this.lblData.Text = "Data:";
+            // 
+            // dtpData
+            // 
+            this.dtpData.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(324, 28);
+            this.dtpData.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(97, 20);
+            this.dtpData.TabIndex = 140;
+            this.dtpData.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            // 
+            // grbBasal
+            // 
+            this.grbBasal.Controls.Add(this.ckbMatutino);
+            this.grbBasal.Controls.Add(this.ckbNoturno);
+            this.grbBasal.Location = new System.Drawing.Point(427, 24);
+            this.grbBasal.Name = "grbBasal";
+            this.grbBasal.Size = new System.Drawing.Size(163, 68);
+            this.grbBasal.TabIndex = 142;
+            this.grbBasal.TabStop = false;
+            this.grbBasal.Text = "Basal";
+            // 
+            // ckbNoturno
+            // 
+            this.ckbNoturno.AutoSize = true;
+            this.ckbNoturno.Location = new System.Drawing.Point(15, 18);
+            this.ckbNoturno.Name = "ckbNoturno";
+            this.ckbNoturno.Size = new System.Drawing.Size(79, 21);
+            this.ckbNoturno.TabIndex = 0;
+            this.ckbNoturno.Text = "Noturno";
+            this.ckbNoturno.UseVisualStyleBackColor = true;
+            // 
+            // ckbMatutino
+            // 
+            this.ckbMatutino.AutoSize = true;
+            this.ckbMatutino.Location = new System.Drawing.Point(16, 38);
+            this.ckbMatutino.Name = "ckbMatutino";
+            this.ckbMatutino.Size = new System.Drawing.Size(83, 21);
+            this.ckbMatutino.TabIndex = 1;
+            this.ckbMatutino.Text = "Matutino";
+            this.ckbMatutino.UseVisualStyleBackColor = true;
+            // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +328,8 @@
             this.grpRegistrar.ResumeLayout(false);
             this.grpRegistrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPesquisa)).EndInit();
+            this.grbBasal.ResumeLayout(false);
+            this.grbBasal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +353,10 @@
         private System.Windows.Forms.Label lblDataFim;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.PictureBox picPesquisa;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.GroupBox grbBasal;
+        private System.Windows.Forms.CheckBox ckbMatutino;
+        private System.Windows.Forms.CheckBox ckbNoturno;
     }
 }

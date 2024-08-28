@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using System.Runtime.InteropServices;
 
 
 namespace NewGlicNow
@@ -33,10 +23,7 @@ namespace NewGlicNow
         }
 
         bool load = false;
-        Usuario usuario = new Usuario();
-          
-
-
+        Usuario usuario = new Usuario();    
 
         private void PreencherClasse()
         {
@@ -233,6 +220,7 @@ namespace NewGlicNow
                 cboEstado.DisplayMember = "Estado";
                 cboEstado.ValueMember = "Id";
                 cboEstado.SelectedIndex = -1;
+                cboEstado.Text = "Estado";
             }
             catch (Exception ex)
             {
@@ -248,6 +236,7 @@ namespace NewGlicNow
                 cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
                 cboGenero.SelectedIndex = -1;
+                cboGenero.Text = "Gênero";
             }
             catch (Exception ex)
             {
@@ -262,6 +251,7 @@ namespace NewGlicNow
                 cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
                 cboTipoDiabete.SelectedIndex = -1;
+                cboTipoDiabete.Text = "Tipo de Diabetes";
             }
             catch (Exception ex)
             {
@@ -283,6 +273,7 @@ namespace NewGlicNow
                 cboCidade.DisplayMember = "Cidade";
                 cboCidade.ValueMember = "Id";
                 cboCidade.SelectedIndex = -1;
+                cboCidade.Text = "Cidade";
             }
             catch (Exception ex)
             {

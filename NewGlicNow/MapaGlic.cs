@@ -21,8 +21,8 @@ namespace NewGlicNow
         public int PosAlmoco { get; set; }
         public int PreJantar { get; set; }
         public int PosJantar { get; set; }
-        public int BasalMatutino { get; set; }
-        public int BasalNoturno { get; set; }
+        public bool BasalMatutino { get; set; }
+        public bool BasalNoturno { get; set; }
         public string Observacao { get; set; }
         public int UsuarioId { get; set; }
 
@@ -38,8 +38,8 @@ namespace NewGlicNow
             PosAlmoco = 0;
             PreJantar = 0;
             PosJantar = 0;
-            BasalMatutino = 0;
-            BasalNoturno = 0;
+            BasalMatutino = false;
+            BasalNoturno = false;
             Observacao = string.Empty;
             UsuarioId = 0;
         }
@@ -60,18 +60,22 @@ namespace NewGlicNow
                 if (Id != 0)
                 {
                     sql += "where Id = @Id \n";
-                    parameters.Add(new SqlParameter("@id", Id));
+                    parameters.Add(new SqlParameter("@Id", Id));
                 }
                 else
                 {
-                    sql += "where UsuarioId = @usuarioId \n";
-                    sql += " and Data between cast(@dataInicio as date) AND cast(@dataFim as date)\n";
+                    sql += "WHERE UsuarioId = @usuarioId \n";
                     parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
-                    parameters.Add(new SqlParameter("@dataInicio", DataInicio));
-                    parameters.Add(new SqlParameter("@dataFim", DataFim));
+
+                    if (DataInicio != DateTime.MinValue && DataFim != DateTime.MinValue)
+                    {
+                        sql += "AND Data BETWEEN cast(@dataInicio as date) AND cast(@dataFim as date) \n";
+                        parameters.Add(new SqlParameter("@dataInicio", SqlDbType.DateTime) { Value = DataInicio });
+                        parameters.Add(new SqlParameter("@dataFim", SqlDbType.DateTime) { Value = DataFim });
+                    }
                 }
                 dt = acesso.Consultar(sql, parameters);
-                if(dt.Rows.Count==1)
+                if(dt.Rows.Count>0)
                 {
                     Id = Convert.ToInt32(dt.Rows[0]["id"]);
                     Data = Convert.ToDateTime(dt.Rows[0]["data"]);
@@ -81,8 +85,8 @@ namespace NewGlicNow
                     PosAlmoco = Convert.ToInt32(dt.Rows[0]["posAlmoco"]);
                     PreJantar = Convert.ToInt32(dt.Rows[0]["preJantar"]);
                     PosJantar = Convert.ToInt32(dt.Rows[0]["posJantar"]);
-                    BasalMatutino = Convert.ToInt32(dt.Rows[0]["basalMatutino"]);
-                    BasalNoturno = Convert.ToInt32(dt.Rows[0]["basalNoturno"]);
+                    BasalMatutino = Convert.ToBoolean(dt.Rows[0]["basalMatutino"]);
+                    BasalNoturno = Convert.ToBoolean(dt.Rows[0]["basalNoturno"]);
                     Observacao = Convert.ToString(dt.Rows[0]["observacao"]);
                     UsuarioId = Convert.ToInt32(dt.Rows[0]["usuarioId"]);
                 }
@@ -102,10 +106,10 @@ namespace NewGlicNow
                 if (Id == 0)
                 {
                     sql = "insert into tblGlicemia \n";
-                    sql += "(Data,PreCafe, PosCafe, PreAlmoco, PosAlmoco, PreJantar," +
+                    sql += "(Data, PreCafe, PosCafe, PreAlmoco, PosAlmoco, PreJantar," +
                         " PosJantar, BasalMatutino, BasalNoturno, Observacao, UsuarioId) \n";
                     sql += "values \n";
-                    sql += "(@data, @preCafe, @posCafe, @preAlmoco, @posAlmoco," +
+                    sql += "(@data,@preCafe, @posCafe, @preAlmoco, @posAlmoco," +
                         " @preJantar, @posJantar, @basalMatutino, @basalNoturno, @observacao, @usuarioId) \n";
                     parameters.Add(new SqlParameter("@data", Data));
                 }

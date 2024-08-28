@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 
 namespace NewGlicNow
@@ -71,8 +70,7 @@ namespace NewGlicNow
                 picPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
                 picPerfil.BackColor = Color.Transparent;
             }
-            lblNomePerfil.Text = usuario.NomeCompleto;
-
+            lblNomePerfil.Text = usuario.NomeCompleto.Split(' ')[0];
         }
 
 

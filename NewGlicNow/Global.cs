@@ -23,7 +23,6 @@ namespace NewGlicNow
         public static string Banco = string.Empty;
         public static int IdUsuarioLogado = 0;
         public static string UltimoIdLogado = "0";
-        public static string ResetMsg = string.Empty;
 
         public static string Criptografar(string senha)
         {
@@ -35,7 +34,6 @@ namespace NewGlicNow
 
             return Regex.Replace(BitConverter.ToString(criptografado), "-", "").ToLower();
         }
-
         public static void LerAppConfig()
         {
             Servidor = ConfigurationManager.AppSettings.Get("servidor");
@@ -44,7 +42,6 @@ namespace NewGlicNow
 
             Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
         }
-
         public static bool SomenteNumeros(char tecla, string texto)
         {
             if ((!char.IsDigit(tecla) && tecla != (char)Keys.Back))
@@ -82,21 +79,6 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
-
-        public static void LimparTexto(TextBox txt)
-        {
-            ResetMsg = txt.Text;
-            txt.Clear();
-        }
-        public static void ResetMensagem(TextBox txt)
-        {
-            if (txt.Text == string.Empty)
-            {
-                txt.Text = Global.ResetMsg;
-                Global.ResetMsg = string.Empty;
-            }
-        }
-
         public static void TextBoxEnter(TextBox txt, string texto)
         {            
             if (txt.Text == texto)
@@ -105,7 +87,6 @@ namespace NewGlicNow
                 txt.ForeColor = Color.Black;
             }
         }
-
         public static void TextBoxLeave(TextBox txt, string texto)
         {
             if (string.IsNullOrWhiteSpace(txt.Text))
@@ -114,9 +95,6 @@ namespace NewGlicNow
                 txt.ForeColor = Color.Gray;
             }
         }
-        //  public static void ResetMensagem(TextBox txt)
-
-
         public static DataTable ConsultarEstados()
         {
             try
@@ -129,7 +107,6 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
-
         public static DataTable ConsultarCidades(int estadoId)
         {
             try
@@ -148,7 +125,6 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
-
         public static DataTable ConsultarSexo()
         {
             try

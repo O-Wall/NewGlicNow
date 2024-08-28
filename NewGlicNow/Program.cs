@@ -32,11 +32,6 @@ namespace NewGlicNow
             {
                 Application.Run(new frmPrincipal());
             }
-
-            /*
-            Application.Run(new frmConfig());
-            */
-
         }
     }
 }

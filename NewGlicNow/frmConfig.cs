@@ -111,8 +111,6 @@ namespace FinalGlicNow
                 picPerfil.BackColor = Color.Transparent;
             }
             txtLogin.Text = usuario.log_In.Login;
-            txtSenha.Text = usuario.log_In.Password;
-            txtConfSenha.Text = usuario.log_In.Password;
         }
         public static bool ValidarCPF(string cpf)
         {
@@ -289,6 +287,7 @@ namespace FinalGlicNow
                 cboEstado.DisplayMember = "Estado";
                 cboEstado.ValueMember = "Id";
                 cboEstado.SelectedIndex = 0;
+                cboEstado.Text = "Estado";
             }
             catch (Exception ex)
             {
@@ -310,6 +309,7 @@ namespace FinalGlicNow
                 cboCidade.DisplayMember = "Cidade";
                 cboCidade.ValueMember = "Id";
                 cboCidade.SelectedIndex = 0;
+                cboCidade.Text = "Cidade";
             }
             catch (Exception ex)
             {
@@ -325,6 +325,7 @@ namespace FinalGlicNow
                 cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
                 cboGenero.SelectedIndex = 0;
+                cboGenero.Text = "Gênero";
             }
             catch (Exception ex)
             {
@@ -339,6 +340,7 @@ namespace FinalGlicNow
                 cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
                 cboTipoDiabete.SelectedIndex = 0;
+                cboTipoDiabete.Text = "Tipo de Diabete";
             }
             catch (Exception ex)
             {

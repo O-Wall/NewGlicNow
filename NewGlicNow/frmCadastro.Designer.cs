@@ -97,7 +97,7 @@
             this.cboEstado.Location = new System.Drawing.Point(109, 463);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(170, 23);
-            this.cboEstado.TabIndex = 16;
+            this.cboEstado.TabIndex = 17;
             this.cboEstado.Text = "Estado";
             this.cboEstado.SelectedValueChanged += new System.EventHandler(this.cboEstado_SelectedValueChanged);
             // 
@@ -110,7 +110,7 @@
             this.cboCidade.Location = new System.Drawing.Point(315, 462);
             this.cboCidade.Name = "cboCidade";
             this.cboCidade.Size = new System.Drawing.Size(226, 23);
-            this.cboCidade.TabIndex = 17;
+            this.cboCidade.TabIndex = 18;
             this.cboCidade.Text = "Cidade";
             // 
             // txtCelular
@@ -122,7 +122,7 @@
             this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(206, 22);
-            this.txtCelular.TabIndex = 10;
+            this.txtCelular.TabIndex = 11;
             this.txtCelular.Text = "Celular";
             this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
@@ -137,7 +137,7 @@
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(239, 22);
-            this.txtBairro.TabIndex = 14;
+            this.txtBairro.TabIndex = 15;
             this.txtBairro.Text = "Bairro";
             this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
             this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
@@ -150,7 +150,7 @@
             this.txtComplemento.Location = new System.Drawing.Point(285, 389);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(256, 22);
-            this.txtComplemento.TabIndex = 13;
+            this.txtComplemento.TabIndex = 14;
             this.txtComplemento.Text = "Complemento";
             this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Enter);
             this.txtComplemento.Leave += new System.EventHandler(this.txtComplemento_Leave);
@@ -164,7 +164,7 @@
             this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(157, 22);
-            this.txtCEP.TabIndex = 15;
+            this.txtCEP.TabIndex = 16;
             this.txtCEP.Text = "CEP";
             this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Enter);
             this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEP_KeyPress);
@@ -179,7 +179,7 @@
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(432, 22);
-            this.txtEndereco.TabIndex = 11;
+            this.txtEndereco.TabIndex = 12;
             this.txtEndereco.Text = "Endereço";
             this.txtEndereco.Enter += new System.EventHandler(this.txtEndereco_Enter);
             this.txtEndereco.Leave += new System.EventHandler(this.txtEndereco_Leave);
@@ -191,7 +191,7 @@
             this.btnCadastro.Location = new System.Drawing.Point(429, 520);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(112, 36);
-            this.btnCadastro.TabIndex = 18;
+            this.btnCadastro.TabIndex = 0;
             this.btnCadastro.Text = "&Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = false;
             this.btnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
@@ -205,7 +205,7 @@
             this.cboGenero.Location = new System.Drawing.Point(79, 293);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(200, 24);
-            this.cboGenero.TabIndex = 9;
+            this.cboGenero.TabIndex = 10;
             this.cboGenero.Text = "Gênero";
             // 
             // cboTipoDiabete
@@ -217,7 +217,7 @@
             this.cboTipoDiabete.Location = new System.Drawing.Point(285, 256);
             this.cboTipoDiabete.Name = "cboTipoDiabete";
             this.cboTipoDiabete.Size = new System.Drawing.Size(256, 23);
-            this.cboTipoDiabete.TabIndex = 8;
+            this.cboTipoDiabete.TabIndex = 9;
             this.cboTipoDiabete.Tag = "";
             this.cboTipoDiabete.Text = "Tipo de Diabete";
             // 
@@ -230,7 +230,7 @@
             this.dtpDataNascimento.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(200, 22);
-            this.dtpDataNascimento.TabIndex = 7;
+            this.dtpDataNascimento.TabIndex = 8;
             this.dtpDataNascimento.UseWaitCursor = true;
             this.dtpDataNascimento.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
@@ -243,7 +243,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(432, 22);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 7;
             this.txtEmail.Text = "E-mail";
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
@@ -257,7 +257,7 @@
             this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(198, 22);
-            this.txtCPF.TabIndex = 5;
+            this.txtCPF.TabIndex = 6;
             this.txtCPF.Text = "CPF";
             this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Enter);
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
@@ -272,7 +272,7 @@
             this.txtLogin.MaxLength = 50;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(180, 22);
-            this.txtLogin.TabIndex = 4;
+            this.txtLogin.TabIndex = 5;
             this.txtLogin.Text = "Login";
             this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
             this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
@@ -286,7 +286,7 @@
             this.txtConfSenha.MaxLength = 30;
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(198, 22);
-            this.txtConfSenha.TabIndex = 3;
+            this.txtConfSenha.TabIndex = 4;
             this.txtConfSenha.Text = "Confirmar senha";
             this.txtConfSenha.Enter += new System.EventHandler(this.txtConfSenha_Enter);
             this.txtConfSenha.Leave += new System.EventHandler(this.txtConfSenha_Leave);
@@ -300,7 +300,7 @@
             this.txtSenha.MaxLength = 30;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(180, 22);
-            this.txtSenha.TabIndex = 2;
+            this.txtSenha.TabIndex = 3;
             this.txtSenha.Text = "Senha";
             this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
@@ -314,7 +314,7 @@
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(386, 22);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 2;
             this.txtNome.Text = "Nome Completo";
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
@@ -329,7 +329,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(618, 33);
-            this.panel2.TabIndex = 18;
+            this.panel2.TabIndex = 1;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // lblCadastro
@@ -381,7 +381,7 @@
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(109, 22);
-            this.txtNumero.TabIndex = 12;
+            this.txtNumero.TabIndex = 13;
             this.txtNumero.Text = "Nº";
             this.txtNumero.Enter += new System.EventHandler(this.txtNumero_Enter);
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
