@@ -45,6 +45,11 @@
             this.txtMedico = new System.Windows.Forms.TextBox();
             this.picCalendario = new System.Windows.Forms.PictureBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.rdbAtivo = new System.Windows.Forms.RadioButton();
+            this.rdbDesativado = new System.Windows.Forms.RadioButton();
+            this.rdbPesquisarDesativados = new System.Windows.Forms.RadioButton();
+            this.rdbPesquisarAtivos = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).BeginInit();
             this.gprPesquisar.SuspendLayout();
             this.grpRegistrar.SuspendLayout();
@@ -96,6 +101,8 @@
             // 
             // gprPesquisar
             // 
+            this.gprPesquisar.Controls.Add(this.rdbPesquisarDesativados);
+            this.gprPesquisar.Controls.Add(this.rdbPesquisarAtivos);
             this.gprPesquisar.Controls.Add(this.lblDataFim);
             this.gprPesquisar.Controls.Add(this.dtpDataAgendaFim);
             this.gprPesquisar.Controls.Add(this.lblDataInicio);
@@ -131,7 +138,7 @@
             this.dtpDataAgendaFim.Name = "dtpDataAgendaFim";
             this.dtpDataAgendaFim.Size = new System.Drawing.Size(97, 20);
             this.dtpDataAgendaFim.TabIndex = 133;
-            this.dtpDataAgendaFim.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            this.dtpDataAgendaFim.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // lblDataInicio
             // 
@@ -166,7 +173,7 @@
             this.dtpDataAgendaInicio.Name = "dtpDataAgendaInicio";
             this.dtpDataAgendaInicio.Size = new System.Drawing.Size(97, 20);
             this.dtpDataAgendaInicio.TabIndex = 132;
-            this.dtpDataAgendaInicio.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            this.dtpDataAgendaInicio.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // txtPesquisaTitulo
             // 
@@ -178,9 +185,13 @@
             this.txtPesquisaTitulo.Size = new System.Drawing.Size(598, 20);
             this.txtPesquisaTitulo.TabIndex = 128;
             this.txtPesquisaTitulo.Text = "Título";
+            this.txtPesquisaTitulo.Enter += new System.EventHandler(this.txtPesquisaTitulo_Enter);
+            this.txtPesquisaTitulo.Leave += new System.EventHandler(this.txtPesquisaTitulo_Leave);
             // 
             // grpRegistrar
             // 
+            this.grpRegistrar.Controls.Add(this.rdbDesativado);
+            this.grpRegistrar.Controls.Add(this.rdbAtivo);
             this.grpRegistrar.Controls.Add(this.txtObservacao);
             this.grpRegistrar.Controls.Add(this.dtpData);
             this.grpRegistrar.Controls.Add(this.picMedico);
@@ -207,6 +218,8 @@
             this.txtObservacao.Size = new System.Drawing.Size(598, 86);
             this.txtObservacao.TabIndex = 133;
             this.txtObservacao.Text = "Observações";
+            this.txtObservacao.Enter += new System.EventHandler(this.txtObservacao_Enter);
+            this.txtObservacao.Leave += new System.EventHandler(this.txtObservacao_Leave);
             // 
             // dtpData
             // 
@@ -239,6 +252,8 @@
             this.txtMedico.Size = new System.Drawing.Size(256, 20);
             this.txtMedico.TabIndex = 132;
             this.txtMedico.Text = "Nome do Medico";
+            this.txtMedico.Enter += new System.EventHandler(this.txtMedico_Enter);
+            this.txtMedico.Leave += new System.EventHandler(this.txtMedico_Leave);
             // 
             // picCalendario
             // 
@@ -260,6 +275,50 @@
             this.txtTitulo.Size = new System.Drawing.Size(598, 20);
             this.txtTitulo.TabIndex = 130;
             this.txtTitulo.Text = "Título";
+            this.txtTitulo.Enter += new System.EventHandler(this.txtTitulo_Enter);
+            this.txtTitulo.Leave += new System.EventHandler(this.txtTitulo_Leave);
+            // 
+            // rdbAtivo
+            // 
+            this.rdbAtivo.AutoSize = true;
+            this.rdbAtivo.Checked = true;
+            this.rdbAtivo.Location = new System.Drawing.Point(149, 48);
+            this.rdbAtivo.Name = "rdbAtivo";
+            this.rdbAtivo.Size = new System.Drawing.Size(58, 21);
+            this.rdbAtivo.TabIndex = 140;
+            this.rdbAtivo.Text = "Ativo";
+            this.rdbAtivo.UseVisualStyleBackColor = true;
+            // 
+            // rdbDesativado
+            // 
+            this.rdbDesativado.AutoSize = true;
+            this.rdbDesativado.Location = new System.Drawing.Point(226, 48);
+            this.rdbDesativado.Name = "rdbDesativado";
+            this.rdbDesativado.Size = new System.Drawing.Size(93, 21);
+            this.rdbDesativado.TabIndex = 141;
+            this.rdbDesativado.Text = "Desativado";
+            this.rdbDesativado.UseVisualStyleBackColor = true;
+            // 
+            // rdbPesquisarDesativados
+            // 
+            this.rdbPesquisarDesativados.AutoSize = true;
+            this.rdbPesquisarDesativados.Location = new System.Drawing.Point(515, 46);
+            this.rdbPesquisarDesativados.Name = "rdbPesquisarDesativados";
+            this.rdbPesquisarDesativados.Size = new System.Drawing.Size(99, 21);
+            this.rdbPesquisarDesativados.TabIndex = 143;
+            this.rdbPesquisarDesativados.Text = "Desativados";
+            this.rdbPesquisarDesativados.UseVisualStyleBackColor = true;
+            // 
+            // rdbPesquisarAtivos
+            // 
+            this.rdbPesquisarAtivos.AutoSize = true;
+            this.rdbPesquisarAtivos.Checked = true;
+            this.rdbPesquisarAtivos.Location = new System.Drawing.Point(450, 46);
+            this.rdbPesquisarAtivos.Name = "rdbPesquisarAtivos";
+            this.rdbPesquisarAtivos.Size = new System.Drawing.Size(64, 21);
+            this.rdbPesquisarAtivos.TabIndex = 142;
+            this.rdbPesquisarAtivos.Text = "Ativos";
+            this.rdbPesquisarAtivos.UseVisualStyleBackColor = true;
             // 
             // ucAgenda
             // 
@@ -304,5 +363,10 @@
         private System.Windows.Forms.Label lblDataFim;
         private System.Windows.Forms.Label lblDataInicio;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.RadioButton rdbPesquisarDesativados;
+        private System.Windows.Forms.RadioButton rdbPesquisarAtivos;
+        private System.Windows.Forms.RadioButton rdbDesativado;
+        private System.Windows.Forms.RadioButton rdbAtivo;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
