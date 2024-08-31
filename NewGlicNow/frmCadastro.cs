@@ -38,11 +38,11 @@ namespace NewGlicNow
             usuario.Celular = txtCelular.Text;
 
             usuario.endereco.Logradouro = txtEndereco.Text;
-            usuario.endereco.Complemento = txtComplemento.Text;
             usuario.endereco.Numero = txtNumero.Text;
+            usuario.endereco.Complemento = txtComplemento.Text;
             usuario.endereco.Bairro = txtBairro.Text;
             usuario.endereco.CEP = txtCEP.Text;
-            usuario.endereco.CidadeId = cboCidade.SelectedIndex;
+            usuario.endereco.CidadeId = Convert.ToInt32(cboCidade.SelectedValue);
         }
         public static bool ValidarCPF(string cpf)
         {

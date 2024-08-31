@@ -34,16 +34,6 @@ namespace NewGlicNow
             txtMedico.Text = usuario.agenda.NomeMedico;
             txtObservacao.Text = usuario.agenda.Observacao;
             dtpData.Value = usuario.agenda.DataHora.Date;
-            if(usuario.agenda.Ativado == true)
-            {
-                rdbAtivo.Checked = true;
-                rdbDesativado.Checked = false;
-            }
-            else
-            {
-                rdbDesativado.Checked = true;
-                rdbAtivo.Checked = false;
-            }
         }
 
         private void PreencherClasse()
@@ -52,14 +42,6 @@ namespace NewGlicNow
             usuario.agenda.NomeMedico = txtMedico.Text;
             usuario.agenda.Observacao = txtObservacao.Text;
             usuario.agenda.DataHora = dtpData.Value.Date;
-            if(rdbAtivo.Checked == true)
-            {
-                usuario.agenda.Ativado = true;
-            }
-            else
-            {
-                usuario.agenda.Ativado =false;
-            }
         }
 
         private void CarregarGridAgenda()
@@ -115,9 +97,7 @@ namespace NewGlicNow
             txtTitulo.Clear();
             txtMedico.Clear();
             txtObservacao.Clear();
-            dtpData.Value = DateTime.Now;
-            rdbAtivo.Checked = true;
-            rdbDesativado.Checked = false;
+            dtpData.Value = DateTime.Now.Date;
             txtTitulo.Focus();
         }
 
@@ -181,20 +161,12 @@ namespace NewGlicNow
             try
             {
                 usuario = new Usuario();
-                if (!string.IsNullOrEmpty(txtPesquisaTitulo.Text) || txtPesquisaTitulo.Text != "Título")
+                if (txtPesquisaTitulo.Text != "Título")
                 {
                     usuario.agenda.Titulo = txtPesquisaTitulo.Text;
                 }
                 usuario.agenda.DataInicio = dtpDataAgendaInicio.Value.Date;
                 usuario.agenda.DataFim = dtpDataAgendaFim.Value.Date;
-                if(rdbPesquisarAtivos.Checked == true)
-                {
-                    usuario.agenda.Ativado = true;
-                }
-                else
-                {
-                    usuario.agenda.Ativado=false;
-                }
                 CarregarGridAgenda();
             }
             catch (Exception ex)

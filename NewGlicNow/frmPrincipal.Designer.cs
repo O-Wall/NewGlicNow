@@ -264,7 +264,7 @@
             this.lblNomePerfil.AutoSize = true;
             this.lblNomePerfil.BackColor = System.Drawing.Color.Transparent;
             this.lblNomePerfil.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePerfil.Location = new System.Drawing.Point(65, 34);
+            this.lblNomePerfil.Location = new System.Drawing.Point(57, 34);
             this.lblNomePerfil.Name = "lblNomePerfil";
             this.lblNomePerfil.Size = new System.Drawing.Size(59, 18);
             this.lblNomePerfil.TabIndex = 35;

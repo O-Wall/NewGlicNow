@@ -286,7 +286,7 @@ namespace FinalGlicNow
                 cboEstado.DataSource = Global.ConsultarEstados();
                 cboEstado.DisplayMember = "Estado";
                 cboEstado.ValueMember = "Id";
-                cboEstado.SelectedIndex = 0;
+                cboEstado.SelectedIndex = -1;
                 cboEstado.Text = "Estado";
             }
             catch (Exception ex)
@@ -308,7 +308,7 @@ namespace FinalGlicNow
                 cboCidade.DataSource = Global.ConsultarCidades(estado);
                 cboCidade.DisplayMember = "Cidade";
                 cboCidade.ValueMember = "Id";
-                cboCidade.SelectedIndex = 0;
+                cboCidade.SelectedIndex = -1;
                 cboCidade.Text = "Cidade";
             }
             catch (Exception ex)
@@ -324,7 +324,7 @@ namespace FinalGlicNow
                 cboGenero.DataSource = Global.ConsultarSexo();
                 cboGenero.DisplayMember = "descricao";
                 cboGenero.ValueMember = "Id";
-                cboGenero.SelectedIndex = 0;
+                cboGenero.SelectedIndex = -1;
                 cboGenero.Text = "Gênero";
             }
             catch (Exception ex)
@@ -339,7 +339,7 @@ namespace FinalGlicNow
                 cboTipoDiabete.DataSource = Global.ConsultarTipoDiabete();
                 cboTipoDiabete.DisplayMember = "descricao";
                 cboTipoDiabete.ValueMember = "Id";
-                cboTipoDiabete.SelectedIndex = 0;
+                cboTipoDiabete.SelectedIndex = -1;
                 cboTipoDiabete.Text = "Tipo de Diabete";
             }
             catch (Exception ex)
@@ -362,8 +362,6 @@ namespace FinalGlicNow
             CarregarSexos();
             CarregarTipoDiabetes();
             PreencherFormulario();
-            txtSenha.UseSystemPasswordChar = true;
-            txtConfSenha.UseSystemPasswordChar = true;
         }
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
