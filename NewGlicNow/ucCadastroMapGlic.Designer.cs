@@ -36,6 +36,11 @@
             this.btnGravar = new System.Windows.Forms.Button();
             this.dgvMapaGlic = new System.Windows.Forms.DataGridView();
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
+            this.grbBasal = new System.Windows.Forms.GroupBox();
+            this.ckbMatutino = new System.Windows.Forms.CheckBox();
+            this.ckbNoturno = new System.Windows.Forms.CheckBox();
+            this.lblData = new System.Windows.Forms.Label();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.cboPeriodo = new System.Windows.Forms.ComboBox();
             this.btnMapa = new System.Windows.Forms.Button();
             this.dtpDataInicio = new System.Windows.Forms.DateTimePicker();
@@ -44,15 +49,10 @@
             this.lblDataFim = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.picPesquisa = new System.Windows.Forms.PictureBox();
-            this.lblData = new System.Windows.Forms.Label();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
-            this.grbBasal = new System.Windows.Forms.GroupBox();
-            this.ckbNoturno = new System.Windows.Forms.CheckBox();
-            this.ckbMatutino = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).BeginInit();
             this.grpRegistrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPesquisa)).BeginInit();
             this.grbBasal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
             // txtValores
@@ -63,7 +63,6 @@
             this.txtValores.Name = "txtValores";
             this.txtValores.Size = new System.Drawing.Size(100, 20);
             this.txtValores.TabIndex = 13;
-            this.txtValores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValores_KeyPress);
             // 
             // txtObservacao
             // 
@@ -82,9 +81,9 @@
             this.lblValores.ForeColor = System.Drawing.Color.White;
             this.lblValores.Location = new System.Drawing.Point(27, 67);
             this.lblValores.Name = "lblValores";
-            this.lblValores.Size = new System.Drawing.Size(103, 13);
+            this.lblValores.Size = new System.Drawing.Size(92, 13);
             this.lblValores.TabIndex = 9;
-            this.lblValores.Text = "Valores da Glicemia:";
+            this.lblValores.Text = "Valor da Glicemia:";
             // 
             // lblPeriodo
             // 
@@ -158,6 +157,59 @@
             this.grpRegistrar.TabStop = false;
             this.grpRegistrar.Text = "Registrar dados";
             // 
+            // grbBasal
+            // 
+            this.grbBasal.Controls.Add(this.ckbMatutino);
+            this.grbBasal.Controls.Add(this.ckbNoturno);
+            this.grbBasal.Location = new System.Drawing.Point(427, 24);
+            this.grbBasal.Name = "grbBasal";
+            this.grbBasal.Size = new System.Drawing.Size(163, 68);
+            this.grbBasal.TabIndex = 142;
+            this.grbBasal.TabStop = false;
+            this.grbBasal.Text = "Basal";
+            // 
+            // ckbMatutino
+            // 
+            this.ckbMatutino.AutoSize = true;
+            this.ckbMatutino.Location = new System.Drawing.Point(16, 38);
+            this.ckbMatutino.Name = "ckbMatutino";
+            this.ckbMatutino.Size = new System.Drawing.Size(83, 21);
+            this.ckbMatutino.TabIndex = 1;
+            this.ckbMatutino.Text = "Matutino";
+            this.ckbMatutino.UseVisualStyleBackColor = true;
+            // 
+            // ckbNoturno
+            // 
+            this.ckbNoturno.AutoSize = true;
+            this.ckbNoturno.Location = new System.Drawing.Point(15, 18);
+            this.ckbNoturno.Name = "ckbNoturno";
+            this.ckbNoturno.Size = new System.Drawing.Size(79, 21);
+            this.ckbNoturno.TabIndex = 0;
+            this.ckbNoturno.Text = "Noturno";
+            this.ckbNoturno.UseVisualStyleBackColor = true;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.White;
+            this.lblData.Location = new System.Drawing.Point(276, 32);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(33, 13);
+            this.lblData.TabIndex = 141;
+            this.lblData.Text = "Data:";
+            // 
+            // dtpData
+            // 
+            this.dtpData.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(318, 28);
+            this.dtpData.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(97, 20);
+            this.dtpData.TabIndex = 140;
+            this.dtpData.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
             // cboPeriodo
             // 
             this.cboPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -192,22 +244,22 @@
             this.dtpDataInicio.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dtpDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataInicio.Location = new System.Drawing.Point(338, 15);
-            this.dtpDataInicio.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataInicio.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpDataInicio.Name = "dtpDataInicio";
             this.dtpDataInicio.Size = new System.Drawing.Size(97, 20);
             this.dtpDataInicio.TabIndex = 15;
-            this.dtpDataInicio.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            this.dtpDataInicio.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // dtpDataFim
             // 
             this.dtpDataFim.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dtpDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataFim.Location = new System.Drawing.Point(516, 15);
-            this.dtpDataFim.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataFim.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpDataFim.Name = "dtpDataFim";
             this.dtpDataFim.Size = new System.Drawing.Size(97, 20);
             this.dtpDataFim.TabIndex = 19;
-            this.dtpDataFim.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
+            this.dtpDataFim.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // lblDataInicio
             // 
@@ -253,59 +305,6 @@
             this.picPesquisa.TabIndex = 139;
             this.picPesquisa.TabStop = false;
             // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(276, 32);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(33, 13);
-            this.lblData.TabIndex = 141;
-            this.lblData.Text = "Data:";
-            // 
-            // dtpData
-            // 
-            this.dtpData.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(324, 28);
-            this.dtpData.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(97, 20);
-            this.dtpData.TabIndex = 140;
-            this.dtpData.Value = new System.DateTime(2024, 6, 25, 0, 0, 0, 0);
-            // 
-            // grbBasal
-            // 
-            this.grbBasal.Controls.Add(this.ckbMatutino);
-            this.grbBasal.Controls.Add(this.ckbNoturno);
-            this.grbBasal.Location = new System.Drawing.Point(427, 24);
-            this.grbBasal.Name = "grbBasal";
-            this.grbBasal.Size = new System.Drawing.Size(163, 68);
-            this.grbBasal.TabIndex = 142;
-            this.grbBasal.TabStop = false;
-            this.grbBasal.Text = "Basal";
-            // 
-            // ckbNoturno
-            // 
-            this.ckbNoturno.AutoSize = true;
-            this.ckbNoturno.Location = new System.Drawing.Point(15, 18);
-            this.ckbNoturno.Name = "ckbNoturno";
-            this.ckbNoturno.Size = new System.Drawing.Size(79, 21);
-            this.ckbNoturno.TabIndex = 0;
-            this.ckbNoturno.Text = "Noturno";
-            this.ckbNoturno.UseVisualStyleBackColor = true;
-            // 
-            // ckbMatutino
-            // 
-            this.ckbMatutino.AutoSize = true;
-            this.ckbMatutino.Location = new System.Drawing.Point(16, 38);
-            this.ckbMatutino.Name = "ckbMatutino";
-            this.ckbMatutino.Size = new System.Drawing.Size(83, 21);
-            this.ckbMatutino.TabIndex = 1;
-            this.ckbMatutino.Text = "Matutino";
-            this.ckbMatutino.UseVisualStyleBackColor = true;
-            // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,9 +326,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).EndInit();
             this.grpRegistrar.ResumeLayout(false);
             this.grpRegistrar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPesquisa)).EndInit();
             this.grbBasal.ResumeLayout(false);
             this.grbBasal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

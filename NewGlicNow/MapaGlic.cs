@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices.ComTypes;
+using System.Transactions;
 
 namespace NewGlicNow
 {
@@ -29,9 +30,9 @@ namespace NewGlicNow
         public MapaGlic()
         {
             Id = 0;
-            Data = DateTime.Now;
-            DataInicio = DateTime.Now;
-            DataFim = DateTime.Now;
+            Data = DateTime.MinValue.Date;
+            DataInicio = DateTime.MinValue.Date;
+            DataFim = DateTime.Today;
             PreCafe = 0;
             PosCafe = 0;
             PreAlmoco = 0;
@@ -51,31 +52,31 @@ namespace NewGlicNow
         public DataTable Consultar()
         {
             try
-            {                
+            {
                 parameters.Clear();
-                sql = "select Id, Data, PreCafe, PosCafe," +
-                    " PreAlmoco, PosAlmoco, PreJantar, PosJantar, BasalMatutino, BasalNoturno," +
-                    "Observacao, UsuarioId \n";
+                sql = "Select Id, Data, PreCafe, PosCafe, PreAlmoco, PosAlmoco, \n";
+                sql += "PreJantar, PosJantar, BasalMatutino, BasalNoturno, \n";
+                sql += "Observacao, UsuarioId \n";
                 sql += "from tblGlicemia \n";
+
                 if (Id != 0)
                 {
-                    sql += "where Id = @Id \n";
-                    parameters.Add(new SqlParameter("@Id", Id));
+                    sql += "where @id = Id\n";
+                    parameters.Add(new SqlParameter("@id", Id));                    
                 }
-                else
+                else if(Data != DateTime.MinValue.Date)
                 {
-                    sql += "WHERE UsuarioId = @usuarioId \n";
-                    parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
-
-                    if (DataInicio != DateTime.MinValue && DataFim != DateTime.MinValue)
-                    {
-                        sql += "AND Data BETWEEN cast(@dataInicio as date) AND cast(@dataFim as date) \n";
-                        parameters.Add(new SqlParameter("@dataInicio", SqlDbType.DateTime) { Value = DataInicio });
-                        parameters.Add(new SqlParameter("@dataFim", SqlDbType.DateTime) { Value = DataFim });
-                    }
+                    sql += "where @data = Data \n";
+                    parameters.Add(new SqlParameter("@data", Data));
+                }
+                else if( DataInicio != DateTime.MinValue.Date)
+                {
+                    sql += "where Data BETWEEN cast(@dataInicio as date) AND cast(@dataFim as date) \n";
+                    parameters.Add(new SqlParameter("@dataInicio", SqlDbType.DateTime) { Value = DataInicio.Date });
+                    parameters.Add(new SqlParameter("@dataFim", SqlDbType.DateTime) { Value = DataFim.Date });
                 }
                 dt = acesso.Consultar(sql, parameters);
-                if(dt.Rows.Count>0)
+                if (dt.Rows.Count > 0)
                 {
                     Id = Convert.ToInt32(dt.Rows[0]["id"]);
                     Data = Convert.ToDateTime(dt.Rows[0]["data"]);
@@ -97,59 +98,67 @@ namespace NewGlicNow
                 throw new Exception(ex.Message);
             }
         }
-       
         public void Gravar()
         {
             try
             {
-                parameters.Clear();
-                if (Id == 0)
+                using (TransactionScope transacao = new TransactionScope())
                 {
-                    sql = "insert into tblGlicemia \n";
-                    sql += "(Data, PreCafe, PosCafe, PreAlmoco, PosAlmoco, PreJantar," +
-                        " PosJantar, BasalMatutino, BasalNoturno, Observacao, UsuarioId) \n";
-                    sql += "values \n";
-                    sql += "(@data,@preCafe, @posCafe, @preAlmoco, @posAlmoco," +
-                        " @preJantar, @posJantar, @basalMatutino, @basalNoturno, @observacao, @usuarioId) \n";
+                    parameters.Clear();
+                    if(Id == 0)
+                    {
+                        sql = "Insert Into tblGlicemia \n";
+                        sql += "(Data, PreCafe, PosCafe, \n";
+                        sql += "PreAlmoco, PosAlmoco, \n";
+                        sql += "PreJantar, PosJantar, \n";
+                        sql += "BasalMatutino, BasalNoturno, \n";
+                        sql += "Observacao, UsuarioId)\n";
+                        sql += "Values \n";
+                        sql += "(@data, @preCafe, @posCafe, \n";
+                        sql += "@preAlmoco, @posAlmoco, \n";
+                        sql += "@preJantar, @posJantar, \n";
+                        sql += "@basalMatutino, @basalNoturno, \n";
+                        sql += "@observacao, @usuarioId)\n";
+                    }
+                    else
+                    {
+                        sql = "update tblGlicemia \n";
+                        sql += "set \n";
+                        sql += "PreCafe = @preCafe, \n";
+                        sql += "PosCafe = @posCafe, \n";
+                        sql += "PreAlmoco = @preAlmoco, \n";
+                        sql += "PosAlmoco = @posAlmoco, \n";
+                        sql += "PreJantar = @preJantar, \n";
+                        sql += "PosJantar = @posJantar, \n";
+                        sql += "BasalMatutino = @basalMatutino, \n";
+                        sql += "BasalNoturno = @basalNoturno, \n";
+                        sql += "Observacao = @observacao, \n";
+                        sql += "UsuarioId = @usuarioId \n";
+                        sql += "where Data = @data; \n";                        
+                    }
                     parameters.Add(new SqlParameter("@data", Data));
-                }
-                else
-                {
-                    sql = "update tblGlicemia \n";
-                    sql += "set \n";
-                    sql += "PreCafe = @preCafe, \n";
-                    sql += "PosCafe = @posCafe, \n";
-                    sql += "PreAlmoco = @preAlmoco, \n";
-                    sql += "PosAlmoco = @posAlmoco, \n";
-                    sql += "PreJantar = @preJantar, \n";
-                    sql += "PosJantar = @posJantar, \n";
-                    sql += "BasalMatutino = @basalMatutino, \n";
-                    sql += "BasalNoturno = @basalNoturno, \n";
-                    sql += "Observacao = @observacao, \n";
-                    sql += "UsuarioId = @usuarioId \n";
-                    sql += "where Id = @id; \n";
-                    parameters.Add(new SqlParameter("@id", Id));
-                }
-                parameters.Add(new SqlParameter("@preCafe", PreCafe));
-                parameters.Add(new SqlParameter("@posCafe", PosCafe));
-                parameters.Add(new SqlParameter("@preAlmoco", PreAlmoco));
-                parameters.Add(new SqlParameter("@posAlmoco", PosAlmoco));
-                parameters.Add(new SqlParameter("@preJantar", PreJantar));
-                parameters.Add(new SqlParameter("@posJantar", PosJantar));
-                parameters.Add(new SqlParameter("@basalMatutino", BasalMatutino));
-                parameters.Add(new SqlParameter("@basalNoturno", BasalNoturno));
-                parameters.Add(new SqlParameter("@observacao", Observacao));
-                parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
+                    parameters.Add(new SqlParameter("@preCafe", PreCafe));
+                    parameters.Add(new SqlParameter("@posCafe", PosCafe));
+                    parameters.Add(new SqlParameter("@preAlmoco", PreAlmoco));
+                    parameters.Add(new SqlParameter("@posAlmoco", PosAlmoco));
+                    parameters.Add(new SqlParameter("@preJantar", PreJantar));
+                    parameters.Add(new SqlParameter("@posJantar", PosJantar));
+                    parameters.Add(new SqlParameter("@basalMatutino", BasalMatutino));
+                    parameters.Add(new SqlParameter("@basalNoturno", BasalNoturno));
+                    parameters.Add(new SqlParameter("@observacao", Observacao));
+                    parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
 
-                if (Id == 0)
-                {
-                    Id = acesso.Executar(parameters, sql);
-                }
-                else
-                {
-                    acesso.Executar(sql, parameters);
-                }
+                    if (Id == 0)
+                    {
+                        Id = acesso.Executar(parameters, sql);
+                    }
+                    else
+                    {
+                        acesso.Executar(sql, parameters);
+                    }
 
+                        transacao.Complete();
+                }
             }
             catch (Exception ex)
             {

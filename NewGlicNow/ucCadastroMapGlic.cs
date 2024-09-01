@@ -53,168 +53,86 @@ namespace NewGlicNow
                 MessageBox.Show("Erro ao carregar dados da grade: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void PreencherClasse()
-        {
-            try
-            {
-                if (cboPeriodo.SelectedIndex == 0)
-                {
-                    usuario.mapaGlic.PreCafe = Convert.ToInt32(txtValores.Text);
-                }
-                else if (cboPeriodo.SelectedIndex == 1)
-                {
-                    usuario.mapaGlic.PosCafe = Convert.ToInt32(txtValores.Text);
-                }
-                else if (cboPeriodo.SelectedIndex == 2)
-                {
-                    usuario.mapaGlic.PreAlmoco = Convert.ToInt32(txtValores.Text);
-                }
-                else if (cboPeriodo.SelectedIndex == 3)
-                {
-                    usuario.mapaGlic.PosAlmoco = Convert.ToInt32(txtValores.Text);
-                }
-                else if (cboPeriodo.SelectedIndex == 4)
-                {
-                    usuario.mapaGlic.PreJantar = Convert.ToInt32(txtValores.Text);
-                }
-                else if (cboPeriodo.SelectedIndex == 5)
-                {
-                    usuario.mapaGlic.PosJantar = Convert.ToInt32(txtValores.Text);
-                }
-                usuario.mapaGlic.Observacao = txtObservacao.Text;
-                if (ckbNoturno.Checked == true)
-                {
-                    usuario.mapaGlic.BasalNoturno = true;
-                }
-                else
-                {
-                    usuario.mapaGlic.BasalNoturno = false;
-                }
-                if (ckbMatutino.Checked == true)
-                {
-                    usuario.mapaGlic.BasalMatutino = true;
-                }
-                else
-                {
-                    usuario.mapaGlic.BasalMatutino = false;
-                }
-                usuario.mapaGlic.Data = dtpData.Value.Date;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao preencher dados da classe: " + ex.Message, "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void PreencherFormulario()
-        {
-            if (cboPeriodo.SelectedIndex == 0)
-            {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.PreCafe);
-            }
-            else if (cboPeriodo.SelectedIndex == 1)
-            {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.PosCafe);
-            }
-            else if (cboPeriodo.SelectedIndex == 2)
-            {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.PreAlmoco);
-            }
-            else if (cboPeriodo.SelectedIndex == 3)
-            {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.PosAlmoco);
-            }
-            else if (cboPeriodo.SelectedIndex == 4)
-            {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.PreJantar);
-            }
-            else if (cboPeriodo.SelectedIndex == 5)
-            {
-                txtValores.Text = Convert.ToString(usuario.mapaGlic.PosJantar);
-            }
-            if (usuario.mapaGlic.BasalNoturno == true)
-            {
-                ckbNoturno.Checked = true;
-            }
-            else
-            {
-                ckbNoturno.Checked = false;
-            }
-            if (usuario.mapaGlic.BasalMatutino == true)
-            {
-                ckbMatutino.Checked = true;
-            }
-            else
-            {
-                ckbMatutino.Checked = true;
-            }
-            txtObservacao.Text = usuario.mapaGlic.Observacao;
-            dtpData.Value = usuario.mapaGlic.Data.Date;
-        }
+        }        
         private void ucCadastroMapGlic_Load(object sender, EventArgs e)
         {
             CarregarGridGlic();
-        }
-        private void txtValores_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = Global.SomenteNumeros(e.KeyChar, (sender as TextBox).Text);
-        }
-        private string ValidarPreenchimento()
+            cboPeriodo.SelectedIndex = -1;            
+        }       
+        private string ValidarCampos()
         {
             string msgErro = string.Empty;
-            if (cboPeriodo.SelectedIndex == -1)
+            if(cboPeriodo.SelectedIndex == -1)
             {
-                msgErro = "Selecione um Período!";
+                msgErro = "Selecione o Período; \n";
             }
-            if (txtValores.Text == string.Empty)
+            if(txtValores.Text == string.Empty)
             {
-                msgErro += "Preencha o campo Valores!";
+                msgErro += "Preencha o campo: Valor da Glicemia; \n";
             }
-            return msgErro;
+            if(dtpData.Value.Date == DateTime.MinValue)
+            {
+                msgErro += "Selecione a Data; \n";
+            }
+            return msgErro;            
         }
-        private void btnGravar_Click(object sender, EventArgs e)
+        private void LimaprCampos()
         {
-            try
-            {
-                string msgERRO = ValidarPreenchimento();
-
-                if (msgERRO != string.Empty)
-                {
-                    MessageBox.Show(msgERRO, "Erro de Preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                PreencherClasse();
-                usuario.mapaGlic.Gravar();
-                MessageBox.Show("Glicemia Gravada com Sucesso!",
-                    "Mapa de Glicemia",
-                   MessageBoxButtons.OK, MessageBoxIcon.Information);                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao gravar dados: " + ex.Message, "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            LimparCampo();
+            cboPeriodo.SelectedIndex = -1;
+            txtValores.Clear();
+            txtObservacao.Clear();
+            dtpData.Value = new DateTime(2024, 1, 1);
+            dtpDataFim.Value = DateTime.Today;
+            dtpDataInicio.Value = new DateTime(2024, 1, 1);
+            ckbMatutino.Checked = false;
+            ckbNoturno.Checked = false;
+            usuario = new Usuario();
+            txtValores.Focus();
         }
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void PreencherClasse()
         {
-            try
+            if (cboPeriodo.SelectedIndex == 0)
             {
-                usuario = new Usuario();
-                usuario.mapaGlic.DataInicio = dtpDataInicio.Value.Date; 
-                usuario.mapaGlic.DataFim = dtpDataFim.Value.Date; 
-
-                if (usuario.mapaGlic.DataInicio <= usuario.mapaGlic.DataFim)
-                {
-                    CarregarGridGlic();
-                }
+                usuario.mapaGlic.PreCafe = Convert.ToInt32(txtValores.Text);
             }
-            catch (Exception ex)
+            else if (cboPeriodo.SelectedIndex == 1)
             {
-                MessageBox.Show("Erro ao pesquisar dados: " + ex.Message, "Erro",
-                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                usuario.mapaGlic.PosCafe = Convert.ToInt32(txtValores.Text);
             }
+            else if (cboPeriodo.SelectedIndex == 2)
+            {
+                usuario.mapaGlic.PreAlmoco = Convert.ToInt32(txtValores.Text);
+            }
+            else if (cboPeriodo.SelectedIndex == 3)
+            {
+                usuario.mapaGlic.PosAlmoco = Convert.ToInt32(txtValores.Text);
+            }
+            else if (cboPeriodo.SelectedIndex == 4)
+            {
+                usuario.mapaGlic.PreJantar = Convert.ToInt32(txtValores.Text);
+            }
+            else if (cboPeriodo.SelectedIndex == 5)
+            {
+                usuario.mapaGlic.PosJantar = Convert.ToInt32(txtValores.Text);
+            }
+            if (ckbNoturno.Checked == true)
+            {
+                usuario.mapaGlic.BasalNoturno = true;
+            }
+            else
+            {
+                usuario.mapaGlic.BasalNoturno = false;
+            }
+            if (ckbMatutino.Checked == true)
+            {
+                usuario.mapaGlic.BasalMatutino = true;
+            }
+            else
+            {
+                usuario.mapaGlic.BasalMatutino = false;
+            }
+            usuario.mapaGlic.Observacao = txtObservacao.Text;
+            usuario.mapaGlic.Data = dtpData.Value.Date;
         }
         private void dgvMapaGlic_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -250,7 +168,7 @@ namespace NewGlicNow
                 cboPeriodo.SelectedIndex = selectedCell.ColumnIndex - 2;
                 usuario.mapaGlic.Consultar();
                 txtObservacao.Text = usuario.mapaGlic.Observacao;
-                dtpData.Value = usuario.mapaGlic.Data;
+                dtpData.Value = usuario.mapaGlic.Data.Date;
                 ckbNoturno.Checked = usuario.mapaGlic.BasalNoturno;
                 ckbMatutino.Checked = usuario.mapaGlic.BasalMatutino;
             }
@@ -259,14 +177,6 @@ namespace NewGlicNow
                 MessageBox.Show("Erro ao selecionar a Glicemia: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void LimparCampo()
-        {
-            Usuario usuario = new Usuario();
-            txtValores.Clear();
-            txtObservacao.Clear();
-            cboPeriodo.SelectedIndex = -1;
-            CarregarGridGlic();
         }
         private void btnMapa_Click(object sender, EventArgs e)
         {
@@ -286,12 +196,14 @@ namespace NewGlicNow
                     // Cria um StreamWriter para escrever no arquivo CSV
                     using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName, false, Encoding.UTF8))
                     {
-                        // Cabeçalhos das colunas
+                        // Cabeçalhos das colunas visíveis
                         for (int i = 0; i < dgvMapaGlic.Columns.Count; i++)
                         {
-                            sw.Write(dgvMapaGlic.Columns[i].HeaderText);
-                            if (i < dgvMapaGlic.Columns.Count - 1)
+                            if (dgvMapaGlic.Columns[i].Visible)
+                            {
+                                sw.Write(dgvMapaGlic.Columns[i].HeaderText);
                                 sw.Write(","); // Usar vírgula como delimitador
+                            }
                         }
                         sw.WriteLine();
 
@@ -300,22 +212,24 @@ namespace NewGlicNow
                         {
                             for (int j = 0; j < dgvMapaGlic.Columns.Count; j++)
                             {
-                                // Checa se a célula é nula e escreve uma string vazia se for
-                                var cellValue = row.Cells[j].Value ?? "";
-
-                                if (dgvMapaGlic.Columns[j].ValueType == typeof(DateTime))
+                                if (dgvMapaGlic.Columns[j].Visible)
                                 {
-                                    // Se for uma coluna de DateTime, formate como desejado
-                                    sw.Write(Convert.ToDateTime(cellValue).ToString("yyyy-MM-dd"));
-                                }
-                                else
-                                {
-                                    // Para outros tipos, apenas converte para string
-                                    sw.Write(cellValue.ToString());
-                                }
+                                    // Checa se a célula é nula e escreve uma string vazia se for
+                                    var cellValue = row.Cells[j].Value ?? "";
 
-                                if (j < dgvMapaGlic.Columns.Count - 1)
+                                    if (dgvMapaGlic.Columns[j].ValueType == typeof(DateTime))
+                                    {
+                                        // Se for uma coluna de DateTime, formate como desejado
+                                        sw.Write(Convert.ToDateTime(cellValue).ToString("dd-MM-yy"));
+                                    }
+                                    else
+                                    {
+                                        // Para outros tipos, apenas converte para string
+                                        sw.Write(cellValue.ToString());
+                                    }
+
                                     sw.Write(","); // Usar vírgula como delimitador
+                                }
                             }
                             sw.WriteLine();
                         }
@@ -334,5 +248,35 @@ namespace NewGlicNow
         }
 
 
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Erro = ValidarCampos();
+                if (Erro != string.Empty)
+                {
+                    MessageBox.Show(Erro, "Erro de Preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                PreencherClasse();
+                usuario.mapaGlic.Gravar();
+                MessageBox.Show("Glicemia Gravada com Sucesso", "Mapa de Glicemia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarGridGlic();
+                LimaprCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Gravar Glicemia: " + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Usuario u = new Usuario();
+            u.mapaGlic.DataInicio = dtpDataInicio.Value.Date;
+            u.mapaGlic.DataFim = dtpDataFim.Value.Date;
+            CarregarGridGlic();
+        }
     }
 }
