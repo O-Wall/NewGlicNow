@@ -32,13 +32,16 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.gprPesquisar = new System.Windows.Forms.GroupBox();
+            this.rdbPesquisarDesativados = new System.Windows.Forms.RadioButton();
+            this.rdbPesquisarAtivos = new System.Windows.Forms.RadioButton();
             this.lblDataFim = new System.Windows.Forms.Label();
             this.dtpDataAgendaFim = new System.Windows.Forms.DateTimePicker();
             this.lblDataInicio = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.dtpDataAgendaInicio = new System.Windows.Forms.DateTimePicker();
-            this.txtPesquisaTitulo = new System.Windows.Forms.TextBox();
             this.grpRegistrar = new System.Windows.Forms.GroupBox();
+            this.rdbDesativado = new System.Windows.Forms.RadioButton();
+            this.rdbAtivo = new System.Windows.Forms.RadioButton();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.picMedico = new System.Windows.Forms.PictureBox();
@@ -46,10 +49,6 @@
             this.picCalendario = new System.Windows.Forms.PictureBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.rdbAtivo = new System.Windows.Forms.RadioButton();
-            this.rdbDesativado = new System.Windows.Forms.RadioButton();
-            this.rdbPesquisarDesativados = new System.Windows.Forms.RadioButton();
-            this.rdbPesquisarAtivos = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).BeginInit();
             this.gprPesquisar.SuspendLayout();
             this.grpRegistrar.SuspendLayout();
@@ -66,12 +65,12 @@
             this.grdAgenda.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.grdAgenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdAgenda.Location = new System.Drawing.Point(73, 89);
+            this.grdAgenda.Location = new System.Drawing.Point(73, 69);
             this.grdAgenda.Name = "grdAgenda";
             this.grdAgenda.ReadOnly = true;
             this.grdAgenda.RowHeadersVisible = false;
             this.grdAgenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdAgenda.Size = new System.Drawing.Size(618, 144);
+            this.grdAgenda.Size = new System.Drawing.Size(618, 173);
             this.grdAgenda.TabIndex = 145;
             this.grdAgenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdAgenda_CellClick);
             // 
@@ -108,24 +107,45 @@
             this.gprPesquisar.Controls.Add(this.lblDataInicio);
             this.gprPesquisar.Controls.Add(this.btnPesquisar);
             this.gprPesquisar.Controls.Add(this.dtpDataAgendaInicio);
-            this.gprPesquisar.Controls.Add(this.txtPesquisaTitulo);
             this.gprPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gprPesquisar.ForeColor = System.Drawing.Color.White;
             this.gprPesquisar.Location = new System.Drawing.Point(73, 8);
             this.gprPesquisar.Name = "gprPesquisar";
-            this.gprPesquisar.Size = new System.Drawing.Size(618, 75);
+            this.gprPesquisar.Size = new System.Drawing.Size(618, 55);
             this.gprPesquisar.TabIndex = 146;
             this.gprPesquisar.TabStop = false;
             this.gprPesquisar.Text = "Pesquisar por";
             // 
+            // rdbPesquisarDesativados
+            // 
+            this.rdbPesquisarDesativados.AutoSize = true;
+            this.rdbPesquisarDesativados.Location = new System.Drawing.Point(515, 23);
+            this.rdbPesquisarDesativados.Name = "rdbPesquisarDesativados";
+            this.rdbPesquisarDesativados.Size = new System.Drawing.Size(99, 21);
+            this.rdbPesquisarDesativados.TabIndex = 143;
+            this.rdbPesquisarDesativados.Text = "Desativados";
+            this.rdbPesquisarDesativados.UseVisualStyleBackColor = true;
+            // 
+            // rdbPesquisarAtivos
+            // 
+            this.rdbPesquisarAtivos.AutoSize = true;
+            this.rdbPesquisarAtivos.Checked = true;
+            this.rdbPesquisarAtivos.Location = new System.Drawing.Point(450, 23);
+            this.rdbPesquisarAtivos.Name = "rdbPesquisarAtivos";
+            this.rdbPesquisarAtivos.Size = new System.Drawing.Size(64, 21);
+            this.rdbPesquisarAtivos.TabIndex = 142;
+            this.rdbPesquisarAtivos.TabStop = true;
+            this.rdbPesquisarAtivos.Text = "Ativos";
+            this.rdbPesquisarAtivos.UseVisualStyleBackColor = true;
+            // 
             // lblDataFim
             // 
             this.lblDataFim.AutoSize = true;
-            this.lblDataFim.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataFim.ForeColor = System.Drawing.Color.White;
-            this.lblDataFim.Location = new System.Drawing.Point(278, 51);
+            this.lblDataFim.Location = new System.Drawing.Point(278, 28);
             this.lblDataFim.Name = "lblDataFim";
-            this.lblDataFim.Size = new System.Drawing.Size(64, 12);
+            this.lblDataFim.Size = new System.Drawing.Size(58, 13);
             this.lblDataFim.TabIndex = 135;
             this.lblDataFim.Text = "Data Final:";
             // 
@@ -133,21 +153,21 @@
             // 
             this.dtpDataAgendaFim.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dtpDataAgendaFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAgendaFim.Location = new System.Drawing.Point(345, 48);
-            this.dtpDataAgendaFim.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaFim.Location = new System.Drawing.Point(345, 25);
+            this.dtpDataAgendaFim.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpDataAgendaFim.Name = "dtpDataAgendaFim";
             this.dtpDataAgendaFim.Size = new System.Drawing.Size(97, 20);
             this.dtpDataAgendaFim.TabIndex = 133;
-            this.dtpDataAgendaFim.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaFim.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // lblDataInicio
             // 
             this.lblDataInicio.AutoSize = true;
-            this.lblDataInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataInicio.ForeColor = System.Drawing.Color.White;
-            this.lblDataInicio.Location = new System.Drawing.Point(94, 50);
+            this.lblDataInicio.Location = new System.Drawing.Point(94, 27);
             this.lblDataInicio.Name = "lblDataInicio";
-            this.lblDataInicio.Size = new System.Drawing.Size(70, 12);
+            this.lblDataInicio.Size = new System.Drawing.Size(63, 13);
             this.lblDataInicio.TabIndex = 134;
             this.lblDataInicio.Text = "Data Inicial:";
             // 
@@ -156,7 +176,7 @@
             this.btnPesquisar.BackColor = System.Drawing.Color.White;
             this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnPesquisar.ForeColor = System.Drawing.Color.Black;
-            this.btnPesquisar.Location = new System.Drawing.Point(11, 43);
+            this.btnPesquisar.Location = new System.Drawing.Point(11, 20);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(77, 26);
             this.btnPesquisar.TabIndex = 131;
@@ -168,25 +188,12 @@
             // 
             this.dtpDataAgendaInicio.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dtpDataAgendaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAgendaInicio.Location = new System.Drawing.Point(166, 47);
-            this.dtpDataAgendaInicio.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpDataAgendaInicio.Location = new System.Drawing.Point(166, 24);
+            this.dtpDataAgendaInicio.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpDataAgendaInicio.Name = "dtpDataAgendaInicio";
             this.dtpDataAgendaInicio.Size = new System.Drawing.Size(97, 20);
             this.dtpDataAgendaInicio.TabIndex = 132;
-            this.dtpDataAgendaInicio.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            // 
-            // txtPesquisaTitulo
-            // 
-            this.txtPesquisaTitulo.BackColor = System.Drawing.Color.White;
-            this.txtPesquisaTitulo.Font = new System.Drawing.Font("Arial", 8F);
-            this.txtPesquisaTitulo.Location = new System.Drawing.Point(11, 19);
-            this.txtPesquisaTitulo.MaxLength = 150;
-            this.txtPesquisaTitulo.Name = "txtPesquisaTitulo";
-            this.txtPesquisaTitulo.Size = new System.Drawing.Size(598, 20);
-            this.txtPesquisaTitulo.TabIndex = 128;
-            this.txtPesquisaTitulo.Text = "Título";
-            this.txtPesquisaTitulo.Enter += new System.EventHandler(this.txtPesquisaTitulo_Enter);
-            this.txtPesquisaTitulo.Leave += new System.EventHandler(this.txtPesquisaTitulo_Leave);
+            this.dtpDataAgendaInicio.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // grpRegistrar
             // 
@@ -207,6 +214,28 @@
             this.grpRegistrar.TabStop = false;
             this.grpRegistrar.Text = "Registrar Tarefa";
             // 
+            // rdbDesativado
+            // 
+            this.rdbDesativado.AutoSize = true;
+            this.rdbDesativado.Location = new System.Drawing.Point(226, 48);
+            this.rdbDesativado.Name = "rdbDesativado";
+            this.rdbDesativado.Size = new System.Drawing.Size(93, 21);
+            this.rdbDesativado.TabIndex = 141;
+            this.rdbDesativado.Text = "Desativado";
+            this.rdbDesativado.UseVisualStyleBackColor = true;
+            // 
+            // rdbAtivo
+            // 
+            this.rdbAtivo.AutoSize = true;
+            this.rdbAtivo.Checked = true;
+            this.rdbAtivo.Location = new System.Drawing.Point(149, 48);
+            this.rdbAtivo.Name = "rdbAtivo";
+            this.rdbAtivo.Size = new System.Drawing.Size(58, 21);
+            this.rdbAtivo.TabIndex = 140;
+            this.rdbAtivo.TabStop = true;
+            this.rdbAtivo.Text = "Ativo";
+            this.rdbAtivo.UseVisualStyleBackColor = true;
+            // 
             // txtObservacao
             // 
             this.txtObservacao.BackColor = System.Drawing.Color.White;
@@ -226,11 +255,11 @@
             this.dtpData.Font = new System.Drawing.Font("Arial", 8F);
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpData.Location = new System.Drawing.Point(41, 49);
-            this.dtpData.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpData.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(92, 20);
             this.dtpData.TabIndex = 131;
-            this.dtpData.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
+            this.dtpData.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // picMedico
             // 
@@ -278,48 +307,6 @@
             this.txtTitulo.Enter += new System.EventHandler(this.txtTitulo_Enter);
             this.txtTitulo.Leave += new System.EventHandler(this.txtTitulo_Leave);
             // 
-            // rdbAtivo
-            // 
-            this.rdbAtivo.AutoSize = true;
-            this.rdbAtivo.Checked = true;
-            this.rdbAtivo.Location = new System.Drawing.Point(149, 48);
-            this.rdbAtivo.Name = "rdbAtivo";
-            this.rdbAtivo.Size = new System.Drawing.Size(58, 21);
-            this.rdbAtivo.TabIndex = 140;
-            this.rdbAtivo.Text = "Ativo";
-            this.rdbAtivo.UseVisualStyleBackColor = true;
-            // 
-            // rdbDesativado
-            // 
-            this.rdbDesativado.AutoSize = true;
-            this.rdbDesativado.Location = new System.Drawing.Point(226, 48);
-            this.rdbDesativado.Name = "rdbDesativado";
-            this.rdbDesativado.Size = new System.Drawing.Size(93, 21);
-            this.rdbDesativado.TabIndex = 141;
-            this.rdbDesativado.Text = "Desativado";
-            this.rdbDesativado.UseVisualStyleBackColor = true;
-            // 
-            // rdbPesquisarDesativados
-            // 
-            this.rdbPesquisarDesativados.AutoSize = true;
-            this.rdbPesquisarDesativados.Location = new System.Drawing.Point(515, 46);
-            this.rdbPesquisarDesativados.Name = "rdbPesquisarDesativados";
-            this.rdbPesquisarDesativados.Size = new System.Drawing.Size(99, 21);
-            this.rdbPesquisarDesativados.TabIndex = 143;
-            this.rdbPesquisarDesativados.Text = "Desativados";
-            this.rdbPesquisarDesativados.UseVisualStyleBackColor = true;
-            // 
-            // rdbPesquisarAtivos
-            // 
-            this.rdbPesquisarAtivos.AutoSize = true;
-            this.rdbPesquisarAtivos.Checked = true;
-            this.rdbPesquisarAtivos.Location = new System.Drawing.Point(450, 46);
-            this.rdbPesquisarAtivos.Name = "rdbPesquisarAtivos";
-            this.rdbPesquisarAtivos.Size = new System.Drawing.Size(64, 21);
-            this.rdbPesquisarAtivos.TabIndex = 142;
-            this.rdbPesquisarAtivos.Text = "Ativos";
-            this.rdbPesquisarAtivos.UseVisualStyleBackColor = true;
-            // 
             // ucAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,7 +337,6 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.GroupBox gprPesquisar;
-        private System.Windows.Forms.TextBox txtPesquisaTitulo;
         private System.Windows.Forms.GroupBox grpRegistrar;
         private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.DateTimePicker dtpData;

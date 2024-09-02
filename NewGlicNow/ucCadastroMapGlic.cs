@@ -57,7 +57,9 @@ namespace NewGlicNow
         private void ucCadastroMapGlic_Load(object sender, EventArgs e)
         {
             CarregarGridGlic();
-            cboPeriodo.SelectedIndex = -1;            
+            cboPeriodo.SelectedIndex = -1;
+            dtpData.Value = DateTime.Today;
+            dtpDataFim.Value = DateTime.Today;
         }       
         private string ValidarCampos()
         {
@@ -81,7 +83,7 @@ namespace NewGlicNow
             cboPeriodo.SelectedIndex = -1;
             txtValores.Clear();
             txtObservacao.Clear();
-            dtpData.Value = new DateTime(2024, 1, 1);
+            dtpData.Value = DateTime.Today;
             dtpDataFim.Value = DateTime.Today;
             dtpDataInicio.Value = new DateTime(2024, 1, 1);
             ckbMatutino.Checked = false;
@@ -220,7 +222,7 @@ namespace NewGlicNow
                                     if (dgvMapaGlic.Columns[j].ValueType == typeof(DateTime))
                                     {
                                         // Se for uma coluna de DateTime, formate como desejado
-                                        sw.Write(Convert.ToDateTime(cellValue).ToString("dd-MM-yy"));
+                                        sw.Write(Convert.ToDateTime(cellValue).ToString("dd/MM/yy"));
                                     }
                                     else
                                     {
@@ -279,4 +281,5 @@ namespace NewGlicNow
             CarregarGridGlic();
         }
     }
+
 }

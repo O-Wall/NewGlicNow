@@ -32,7 +32,7 @@ namespace NewGlicNow
             Id = 0;
             Data = DateTime.MinValue.Date;
             DataInicio = DateTime.MinValue.Date;
-            DataFim = DateTime.Today;
+            DataFim = DateTime.Today.Date;
             PreCafe = 0;
             PosCafe = 0;
             PreAlmoco = 0;

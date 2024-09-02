@@ -180,11 +180,6 @@ namespace NewGlicNow
                     msgErro += "Preencha o campo: ENDEREÇO.\n";
                 }
 
-                if (txtComplemento.Text == string.Empty || txtComplemento.Text == "Complemento")
-                {
-                    msgErro += "Preencha o campo: COMPLEMENTO.\n";
-                }
-
                 if (txtBairro.Text == string.Empty || txtBairro.Text == "Bairro")
                 {
                     msgErro += "Preencha o campo: BAIRRO.\n";
