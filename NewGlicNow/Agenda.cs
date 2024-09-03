@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Transactions;
+using System.Windows.Forms;
 
 namespace NewGlicNow
 {
@@ -142,6 +143,31 @@ namespace NewGlicNow
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+        public void Excluir()
+        {
+            try
+            {
+                using (TransactionScope transacao = new TransactionScope())
+                {
+                    parameters.Clear();
+                    sql = "DELETE FROM tblAgenda WHERE Id = @id AND UsuarioId = @usuarioId\n";
+                    parameters.Add(new SqlParameter("@id", Id));                  
+                    parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
+
+                    acesso.Executar(sql, parameters);
+                    transacao.Complete();
+                }
+
+                MessageBox.Show("Registro excluído com sucesso!", "Exclusão",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Exibe uma mensagem de erro em caso de falha
+                MessageBox.Show($"Erro ao excluir o registro: {ex.Message}", "Erro",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

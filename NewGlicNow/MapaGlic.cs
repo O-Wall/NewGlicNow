@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices.ComTypes;
 using System.Transactions;
+using System.Windows.Forms;
 
 namespace NewGlicNow
 {
@@ -163,6 +164,39 @@ namespace NewGlicNow
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+        public void ExcluirPorData(DateTime data)
+        {
+            try
+            {
+                using (TransactionScope transacao = new TransactionScope())
+                {
+                    parameters.Clear();
+                   if(Id != 0)
+                    {
+                        sql = "DELETE FROM tblGlicemia WHERE Id = @id AND UsuarioId = @usuarioId\n";
+                        parameters.Add(new SqlParameter("@id", Id));
+                    }
+                   else
+                    {
+                        sql = "DELETE FROM tblGlicemia WHERE Data = @data AND UsuarioId = @usuarioId";
+                        parameters.Add(new SqlParameter("@data", data));
+                    }
+                    parameters.Add(new SqlParameter("@usuarioId", Global.IdUsuarioLogado));
+
+                    acesso.Executar(sql, parameters);
+                    transacao.Complete();
+                }
+
+                MessageBox.Show("Registro excluído com sucesso!", "Exclusão",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Exibe uma mensagem de erro em caso de falha
+                MessageBox.Show($"Erro ao excluir o registro: {ex.Message}", "Erro",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

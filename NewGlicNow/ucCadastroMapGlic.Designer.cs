@@ -49,6 +49,7 @@
             this.lblDataFim = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.picPesquisa = new System.Windows.Forms.PictureBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapaGlic)).BeginInit();
             this.grpRegistrar.SuspendLayout();
             this.grbBasal.SuspendLayout();
@@ -305,11 +306,24 @@
             this.picPesquisa.TabIndex = 139;
             this.picPesquisa.TabStop = false;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.White;
+            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExcluir.Location = new System.Drawing.Point(340, 419);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(103, 35);
+            this.btnExcluir.TabIndex = 140;
+            this.btnExcluir.Text = "&Excluir Registro";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // ucCadastroMapGlic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(46)))), ((int)(((byte)(44)))));
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.picPesquisa);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblDataFim);
@@ -357,5 +371,6 @@
         private System.Windows.Forms.GroupBox grbBasal;
         private System.Windows.Forms.CheckBox ckbMatutino;
         private System.Windows.Forms.CheckBox ckbNoturno;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

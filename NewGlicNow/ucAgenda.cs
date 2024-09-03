@@ -100,20 +100,20 @@ namespace NewGlicNow
                     int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
                     // Chama a função Consultar usando o ID recuperado
-                    Usuario u = new Usuario();
-                    u.agenda.Id = id;
-                    u.agenda.Consultar();
+                    usuario = new Usuario();
+                    usuario.agenda.Id = id;
+                    usuario.agenda.Consultar();
 
                     // Agora preenche os controles do formulário com os dados retornados
                     if (selectedColumn == "Data")
                     {
-                        dtpData.Value = u.agenda.DataHora.Date;
+                        dtpData.Value = usuario.agenda.DataHora.Date;
                     }
                     else if (selectedColumn == "Titulo")
                     {
-                        txtTitulo.Text = u.agenda.Titulo.ToString();
+                        txtTitulo.Text = usuario.agenda.Titulo.ToString();
                     }
-                    if(u.agenda.Ativado == true)
+                    if(usuario.agenda.Ativado == true)
                     {
                         rdbAtivo.Checked = true;
                     }
@@ -121,8 +121,8 @@ namespace NewGlicNow
                     {
                         rdbDesativado.Checked = true;
                     }
-                    txtMedico.Text = u.agenda.NomeMedico.ToString();
-                    txtObservacao.Text = u.agenda.Observacao.ToString();
+                    txtMedico.Text = usuario.agenda.NomeMedico.ToString();
+                    txtObservacao.Text = usuario.agenda.Observacao.ToString();
                 }
             }
             catch (Exception ex)
@@ -204,6 +204,12 @@ namespace NewGlicNow
         private void txtObservacao_Leave(object sender, EventArgs e)
         {
             Global.TextBoxLeave(txtObservacao, "Observações");
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            usuario.agenda.Excluir();
+            LimparCampos();
         }
     }
 }

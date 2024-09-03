@@ -260,6 +260,8 @@ namespace NewGlicNow
                     MessageBox.Show(Erro, "Erro de Preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                usuario.mapaGlic.Data = dtpData.Value.Date;
+                usuario.mapaGlic.Consultar();
                 PreencherClasse();
                 usuario.mapaGlic.Gravar();
                 MessageBox.Show("Glicemia Gravada com Sucesso", "Mapa de Glicemia", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -278,6 +280,13 @@ namespace NewGlicNow
             Usuario u = new Usuario();
             u.mapaGlic.DataInicio = dtpDataInicio.Value.Date;
             u.mapaGlic.DataFim = dtpDataFim.Value.Date;
+            dgvMapaGlic.DataSource = u.mapaGlic.Consultar();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Usuario user = new Usuario();
+            user.mapaGlic.ExcluirPorData(dtpData.Value.Date);
             CarregarGridGlic();
         }
     }

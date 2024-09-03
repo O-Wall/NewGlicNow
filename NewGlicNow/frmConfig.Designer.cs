@@ -550,6 +550,7 @@
             this.Controls.Add(this.pnlBordaConfig);
             this.Controls.Add(this.gboLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConfig";
             this.Text = "frmConfig";
             this.Load += new System.EventHandler(this.frmConfig_Load);

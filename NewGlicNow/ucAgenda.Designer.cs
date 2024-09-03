@@ -49,6 +49,7 @@
             this.picCalendario = new System.Windows.Forms.PictureBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).BeginInit();
             this.gprPesquisar.SuspendLayout();
             this.grpRegistrar.SuspendLayout();
@@ -307,11 +308,24 @@
             this.txtTitulo.Enter += new System.EventHandler(this.txtTitulo_Enter);
             this.txtTitulo.Leave += new System.EventHandler(this.txtTitulo_Leave);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.White;
+            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExcluir.Location = new System.Drawing.Point(328, 424);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(107, 41);
+            this.btnExcluir.TabIndex = 148;
+            this.btnExcluir.Text = "&Excluir Registro";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // ucAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(63)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.grdAgenda);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnGravar);
@@ -354,5 +368,6 @@
         private System.Windows.Forms.RadioButton rdbDesativado;
         private System.Windows.Forms.RadioButton rdbAtivo;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
