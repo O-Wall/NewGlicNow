@@ -96,23 +96,12 @@ namespace NewGlicNow
                     var selectedCell = selectedRow.Cells[e.ColumnIndex];
                     var selectedColumn = grdAgenda.Columns[e.ColumnIndex].Name;
 
-                    // Supondo que o ID está na primeira coluna (ajuste se necessário)
                     int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
-                    // Chama a função Consultar usando o ID recuperado
                     usuario = new Usuario();
                     usuario.agenda.Id = id;
                     usuario.agenda.Consultar();
 
-                    // Agora preenche os controles do formulário com os dados retornados
-                    if (selectedColumn == "Data")
-                    {
-                        dtpData.Value = usuario.agenda.DataHora.Date;
-                    }
-                    else if (selectedColumn == "Titulo")
-                    {
-                        txtTitulo.Text = usuario.agenda.Titulo.ToString();
-                    }
                     if(usuario.agenda.Ativado == true)
                     {
                         rdbAtivo.Checked = true;
@@ -121,8 +110,10 @@ namespace NewGlicNow
                     {
                         rdbDesativado.Checked = true;
                     }
+                    txtTitulo.Text = usuario.agenda.Titulo.ToString();
                     txtMedico.Text = usuario.agenda.NomeMedico.ToString();
                     txtObservacao.Text = usuario.agenda.Observacao.ToString();
+                    dtpData.Value = usuario.agenda.DataHora.Date;
                 }
             }
             catch (Exception ex)
@@ -162,18 +153,18 @@ namespace NewGlicNow
         {
             try
             {
-                Usuario u = new Usuario();
-                u.agenda.DataInicio = dtpDataAgendaInicio.Value.Date;
-                u.agenda.DataFim = dtpDataAgendaFim.Value.Date;
+                usuario = new Usuario();
+                usuario.agenda.DataInicio = dtpDataAgendaInicio.Value.Date;
+                usuario.agenda.DataFim = dtpDataAgendaFim.Value.Date;
                 if(rdbPesquisarAtivos.Checked)
                 {
-                    u.agenda.Ativado = true;
+                    usuario.agenda.Ativado = true;
                 }
                 else if(rdbPesquisarDesativados.Checked)
                 {
-                    u.agenda.Ativado = false;
+                    usuario.agenda.Ativado = false;
                 }
-                grdAgenda.DataSource = u.agenda.Consultar();
+                CarregarGridAgenda();
             }
             catch (Exception ex)
             {
